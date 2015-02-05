@@ -1,0 +1,46 @@
+{
+	"environment" : 
+		{
+			"bandwidth" : 64,
+			"timeLimit" : 21600,
+			"scheduleType" : "priority",
+			"migrationType" : "offline",
+			"controlType" : "closeloop",
+			"networkType" : "dynamic",
+			"pageSize" : 4,
+
+			"wwsRatio" : 1,
+			"wwsDirtyRate" : 90,
+			"normalDirtyRate" : 20,
+			"maxPreCopyRound" : 30,
+			"minDirtyPage" : 50,
+			"maxNoProgressRound" : 2,
+
+			"networkInterval" : 10,
+			"networkSD" : 54.8222
+		},
+
+	"vmSpecList" :
+		[
+			{
+					"vmAmount" : 200,
+					"ram" : 512,
+					"priority" : 1,
+					"qos" : 300
+			},
+
+			{
+					"vmAmount" : 200,
+					"ram" : 512,
+					"priority" : 2,
+					"qos" : 2700
+			},
+
+			{
+					"vmAmount" : 200,
+					"ram" : 512,
+					"priority" : 3,
+					"qos" : 32400
+			}
+		]
+}
