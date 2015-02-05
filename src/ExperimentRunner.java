@@ -303,8 +303,11 @@ public class ExperimentRunner {
 		/*Environment.setNetworkInterval(17);
 		Environment.setMigrationTimeLimit(21600);
 		System.out.println(NetworkGenerator.calculateIntervalFraction(21599.999999999975));*/
-		if(args.length == 1){
+		if(args.length > 0){
 			String inputPath = args[0];
+			/*for(int i=0; i<args.length; i++){
+				System.out.println(args[i]);
+			}*/
 			ExperimentRunner runner = new ExperimentRunner(inputPath);
 			runner.runExperiment();
 		}
