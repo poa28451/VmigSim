@@ -1,4 +1,6 @@
 package main;
+
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.PrintStream;
@@ -36,6 +38,8 @@ public class ExperimentRunner {
 	private JsonDecoder decoder;
 	
 	public ExperimentRunner(String inputPath, String outputPath, int experimentRounds){
+		/*File out = new File(outputPath);
+		out.mkdirs();*/
 		FilePathContainer.setInputPath(inputPath);
 		FilePathContainer.setOutputPath(outputPath);
 		decoder = new JsonDecoder();
