@@ -28,7 +28,9 @@ public class FilePathContainer {
 			int usedPos = pos1 > pos2 ? pos1 : pos2;
 			String dirPath = filePath.substring(0, usedPos);
 			File dir = new File(dirPath);
-			dir.mkdirs();
+			if(!dir.mkdirs()){
+				System.out.println("Unable to create path" + dirPath);
+			}
 		}
 	}
 }
