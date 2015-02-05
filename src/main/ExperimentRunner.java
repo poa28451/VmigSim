@@ -80,7 +80,7 @@ public class ExperimentRunner {
 			PrintStream stream =  new PrintStream(fileStream);
 			return stream;
 		} catch (FileNotFoundException e) {
-			System.out.println("Input file's path not found.");
+			System.out.println("Output file's path not found.");
 			e.printStackTrace();
 			System.exit(1);
 		}
