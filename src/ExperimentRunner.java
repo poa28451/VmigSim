@@ -303,9 +303,14 @@ public class ExperimentRunner {
 		/*Environment.setNetworkInterval(17);
 		Environment.setMigrationTimeLimit(21600);
 		System.out.println(NetworkGenerator.calculateIntervalFraction(21599.999999999975));*/
-		
-		ExperimentRunner runner = new ExperimentRunner("temp.json");
-		runner.runExperiment();
+		if(args.length == 1){
+			String inputPath = args[0];
+			ExperimentRunner runner = new ExperimentRunner(inputPath);
+			runner.runExperiment();
+		}
+		else{
+			System.out.println("VmigSim need an input file's path as first argument.");
+		}
 		
 		/*Random ran = new Random();
 		for(int i=0; i<100; i++){
