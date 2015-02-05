@@ -1,4 +1,4 @@
-package tryclass;
+package broker_collaborator;
 
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
@@ -9,13 +9,12 @@ import java.util.Random;
 
 import variable.Constant;
 import variable.Environment;
+import variable.FilePathContainer;
 
 public class NetworkGenerator {
 	private static double originalBandwidth;
 	private static ArrayList<Double> bwTrace, dev = new ArrayList<>(), allList = new ArrayList<>();
 	private double stddevPercent;
-	private final String outputPath = "network\\";
-	private final String outputName = "network.txt";
 
 	public NetworkGenerator(double originalBandwidth){
 		setOriginalBandwidth(originalBandwidth);
@@ -41,9 +40,9 @@ public class NetworkGenerator {
 				break;
 		}
 		//Print the bandwidth output to the file
-		printBwTraceToFile(outputPath + outputName);
-		printDevTraceToFile(outputPath + "dev.txt");
-		printAllBwTraceToFile(outputPath + "all.txt");
+		printBwTraceToFile(FilePathContainer.networkPath + "network.txt");
+		printDevTraceToFile(FilePathContainer.networkPath + "dev.txt");
+		printAllBwTraceToFile(FilePathContainer.networkPath + "all.txt");
 	}
 	
 	private void generateStaticBandwidth(double intervalAmount){

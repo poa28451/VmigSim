@@ -4,9 +4,7 @@ import java.util.ArrayList;
 
 public class Parameters {
 	private double bandwidth;
-	//private int vmRam;//*******
 	private double timeLimit;
-	//private int scenarioType;//*******
 	private int scheduleType;
 	private int migrationType;
 	private int controlType;

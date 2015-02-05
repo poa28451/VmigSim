@@ -1,4 +1,4 @@
-package tryclass;
+package cloudsim_inherit;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -16,6 +16,9 @@ import org.cloudbus.cloudsim.core.CloudSimTags;
 import org.cloudbus.cloudsim.core.SimEvent;
 import org.cloudbus.cloudsim.lists.VmList;
 
+import broker_collaborator.Controller;
+import broker_collaborator.MigrationManager;
+import broker_collaborator.Scheduler;
 import container.MigrationResults;
 import variable.Constant;
 import variable.Environment;

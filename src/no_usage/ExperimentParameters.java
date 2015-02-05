@@ -1,4 +1,4 @@
-package variable;
+package no_usage;
 
 import java.util.HashMap;
 

@@ -1,4 +1,4 @@
-package tryclass;
+package cloudsim_inherit;
 
 import java.util.ArrayList;
 import java.util.List;

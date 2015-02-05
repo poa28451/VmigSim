@@ -1,9 +1,10 @@
-package tryclass;
+package broker_collaborator;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
+import cloudsim_inherit.VmTest;
 import variable.Constant;
 import variable.Environment;
 import message.MigrationMessage;

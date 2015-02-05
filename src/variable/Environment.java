@@ -7,7 +7,6 @@ import container.VmSpec;
 
 public class Environment {
 	public static double migrationTimeLimit;
-	//public static int vmRam;//*******
 	public static int scheduleType;
 	public static int migrationType;
 	public static int controlType;
@@ -24,21 +23,6 @@ public class Environment {
 	public static double networkSD;
 	
 	public static MigrationResults migrationResult;
-	
-	/*public static void setBandwidth(int min, int max){
-		Random r = new Random();
-		//bandwidth = min + r.nextInt(max - min + 1);
-		bandwidth = min + (r.nextDouble() * (max - min));
-		
-		System.out.println("WAN bandwidth generated at: " + bandwidth+ "Mbps ");
-	}*/	
-	
-	/*public static void setMigrationTimeLimit(double min, double max){
-		Random r = new Random();
-		migrationLimit = min + (r.nextDouble() * (max - min));
-		
-		System.out.println("Migration time limit generated at: " + migrationLimit + " seconds");
-	}*/
 	
 	public static void setMigrationTimeLimit(double migrationTimeLimit){
 		Environment.migrationTimeLimit = migrationTimeLimit;
@@ -59,26 +43,6 @@ public class Environment {
 	public static void setNetworkType(int networkType) {
 		Environment.networkType = networkType;
 	}
-	
-	/*public static void setMinMaxQos(int min, int max){
-		minQos = min;
-		maxQos = max;
-	}*/
-	
-	/*public static int generateQos(){
-		Random r = new Random();
-		//double result = min + (r.nextDouble() * (max - min));
-		int result = minQos + (r.nextInt(maxQos - minQos + 1));
-		return result;
-	}*/
-
-	/*public static void setVmRam(int vmRam) {
-		Environment.vmRam = vmRam;
-	}*/
-
-	/*public static void setScenarioType(int scenarioType) {
-		Environment.scenarioType = scenarioType;
-	}*/
 
 	public static void setWwsPageRatio(double wwsPageRatio) {
 		Environment.wwsPageRatio = wwsPageRatio;
@@ -137,14 +101,6 @@ public class Environment {
 		}
 		return maxRam;
 	}
-	
-	/*public static int getTotalVmRam(){
-		int totalRam = 0;
-		for(VmSpec spec : vmSpecList){
-			totalRam += (spec.getRam() * spec.getAmountVm());
-		}
-		return totalRam;
-	}*/
 	
 	public static int getTotalVmAmount(){
 		int amount = 0;

@@ -1,6 +1,6 @@
 package message;
 
-import tryclass.VmTest;
+import cloudsim_inherit.VmTest;
 import variable.Constant;
 
 public class PreCopyMessage extends MigrationMessage{

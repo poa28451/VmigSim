@@ -2,8 +2,8 @@ package container;
 
 import java.util.ArrayList;
 
-import tryclass.NetworkGenerator;
-import tryclass.VmTest;
+import broker_collaborator.NetworkGenerator;
+import cloudsim_inherit.VmTest;
 import variable.Constant;
 import variable.Environment;
 

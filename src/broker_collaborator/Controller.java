@@ -1,7 +1,8 @@
-package tryclass;
+package broker_collaborator;
 
 import org.cloudbus.cloudsim.core.CloudSim;
 
+import cloudsim_inherit.VmTest;
 import variable.Constant;
 import variable.Environment;
 import message.MigrationMessage;

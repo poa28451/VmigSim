@@ -1,9 +1,10 @@
-package tryclass;
+package broker_collaborator;
 
 import java.util.Random;
 
 import org.cloudbus.cloudsim.core.CloudSim;
 
+import cloudsim_inherit.VmTest;
 import variable.Constant;
 import variable.Environment;
 import message.MigrationMessage;
@@ -189,7 +190,7 @@ public class MigrationManager {
 		return num * Constant.KILO_BYTE;
 	}
 
-	protected void setMigrationData(MigrationMessage migrationData) {
+	public void setMigrationData(MigrationMessage migrationData) {
 		this.migrationData = migrationData;
 		setPreCopyRound(0);
 		setNoProgressRound(0);

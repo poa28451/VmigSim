@@ -1,6 +1,6 @@
 package message;
 
-import tryclass.VmTest;
+import cloudsim_inherit.VmTest;
 
 public class MigrationMessage {
 	private VmTest vm;

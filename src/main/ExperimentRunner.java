@@ -1,66 +1,141 @@
+package main;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.PrintStream;
-import java.util.ArrayList;
 
 import container.Parameters;
-import container.VmSpec;
 import parser.JsonDecoder;
-import variable.Constant;
-import variable.ExperimentParameters;
-
+import variable.FilePathContainer;
 
 public class ExperimentRunner {
-	private String inputPath;
+	/*
 	private final String outputPath = "result\\";
 	private final String outputName = "output";
-	private JsonDecoder decoder;
-	/*private int scheduleType = Constant.FIFO;
+	
+	private int scheduleType = Constant.FIFO;
 	private int migrationType = Constant.OFFLINE;
 	private int networkType = Constant.STATIC;
 	private int scenario = Constant.SCENE_C;
 	private int vmRam = 1024;
 	private int bandwidth = 500;*/
-	private int[] scheduleType;
+	/*private int[] scheduleType;
 	private int[] migrationType;
 	private int[] networkType;
 	private int[] scenarioType;
 	private int[] vmRamType;// = {512, 1024};
 	private double[] bandwidthType;// = {64, 256, 1024};
 	
-	private int sampleRound = 1;
-	private int currentRound = 0;
 	private int expNum = 7;
+*/	
+	/*private String inputPath;
+	private String outputPath;*/
 	
-	public ExperimentRunner(String inputPath){
-		this.inputPath = inputPath;
+	private int experimentRounds = 1;
+	private int currentRound = 0;
+	
+	private JsonDecoder decoder;
+	
+	public ExperimentRunner(String inputPath, String outputPath, int experimentRounds){
+		FilePathContainer.setInputPath(inputPath);
+		FilePathContainer.setOutputPath(outputPath);
 		decoder = new JsonDecoder();
-		initialMigrationScenario();
+		this.experimentRounds = experimentRounds;
+		//initialMigrationScenario();
 	}
 	
 	public void runExperiment(){
 		try {
-			//Parameters param = setParameters();
-			Parameters param = decoder.readInputFile(inputPath);
-			//runExperiment(bandwidth, vmRam, timeLimit, scheduleType, migrationType, networkType);
-			for(;currentRound < sampleRound; currentRound++){
+			Parameters param = decoder.readInputFile(FilePathContainer.inputPath);
+			for(;currentRound < experimentRounds; currentRound++){
 				runExperiment(param);
 			}
-			/*for(int bw : bandwidth){
-				for(int ram : vmRam){
-					runExperiment(bw, ram, timeLimit, scheduleType, migrationType, networkType);
-				}
-			}*/
-			
-			/*runExperiment(2, vmRam, timeLimit, scheduleType, migrationType, networkType);
-			runExperiment(512, vmRam, timeLimit, scheduleType, migrationType, networkType);
-			runExperiment(1024, vmRam, timeLimit, scheduleType, migrationType, networkType);*/
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
 	}
 	
-	public Parameters setParameters(){
+	public void runExperiment(Parameters param) throws FileNotFoundException{
+		/*double bw = param.getBandwidth();
+		int schedType = param.getScheduleType();
+		int migType = param.getMigrationType();
+		int conType = param.getControlType();
+		int netType = param.getNetworkType();
+		PrintStream out;
+		out = createOutputFilename(bw, schedType, migType, conType, netType);*/
+		
+		PrintStream stream = prepareOutputPath(FilePathContainer.outputPath);
+		System.setOut(stream);
+		
+		VMigSim run = new VMigSim();
+		run.startExperiment(param);
+		
+		stream.close();
+	}
+	
+	private PrintStream prepareOutputPath(String outputPath){
+		FileOutputStream fileStream;
+		try {
+			fileStream = new FileOutputStream(outputPath);
+			PrintStream stream =  new PrintStream(fileStream);
+			return stream;
+		} catch (FileNotFoundException e) {
+			System.out.println("Input file's path not found.");
+			e.printStackTrace();
+			System.exit(1);
+		}
+		return null;
+	}
+		
+	/*public PrintStream createOutputFilename(double bw,
+			int schedType, int migType, int conType, int netType) throws FileNotFoundException{
+		String schedule = Constant.scheduleKeyName.get(schedType);
+		String migration = Constant.migrationKeyName.get(migType);
+		String control = Constant.controlKeyName.get(conType);
+		String network = Constant.networkKeyName.get(netType);
+		
+		String filename = expNum + "" + currentRound + "-" + outputName + bw +
+				"-" + schedule + "-" + migration + "-" + control + "-" + network + ".txt";
+		return new PrintStream(new FileOutputStream(outputPath + filename));
+	}*/
+	
+	public static void main(String args[]){
+		/*Environment.setNetworkInterval(17);
+		Environment.setMigrationTimeLimit(21600);
+		System.out.println(NetworkGenerator.calculateIntervalFraction(21599.999999999975));*/
+		if(args.length == 3){
+			String inputPath = args[0];
+			String outputPath = args[1];
+			int experimentRound = Integer.valueOf(args[2]);
+			/*for(int i=0; i<args.length; i++){
+				System.out.println(args[i]);
+			}*/
+			ExperimentRunner runner = new ExperimentRunner(inputPath, outputPath, experimentRound);
+			runner.runExperiment();
+		}
+		else{
+			System.out.println("VmigSim need 3 arguments for input path, output path, and experiment rounds.");
+		}
+		
+		/*Random ran = new Random();
+		for(int i=0; i<100; i++){
+			double chance = ran.nextGaussian();
+			if(chance > 0) chance *= -1;
+			double bw = Math.max(1, Math.min(100, (int) 100 + chance * 54.8222));
+			System.out.println(bw);
+		}*/
+		
+		/*Random ran = new Random();
+		for(int i=0; i<100; i++){
+			double range = 100 - 0;
+	        double mid = 0 + range / 2.0;
+	        double unitGaussian = ran.nextGaussian();
+	        double biasFactor = Math.exp(1.0);
+	        double retval = mid+(range*(biasFactor/(biasFactor+Math.exp(-unitGaussian/(1.0-0.548222)))-0.5));
+	        System.out.println(retval);
+		}*/
+		
+	}
+	/*public Parameters setParameters(){
 		double timeLimit = ExperimentParameters.COMMON_TIME_LIMIT;
 		double bandwidth = bandwidthType[0];
 		int vmRam = vmRamType[0];
@@ -70,7 +145,7 @@ public class ExperimentRunner {
 		int network = networkType[Constant.DYNAMIC];
 		
 		ArrayList<VmSpec> vmSpecList = createVmSpecList(scenario, vmRam);
-
+	
 		int pageSizeKB = ExperimentParameters.PAGESIZE_KB;
 		double wwsPageRatio = ExperimentParameters.WWS_RATE;
 		double wwsDirtyRate = ExperimentParameters.WWS_DIRTY_RATE;
@@ -102,7 +177,7 @@ public class ExperimentRunner {
 		param.setNetworkSD(networkSD);
 		
 		return param;
-	}
+	}*/
 	
 	/*public void runExperiment(int bw, int vmRam, double timeLimit, int schedType,
 			int migType, int netType) throws FileNotFoundException{
@@ -117,33 +192,16 @@ public class ExperimentRunner {
 		}
 	}*/
 	
-	public void runExperiment(Parameters param) throws FileNotFoundException{
-		//int scene = param.getScenarioType();
-		double bw = param.getBandwidth();
-		int schedType = param.getScheduleType();
-		int migType = param.getMigrationType();
-		int conType = param.getControlType();
-		int netType = param.getNetworkType();
-		
-		//example of filename: "outputA512-fifo-offline-static.txt"
-		VMigSim run = new VMigSim();
-		PrintStream out;
-		out = createOutputFilename(bw, schedType, migType, conType, netType);
-		System.setOut(out);
-		run.startExperiment(param);
-		out.close();
-	}
-	
-	public void initialMigrationScenario(){
+	/*public void initialMigrationScenario(){
 		scheduleType = new int[]{Constant.FIFO, Constant.PRIORITY_BASED};
 		migrationType = new int[]{Constant.OFFLINE, Constant.PRECOPY};
 		networkType = new int[]{Constant.STATIC, Constant.DYNAMIC};
 		scenarioType = new int[]{ExperimentParameters.SCENE_A, ExperimentParameters.SCENE_B, ExperimentParameters.SCENE_C};
 		vmRamType = new int[]{512, 1024};
 		bandwidthType = new double[]{64, 500, 1024};
-	}
+	}*/
 	
-	private ArrayList<VmSpec> createVmSpecList(int scenario, int ram){
+	/*private ArrayList<VmSpec> createVmSpecList(int scenario, int ram){
 		ArrayList<VmSpec> vmSpecList = new ArrayList<VmSpec>();
 		VmSpec spec1, spec2, spec3;
 		switch (scenario) {
@@ -169,20 +227,7 @@ public class ExperimentRunner {
 				break;
 		}
 		return vmSpecList;	
-	}
-		
-	public PrintStream createOutputFilename(double bw,
-			int schedType, int migType, int conType, int netType) throws FileNotFoundException{
-		//String scene = ExperimentParameters.sceneName.get(sceneType);
-		String schedule = Constant.scheduleKeyName.get(schedType);
-		String migration = Constant.migrationKeyName.get(migType);
-		String control = Constant.controlKeyName.get(conType);
-		String network = Constant.networkKeyName.get(netType);
-		
-		String filename = expNum + "" + currentRound + "-" + outputName + bw +
-				"-" + schedule + "-" + migration + "-" + control + "-" + network + ".txt";
-		return new PrintStream(new FileOutputStream(outputPath + filename));
-	}
+	}*/
 	
 	/*public void run2mbpsExperiment() throws FileNotFoundException{
 		VMigSim run = new VMigSim();
@@ -298,40 +343,4 @@ public class ExperimentRunner {
 		
 		return (int) num;
 	}*/
-	
-	public static void main(String args[]){
-		/*Environment.setNetworkInterval(17);
-		Environment.setMigrationTimeLimit(21600);
-		System.out.println(NetworkGenerator.calculateIntervalFraction(21599.999999999975));*/
-		if(args.length > 0){
-			String inputPath = args[0];
-			/*for(int i=0; i<args.length; i++){
-				System.out.println(args[i]);
-			}*/
-			ExperimentRunner runner = new ExperimentRunner(inputPath);
-			runner.runExperiment();
-		}
-		else{
-			System.out.println("VmigSim need an input file's path as first argument.");
-		}
-		
-		/*Random ran = new Random();
-		for(int i=0; i<100; i++){
-			double chance = ran.nextGaussian();
-			if(chance > 0) chance *= -1;
-			double bw = Math.max(1, Math.min(100, (int) 100 + chance * 54.8222));
-			System.out.println(bw);
-		}*/
-		
-		/*Random ran = new Random();
-		for(int i=0; i<100; i++){
-			double range = 100 - 0;
-	        double mid = 0 + range / 2.0;
-	        double unitGaussian = ran.nextGaussian();
-	        double biasFactor = Math.exp(1.0);
-	        double retval = mid+(range*(biasFactor/(biasFactor+Math.exp(-unitGaussian/(1.0-0.548222)))-0.5));
-	        System.out.println(retval);
-		}*/
-		
-	}
 }

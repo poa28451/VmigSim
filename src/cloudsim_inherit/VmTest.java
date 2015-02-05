@@ -1,4 +1,4 @@
-package tryclass;
+package cloudsim_inherit;
 
 import org.cloudbus.cloudsim.CloudletScheduler;
 import org.cloudbus.cloudsim.Vm;
