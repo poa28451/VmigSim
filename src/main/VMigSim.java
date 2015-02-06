@@ -59,6 +59,7 @@ public class VMigSim {
 		}*/
 		
 		simulateMigration();
+		printSimulationResult();
 	}
 	
 	public void setEnvironment(Parameters param){
@@ -159,7 +160,6 @@ public class VMigSim {
 		CloudSim.startSimulation();
 		//CloudSim.stopSimulation();
 		System.out.println("VmigSim finished!");
-		printSimulationResult();
 	}
 	
 	private void printSimulationResult(){

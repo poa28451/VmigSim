@@ -13,7 +13,7 @@ import variable.FilePathContainer;
 
 public class NetworkGenerator {
 	private static double originalBandwidth;
-	private static ArrayList<Double> bwTrace, dev = new ArrayList<>(), allList = new ArrayList<>();
+	private static ArrayList<Double> bwTrace, allList = new ArrayList<>();
 	private double stddevPercent;
 
 	public NetworkGenerator(double originalBandwidth){
@@ -40,9 +40,9 @@ public class NetworkGenerator {
 				break;
 		}
 		//Print the bandwidth output to the file
-		printBwTraceToFile(FilePathContainer.networkPath + "network.txt");
-		printDevTraceToFile(FilePathContainer.networkPath + "dev.txt");
-		printAllBwTraceToFile(FilePathContainer.networkPath + "all.txt");
+		printBwTraceToFile();
+		/*printBwTraceToFile(FilePathContainer.networkPath + "network.txt");
+		printAllBwTraceToFile(FilePathContainer.networkPath + "all.txt");*/
 	}
 	
 	private void generateStaticBandwidth(double intervalAmount){
@@ -58,7 +58,6 @@ public class NetworkGenerator {
 		for(int i=0; i<intervalAmount; i++){			
 			double deviation = randomDeviation(ran);
 			// Plus 1 for making the number into % (e.g. 120%)
-			//double bw = getOriginalBandwidth() * (deviation + 1);
 			double bw = getOriginalBandwidth() - deviation;
 			getBwTrace().add(bw);
 			/*int bw;
@@ -98,7 +97,6 @@ public class NetworkGenerator {
 			allList.add(getOriginalBandwidth() - deviation);
 		//Do the loop until we get the deviation that is less than the bandwidth
 		}while(deviation > getOriginalBandwidth() || deviation < 0);
-		dev.add(deviation);
 		return deviation;
 	}
 	
@@ -199,7 +197,8 @@ public class NetworkGenerator {
 		return Math.ceil(amount);
 	}
 	
-	private void printBwTraceToFile(String filePath){
+	private void printBwTraceToFile(){
+		String filePath = FilePathContainer.getNetworkFilePath();
 		PrintWriter writer;
 		try {
 			writer = new PrintWriter(filePath, "UTF-8");
@@ -217,25 +216,7 @@ public class NetworkGenerator {
 		}
 	}
 	
-	private void printDevTraceToFile(String filePath){
-		PrintWriter writer;
-		try {
-			writer = new PrintWriter(filePath, "UTF-8");
-			
-			for(int i=0; i<dev.size(); i++){
-				double sd = dev.get(i);
-				//writer.println("Time " + (i+0.1) + "-" + (i+1) + ": " + bw);
-				writer.println(sd);
-			}
-			writer.close();
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (UnsupportedEncodingException e) {
-			e.printStackTrace();
-		}
-	}
-	
-	private void printAllBwTraceToFile(String filePath){
+	/*private void printAllBwTraceToFile(String filePath){
 		PrintWriter writer;
 		try {
 			writer = new PrintWriter(filePath, "UTF-8");
@@ -251,7 +232,7 @@ public class NetworkGenerator {
 		} catch (UnsupportedEncodingException e) {
 			e.printStackTrace();
 		}
-	}
+	}*/
 	
 	public static double getOriginalBandwidth() {
 		return originalBandwidth;

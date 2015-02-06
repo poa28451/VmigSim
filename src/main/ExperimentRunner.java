@@ -32,13 +32,13 @@ public class ExperimentRunner {
 	private String outputPath;*/
 	
 	private int experimentRounds = 1;
-	private int currentRound = 0;
+	public static int currentRound = 1;
 	
 	private JsonDecoder decoder;
 	
 	public ExperimentRunner(String inputPath, String outputPath, int experimentRounds){
 		FilePathContainer.setInputPath(inputPath);
-		FilePathContainer.setOutputPath(outputPath);
+		FilePathContainer.setOutputDirectory(outputPath);
 		decoder = new JsonDecoder();
 		this.experimentRounds = experimentRounds;
 		//initialMigrationScenario();
@@ -47,7 +47,8 @@ public class ExperimentRunner {
 	public void runExperiment(){
 		try {
 			Parameters param = decoder.readInputFile(FilePathContainer.inputPath);
-			for(;currentRound < experimentRounds; currentRound++){
+			for(;currentRound <= experimentRounds; currentRound++){
+				FilePathContainer.setExperimentRound(currentRound);
 				runExperiment(param);
 			}
 		} catch (FileNotFoundException e) {
@@ -64,7 +65,8 @@ public class ExperimentRunner {
 		PrintStream out;
 		out = createOutputFilename(bw, schedType, migType, conType, netType);*/
 		
-		PrintStream stream = prepareOutputPath(FilePathContainer.outputPath);
+		//PrintStream stream = prepareOutputPath(FilePathContainer.outputDirectory);
+		PrintStream stream = prepareLogPath();
 		System.setOut(stream);
 		
 		VMigSim run = new VMigSim();
@@ -73,10 +75,11 @@ public class ExperimentRunner {
 		stream.close();
 	}
 	
-	private PrintStream prepareOutputPath(String outputPath){
+	private PrintStream prepareLogPath(){
+		String logPath = FilePathContainer.getLogFilePath();
 		FileOutputStream fileStream;
 		try {
-			fileStream = new FileOutputStream(outputPath);
+			fileStream = new FileOutputStream(logPath);
 			PrintStream stream =  new PrintStream(fileStream);
 			return stream;
 		} catch (FileNotFoundException e) {
@@ -86,36 +89,32 @@ public class ExperimentRunner {
 		}
 		return null;
 	}
-		
-	/*public PrintStream createOutputFilename(double bw,
-			int schedType, int migType, int conType, int netType) throws FileNotFoundException{
-		String schedule = Constant.scheduleKeyName.get(schedType);
-		String migration = Constant.migrationKeyName.get(migType);
-		String control = Constant.controlKeyName.get(conType);
-		String network = Constant.networkKeyName.get(netType);
-		
-		String filename = expNum + "" + currentRound + "-" + outputName + bw +
-				"-" + schedule + "-" + migration + "-" + control + "-" + network + ".txt";
-		return new PrintStream(new FileOutputStream(outputPath + filename));
-	}*/
 	
 	public static void main(String args[]){
 		/*Environment.setNetworkInterval(17);
 		Environment.setMigrationTimeLimit(21600);
 		System.out.println(NetworkGenerator.calculateIntervalFraction(21599.999999999975));*/
+		
 		if(args.length == 3){
 			String inputPath = args[0];
 			String outputPath = args[1];
 			int experimentRound = Integer.valueOf(args[2]);
-			/*for(int i=0; i<args.length; i++){
+			for(int i=0; i<args.length; i++){
 				System.out.println(args[i]);
-			}*/
+			}
 			ExperimentRunner runner = new ExperimentRunner(inputPath, outputPath, experimentRound);
 			runner.runExperiment();
 		}
 		else{
 			System.out.println("VmigSim need 3 arguments for input path, output path, and experiment rounds.");
 		}
+		
+
+		/*FilePathContainer.setOutputDirectory(args[1]);
+		for(int i=0; i<5; i++){
+			FilePathContainer.setExperimentRound(i+1);
+			System.out.println(FilePathContainer.getLogFilePath());
+		}*/
 		
 		/*Random ran = new Random();
 		for(int i=0; i<100; i++){
@@ -136,6 +135,19 @@ public class ExperimentRunner {
 		}*/
 		
 	}
+	
+	/*public PrintStream createOutputFilename(double bw,
+			int schedType, int migType, int conType, int netType) throws FileNotFoundException{
+		String schedule = Constant.scheduleKeyName.get(schedType);
+		String migration = Constant.migrationKeyName.get(migType);
+		String control = Constant.controlKeyName.get(conType);
+		String network = Constant.networkKeyName.get(netType);
+		
+		String filename = expNum + "" + currentRound + "-" + outputName + bw +
+				"-" + schedule + "-" + migration + "-" + control + "-" + network + ".txt";
+		return new PrintStream(new FileOutputStream(outputPath + filename));
+	}*/
+	
 	/*public Parameters setParameters(){
 		double timeLimit = ExperimentParameters.COMMON_TIME_LIMIT;
 		double bandwidth = bandwidthType[0];
