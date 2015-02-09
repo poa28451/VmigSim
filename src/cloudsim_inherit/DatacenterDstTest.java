@@ -104,6 +104,7 @@ public class DatacenterDstTest extends Datacenter{
 			System.out.println("\tVM id: " + migratedVm.getId());
 			//System.out.println("\tDirty page amount: " + message.getMigratedPageIndices().size());
 			System.out.println("\tDirty page amount: " + message.getDirtyPage());
+			System.out.println("\tVM id: " + migratedVm.getId() + " has done the migration.");
 			
 			boolean result = allocateResourceForVm(migratedVm);
 			migratedVm.setStopClock(CloudSim.clock());

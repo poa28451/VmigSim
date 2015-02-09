@@ -127,7 +127,7 @@ public class NetworkGenerator {
 	 * @return the time left (in seconds) before the interval changing
 	 */
 	public static double calculateIntervalFraction(double clock){
-		double stopInterval = 0;
+		double nextIntervalClock = 0;
 		double intervalFraction = 0;
 		double timeLimit = Environment.migrationTimeLimit;
 		double interval = Environment.networkInterval;
@@ -136,18 +136,18 @@ public class NetworkGenerator {
 		//	stop of the current interval = start of the next interval
 		if(clock + interval <= timeLimit){
 			int nextIntervalNum = calculateIntervalNum(clock) + 1;
-			stopInterval = new BigDecimal((nextIntervalNum * interval) + Constant.START_INTERVAL)
+			nextIntervalClock = new BigDecimal((nextIntervalNum * interval) + Constant.START_INTERVAL)
 				.setScale(Constant.DECIMAL_SCALE, BigDecimal.ROUND_HALF_UP).doubleValue();
 		}
 		//If the interval has reached the time limit already,
 		//	find the fraction by time limit (time left until reaches the time limit)
 		//	stop of the current interval = time limit
 		else{
-			stopInterval = timeLimit;
+			nextIntervalClock = timeLimit;
 		}
 		
 		//Find the leftover time of current interval
-		intervalFraction = new BigDecimal(stopInterval - clock)
+		intervalFraction = new BigDecimal(nextIntervalClock - clock)
 			.setScale(Constant.DECIMAL_SCALE, BigDecimal.ROUND_HALF_UP).doubleValue();
 		
 		//If the double decimal issues (imprecise decimal) occurred,

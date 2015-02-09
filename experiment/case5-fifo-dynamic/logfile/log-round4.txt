@@ -1,0 +1,4507 @@
+
+0.1 DC id: 2: Recieved start migration message from controller
+Starting the migration with vm amount: 600
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 6 added to a waiting queue
+Amount in a waiting queue: 1
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 365 added to a waiting queue
+Amount in a waiting queue: 2
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 289 added to a waiting queue
+Amount in a waiting queue: 3
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 551 added to a waiting queue
+Amount in a waiting queue: 4
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 83 added to a waiting queue
+Amount in a waiting queue: 5
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 468 added to a waiting queue
+Amount in a waiting queue: 6
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 574 added to a waiting queue
+Amount in a waiting queue: 7
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 588 added to a waiting queue
+Amount in a waiting queue: 8
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 416 added to a waiting queue
+Amount in a waiting queue: 9
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 36 added to a waiting queue
+Amount in a waiting queue: 10
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 119 added to a waiting queue
+Amount in a waiting queue: 11
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 77 added to a waiting queue
+Amount in a waiting queue: 12
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 408 added to a waiting queue
+Amount in a waiting queue: 13
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 475 added to a waiting queue
+Amount in a waiting queue: 14
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 206 added to a waiting queue
+Amount in a waiting queue: 15
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 458 added to a waiting queue
+Amount in a waiting queue: 16
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 106 added to a waiting queue
+Amount in a waiting queue: 17
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 243 added to a waiting queue
+Amount in a waiting queue: 18
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 539 added to a waiting queue
+Amount in a waiting queue: 19
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 142 added to a waiting queue
+Amount in a waiting queue: 20
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 593 added to a waiting queue
+Amount in a waiting queue: 21
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 597 added to a waiting queue
+Amount in a waiting queue: 22
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 148 added to a waiting queue
+Amount in a waiting queue: 23
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 15 added to a waiting queue
+Amount in a waiting queue: 24
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 427 added to a waiting queue
+Amount in a waiting queue: 25
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 595 added to a waiting queue
+Amount in a waiting queue: 26
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 580 added to a waiting queue
+Amount in a waiting queue: 27
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 483 added to a waiting queue
+Amount in a waiting queue: 28
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 537 added to a waiting queue
+Amount in a waiting queue: 29
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 564 added to a waiting queue
+Amount in a waiting queue: 30
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 230 added to a waiting queue
+Amount in a waiting queue: 31
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 592 added to a waiting queue
+Amount in a waiting queue: 32
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 497 added to a waiting queue
+Amount in a waiting queue: 33
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 131 added to a waiting queue
+Amount in a waiting queue: 34
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 164 added to a waiting queue
+Amount in a waiting queue: 35
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 56 added to a waiting queue
+Amount in a waiting queue: 36
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 410 added to a waiting queue
+Amount in a waiting queue: 37
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 171 added to a waiting queue
+Amount in a waiting queue: 38
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 25 added to a waiting queue
+Amount in a waiting queue: 39
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 561 added to a waiting queue
+Amount in a waiting queue: 40
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 513 added to a waiting queue
+Amount in a waiting queue: 41
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 366 added to a waiting queue
+Amount in a waiting queue: 42
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 187 added to a waiting queue
+Amount in a waiting queue: 43
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 33 added to a waiting queue
+Amount in a waiting queue: 44
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 286 added to a waiting queue
+Amount in a waiting queue: 45
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 104 added to a waiting queue
+Amount in a waiting queue: 46
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 485 added to a waiting queue
+Amount in a waiting queue: 47
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 67 added to a waiting queue
+Amount in a waiting queue: 48
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 377 added to a waiting queue
+Amount in a waiting queue: 49
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 239 added to a waiting queue
+Amount in a waiting queue: 50
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 143 added to a waiting queue
+Amount in a waiting queue: 51
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 516 added to a waiting queue
+Amount in a waiting queue: 52
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 88 added to a waiting queue
+Amount in a waiting queue: 53
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 124 added to a waiting queue
+Amount in a waiting queue: 54
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 126 added to a waiting queue
+Amount in a waiting queue: 55
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 248 added to a waiting queue
+Amount in a waiting queue: 56
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 86 added to a waiting queue
+Amount in a waiting queue: 57
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 153 added to a waiting queue
+Amount in a waiting queue: 58
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 5 added to a waiting queue
+Amount in a waiting queue: 59
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 336 added to a waiting queue
+Amount in a waiting queue: 60
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 412 added to a waiting queue
+Amount in a waiting queue: 61
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 277 added to a waiting queue
+Amount in a waiting queue: 62
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 279 added to a waiting queue
+Amount in a waiting queue: 63
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 375 added to a waiting queue
+Amount in a waiting queue: 64
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 254 added to a waiting queue
+Amount in a waiting queue: 65
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 301 added to a waiting queue
+Amount in a waiting queue: 66
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 453 added to a waiting queue
+Amount in a waiting queue: 67
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 439 added to a waiting queue
+Amount in a waiting queue: 68
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 247 added to a waiting queue
+Amount in a waiting queue: 69
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 498 added to a waiting queue
+Amount in a waiting queue: 70
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 296 added to a waiting queue
+Amount in a waiting queue: 71
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 582 added to a waiting queue
+Amount in a waiting queue: 72
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 534 added to a waiting queue
+Amount in a waiting queue: 73
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 214 added to a waiting queue
+Amount in a waiting queue: 74
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 297 added to a waiting queue
+Amount in a waiting queue: 75
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 522 added to a waiting queue
+Amount in a waiting queue: 76
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 236 added to a waiting queue
+Amount in a waiting queue: 77
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 233 added to a waiting queue
+Amount in a waiting queue: 78
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 488 added to a waiting queue
+Amount in a waiting queue: 79
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 288 added to a waiting queue
+Amount in a waiting queue: 80
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 369 added to a waiting queue
+Amount in a waiting queue: 81
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 140 added to a waiting queue
+Amount in a waiting queue: 82
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 227 added to a waiting queue
+Amount in a waiting queue: 83
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 265 added to a waiting queue
+Amount in a waiting queue: 84
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 59 added to a waiting queue
+Amount in a waiting queue: 85
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 523 added to a waiting queue
+Amount in a waiting queue: 86
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 87 added to a waiting queue
+Amount in a waiting queue: 87
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 303 added to a waiting queue
+Amount in a waiting queue: 88
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 62 added to a waiting queue
+Amount in a waiting queue: 89
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 111 added to a waiting queue
+Amount in a waiting queue: 90
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 212 added to a waiting queue
+Amount in a waiting queue: 91
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 431 added to a waiting queue
+Amount in a waiting queue: 92
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 572 added to a waiting queue
+Amount in a waiting queue: 93
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 446 added to a waiting queue
+Amount in a waiting queue: 94
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 466 added to a waiting queue
+Amount in a waiting queue: 95
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 440 added to a waiting queue
+Amount in a waiting queue: 96
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 60 added to a waiting queue
+Amount in a waiting queue: 97
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 314 added to a waiting queue
+Amount in a waiting queue: 98
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 44 added to a waiting queue
+Amount in a waiting queue: 99
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 581 added to a waiting queue
+Amount in a waiting queue: 100
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 158 added to a waiting queue
+Amount in a waiting queue: 101
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 11 added to a waiting queue
+Amount in a waiting queue: 102
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 346 added to a waiting queue
+Amount in a waiting queue: 103
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 1 added to a waiting queue
+Amount in a waiting queue: 104
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 505 added to a waiting queue
+Amount in a waiting queue: 105
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 339 added to a waiting queue
+Amount in a waiting queue: 106
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 221 added to a waiting queue
+Amount in a waiting queue: 107
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 218 added to a waiting queue
+Amount in a waiting queue: 108
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 287 added to a waiting queue
+Amount in a waiting queue: 109
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 196 added to a waiting queue
+Amount in a waiting queue: 110
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 110 added to a waiting queue
+Amount in a waiting queue: 111
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 577 added to a waiting queue
+Amount in a waiting queue: 112
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 403 added to a waiting queue
+Amount in a waiting queue: 113
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 520 added to a waiting queue
+Amount in a waiting queue: 114
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 223 added to a waiting queue
+Amount in a waiting queue: 115
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 399 added to a waiting queue
+Amount in a waiting queue: 116
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 238 added to a waiting queue
+Amount in a waiting queue: 117
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 394 added to a waiting queue
+Amount in a waiting queue: 118
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 578 added to a waiting queue
+Amount in a waiting queue: 119
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 152 added to a waiting queue
+Amount in a waiting queue: 120
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 39 added to a waiting queue
+Amount in a waiting queue: 121
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 397 added to a waiting queue
+Amount in a waiting queue: 122
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 109 added to a waiting queue
+Amount in a waiting queue: 123
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 507 added to a waiting queue
+Amount in a waiting queue: 124
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 376 added to a waiting queue
+Amount in a waiting queue: 125
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 479 added to a waiting queue
+Amount in a waiting queue: 126
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 386 added to a waiting queue
+Amount in a waiting queue: 127
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 589 added to a waiting queue
+Amount in a waiting queue: 128
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 272 added to a waiting queue
+Amount in a waiting queue: 129
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 425 added to a waiting queue
+Amount in a waiting queue: 130
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 411 added to a waiting queue
+Amount in a waiting queue: 131
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 102 added to a waiting queue
+Amount in a waiting queue: 132
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 327 added to a waiting queue
+Amount in a waiting queue: 133
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 98 added to a waiting queue
+Amount in a waiting queue: 134
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 402 added to a waiting queue
+Amount in a waiting queue: 135
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 492 added to a waiting queue
+Amount in a waiting queue: 136
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 58 added to a waiting queue
+Amount in a waiting queue: 137
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 348 added to a waiting queue
+Amount in a waiting queue: 138
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 191 added to a waiting queue
+Amount in a waiting queue: 139
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 525 added to a waiting queue
+Amount in a waiting queue: 140
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 274 added to a waiting queue
+Amount in a waiting queue: 141
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 219 added to a waiting queue
+Amount in a waiting queue: 142
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 216 added to a waiting queue
+Amount in a waiting queue: 143
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 568 added to a waiting queue
+Amount in a waiting queue: 144
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 542 added to a waiting queue
+Amount in a waiting queue: 145
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 205 added to a waiting queue
+Amount in a waiting queue: 146
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 571 added to a waiting queue
+Amount in a waiting queue: 147
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 19 added to a waiting queue
+Amount in a waiting queue: 148
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 351 added to a waiting queue
+Amount in a waiting queue: 149
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 514 added to a waiting queue
+Amount in a waiting queue: 150
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 570 added to a waiting queue
+Amount in a waiting queue: 151
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 268 added to a waiting queue
+Amount in a waiting queue: 152
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 118 added to a waiting queue
+Amount in a waiting queue: 153
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 231 added to a waiting queue
+Amount in a waiting queue: 154
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 562 added to a waiting queue
+Amount in a waiting queue: 155
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 121 added to a waiting queue
+Amount in a waiting queue: 156
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 298 added to a waiting queue
+Amount in a waiting queue: 157
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 299 added to a waiting queue
+Amount in a waiting queue: 158
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 364 added to a waiting queue
+Amount in a waiting queue: 159
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 166 added to a waiting queue
+Amount in a waiting queue: 160
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 552 added to a waiting queue
+Amount in a waiting queue: 161
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 500 added to a waiting queue
+Amount in a waiting queue: 162
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 13 added to a waiting queue
+Amount in a waiting queue: 163
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 371 added to a waiting queue
+Amount in a waiting queue: 164
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 359 added to a waiting queue
+Amount in a waiting queue: 165
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 21 added to a waiting queue
+Amount in a waiting queue: 166
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 113 added to a waiting queue
+Amount in a waiting queue: 167
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 240 added to a waiting queue
+Amount in a waiting queue: 168
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 149 added to a waiting queue
+Amount in a waiting queue: 169
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 85 added to a waiting queue
+Amount in a waiting queue: 170
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 14 added to a waiting queue
+Amount in a waiting queue: 171
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 474 added to a waiting queue
+Amount in a waiting queue: 172
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 249 added to a waiting queue
+Amount in a waiting queue: 173
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 71 added to a waiting queue
+Amount in a waiting queue: 174
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 558 added to a waiting queue
+Amount in a waiting queue: 175
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 481 added to a waiting queue
+Amount in a waiting queue: 176
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 120 added to a waiting queue
+Amount in a waiting queue: 177
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 462 added to a waiting queue
+Amount in a waiting queue: 178
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 395 added to a waiting queue
+Amount in a waiting queue: 179
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 495 added to a waiting queue
+Amount in a waiting queue: 180
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 234 added to a waiting queue
+Amount in a waiting queue: 181
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 70 added to a waiting queue
+Amount in a waiting queue: 182
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 443 added to a waiting queue
+Amount in a waiting queue: 183
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 476 added to a waiting queue
+Amount in a waiting queue: 184
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 50 added to a waiting queue
+Amount in a waiting queue: 185
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 557 added to a waiting queue
+Amount in a waiting queue: 186
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 291 added to a waiting queue
+Amount in a waiting queue: 187
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 80 added to a waiting queue
+Amount in a waiting queue: 188
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 64 added to a waiting queue
+Amount in a waiting queue: 189
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 100 added to a waiting queue
+Amount in a waiting queue: 190
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 372 added to a waiting queue
+Amount in a waiting queue: 191
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 30 added to a waiting queue
+Amount in a waiting queue: 192
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 220 added to a waiting queue
+Amount in a waiting queue: 193
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 38 added to a waiting queue
+Amount in a waiting queue: 194
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 194 added to a waiting queue
+Amount in a waiting queue: 195
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 452 added to a waiting queue
+Amount in a waiting queue: 196
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 182 added to a waiting queue
+Amount in a waiting queue: 197
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 482 added to a waiting queue
+Amount in a waiting queue: 198
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 521 added to a waiting queue
+Amount in a waiting queue: 199
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 46 added to a waiting queue
+Amount in a waiting queue: 200
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 213 added to a waiting queue
+Amount in a waiting queue: 201
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 489 added to a waiting queue
+Amount in a waiting queue: 202
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 54 added to a waiting queue
+Amount in a waiting queue: 203
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 566 added to a waiting queue
+Amount in a waiting queue: 204
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 324 added to a waiting queue
+Amount in a waiting queue: 205
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 96 added to a waiting queue
+Amount in a waiting queue: 206
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 167 added to a waiting queue
+Amount in a waiting queue: 207
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 429 added to a waiting queue
+Amount in a waiting queue: 208
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 343 added to a waiting queue
+Amount in a waiting queue: 209
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 536 added to a waiting queue
+Amount in a waiting queue: 210
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 112 added to a waiting queue
+Amount in a waiting queue: 211
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 10 added to a waiting queue
+Amount in a waiting queue: 212
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 108 added to a waiting queue
+Amount in a waiting queue: 213
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 8 added to a waiting queue
+Amount in a waiting queue: 214
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 246 added to a waiting queue
+Amount in a waiting queue: 215
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 584 added to a waiting queue
+Amount in a waiting queue: 216
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 261 added to a waiting queue
+Amount in a waiting queue: 217
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 310 added to a waiting queue
+Amount in a waiting queue: 218
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 229 added to a waiting queue
+Amount in a waiting queue: 219
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 141 added to a waiting queue
+Amount in a waiting queue: 220
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 317 added to a waiting queue
+Amount in a waiting queue: 221
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 183 added to a waiting queue
+Amount in a waiting queue: 222
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 4 added to a waiting queue
+Amount in a waiting queue: 223
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 383 added to a waiting queue
+Amount in a waiting queue: 224
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 420 added to a waiting queue
+Amount in a waiting queue: 225
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 391 added to a waiting queue
+Amount in a waiting queue: 226
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 3 added to a waiting queue
+Amount in a waiting queue: 227
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 433 added to a waiting queue
+Amount in a waiting queue: 228
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 115 added to a waiting queue
+Amount in a waiting queue: 229
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 263 added to a waiting queue
+Amount in a waiting queue: 230
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 553 added to a waiting queue
+Amount in a waiting queue: 231
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 330 added to a waiting queue
+Amount in a waiting queue: 232
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 91 added to a waiting queue
+Amount in a waiting queue: 233
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 257 added to a waiting queue
+Amount in a waiting queue: 234
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 374 added to a waiting queue
+Amount in a waiting queue: 235
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 193 added to a waiting queue
+Amount in a waiting queue: 236
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 264 added to a waiting queue
+Amount in a waiting queue: 237
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 275 added to a waiting queue
+Amount in a waiting queue: 238
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 329 added to a waiting queue
+Amount in a waiting queue: 239
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 508 added to a waiting queue
+Amount in a waiting queue: 240
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 415 added to a waiting queue
+Amount in a waiting queue: 241
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 146 added to a waiting queue
+Amount in a waiting queue: 242
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 555 added to a waiting queue
+Amount in a waiting queue: 243
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 156 added to a waiting queue
+Amount in a waiting queue: 244
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 354 added to a waiting queue
+Amount in a waiting queue: 245
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 432 added to a waiting queue
+Amount in a waiting queue: 246
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 480 added to a waiting queue
+Amount in a waiting queue: 247
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 16 added to a waiting queue
+Amount in a waiting queue: 248
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 477 added to a waiting queue
+Amount in a waiting queue: 249
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 81 added to a waiting queue
+Amount in a waiting queue: 250
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 419 added to a waiting queue
+Amount in a waiting queue: 251
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 567 added to a waiting queue
+Amount in a waiting queue: 252
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 393 added to a waiting queue
+Amount in a waiting queue: 253
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 177 added to a waiting queue
+Amount in a waiting queue: 254
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 92 added to a waiting queue
+Amount in a waiting queue: 255
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 134 added to a waiting queue
+Amount in a waiting queue: 256
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 510 added to a waiting queue
+Amount in a waiting queue: 257
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 147 added to a waiting queue
+Amount in a waiting queue: 258
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 84 added to a waiting queue
+Amount in a waiting queue: 259
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 496 added to a waiting queue
+Amount in a waiting queue: 260
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 79 added to a waiting queue
+Amount in a waiting queue: 261
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 74 added to a waiting queue
+Amount in a waiting queue: 262
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 69 added to a waiting queue
+Amount in a waiting queue: 263
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 559 added to a waiting queue
+Amount in a waiting queue: 264
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 426 added to a waiting queue
+Amount in a waiting queue: 265
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 515 added to a waiting queue
+Amount in a waiting queue: 266
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 413 added to a waiting queue
+Amount in a waiting queue: 267
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 307 added to a waiting queue
+Amount in a waiting queue: 268
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 424 added to a waiting queue
+Amount in a waiting queue: 269
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 451 added to a waiting queue
+Amount in a waiting queue: 270
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 573 added to a waiting queue
+Amount in a waiting queue: 271
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 504 added to a waiting queue
+Amount in a waiting queue: 272
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 459 added to a waiting queue
+Amount in a waiting queue: 273
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 530 added to a waiting queue
+Amount in a waiting queue: 274
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 333 added to a waiting queue
+Amount in a waiting queue: 275
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 282 added to a waiting queue
+Amount in a waiting queue: 276
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 506 added to a waiting queue
+Amount in a waiting queue: 277
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 362 added to a waiting queue
+Amount in a waiting queue: 278
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 401 added to a waiting queue
+Amount in a waiting queue: 279
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 262 added to a waiting queue
+Amount in a waiting queue: 280
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 385 added to a waiting queue
+Amount in a waiting queue: 281
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 590 added to a waiting queue
+Amount in a waiting queue: 282
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 527 added to a waiting queue
+Amount in a waiting queue: 283
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 150 added to a waiting queue
+Amount in a waiting queue: 284
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 128 added to a waiting queue
+Amount in a waiting queue: 285
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 423 added to a waiting queue
+Amount in a waiting queue: 286
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 501 added to a waiting queue
+Amount in a waiting queue: 287
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 23 added to a waiting queue
+Amount in a waiting queue: 288
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 151 added to a waiting queue
+Amount in a waiting queue: 289
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 389 added to a waiting queue
+Amount in a waiting queue: 290
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 435 added to a waiting queue
+Amount in a waiting queue: 291
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 349 added to a waiting queue
+Amount in a waiting queue: 292
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 276 added to a waiting queue
+Amount in a waiting queue: 293
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 414 added to a waiting queue
+Amount in a waiting queue: 294
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 358 added to a waiting queue
+Amount in a waiting queue: 295
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 20 added to a waiting queue
+Amount in a waiting queue: 296
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 313 added to a waiting queue
+Amount in a waiting queue: 297
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 388 added to a waiting queue
+Amount in a waiting queue: 298
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 511 added to a waiting queue
+Amount in a waiting queue: 299
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 407 added to a waiting queue
+Amount in a waiting queue: 300
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 256 added to a waiting queue
+Amount in a waiting queue: 301
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 107 added to a waiting queue
+Amount in a waiting queue: 302
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 175 added to a waiting queue
+Amount in a waiting queue: 303
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 63 added to a waiting queue
+Amount in a waiting queue: 304
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 242 added to a waiting queue
+Amount in a waiting queue: 305
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 325 added to a waiting queue
+Amount in a waiting queue: 306
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 123 added to a waiting queue
+Amount in a waiting queue: 307
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 161 added to a waiting queue
+Amount in a waiting queue: 308
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 524 added to a waiting queue
+Amount in a waiting queue: 309
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 186 added to a waiting queue
+Amount in a waiting queue: 310
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 486 added to a waiting queue
+Amount in a waiting queue: 311
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 502 added to a waiting queue
+Amount in a waiting queue: 312
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 337 added to a waiting queue
+Amount in a waiting queue: 313
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 464 added to a waiting queue
+Amount in a waiting queue: 314
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 284 added to a waiting queue
+Amount in a waiting queue: 315
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 565 added to a waiting queue
+Amount in a waiting queue: 316
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 9 added to a waiting queue
+Amount in a waiting queue: 317
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 323 added to a waiting queue
+Amount in a waiting queue: 318
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 381 added to a waiting queue
+Amount in a waiting queue: 319
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 528 added to a waiting queue
+Amount in a waiting queue: 320
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 116 added to a waiting queue
+Amount in a waiting queue: 321
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 57 added to a waiting queue
+Amount in a waiting queue: 322
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 125 added to a waiting queue
+Amount in a waiting queue: 323
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 89 added to a waiting queue
+Amount in a waiting queue: 324
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 454 added to a waiting queue
+Amount in a waiting queue: 325
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 105 added to a waiting queue
+Amount in a waiting queue: 326
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 490 added to a waiting queue
+Amount in a waiting queue: 327
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 237 added to a waiting queue
+Amount in a waiting queue: 328
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 52 added to a waiting queue
+Amount in a waiting queue: 329
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 45 added to a waiting queue
+Amount in a waiting queue: 330
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 210 added to a waiting queue
+Amount in a waiting queue: 331
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 138 added to a waiting queue
+Amount in a waiting queue: 332
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 473 added to a waiting queue
+Amount in a waiting queue: 333
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 334 added to a waiting queue
+Amount in a waiting queue: 334
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 378 added to a waiting queue
+Amount in a waiting queue: 335
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 587 added to a waiting queue
+Amount in a waiting queue: 336
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 560 added to a waiting queue
+Amount in a waiting queue: 337
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 456 added to a waiting queue
+Amount in a waiting queue: 338
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 311 added to a waiting queue
+Amount in a waiting queue: 339
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 463 added to a waiting queue
+Amount in a waiting queue: 340
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 172 added to a waiting queue
+Amount in a waiting queue: 341
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 384 added to a waiting queue
+Amount in a waiting queue: 342
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 387 added to a waiting queue
+Amount in a waiting queue: 343
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 328 added to a waiting queue
+Amount in a waiting queue: 344
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 341 added to a waiting queue
+Amount in a waiting queue: 345
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 129 added to a waiting queue
+Amount in a waiting queue: 346
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 280 added to a waiting queue
+Amount in a waiting queue: 347
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 441 added to a waiting queue
+Amount in a waiting queue: 348
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 55 added to a waiting queue
+Amount in a waiting queue: 349
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 319 added to a waiting queue
+Amount in a waiting queue: 350
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 93 added to a waiting queue
+Amount in a waiting queue: 351
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 321 added to a waiting queue
+Amount in a waiting queue: 352
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 526 added to a waiting queue
+Amount in a waiting queue: 353
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 390 added to a waiting queue
+Amount in a waiting queue: 354
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 178 added to a waiting queue
+Amount in a waiting queue: 355
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 315 added to a waiting queue
+Amount in a waiting queue: 356
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 31 added to a waiting queue
+Amount in a waiting queue: 357
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 132 added to a waiting queue
+Amount in a waiting queue: 358
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 353 added to a waiting queue
+Amount in a waiting queue: 359
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 312 added to a waiting queue
+Amount in a waiting queue: 360
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 12 added to a waiting queue
+Amount in a waiting queue: 361
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 202 added to a waiting queue
+Amount in a waiting queue: 362
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 445 added to a waiting queue
+Amount in a waiting queue: 363
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 103 added to a waiting queue
+Amount in a waiting queue: 364
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 318 added to a waiting queue
+Amount in a waiting queue: 365
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 251 added to a waiting queue
+Amount in a waiting queue: 366
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 305 added to a waiting queue
+Amount in a waiting queue: 367
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 117 added to a waiting queue
+Amount in a waiting queue: 368
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 26 added to a waiting queue
+Amount in a waiting queue: 369
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 338 added to a waiting queue
+Amount in a waiting queue: 370
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 470 added to a waiting queue
+Amount in a waiting queue: 371
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 207 added to a waiting queue
+Amount in a waiting queue: 372
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 136 added to a waiting queue
+Amount in a waiting queue: 373
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 320 added to a waiting queue
+Amount in a waiting queue: 374
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 380 added to a waiting queue
+Amount in a waiting queue: 375
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 0 added to a waiting queue
+Amount in a waiting queue: 376
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 114 added to a waiting queue
+Amount in a waiting queue: 377
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 232 added to a waiting queue
+Amount in a waiting queue: 378
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 352 added to a waiting queue
+Amount in a waiting queue: 379
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 241 added to a waiting queue
+Amount in a waiting queue: 380
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 35 added to a waiting queue
+Amount in a waiting queue: 381
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 598 added to a waiting queue
+Amount in a waiting queue: 382
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 283 added to a waiting queue
+Amount in a waiting queue: 383
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 579 added to a waiting queue
+Amount in a waiting queue: 384
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 176 added to a waiting queue
+Amount in a waiting queue: 385
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 444 added to a waiting queue
+Amount in a waiting queue: 386
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 422 added to a waiting queue
+Amount in a waiting queue: 387
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 409 added to a waiting queue
+Amount in a waiting queue: 388
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 347 added to a waiting queue
+Amount in a waiting queue: 389
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 517 added to a waiting queue
+Amount in a waiting queue: 390
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 448 added to a waiting queue
+Amount in a waiting queue: 391
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 273 added to a waiting queue
+Amount in a waiting queue: 392
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 165 added to a waiting queue
+Amount in a waiting queue: 393
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 322 added to a waiting queue
+Amount in a waiting queue: 394
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 316 added to a waiting queue
+Amount in a waiting queue: 395
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 270 added to a waiting queue
+Amount in a waiting queue: 396
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 28 added to a waiting queue
+Amount in a waiting queue: 397
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 222 added to a waiting queue
+Amount in a waiting queue: 398
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 545 added to a waiting queue
+Amount in a waiting queue: 399
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 518 added to a waiting queue
+Amount in a waiting queue: 400
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 546 added to a waiting queue
+Amount in a waiting queue: 401
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 53 added to a waiting queue
+Amount in a waiting queue: 402
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 253 added to a waiting queue
+Amount in a waiting queue: 403
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 281 added to a waiting queue
+Amount in a waiting queue: 404
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 2 added to a waiting queue
+Amount in a waiting queue: 405
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 200 added to a waiting queue
+Amount in a waiting queue: 406
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 266 added to a waiting queue
+Amount in a waiting queue: 407
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 271 added to a waiting queue
+Amount in a waiting queue: 408
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 512 added to a waiting queue
+Amount in a waiting queue: 409
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 363 added to a waiting queue
+Amount in a waiting queue: 410
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 99 added to a waiting queue
+Amount in a waiting queue: 411
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 34 added to a waiting queue
+Amount in a waiting queue: 412
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 373 added to a waiting queue
+Amount in a waiting queue: 413
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 535 added to a waiting queue
+Amount in a waiting queue: 414
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 538 added to a waiting queue
+Amount in a waiting queue: 415
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 41 added to a waiting queue
+Amount in a waiting queue: 416
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 547 added to a waiting queue
+Amount in a waiting queue: 417
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 169 added to a waiting queue
+Amount in a waiting queue: 418
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 540 added to a waiting queue
+Amount in a waiting queue: 419
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 145 added to a waiting queue
+Amount in a waiting queue: 420
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 417 added to a waiting queue
+Amount in a waiting queue: 421
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 260 added to a waiting queue
+Amount in a waiting queue: 422
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 259 added to a waiting queue
+Amount in a waiting queue: 423
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 170 added to a waiting queue
+Amount in a waiting queue: 424
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 179 added to a waiting queue
+Amount in a waiting queue: 425
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 493 added to a waiting queue
+Amount in a waiting queue: 426
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 78 added to a waiting queue
+Amount in a waiting queue: 427
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 184 added to a waiting queue
+Amount in a waiting queue: 428
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 529 added to a waiting queue
+Amount in a waiting queue: 429
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 404 added to a waiting queue
+Amount in a waiting queue: 430
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 396 added to a waiting queue
+Amount in a waiting queue: 431
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 61 added to a waiting queue
+Amount in a waiting queue: 432
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 76 added to a waiting queue
+Amount in a waiting queue: 433
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 430 added to a waiting queue
+Amount in a waiting queue: 434
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 290 added to a waiting queue
+Amount in a waiting queue: 435
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 73 added to a waiting queue
+Amount in a waiting queue: 436
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 135 added to a waiting queue
+Amount in a waiting queue: 437
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 471 added to a waiting queue
+Amount in a waiting queue: 438
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 554 added to a waiting queue
+Amount in a waiting queue: 439
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 465 added to a waiting queue
+Amount in a waiting queue: 440
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 332 added to a waiting queue
+Amount in a waiting queue: 441
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 255 added to a waiting queue
+Amount in a waiting queue: 442
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 224 added to a waiting queue
+Amount in a waiting queue: 443
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 217 added to a waiting queue
+Amount in a waiting queue: 444
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 302 added to a waiting queue
+Amount in a waiting queue: 445
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 97 added to a waiting queue
+Amount in a waiting queue: 446
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 484 added to a waiting queue
+Amount in a waiting queue: 447
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 428 added to a waiting queue
+Amount in a waiting queue: 448
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 382 added to a waiting queue
+Amount in a waiting queue: 449
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 65 added to a waiting queue
+Amount in a waiting queue: 450
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 586 added to a waiting queue
+Amount in a waiting queue: 451
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 345 added to a waiting queue
+Amount in a waiting queue: 452
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 442 added to a waiting queue
+Amount in a waiting queue: 453
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 37 added to a waiting queue
+Amount in a waiting queue: 454
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 569 added to a waiting queue
+Amount in a waiting queue: 455
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 467 added to a waiting queue
+Amount in a waiting queue: 456
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 532 added to a waiting queue
+Amount in a waiting queue: 457
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 434 added to a waiting queue
+Amount in a waiting queue: 458
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 306 added to a waiting queue
+Amount in a waiting queue: 459
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 258 added to a waiting queue
+Amount in a waiting queue: 460
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 267 added to a waiting queue
+Amount in a waiting queue: 461
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 72 added to a waiting queue
+Amount in a waiting queue: 462
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 599 added to a waiting queue
+Amount in a waiting queue: 463
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 173 added to a waiting queue
+Amount in a waiting queue: 464
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 357 added to a waiting queue
+Amount in a waiting queue: 465
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 199 added to a waiting queue
+Amount in a waiting queue: 466
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 185 added to a waiting queue
+Amount in a waiting queue: 467
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 235 added to a waiting queue
+Amount in a waiting queue: 468
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 269 added to a waiting queue
+Amount in a waiting queue: 469
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 438 added to a waiting queue
+Amount in a waiting queue: 470
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 180 added to a waiting queue
+Amount in a waiting queue: 471
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 519 added to a waiting queue
+Amount in a waiting queue: 472
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 29 added to a waiting queue
+Amount in a waiting queue: 473
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 295 added to a waiting queue
+Amount in a waiting queue: 474
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 541 added to a waiting queue
+Amount in a waiting queue: 475
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 211 added to a waiting queue
+Amount in a waiting queue: 476
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 159 added to a waiting queue
+Amount in a waiting queue: 477
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 133 added to a waiting queue
+Amount in a waiting queue: 478
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 326 added to a waiting queue
+Amount in a waiting queue: 479
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 188 added to a waiting queue
+Amount in a waiting queue: 480
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 455 added to a waiting queue
+Amount in a waiting queue: 481
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 51 added to a waiting queue
+Amount in a waiting queue: 482
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 418 added to a waiting queue
+Amount in a waiting queue: 483
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 469 added to a waiting queue
+Amount in a waiting queue: 484
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 130 added to a waiting queue
+Amount in a waiting queue: 485
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 356 added to a waiting queue
+Amount in a waiting queue: 486
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 24 added to a waiting queue
+Amount in a waiting queue: 487
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 308 added to a waiting queue
+Amount in a waiting queue: 488
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 209 added to a waiting queue
+Amount in a waiting queue: 489
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 42 added to a waiting queue
+Amount in a waiting queue: 490
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 400 added to a waiting queue
+Amount in a waiting queue: 491
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 32 added to a waiting queue
+Amount in a waiting queue: 492
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 300 added to a waiting queue
+Amount in a waiting queue: 493
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 398 added to a waiting queue
+Amount in a waiting queue: 494
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 203 added to a waiting queue
+Amount in a waiting queue: 495
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 392 added to a waiting queue
+Amount in a waiting queue: 496
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 596 added to a waiting queue
+Amount in a waiting queue: 497
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 491 added to a waiting queue
+Amount in a waiting queue: 498
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 18 added to a waiting queue
+Amount in a waiting queue: 499
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 405 added to a waiting queue
+Amount in a waiting queue: 500
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 436 added to a waiting queue
+Amount in a waiting queue: 501
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 225 added to a waiting queue
+Amount in a waiting queue: 502
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 137 added to a waiting queue
+Amount in a waiting queue: 503
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 509 added to a waiting queue
+Amount in a waiting queue: 504
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 367 added to a waiting queue
+Amount in a waiting queue: 505
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 292 added to a waiting queue
+Amount in a waiting queue: 506
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 75 added to a waiting queue
+Amount in a waiting queue: 507
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 66 added to a waiting queue
+Amount in a waiting queue: 508
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 576 added to a waiting queue
+Amount in a waiting queue: 509
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 68 added to a waiting queue
+Amount in a waiting queue: 510
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 181 added to a waiting queue
+Amount in a waiting queue: 511
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 360 added to a waiting queue
+Amount in a waiting queue: 512
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 163 added to a waiting queue
+Amount in a waiting queue: 513
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 487 added to a waiting queue
+Amount in a waiting queue: 514
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 344 added to a waiting queue
+Amount in a waiting queue: 515
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 544 added to a waiting queue
+Amount in a waiting queue: 516
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 278 added to a waiting queue
+Amount in a waiting queue: 517
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 190 added to a waiting queue
+Amount in a waiting queue: 518
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 585 added to a waiting queue
+Amount in a waiting queue: 519
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 549 added to a waiting queue
+Amount in a waiting queue: 520
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 27 added to a waiting queue
+Amount in a waiting queue: 521
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 226 added to a waiting queue
+Amount in a waiting queue: 522
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 309 added to a waiting queue
+Amount in a waiting queue: 523
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 494 added to a waiting queue
+Amount in a waiting queue: 524
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 350 added to a waiting queue
+Amount in a waiting queue: 525
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 304 added to a waiting queue
+Amount in a waiting queue: 526
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 499 added to a waiting queue
+Amount in a waiting queue: 527
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 245 added to a waiting queue
+Amount in a waiting queue: 528
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 162 added to a waiting queue
+Amount in a waiting queue: 529
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 204 added to a waiting queue
+Amount in a waiting queue: 530
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 47 added to a waiting queue
+Amount in a waiting queue: 531
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 575 added to a waiting queue
+Amount in a waiting queue: 532
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 450 added to a waiting queue
+Amount in a waiting queue: 533
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 548 added to a waiting queue
+Amount in a waiting queue: 534
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 94 added to a waiting queue
+Amount in a waiting queue: 535
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 157 added to a waiting queue
+Amount in a waiting queue: 536
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 49 added to a waiting queue
+Amount in a waiting queue: 537
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 447 added to a waiting queue
+Amount in a waiting queue: 538
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 294 added to a waiting queue
+Amount in a waiting queue: 539
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 122 added to a waiting queue
+Amount in a waiting queue: 540
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 250 added to a waiting queue
+Amount in a waiting queue: 541
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 7 added to a waiting queue
+Amount in a waiting queue: 542
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 460 added to a waiting queue
+Amount in a waiting queue: 543
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 421 added to a waiting queue
+Amount in a waiting queue: 544
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 244 added to a waiting queue
+Amount in a waiting queue: 545
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 293 added to a waiting queue
+Amount in a waiting queue: 546
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 563 added to a waiting queue
+Amount in a waiting queue: 547
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 449 added to a waiting queue
+Amount in a waiting queue: 548
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 154 added to a waiting queue
+Amount in a waiting queue: 549
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 101 added to a waiting queue
+Amount in a waiting queue: 550
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 228 added to a waiting queue
+Amount in a waiting queue: 551
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 22 added to a waiting queue
+Amount in a waiting queue: 552
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 17 added to a waiting queue
+Amount in a waiting queue: 553
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 189 added to a waiting queue
+Amount in a waiting queue: 554
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 252 added to a waiting queue
+Amount in a waiting queue: 555
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 583 added to a waiting queue
+Amount in a waiting queue: 556
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 215 added to a waiting queue
+Amount in a waiting queue: 557
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 556 added to a waiting queue
+Amount in a waiting queue: 558
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 331 added to a waiting queue
+Amount in a waiting queue: 559
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 361 added to a waiting queue
+Amount in a waiting queue: 560
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 48 added to a waiting queue
+Amount in a waiting queue: 561
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 379 added to a waiting queue
+Amount in a waiting queue: 562
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 478 added to a waiting queue
+Amount in a waiting queue: 563
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 82 added to a waiting queue
+Amount in a waiting queue: 564
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 533 added to a waiting queue
+Amount in a waiting queue: 565
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 95 added to a waiting queue
+Amount in a waiting queue: 566
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 461 added to a waiting queue
+Amount in a waiting queue: 567
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 550 added to a waiting queue
+Amount in a waiting queue: 568
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 192 added to a waiting queue
+Amount in a waiting queue: 569
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 594 added to a waiting queue
+Amount in a waiting queue: 570
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 472 added to a waiting queue
+Amount in a waiting queue: 571
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 591 added to a waiting queue
+Amount in a waiting queue: 572
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 355 added to a waiting queue
+Amount in a waiting queue: 573
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 503 added to a waiting queue
+Amount in a waiting queue: 574
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 543 added to a waiting queue
+Amount in a waiting queue: 575
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 43 added to a waiting queue
+Amount in a waiting queue: 576
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 368 added to a waiting queue
+Amount in a waiting queue: 577
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 531 added to a waiting queue
+Amount in a waiting queue: 578
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 197 added to a waiting queue
+Amount in a waiting queue: 579
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 370 added to a waiting queue
+Amount in a waiting queue: 580
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 335 added to a waiting queue
+Amount in a waiting queue: 581
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 285 added to a waiting queue
+Amount in a waiting queue: 582
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 168 added to a waiting queue
+Amount in a waiting queue: 583
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 201 added to a waiting queue
+Amount in a waiting queue: 584
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 195 added to a waiting queue
+Amount in a waiting queue: 585
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 198 added to a waiting queue
+Amount in a waiting queue: 586
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 457 added to a waiting queue
+Amount in a waiting queue: 587
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 208 added to a waiting queue
+Amount in a waiting queue: 588
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 139 added to a waiting queue
+Amount in a waiting queue: 589
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 437 added to a waiting queue
+Amount in a waiting queue: 590
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 40 added to a waiting queue
+Amount in a waiting queue: 591
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 144 added to a waiting queue
+Amount in a waiting queue: 592
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 342 added to a waiting queue
+Amount in a waiting queue: 593
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 160 added to a waiting queue
+Amount in a waiting queue: 594
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 90 added to a waiting queue
+Amount in a waiting queue: 595
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 174 added to a waiting queue
+Amount in a waiting queue: 596
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 406 added to a waiting queue
+Amount in a waiting queue: 597
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 155 added to a waiting queue
+Amount in a waiting queue: 598
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 127 added to a waiting queue
+Amount in a waiting queue: 599
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 340 added to a waiting queue
+Amount in a waiting queue: 600
+
+91.71098983110986 DC id: 3: Recieved migrated VM from controller
+	VM id: 6
+VM id: 6 allocated into Host id 0
+
+171.45210603745812 DC id: 3: Recieved migrated VM from controller
+	VM id: 365
+VM id: 365 allocated into Host id 0
+
+267.5716406402656 DC id: 3: Recieved migrated VM from controller
+	VM id: 289
+VM id: 289 allocated into Host id 0
+
+337.6381832687333 DC id: 3: Recieved migrated VM from controller
+	VM id: 551
+VM id: 551 allocated into Host id 0
+
+429.99548457549804 DC id: 3: Recieved migrated VM from controller
+	VM id: 83
+VM id: 83 allocated into Host id 1
+
+575.7312766651221 DC id: 3: Recieved migrated VM from controller
+	VM id: 468
+VM id: 468 allocated into Host id 1
+
+660.2902792803411 DC id: 3: Recieved migrated VM from controller
+	VM id: 574
+VM id: 574 allocated into Host id 1
+
+747.1337689192075 DC id: 3: Recieved migrated VM from controller
+	VM id: 588
+VM id: 588 allocated into Host id 1
+
+903.7509545526771 DC id: 3: Recieved migrated VM from controller
+	VM id: 416
+VM id: 416 allocated into Host id 2
+
+978.153062175175 DC id: 3: Recieved migrated VM from controller
+	VM id: 36
+VM id: 36 allocated into Host id 2
+
+1055.2202337001934 DC id: 3: Recieved migrated VM from controller
+	VM id: 119
+VM id: 119 allocated into Host id 2
+
+1136.0061558165676 DC id: 3: Recieved migrated VM from controller
+	VM id: 77
+VM id: 77 allocated into Host id 2
+
+1273.1444746881054 DC id: 3: Recieved migrated VM from controller
+	VM id: 408
+VM id: 408 allocated into Host id 3
+
+1355.0557216292857 DC id: 3: Recieved migrated VM from controller
+	VM id: 475
+VM id: 475 allocated into Host id 3
+
+1430.9473340196735 DC id: 3: Recieved migrated VM from controller
+	VM id: 206
+VM id: 206 allocated into Host id 3
+
+1526.0529374711518 DC id: 3: Recieved migrated VM from controller
+	VM id: 458
+VM id: 458 allocated into Host id 3
+
+1598.4939966529996 DC id: 3: Recieved migrated VM from controller
+	VM id: 106
+VM id: 106 allocated into Host id 4
+
+1746.0532940618768 DC id: 3: Recieved migrated VM from controller
+	VM id: 243
+VM id: 243 allocated into Host id 4
+
+1841.7302824559115 DC id: 3: Recieved migrated VM from controller
+	VM id: 539
+VM id: 539 allocated into Host id 4
+
+1919.2587208910456 DC id: 3: Recieved migrated VM from controller
+	VM id: 142
+VM id: 142 allocated into Host id 4
+
+2018.8013871804803 DC id: 3: Recieved migrated VM from controller
+	VM id: 593
+VM id: 593 allocated into Host id 5
+
+2088.889643383065 DC id: 3: Recieved migrated VM from controller
+	VM id: 597
+VM id: 597 allocated into Host id 5
+
+2248.054474300988 DC id: 3: Recieved migrated VM from controller
+	VM id: 148
+VM id: 148 allocated into Host id 5
+
+2328.610958778082 DC id: 3: Recieved migrated VM from controller
+	VM id: 15
+VM id: 15 allocated into Host id 5
+
+2467.9134433965864 DC id: 3: Recieved migrated VM from controller
+	VM id: 427
+VM id: 427 allocated into Host id 6
+
+2562.822354781882 DC id: 3: Recieved migrated VM from controller
+	VM id: 595
+VM id: 595 allocated into Host id 6
+
+2639.2737767628055 DC id: 3: Recieved migrated VM from controller
+	VM id: 580
+VM id: 580 allocated into Host id 6
+
+2762.2351110293243 DC id: 3: Recieved migrated VM from controller
+	VM id: 483
+VM id: 483 allocated into Host id 6
+
+2836.2818263711943 DC id: 3: Recieved migrated VM from controller
+	VM id: 537
+VM id: 537 allocated into Host id 7
+
+2930.2110984358906 DC id: 3: Recieved migrated VM from controller
+	VM id: 564
+VM id: 564 allocated into Host id 7
+
+3086.272258032064 DC id: 3: Recieved migrated VM from controller
+	VM id: 230
+VM id: 230 allocated into Host id 7
+
+3177.297257581589 DC id: 3: Recieved migrated VM from controller
+	VM id: 592
+VM id: 592 allocated into Host id 7
+
+3260.8208855388384 DC id: 3: Recieved migrated VM from controller
+	VM id: 497
+VM id: 497 allocated into Host id 8
+
+3357.7872224462913 DC id: 3: Recieved migrated VM from controller
+	VM id: 131
+VM id: 131 allocated into Host id 8
+
+3496.2978353882954 DC id: 3: Recieved migrated VM from controller
+	VM id: 164
+VM id: 164 allocated into Host id 8
+
+3566.90672823285 DC id: 3: Recieved migrated VM from controller
+	VM id: 56
+VM id: 56 allocated into Host id 8
+
+3737.028022928729 DC id: 3: Recieved migrated VM from controller
+	VM id: 410
+VM id: 410 allocated into Host id 9
+
+3854.923975078605 DC id: 3: Recieved migrated VM from controller
+	VM id: 171
+VM id: 171 allocated into Host id 9
+
+3961.85662403578 DC id: 3: Recieved migrated VM from controller
+	VM id: 25
+VM id: 25 allocated into Host id 9
+
+4048.901545950926 DC id: 3: Recieved migrated VM from controller
+	VM id: 561
+VM id: 561 allocated into Host id 9
+
+4126.335119239808 DC id: 3: Recieved migrated VM from controller
+	VM id: 513
+VM id: 513 allocated into Host id 10
+
+4197.98063479289 DC id: 3: Recieved migrated VM from controller
+	VM id: 366
+VM id: 366 allocated into Host id 10
+
+4315.588126653845 DC id: 3: Recieved migrated VM from controller
+	VM id: 187
+VM id: 187 allocated into Host id 10
+
+4484.668855145119 DC id: 3: Recieved migrated VM from controller
+	VM id: 33
+VM id: 33 allocated into Host id 10
+
+4588.16796312362 DC id: 3: Recieved migrated VM from controller
+	VM id: 286
+VM id: 286 allocated into Host id 11
+
+4764.166815611474 DC id: 3: Recieved migrated VM from controller
+	VM id: 104
+VM id: 104 allocated into Host id 11
+
+4860.3202171807025 DC id: 3: Recieved migrated VM from controller
+	VM id: 485
+VM id: 485 allocated into Host id 11
+
+4936.937060502094 DC id: 3: Recieved migrated VM from controller
+	VM id: 67
+VM id: 67 allocated into Host id 11
+
+5037.189133313352 DC id: 3: Recieved migrated VM from controller
+	VM id: 377
+VM id: 377 allocated into Host id 12
+
+5169.883959746747 DC id: 3: Recieved migrated VM from controller
+	VM id: 239
+VM id: 239 allocated into Host id 12
+
+5254.73112132281 DC id: 3: Recieved migrated VM from controller
+	VM id: 143
+VM id: 143 allocated into Host id 12
+
+5337.5604687824425 DC id: 3: Recieved migrated VM from controller
+	VM id: 516
+VM id: 516 allocated into Host id 12
+
+5461.680122847532 DC id: 3: Recieved migrated VM from controller
+	VM id: 88
+VM id: 88 allocated into Host id 13
+
+5530.028625224655 DC id: 3: Recieved migrated VM from controller
+	VM id: 124
+VM id: 124 allocated into Host id 13
+
+5600.593409210246 DC id: 3: Recieved migrated VM from controller
+	VM id: 126
+VM id: 126 allocated into Host id 13
+
+5684.573095082634 DC id: 3: Recieved migrated VM from controller
+	VM id: 248
+VM id: 248 allocated into Host id 13
+
+5766.983998758076 DC id: 3: Recieved migrated VM from controller
+	VM id: 86
+VM id: 86 allocated into Host id 14
+
+5864.239998533958 DC id: 3: Recieved migrated VM from controller
+	VM id: 153
+VM id: 153 allocated into Host id 14
+
+5950.664194325201 DC id: 3: Recieved migrated VM from controller
+	VM id: 5
+VM id: 5 allocated into Host id 14
+
+6041.79013953474 DC id: 3: Recieved migrated VM from controller
+	VM id: 336
+VM id: 336 allocated into Host id 14
+
+6114.515802677512 DC id: 3: Recieved migrated VM from controller
+	VM id: 412
+VM id: 412 allocated into Host id 15
+
+6205.1652592307455 DC id: 3: Recieved migrated VM from controller
+	VM id: 277
+VM id: 277 allocated into Host id 15
+
+6333.795462834175 DC id: 3: Recieved migrated VM from controller
+	VM id: 279
+VM id: 279 allocated into Host id 15
+
+6461.562793910846 DC id: 3: Recieved migrated VM from controller
+	VM id: 375
+VM id: 375 allocated into Host id 15
+
+6781.546925842374 DC id: 3: Recieved migrated VM from controller
+	VM id: 254
+VM id: 254 allocated into Host id 16
+
+6857.160036114139 DC id: 3: Recieved migrated VM from controller
+	VM id: 301
+VM id: 301 allocated into Host id 16
+
+6967.969787344057 DC id: 3: Recieved migrated VM from controller
+	VM id: 453
+VM id: 453 allocated into Host id 16
+
+7076.82197607584 DC id: 3: Recieved migrated VM from controller
+	VM id: 439
+VM id: 439 allocated into Host id 16
+
+7190.255415285471 DC id: 3: Recieved migrated VM from controller
+	VM id: 247
+VM id: 247 allocated into Host id 17
+
+7283.041694421739 DC id: 3: Recieved migrated VM from controller
+	VM id: 498
+VM id: 498 allocated into Host id 17
+
+7361.250241331629 DC id: 3: Recieved migrated VM from controller
+	VM id: 296
+VM id: 296 allocated into Host id 17
+
+7476.068156341218 DC id: 3: Recieved migrated VM from controller
+	VM id: 582
+VM id: 582 allocated into Host id 17
+
+7662.460295060572 DC id: 3: Recieved migrated VM from controller
+	VM id: 534
+VM id: 534 allocated into Host id 18
+
+7836.2016839638 DC id: 3: Recieved migrated VM from controller
+	VM id: 214
+VM id: 214 allocated into Host id 18
+
+7964.131724980097 DC id: 3: Recieved migrated VM from controller
+	VM id: 297
+VM id: 297 allocated into Host id 18
+
+8075.189377642746 DC id: 3: Recieved migrated VM from controller
+	VM id: 522
+VM id: 522 allocated into Host id 18
+
+8165.004460487683 DC id: 3: Recieved migrated VM from controller
+	VM id: 236
+VM id: 236 allocated into Host id 19
+
+8355.080517240902 DC id: 3: Recieved migrated VM from controller
+	VM id: 233
+VM id: 233 allocated into Host id 19
+
+8432.916178221089 DC id: 3: Recieved migrated VM from controller
+	VM id: 488
+VM id: 488 allocated into Host id 19
+
+8576.80046081955 DC id: 3: Recieved migrated VM from controller
+	VM id: 288
+VM id: 288 allocated into Host id 19
+
+8713.24077637914 DC id: 3: Recieved migrated VM from controller
+	VM id: 369
+VM id: 369 allocated into Host id 20
+
+8835.749224981528 DC id: 3: Recieved migrated VM from controller
+	VM id: 140
+VM id: 140 allocated into Host id 20
+
+8907.591810695554 DC id: 3: Recieved migrated VM from controller
+	VM id: 227
+VM id: 227 allocated into Host id 20
+
+9006.87999680336 DC id: 3: Recieved migrated VM from controller
+	VM id: 265
+VM id: 265 allocated into Host id 20
+
+9112.528695730021 DC id: 3: Recieved migrated VM from controller
+	VM id: 59
+VM id: 59 allocated into Host id 21
+
+9190.320201793473 DC id: 3: Recieved migrated VM from controller
+	VM id: 523
+VM id: 523 allocated into Host id 21
+
+9282.215007175702 DC id: 3: Recieved migrated VM from controller
+	VM id: 87
+VM id: 87 allocated into Host id 21
+
+9351.899476318515 DC id: 3: Recieved migrated VM from controller
+	VM id: 303
+VM id: 303 allocated into Host id 21
+
+9430.146766633465 DC id: 3: Recieved migrated VM from controller
+	VM id: 62
+VM id: 62 allocated into Host id 22
+
+9511.49649088469 DC id: 3: Recieved migrated VM from controller
+	VM id: 111
+VM id: 111 allocated into Host id 22
+
+9605.448805698172 DC id: 3: Recieved migrated VM from controller
+	VM id: 212
+VM id: 212 allocated into Host id 22
+
+9678.60751111541 DC id: 3: Recieved migrated VM from controller
+	VM id: 431
+VM id: 431 allocated into Host id 22
+
+9749.354173949969 DC id: 3: Recieved migrated VM from controller
+	VM id: 572
+VM id: 572 allocated into Host id 23
+
+9826.105075631069 DC id: 3: Recieved migrated VM from controller
+	VM id: 446
+VM id: 446 allocated into Host id 23
+
+9954.191064752502 DC id: 3: Recieved migrated VM from controller
+	VM id: 466
+VM id: 466 allocated into Host id 23
+
+10038.67851532187 DC id: 3: Recieved migrated VM from controller
+	VM id: 440
+VM id: 440 allocated into Host id 23
+
+10138.292596730264 DC id: 3: Recieved migrated VM from controller
+	VM id: 60
+VM id: 60 allocated into Host id 24
+
+10239.333055309844 DC id: 3: Recieved migrated VM from controller
+	VM id: 314
+VM id: 314 allocated into Host id 24
+
+10360.826153014572 DC id: 3: Recieved migrated VM from controller
+	VM id: 44
+VM id: 44 allocated into Host id 24
+
+10562.921942546036 DC id: 3: Recieved migrated VM from controller
+	VM id: 581
+VM id: 581 allocated into Host id 24
+
+10654.371890975004 DC id: 3: Recieved migrated VM from controller
+	VM id: 158
+VM id: 158 allocated into Host id 25
+
+10777.95902938383 DC id: 3: Recieved migrated VM from controller
+	VM id: 11
+VM id: 11 allocated into Host id 25
+
+10866.709269255529 DC id: 3: Recieved migrated VM from controller
+	VM id: 346
+VM id: 346 allocated into Host id 25
+
+10937.263100407492 DC id: 3: Recieved migrated VM from controller
+	VM id: 1
+VM id: 1 allocated into Host id 25
+
+11064.020092424214 DC id: 3: Recieved migrated VM from controller
+	VM id: 505
+VM id: 505 allocated into Host id 26
+
+11186.517288057625 DC id: 3: Recieved migrated VM from controller
+	VM id: 339
+VM id: 339 allocated into Host id 26
+
+11268.559252138488 DC id: 3: Recieved migrated VM from controller
+	VM id: 221
+VM id: 221 allocated into Host id 26
+
+11410.290411535781 DC id: 3: Recieved migrated VM from controller
+	VM id: 218
+VM id: 218 allocated into Host id 26
+
+11516.990317393662 DC id: 3: Recieved migrated VM from controller
+	VM id: 287
+VM id: 287 allocated into Host id 27
+
+11594.489524355939 DC id: 3: Recieved migrated VM from controller
+	VM id: 196
+VM id: 196 allocated into Host id 27
+
+11662.966505423989 DC id: 3: Recieved migrated VM from controller
+	VM id: 110
+VM id: 110 allocated into Host id 27
+
+11762.859672443019 DC id: 3: Recieved migrated VM from controller
+	VM id: 577
+VM id: 577 allocated into Host id 27
+
+11915.442721918138 DC id: 3: Recieved migrated VM from controller
+	VM id: 403
+VM id: 403 allocated into Host id 28
+
+12033.24830700552 DC id: 3: Recieved migrated VM from controller
+	VM id: 520
+VM id: 520 allocated into Host id 28
+
+12152.17199759221 DC id: 3: Recieved migrated VM from controller
+	VM id: 223
+VM id: 223 allocated into Host id 28
+
+12301.588945117195 DC id: 3: Recieved migrated VM from controller
+	VM id: 399
+VM id: 399 allocated into Host id 28
+
+12400.183952477844 DC id: 3: Recieved migrated VM from controller
+	VM id: 238
+VM id: 238 allocated into Host id 29
+
+12522.86521379142 DC id: 3: Recieved migrated VM from controller
+	VM id: 394
+VM id: 394 allocated into Host id 29
+
+12622.738626616238 DC id: 3: Recieved migrated VM from controller
+	VM id: 578
+VM id: 578 allocated into Host id 29
+
+12712.63963637107 DC id: 3: Recieved migrated VM from controller
+	VM id: 152
+VM id: 152 allocated into Host id 29
+
+12816.716940449862 DC id: 3: Recieved migrated VM from controller
+	VM id: 39
+VM id: 39 allocated into Host id 30
+
+12955.727789260534 DC id: 3: Recieved migrated VM from controller
+	VM id: 397
+VM id: 397 allocated into Host id 30
+
+13041.47992906535 DC id: 3: Recieved migrated VM from controller
+	VM id: 109
+VM id: 109 allocated into Host id 30
+
+13202.504781294792 DC id: 3: Recieved migrated VM from controller
+	VM id: 507
+VM id: 507 allocated into Host id 30
+
+13270.876297325962 DC id: 3: Recieved migrated VM from controller
+	VM id: 376
+VM id: 376 allocated into Host id 31
+
+13338.20819016992 DC id: 3: Recieved migrated VM from controller
+	VM id: 479
+VM id: 479 allocated into Host id 31
+
+13444.885306881028 DC id: 3: Recieved migrated VM from controller
+	VM id: 386
+VM id: 386 allocated into Host id 31
+
+13545.00604072773 DC id: 3: Recieved migrated VM from controller
+	VM id: 589
+VM id: 589 allocated into Host id 31
+
+13660.31620876619 DC id: 3: Recieved migrated VM from controller
+	VM id: 272
+VM id: 272 allocated into Host id 32
+
+13738.20081409884 DC id: 3: Recieved migrated VM from controller
+	VM id: 425
+VM id: 425 allocated into Host id 32
+
+13826.458439216287 DC id: 3: Recieved migrated VM from controller
+	VM id: 411
+VM id: 411 allocated into Host id 32
+
+13898.630453443257 DC id: 3: Recieved migrated VM from controller
+	VM id: 102
+VM id: 102 allocated into Host id 32
+
+13967.806387454499 DC id: 3: Recieved migrated VM from controller
+	VM id: 327
+VM id: 327 allocated into Host id 33
+
+14072.641840248887 DC id: 3: Recieved migrated VM from controller
+	VM id: 98
+VM id: 98 allocated into Host id 33
+
+14156.633211193242 DC id: 3: Recieved migrated VM from controller
+	VM id: 402
+VM id: 402 allocated into Host id 33
+
+14234.311205598717 DC id: 3: Recieved migrated VM from controller
+	VM id: 492
+VM id: 492 allocated into Host id 33
+
+14351.412917112206 DC id: 3: Recieved migrated VM from controller
+	VM id: 58
+VM id: 58 allocated into Host id 34
+
+14458.0606548413 DC id: 3: Recieved migrated VM from controller
+	VM id: 348
+VM id: 348 allocated into Host id 34
+
+14527.852283170718 DC id: 3: Recieved migrated VM from controller
+	VM id: 191
+VM id: 191 allocated into Host id 34
+
+14602.220059042895 DC id: 3: Recieved migrated VM from controller
+	VM id: 525
+VM id: 525 allocated into Host id 34
+
+14722.136429140566 DC id: 3: Recieved migrated VM from controller
+	VM id: 274
+VM id: 274 allocated into Host id 35
+
+14811.400431849928 DC id: 3: Recieved migrated VM from controller
+	VM id: 219
+VM id: 219 allocated into Host id 35
+
+14914.985007705835 DC id: 3: Recieved migrated VM from controller
+	VM id: 216
+VM id: 216 allocated into Host id 35
+
+14992.133868237905 DC id: 3: Recieved migrated VM from controller
+	VM id: 568
+VM id: 568 allocated into Host id 35
+
+15063.811939419258 DC id: 3: Recieved migrated VM from controller
+	VM id: 542
+VM id: 542 allocated into Host id 36
+
+15145.928702824634 DC id: 3: Recieved migrated VM from controller
+	VM id: 205
+VM id: 205 allocated into Host id 36
+
+15216.316702162743 DC id: 3: Recieved migrated VM from controller
+	VM id: 571
+VM id: 571 allocated into Host id 36
+
+15367.716553935325 DC id: 3: Recieved migrated VM from controller
+	VM id: 19
+VM id: 19 allocated into Host id 36
+
+15552.196304453144 DC id: 3: Recieved migrated VM from controller
+	VM id: 351
+VM id: 351 allocated into Host id 37
+
+15670.553136492425 DC id: 3: Recieved migrated VM from controller
+	VM id: 514
+VM id: 514 allocated into Host id 37
+
+15783.376245841391 DC id: 3: Recieved migrated VM from controller
+	VM id: 570
+VM id: 570 allocated into Host id 37
+
+15863.632914559288 DC id: 3: Recieved migrated VM from controller
+	VM id: 268
+VM id: 268 allocated into Host id 37
+
+15947.332637554962 DC id: 3: Recieved migrated VM from controller
+	VM id: 118
+VM id: 118 allocated into Host id 38
+
+16016.608207750363 DC id: 3: Recieved migrated VM from controller
+	VM id: 231
+VM id: 231 allocated into Host id 38
+
+16151.697362720244 DC id: 3: Recieved migrated VM from controller
+	VM id: 562
+VM id: 562 allocated into Host id 38
+
+16217.54296343571 DC id: 3: Recieved migrated VM from controller
+	VM id: 121
+VM id: 121 allocated into Host id 38
+
+16286.678598720999 DC id: 3: Recieved migrated VM from controller
+	VM id: 298
+VM id: 298 allocated into Host id 39
+
+16398.83683193594 DC id: 3: Recieved migrated VM from controller
+	VM id: 299
+VM id: 299 allocated into Host id 39
+
+16471.39038897139 DC id: 3: Recieved migrated VM from controller
+	VM id: 364
+VM id: 364 allocated into Host id 39
+
+16542.880723540115 DC id: 3: Recieved migrated VM from controller
+	VM id: 166
+VM id: 166 allocated into Host id 39
+
+16610.956531760567 DC id: 3: Recieved migrated VM from controller
+	VM id: 552
+VM id: 552 allocated into Host id 40
+
+16688.35687715974 DC id: 3: Recieved migrated VM from controller
+	VM id: 500
+VM id: 500 allocated into Host id 40
+
+16762.072983895036 DC id: 3: Recieved migrated VM from controller
+	VM id: 13
+VM id: 13 allocated into Host id 40
+
+16886.793056832168 DC id: 3: Recieved migrated VM from controller
+	VM id: 371
+VM id: 371 allocated into Host id 40
+
+17012.7828019569 DC id: 3: Recieved migrated VM from controller
+	VM id: 359
+VM id: 359 allocated into Host id 41
+
+17100.3214325809 DC id: 3: Recieved migrated VM from controller
+	VM id: 21
+VM id: 21 allocated into Host id 41
+
+17204.16134178775 DC id: 3: Recieved migrated VM from controller
+	VM id: 113
+VM id: 113 allocated into Host id 41
+
+17326.27476023167 DC id: 3: Recieved migrated VM from controller
+	VM id: 240
+VM id: 240 allocated into Host id 41
+
+17421.144915706485 DC id: 3: Recieved migrated VM from controller
+	VM id: 149
+VM id: 149 allocated into Host id 42
+
+17511.549770368074 DC id: 3: Recieved migrated VM from controller
+	VM id: 85
+VM id: 85 allocated into Host id 42
+
+17618.67184569229 DC id: 3: Recieved migrated VM from controller
+	VM id: 14
+VM id: 14 allocated into Host id 42
+
+17732.246560601645 DC id: 3: Recieved migrated VM from controller
+	VM id: 474
+VM id: 474 allocated into Host id 42
+
+17841.68862867336 DC id: 3: Recieved migrated VM from controller
+	VM id: 249
+VM id: 249 allocated into Host id 43
+
+17931.861534632375 DC id: 3: Recieved migrated VM from controller
+	VM id: 71
+VM id: 71 allocated into Host id 43
+
+18047.364935406255 DC id: 3: Recieved migrated VM from controller
+	VM id: 558
+VM id: 558 allocated into Host id 43
+
+18123.121685343314 DC id: 3: Recieved migrated VM from controller
+	VM id: 481
+VM id: 481 allocated into Host id 43
+
+18196.06614646418 DC id: 3: Recieved migrated VM from controller
+	VM id: 120
+VM id: 120 allocated into Host id 44
+
+18273.49522080976 DC id: 3: Recieved migrated VM from controller
+	VM id: 462
+VM id: 462 allocated into Host id 44
+
+18347.474144492768 DC id: 3: Recieved migrated VM from controller
+	VM id: 395
+VM id: 395 allocated into Host id 44
+
+18426.518525541822 DC id: 3: Recieved migrated VM from controller
+	VM id: 495
+VM id: 495 allocated into Host id 44
+
+18529.616741841834 DC id: 3: Recieved migrated VM from controller
+	VM id: 234
+VM id: 234 allocated into Host id 45
+
+18661.82279706612 DC id: 3: Recieved migrated VM from controller
+	VM id: 70
+VM id: 70 allocated into Host id 45
+
+18728.905230234748 DC id: 3: Recieved migrated VM from controller
+	VM id: 443
+VM id: 443 allocated into Host id 45
+
+18824.792715696767 DC id: 3: Recieved migrated VM from controller
+	VM id: 476
+VM id: 476 allocated into Host id 45
+
+18906.642946590684 DC id: 3: Recieved migrated VM from controller
+	VM id: 50
+VM id: 50 allocated into Host id 46
+
+18989.21207279059 DC id: 3: Recieved migrated VM from controller
+	VM id: 557
+VM id: 557 allocated into Host id 46
+
+19110.32838250263 DC id: 3: Recieved migrated VM from controller
+	VM id: 291
+VM id: 291 allocated into Host id 46
+
+19274.040608978437 DC id: 3: Recieved migrated VM from controller
+	VM id: 80
+VM id: 80 allocated into Host id 46
+
+19378.142404324975 DC id: 3: Recieved migrated VM from controller
+	VM id: 64
+VM id: 64 allocated into Host id 47
+
+19474.08061834447 DC id: 3: Recieved migrated VM from controller
+	VM id: 100
+VM id: 100 allocated into Host id 47
+
+19635.87759317918 DC id: 3: Recieved migrated VM from controller
+	VM id: 372
+VM id: 372 allocated into Host id 47
+
+19842.262901215578 DC id: 3: Recieved migrated VM from controller
+	VM id: 30
+VM id: 30 allocated into Host id 47
+
+19948.215324524295 DC id: 3: Recieved migrated VM from controller
+	VM id: 220
+VM id: 220 allocated into Host id 48
+
+20032.330293986284 DC id: 3: Recieved migrated VM from controller
+	VM id: 38
+VM id: 38 allocated into Host id 48
+
+20117.120406916012 DC id: 3: Recieved migrated VM from controller
+	VM id: 194
+VM id: 194 allocated into Host id 48
+
+20239.878294440165 DC id: 3: Recieved migrated VM from controller
+	VM id: 452
+VM id: 452 allocated into Host id 48
+
+20326.654467185675 DC id: 3: Recieved migrated VM from controller
+	VM id: 182
+VM id: 182 allocated into Host id 49
+
+20482.427576823047 DC id: 3: Recieved migrated VM from controller
+	VM id: 482
+VM id: 482 allocated into Host id 49
+
+20574.059422585295 DC id: 3: Recieved migrated VM from controller
+	VM id: 521
+VM id: 521 allocated into Host id 49
+
+20642.143325430174 DC id: 3: Recieved migrated VM from controller
+	VM id: 46
+VM id: 46 allocated into Host id 49
+
+20750.037493921533 DC id: 3: Recieved migrated VM from controller
+	VM id: 213
+VM id: 213 allocated into Host id 50
+
+20881.6195673914 DC id: 3: Recieved migrated VM from controller
+	VM id: 489
+VM id: 489 allocated into Host id 50
+
+20981.987462481575 DC id: 3: Recieved migrated VM from controller
+	VM id: 54
+VM id: 54 allocated into Host id 50
+
+21061.975936804633 DC id: 3: Recieved migrated VM from controller
+	VM id: 566
+VM id: 566 allocated into Host id 50
+
+21149.231408113057 DC id: 3: Recieved migrated VM from controller
+	VM id: 324
+VM id: 324 allocated into Host id 51
+
+21317.60729949864 DC id: 3: Recieved migrated VM from controller
+	VM id: 96
+VM id: 96 allocated into Host id 51
+
+21481.786503891984 DC id: 3: Recieved migrated VM from controller
+	VM id: 167
+VM id: 167 allocated into Host id 51
+
+21561.283825544393 DC id: 3: Recieved migrated VM from controller
+	VM id: 429
+VM id: 429 allocated into Host id 51
+Broker1 is shutting down...
+VmigSim finished!
+
+Migrated VM details ::
+	VM: 6 finished the migration with the time 91.61098983110986 seconds
+		RAM = 512 MB
+		Priority = 1
+		Downtime = 91.61098983110986 seconds
+		QoS = 300 seconds / violate = false
+		Migration result = true
+	VM: 365 finished the migration with the time 79.74111620634827 seconds
+		RAM = 512 MB
+		Priority = 2
+		Downtime = 79.74111620634827 seconds
+		QoS = 2700 seconds / violate = false
+		Migration result = true
+	VM: 289 finished the migration with the time 96.11953460280748 seconds
+		RAM = 512 MB
+		Priority = 2
+		Downtime = 96.11953460280748 seconds
+		QoS = 2700 seconds / violate = false
+		Migration result = true
+	VM: 551 finished the migration with the time 70.06654262846766 seconds
+		RAM = 512 MB
+		Priority = 3
+		Downtime = 70.06654262846766 seconds
+		QoS = 32400 seconds / violate = false
+		Migration result = true
+	VM: 83 finished the migration with the time 92.35730130676471 seconds
+		RAM = 512 MB
+		Priority = 1
+		Downtime = 92.35730130676471 seconds
+		QoS = 300 seconds / violate = false
+		Migration result = true
+	VM: 468 finished the migration with the time 145.73579208962403 seconds
+		RAM = 512 MB
+		Priority = 3
+		Downtime = 145.73579208962403 seconds
+		QoS = 32400 seconds / violate = false
+		Migration result = true
+	VM: 574 finished the migration with the time 84.559002615219 seconds
+		RAM = 512 MB
+		Priority = 3
+		Downtime = 84.559002615219 seconds
+		QoS = 32400 seconds / violate = false
+		Migration result = true
+	VM: 588 finished the migration with the time 86.8434896388663 seconds
+		RAM = 512 MB
+		Priority = 3
+		Downtime = 86.8434896388663 seconds
+		QoS = 32400 seconds / violate = false
+		Migration result = true
+	VM: 416 finished the migration with the time 156.61718563346963 seconds
+		RAM = 512 MB
+		Priority = 3
+		Downtime = 156.61718563346963 seconds
+		QoS = 32400 seconds / violate = false
+		Migration result = true
+	VM: 36 finished the migration with the time 74.40210762249798 seconds
+		RAM = 512 MB
+		Priority = 1
+		Downtime = 74.40210762249798 seconds
+		QoS = 300 seconds / violate = false
+		Migration result = true
+	VM: 119 finished the migration with the time 77.06717152501845 seconds
+		RAM = 512 MB
+		Priority = 1
+		Downtime = 77.06717152501845 seconds
+		QoS = 300 seconds / violate = false
+		Migration result = true
+	VM: 77 finished the migration with the time 80.7859221163743 seconds
+		RAM = 512 MB
+		Priority = 1
+		Downtime = 80.7859221163743 seconds
+		QoS = 300 seconds / violate = false
+		Migration result = true
+	VM: 408 finished the migration with the time 137.13831887153788 seconds
+		RAM = 512 MB
+		Priority = 3
+		Downtime = 137.13831887153788 seconds
+		QoS = 32400 seconds / violate = false
+		Migration result = true
+	VM: 475 finished the migration with the time 81.91124694118034 seconds
+		RAM = 512 MB
+		Priority = 3
+		Downtime = 81.91124694118034 seconds
+		QoS = 32400 seconds / violate = false
+		Migration result = true
+	VM: 206 finished the migration with the time 75.89161239038778 seconds
+		RAM = 512 MB
+		Priority = 2
+		Downtime = 75.89161239038778 seconds
+		QoS = 2700 seconds / violate = false
+		Migration result = true
+	VM: 458 finished the migration with the time 95.1056034514784 seconds
+		RAM = 512 MB
+		Priority = 3
+		Downtime = 95.1056034514784 seconds
+		QoS = 32400 seconds / violate = false
+		Migration result = true
+	VM: 106 finished the migration with the time 72.44105918184776 seconds
+		RAM = 512 MB
+		Priority = 1
+		Downtime = 72.44105918184776 seconds
+		QoS = 300 seconds / violate = false
+		Migration result = true
+	VM: 243 finished the migration with the time 147.55929740887714 seconds
+		RAM = 512 MB
+		Priority = 2
+		Downtime = 147.55929740887714 seconds
+		QoS = 2700 seconds / violate = false
+		Migration result = true
+	VM: 539 finished the migration with the time 95.6769883940347 seconds
+		RAM = 512 MB
+		Priority = 3
+		Downtime = 95.6769883940347 seconds
+		QoS = 32400 seconds / violate = false
+		Migration result = true
+	VM: 142 finished the migration with the time 77.52843843513412 seconds
+		RAM = 512 MB
+		Priority = 1
+		Downtime = 77.52843843513412 seconds
+		QoS = 300 seconds / violate = false
+		Migration result = true
+	VM: 593 finished the migration with the time 99.54266628943478 seconds
+		RAM = 512 MB
+		Priority = 3
+		Downtime = 99.54266628943478 seconds
+		QoS = 32400 seconds / violate = false
+		Migration result = true
+	VM: 597 finished the migration with the time 70.08825620258473 seconds
+		RAM = 512 MB
+		Priority = 3
+		Downtime = 70.08825620258473 seconds
+		QoS = 32400 seconds / violate = false
+		Migration result = true
+	VM: 148 finished the migration with the time 159.1648309179233 seconds
+		RAM = 512 MB
+		Priority = 1
+		Downtime = 159.1648309179233 seconds
+		QoS = 300 seconds / violate = false
+		Migration result = true
+	VM: 15 finished the migration with the time 80.55648447709376 seconds
+		RAM = 512 MB
+		Priority = 1
+		Downtime = 80.55648447709376 seconds
+		QoS = 300 seconds / violate = false
+		Migration result = true
+	VM: 427 finished the migration with the time 139.30248461850437 seconds
+		RAM = 512 MB
+		Priority = 3
+		Downtime = 139.30248461850437 seconds
+		QoS = 32400 seconds / violate = false
+		Migration result = true
+	VM: 595 finished the migration with the time 94.90891138529577 seconds
+		RAM = 512 MB
+		Priority = 3
+		Downtime = 94.90891138529577 seconds
+		QoS = 32400 seconds / violate = false
+		Migration result = true
+	VM: 580 finished the migration with the time 76.45142198092358 seconds
+		RAM = 512 MB
+		Priority = 3
+		Downtime = 76.45142198092358 seconds
+		QoS = 32400 seconds / violate = false
+		Migration result = true
+	VM: 483 finished the migration with the time 122.96133426651883 seconds
+		RAM = 512 MB
+		Priority = 3
+		Downtime = 122.96133426651883 seconds
+		QoS = 32400 seconds / violate = false
+		Migration result = true
+	VM: 537 finished the migration with the time 74.04671534186973 seconds
+		RAM = 512 MB
+		Priority = 3
+		Downtime = 74.04671534186973 seconds
+		QoS = 32400 seconds / violate = false
+		Migration result = true
+	VM: 564 finished the migration with the time 93.92927206469639 seconds
+		RAM = 512 MB
+		Priority = 3
+		Downtime = 93.92927206469639 seconds
+		QoS = 32400 seconds / violate = false
+		Migration result = true
+	VM: 230 finished the migration with the time 156.06115959617344 seconds
+		RAM = 512 MB
+		Priority = 2
+		Downtime = 156.06115959617344 seconds
+		QoS = 2700 seconds / violate = false
+		Migration result = true
+	VM: 592 finished the migration with the time 91.02499954952481 seconds
+		RAM = 512 MB
+		Priority = 3
+		Downtime = 91.02499954952481 seconds
+		QoS = 32400 seconds / violate = false
+		Migration result = true
+	VM: 497 finished the migration with the time 83.52362795724977 seconds
+		RAM = 512 MB
+		Priority = 3
+		Downtime = 83.52362795724977 seconds
+		QoS = 32400 seconds / violate = false
+		Migration result = true
+	VM: 131 finished the migration with the time 96.96633690745298 seconds
+		RAM = 512 MB
+		Priority = 1
+		Downtime = 96.96633690745298 seconds
+		QoS = 300 seconds / violate = false
+		Migration result = true
+	VM: 164 finished the migration with the time 138.51061294200437 seconds
+		RAM = 512 MB
+		Priority = 1
+		Downtime = 138.51061294200437 seconds
+		QoS = 300 seconds / violate = false
+		Migration result = true
+	VM: 56 finished the migration with the time 70.6088928445547 seconds
+		RAM = 512 MB
+		Priority = 1
+		Downtime = 70.6088928445547 seconds
+		QoS = 300 seconds / violate = false
+		Migration result = true
+	VM: 410 finished the migration with the time 170.1212946958792 seconds
+		RAM = 512 MB
+		Priority = 3
+		Downtime = 170.1212946958792 seconds
+		QoS = 32400 seconds / violate = false
+		Migration result = true
+	VM: 171 finished the migration with the time 117.89595214987594 seconds
+		RAM = 512 MB
+		Priority = 1
+		Downtime = 117.89595214987594 seconds
+		QoS = 300 seconds / violate = false
+		Migration result = true
+	VM: 25 finished the migration with the time 106.93264895717509 seconds
+		RAM = 512 MB
+		Priority = 1
+		Downtime = 106.93264895717509 seconds
+		QoS = 300 seconds / violate = false
+		Migration result = true
+	VM: 561 finished the migration with the time 87.04492191514578 seconds
+		RAM = 512 MB
+		Priority = 3
+		Downtime = 87.04492191514578 seconds
+		QoS = 32400 seconds / violate = false
+		Migration result = true
+	VM: 513 finished the migration with the time 77.4335732888811 seconds
+		RAM = 512 MB
+		Priority = 3
+		Downtime = 77.4335732888811 seconds
+		QoS = 32400 seconds / violate = false
+		Migration result = true
+	VM: 366 finished the migration with the time 71.64551555308174 seconds
+		RAM = 512 MB
+		Priority = 2
+		Downtime = 71.64551555308174 seconds
+		QoS = 2700 seconds / violate = false
+		Migration result = true
+	VM: 187 finished the migration with the time 117.60749186095578 seconds
+		RAM = 512 MB
+		Priority = 1
+		Downtime = 117.60749186095578 seconds
+		QoS = 300 seconds / violate = false
+		Migration result = true
+	VM: 33 finished the migration with the time 169.0807284912732 seconds
+		RAM = 512 MB
+		Priority = 1
+		Downtime = 169.0807284912732 seconds
+		QoS = 300 seconds / violate = false
+		Migration result = true
+	VM: 286 finished the migration with the time 103.49910797850166 seconds
+		RAM = 512 MB
+		Priority = 2
+		Downtime = 103.49910797850166 seconds
+		QoS = 2700 seconds / violate = false
+		Migration result = true
+	VM: 104 finished the migration with the time 175.99885248785392 seconds
+		RAM = 512 MB
+		Priority = 1
+		Downtime = 175.99885248785392 seconds
+		QoS = 300 seconds / violate = false
+		Migration result = true
+	VM: 485 finished the migration with the time 96.15340156922821 seconds
+		RAM = 512 MB
+		Priority = 3
+		Downtime = 96.15340156922821 seconds
+		QoS = 32400 seconds / violate = false
+		Migration result = true
+	VM: 67 finished the migration with the time 76.61684332139174 seconds
+		RAM = 512 MB
+		Priority = 1
+		Downtime = 76.61684332139174 seconds
+		QoS = 300 seconds / violate = false
+		Migration result = true
+	VM: 377 finished the migration with the time 100.25207281125756 seconds
+		RAM = 512 MB
+		Priority = 2
+		Downtime = 100.25207281125756 seconds
+		QoS = 2700 seconds / violate = false
+		Migration result = true
+	VM: 239 finished the migration with the time 132.6948264333955 seconds
+		RAM = 512 MB
+		Priority = 2
+		Downtime = 132.6948264333955 seconds
+		QoS = 2700 seconds / violate = false
+		Migration result = true
+	VM: 143 finished the migration with the time 84.84716157606377 seconds
+		RAM = 512 MB
+		Priority = 1
+		Downtime = 84.84716157606377 seconds
+		QoS = 300 seconds / violate = false
+		Migration result = true
+	VM: 516 finished the migration with the time 82.8293474596322 seconds
+		RAM = 512 MB
+		Priority = 3
+		Downtime = 82.8293474596322 seconds
+		QoS = 32400 seconds / violate = false
+		Migration result = true
+	VM: 88 finished the migration with the time 124.1196540650902 seconds
+		RAM = 512 MB
+		Priority = 1
+		Downtime = 124.1196540650902 seconds
+		QoS = 300 seconds / violate = false
+		Migration result = true
+	VM: 124 finished the migration with the time 68.34850237712314 seconds
+		RAM = 512 MB
+		Priority = 1
+		Downtime = 68.34850237712314 seconds
+		QoS = 300 seconds / violate = false
+		Migration result = true
+	VM: 126 finished the migration with the time 70.56478398559099 seconds
+		RAM = 512 MB
+		Priority = 1
+		Downtime = 70.56478398559099 seconds
+		QoS = 300 seconds / violate = false
+		Migration result = true
+	VM: 248 finished the migration with the time 83.9796858723876 seconds
+		RAM = 512 MB
+		Priority = 2
+		Downtime = 83.9796858723876 seconds
+		QoS = 2700 seconds / violate = false
+		Migration result = true
+	VM: 86 finished the migration with the time 82.41090367544277 seconds
+		RAM = 512 MB
+		Priority = 1
+		Downtime = 82.41090367544277 seconds
+		QoS = 300 seconds / violate = false
+		Migration result = true
+	VM: 153 finished the migration with the time 97.25599977588138 seconds
+		RAM = 512 MB
+		Priority = 1
+		Downtime = 97.25599977588138 seconds
+		QoS = 300 seconds / violate = false
+		Migration result = true
+	VM: 5 finished the migration with the time 86.42419579124227 seconds
+		RAM = 512 MB
+		Priority = 1
+		Downtime = 86.42419579124227 seconds
+		QoS = 300 seconds / violate = false
+		Migration result = true
+	VM: 336 finished the migration with the time 91.12594520953934 seconds
+		RAM = 512 MB
+		Priority = 2
+		Downtime = 91.12594520953934 seconds
+		QoS = 2700 seconds / violate = false
+		Migration result = true
+	VM: 412 finished the migration with the time 72.7256631427714 seconds
+		RAM = 512 MB
+		Priority = 3
+		Downtime = 72.7256631427714 seconds
+		QoS = 32400 seconds / violate = false
+		Migration result = true
+	VM: 277 finished the migration with the time 90.64945655323424 seconds
+		RAM = 512 MB
+		Priority = 2
+		Downtime = 90.64945655323424 seconds
+		QoS = 2700 seconds / violate = false
+		Migration result = true
+	VM: 279 finished the migration with the time 128.63020360342972 seconds
+		RAM = 512 MB
+		Priority = 2
+		Downtime = 128.63020360342972 seconds
+		QoS = 2700 seconds / violate = false
+		Migration result = true
+	VM: 375 finished the migration with the time 127.76733107667147 seconds
+		RAM = 512 MB
+		Priority = 2
+		Downtime = 127.76733107667147 seconds
+		QoS = 2700 seconds / violate = false
+		Migration result = true
+	VM: 254 finished the migration with the time 319.98413193152714 seconds
+		RAM = 512 MB
+		Priority = 2
+		Downtime = 319.98413193152714 seconds
+		QoS = 2700 seconds / violate = false
+		Migration result = true
+	VM: 301 finished the migration with the time 75.61311027176505 seconds
+		RAM = 512 MB
+		Priority = 2
+		Downtime = 75.61311027176505 seconds
+		QoS = 2700 seconds / violate = false
+		Migration result = true
+	VM: 453 finished the migration with the time 110.80975122991829 seconds
+		RAM = 512 MB
+		Priority = 3
+		Downtime = 110.80975122991829 seconds
+		QoS = 32400 seconds / violate = false
+		Migration result = true
+	VM: 439 finished the migration with the time 108.85218873178295 seconds
+		RAM = 512 MB
+		Priority = 3
+		Downtime = 108.85218873178295 seconds
+		QoS = 32400 seconds / violate = false
+		Migration result = true
+	VM: 247 finished the migration with the time 113.43343920963034 seconds
+		RAM = 512 MB
+		Priority = 2
+		Downtime = 113.43343920963034 seconds
+		QoS = 2700 seconds / violate = false
+		Migration result = true
+	VM: 498 finished the migration with the time 92.78627913626796 seconds
+		RAM = 512 MB
+		Priority = 3
+		Downtime = 92.78627913626796 seconds
+		QoS = 32400 seconds / violate = false
+		Migration result = true
+	VM: 296 finished the migration with the time 78.2085469098905 seconds
+		RAM = 512 MB
+		Priority = 2
+		Downtime = 78.2085469098905 seconds
+		QoS = 2700 seconds / violate = false
+		Migration result = true
+	VM: 582 finished the migration with the time 114.81791500958892 seconds
+		RAM = 512 MB
+		Priority = 3
+		Downtime = 114.81791500958892 seconds
+		QoS = 32400 seconds / violate = false
+		Migration result = true
+	VM: 534 finished the migration with the time 186.39213871935408 seconds
+		RAM = 512 MB
+		Priority = 3
+		Downtime = 186.39213871935408 seconds
+		QoS = 32400 seconds / violate = false
+		Migration result = true
+	VM: 214 finished the migration with the time 173.7413889032279 seconds
+		RAM = 512 MB
+		Priority = 2
+		Downtime = 173.7413889032279 seconds
+		QoS = 2700 seconds / violate = false
+		Migration result = true
+	VM: 297 finished the migration with the time 127.93004101629666 seconds
+		RAM = 512 MB
+		Priority = 2
+		Downtime = 127.93004101629666 seconds
+		QoS = 2700 seconds / violate = false
+		Migration result = true
+	VM: 522 finished the migration with the time 111.05765266264923 seconds
+		RAM = 512 MB
+		Priority = 3
+		Downtime = 111.05765266264923 seconds
+		QoS = 32400 seconds / violate = false
+		Migration result = true
+	VM: 236 finished the migration with the time 89.81508284493718 seconds
+		RAM = 512 MB
+		Priority = 2
+		Downtime = 89.81508284493718 seconds
+		QoS = 2700 seconds / violate = false
+		Migration result = true
+	VM: 233 finished the migration with the time 190.07605675321926 seconds
+		RAM = 512 MB
+		Priority = 2
+		Downtime = 190.07605675321926 seconds
+		QoS = 2700 seconds / violate = false
+		Migration result = true
+	VM: 488 finished the migration with the time 77.83566098018662 seconds
+		RAM = 512 MB
+		Priority = 3
+		Downtime = 77.83566098018662 seconds
+		QoS = 32400 seconds / violate = false
+		Migration result = true
+	VM: 288 finished the migration with the time 143.88428259846043 seconds
+		RAM = 512 MB
+		Priority = 2
+		Downtime = 143.88428259846043 seconds
+		QoS = 2700 seconds / violate = false
+		Migration result = true
+	VM: 369 finished the migration with the time 136.44031555958983 seconds
+		RAM = 512 MB
+		Priority = 2
+		Downtime = 136.44031555958983 seconds
+		QoS = 2700 seconds / violate = false
+		Migration result = true
+	VM: 140 finished the migration with the time 122.50844860238739 seconds
+		RAM = 512 MB
+		Priority = 1
+		Downtime = 122.50844860238739 seconds
+		QoS = 300 seconds / violate = false
+		Migration result = true
+	VM: 227 finished the migration with the time 71.84258571402613 seconds
+		RAM = 512 MB
+		Priority = 2
+		Downtime = 71.84258571402613 seconds
+		QoS = 2700 seconds / violate = false
+		Migration result = true
+	VM: 265 finished the migration with the time 99.28818610780502 seconds
+		RAM = 512 MB
+		Priority = 2
+		Downtime = 99.28818610780502 seconds
+		QoS = 2700 seconds / violate = false
+		Migration result = true
+	VM: 59 finished the migration with the time 105.648698926662 seconds
+		RAM = 512 MB
+		Priority = 1
+		Downtime = 105.648698926662 seconds
+		QoS = 300 seconds / violate = false
+		Migration result = true
+	VM: 523 finished the migration with the time 77.7915060634518 seconds
+		RAM = 512 MB
+		Priority = 3
+		Downtime = 77.7915060634518 seconds
+		QoS = 32400 seconds / violate = false
+		Migration result = true
+	VM: 87 finished the migration with the time 91.8948053822294 seconds
+		RAM = 512 MB
+		Priority = 1
+		Downtime = 91.8948053822294 seconds
+		QoS = 300 seconds / violate = false
+		Migration result = true
+	VM: 303 finished the migration with the time 69.68446914281313 seconds
+		RAM = 512 MB
+		Priority = 2
+		Downtime = 69.68446914281313 seconds
+		QoS = 2700 seconds / violate = false
+		Migration result = true
+	VM: 62 finished the migration with the time 78.24729031494978 seconds
+		RAM = 512 MB
+		Priority = 1
+		Downtime = 78.24729031494978 seconds
+		QoS = 300 seconds / violate = false
+		Migration result = true
+	VM: 111 finished the migration with the time 81.34972425122623 seconds
+		RAM = 512 MB
+		Priority = 1
+		Downtime = 81.34972425122623 seconds
+		QoS = 300 seconds / violate = false
+		Migration result = true
+	VM: 212 finished the migration with the time 93.95231481348108 seconds
+		RAM = 512 MB
+		Priority = 2
+		Downtime = 93.95231481348108 seconds
+		QoS = 2700 seconds / violate = false
+		Migration result = true
+	VM: 431 finished the migration with the time 73.1587054172374 seconds
+		RAM = 512 MB
+		Priority = 3
+		Downtime = 73.1587054172374 seconds
+		QoS = 32400 seconds / violate = false
+		Migration result = true
+	VM: 572 finished the migration with the time 70.7466628345595 seconds
+		RAM = 512 MB
+		Priority = 3
+		Downtime = 70.7466628345595 seconds
+		QoS = 32400 seconds / violate = false
+		Migration result = true
+	VM: 446 finished the migration with the time 76.7509016811001 seconds
+		RAM = 512 MB
+		Priority = 3
+		Downtime = 76.7509016811001 seconds
+		QoS = 32400 seconds / violate = false
+		Migration result = true
+	VM: 466 finished the migration with the time 128.08598912143228 seconds
+		RAM = 512 MB
+		Priority = 3
+		Downtime = 128.08598912143228 seconds
+		QoS = 32400 seconds / violate = false
+		Migration result = true
+	VM: 440 finished the migration with the time 84.4874505693686 seconds
+		RAM = 512 MB
+		Priority = 3
+		Downtime = 84.4874505693686 seconds
+		QoS = 32400 seconds / violate = false
+		Migration result = true
+	VM: 60 finished the migration with the time 99.6140814083941 seconds
+		RAM = 512 MB
+		Priority = 1
+		Downtime = 99.6140814083941 seconds
+		QoS = 300 seconds / violate = false
+		Migration result = true
+	VM: 314 finished the migration with the time 101.04045857958127 seconds
+		RAM = 512 MB
+		Priority = 2
+		Downtime = 101.04045857958127 seconds
+		QoS = 2700 seconds / violate = false
+		Migration result = true
+	VM: 44 finished the migration with the time 121.49309770472868 seconds
+		RAM = 512 MB
+		Priority = 1
+		Downtime = 121.49309770472868 seconds
+		QoS = 300 seconds / violate = false
+		Migration result = true
+	VM: 581 finished the migration with the time 202.0957895314636 seconds
+		RAM = 512 MB
+		Priority = 3
+		Downtime = 202.0957895314636 seconds
+		QoS = 32400 seconds / violate = false
+		Migration result = true
+	VM: 158 finished the migration with the time 91.44994842896723 seconds
+		RAM = 512 MB
+		Priority = 1
+		Downtime = 91.44994842896723 seconds
+		QoS = 300 seconds / violate = false
+		Migration result = true
+	VM: 11 finished the migration with the time 123.58713840882672 seconds
+		RAM = 512 MB
+		Priority = 1
+		Downtime = 123.58713840882672 seconds
+		QoS = 300 seconds / violate = false
+		Migration result = true
+	VM: 346 finished the migration with the time 88.75023987169948 seconds
+		RAM = 512 MB
+		Priority = 2
+		Downtime = 88.75023987169948 seconds
+		QoS = 2700 seconds / violate = false
+		Migration result = true
+	VM: 1 finished the migration with the time 70.5538311519623 seconds
+		RAM = 512 MB
+		Priority = 1
+		Downtime = 70.5538311519623 seconds
+		QoS = 300 seconds / violate = false
+		Migration result = true
+	VM: 505 finished the migration with the time 126.75699201672262 seconds
+		RAM = 512 MB
+		Priority = 3
+		Downtime = 126.75699201672262 seconds
+		QoS = 32400 seconds / violate = false
+		Migration result = true
+	VM: 339 finished the migration with the time 122.49719563341071 seconds
+		RAM = 512 MB
+		Priority = 2
+		Downtime = 122.49719563341071 seconds
+		QoS = 2700 seconds / violate = false
+		Migration result = true
+	VM: 221 finished the migration with the time 82.04196408086344 seconds
+		RAM = 512 MB
+		Priority = 2
+		Downtime = 82.04196408086344 seconds
+		QoS = 2700 seconds / violate = false
+		Migration result = true
+	VM: 218 finished the migration with the time 141.73115939729414 seconds
+		RAM = 512 MB
+		Priority = 2
+		Downtime = 141.73115939729414 seconds
+		QoS = 2700 seconds / violate = false
+		Migration result = true
+	VM: 287 finished the migration with the time 106.69990585788003 seconds
+		RAM = 512 MB
+		Priority = 2
+		Downtime = 106.69990585788003 seconds
+		QoS = 2700 seconds / violate = false
+		Migration result = true
+	VM: 196 finished the migration with the time 77.49920696227665 seconds
+		RAM = 512 MB
+		Priority = 1
+		Downtime = 77.49920696227665 seconds
+		QoS = 300 seconds / violate = false
+		Migration result = true
+	VM: 110 finished the migration with the time 68.47698106804927 seconds
+		RAM = 512 MB
+		Priority = 1
+		Downtime = 68.47698106804927 seconds
+		QoS = 300 seconds / violate = false
+		Migration result = true
+	VM: 577 finished the migration with the time 99.89316701903006 seconds
+		RAM = 512 MB
+		Priority = 3
+		Downtime = 99.89316701903006 seconds
+		QoS = 32400 seconds / violate = false
+		Migration result = true
+	VM: 403 finished the migration with the time 152.5830494751188 seconds
+		RAM = 512 MB
+		Priority = 3
+		Downtime = 152.5830494751188 seconds
+		QoS = 32400 seconds / violate = false
+		Migration result = true
+	VM: 520 finished the migration with the time 117.80558508738277 seconds
+		RAM = 512 MB
+		Priority = 3
+		Downtime = 117.80558508738277 seconds
+		QoS = 32400 seconds / violate = false
+		Migration result = true
+	VM: 223 finished the migration with the time 118.92369058668949 seconds
+		RAM = 512 MB
+		Priority = 2
+		Downtime = 118.92369058668949 seconds
+		QoS = 2700 seconds / violate = false
+		Migration result = true
+	VM: 399 finished the migration with the time 149.41694752498532 seconds
+		RAM = 512 MB
+		Priority = 2
+		Downtime = 149.41694752498532 seconds
+		QoS = 2700 seconds / violate = false
+		Migration result = true
+	VM: 238 finished the migration with the time 98.59500736064876 seconds
+		RAM = 512 MB
+		Priority = 2
+		Downtime = 98.59500736064876 seconds
+		QoS = 2700 seconds / violate = false
+		Migration result = true
+	VM: 394 finished the migration with the time 122.68126131357528 seconds
+		RAM = 512 MB
+		Priority = 2
+		Downtime = 122.68126131357528 seconds
+		QoS = 2700 seconds / violate = false
+		Migration result = true
+	VM: 578 finished the migration with the time 99.8734128248174 seconds
+		RAM = 512 MB
+		Priority = 3
+		Downtime = 99.8734128248174 seconds
+		QoS = 32400 seconds / violate = false
+		Migration result = true
+	VM: 152 finished the migration with the time 89.90100975483253 seconds
+		RAM = 512 MB
+		Priority = 1
+		Downtime = 89.90100975483253 seconds
+		QoS = 300 seconds / violate = false
+		Migration result = true
+	VM: 39 finished the migration with the time 104.0773040787911 seconds
+		RAM = 512 MB
+		Priority = 1
+		Downtime = 104.0773040787911 seconds
+		QoS = 300 seconds / violate = false
+		Migration result = true
+	VM: 397 finished the migration with the time 139.0108488106721 seconds
+		RAM = 512 MB
+		Priority = 2
+		Downtime = 139.0108488106721 seconds
+		QoS = 2700 seconds / violate = false
+		Migration result = true
+	VM: 109 finished the migration with the time 85.75213980481561 seconds
+		RAM = 512 MB
+		Priority = 1
+		Downtime = 85.75213980481561 seconds
+		QoS = 300 seconds / violate = false
+		Migration result = true
+	VM: 507 finished the migration with the time 161.02485222944185 seconds
+		RAM = 512 MB
+		Priority = 3
+		Downtime = 161.02485222944185 seconds
+		QoS = 32400 seconds / violate = false
+		Migration result = true
+	VM: 376 finished the migration with the time 68.37151603116976 seconds
+		RAM = 512 MB
+		Priority = 2
+		Downtime = 68.37151603116976 seconds
+		QoS = 2700 seconds / violate = false
+		Migration result = true
+	VM: 479 finished the migration with the time 67.33189284395894 seconds
+		RAM = 512 MB
+		Priority = 3
+		Downtime = 67.33189284395894 seconds
+		QoS = 32400 seconds / violate = false
+		Migration result = true
+	VM: 386 finished the migration with the time 106.67711671110726 seconds
+		RAM = 512 MB
+		Priority = 2
+		Downtime = 106.67711671110726 seconds
+		QoS = 2700 seconds / violate = false
+		Migration result = true
+	VM: 589 finished the migration with the time 100.1207338467035 seconds
+		RAM = 512 MB
+		Priority = 3
+		Downtime = 100.1207338467035 seconds
+		QoS = 32400 seconds / violate = false
+		Migration result = true
+	VM: 272 finished the migration with the time 115.3101680384585 seconds
+		RAM = 512 MB
+		Priority = 2
+		Downtime = 115.3101680384585 seconds
+		QoS = 2700 seconds / violate = false
+		Migration result = true
+	VM: 425 finished the migration with the time 77.88460533265054 seconds
+		RAM = 512 MB
+		Priority = 3
+		Downtime = 77.88460533265054 seconds
+		QoS = 32400 seconds / violate = false
+		Migration result = true
+	VM: 411 finished the migration with the time 88.25762511744699 seconds
+		RAM = 512 MB
+		Priority = 3
+		Downtime = 88.25762511744699 seconds
+		QoS = 32400 seconds / violate = false
+		Migration result = true
+	VM: 102 finished the migration with the time 72.17201422697013 seconds
+		RAM = 512 MB
+		Priority = 1
+		Downtime = 72.17201422697013 seconds
+		QoS = 300 seconds / violate = false
+		Migration result = true
+	VM: 327 finished the migration with the time 69.1759340112421 seconds
+		RAM = 512 MB
+		Priority = 2
+		Downtime = 69.1759340112421 seconds
+		QoS = 2700 seconds / violate = false
+		Migration result = true
+	VM: 98 finished the migration with the time 104.83545279438869 seconds
+		RAM = 512 MB
+		Priority = 1
+		Downtime = 104.83545279438869 seconds
+		QoS = 300 seconds / violate = false
+		Migration result = true
+	VM: 402 finished the migration with the time 83.99137094435461 seconds
+		RAM = 512 MB
+		Priority = 3
+		Downtime = 83.99137094435461 seconds
+		QoS = 32400 seconds / violate = false
+		Migration result = true
+	VM: 492 finished the migration with the time 77.67799440547348 seconds
+		RAM = 512 MB
+		Priority = 3
+		Downtime = 77.67799440547348 seconds
+		QoS = 32400 seconds / violate = false
+		Migration result = true
+	VM: 58 finished the migration with the time 117.10171151348858 seconds
+		RAM = 512 MB
+		Priority = 1
+		Downtime = 117.10171151348858 seconds
+		QoS = 300 seconds / violate = false
+		Migration result = true
+	VM: 348 finished the migration with the time 106.64773772909392 seconds
+		RAM = 512 MB
+		Priority = 2
+		Downtime = 106.64773772909392 seconds
+		QoS = 2700 seconds / violate = false
+		Migration result = true
+	VM: 191 finished the migration with the time 69.79162832941888 seconds
+		RAM = 512 MB
+		Priority = 1
+		Downtime = 69.79162832941888 seconds
+		QoS = 300 seconds / violate = false
+		Migration result = true
+	VM: 525 finished the migration with the time 74.36777587217625 seconds
+		RAM = 512 MB
+		Priority = 3
+		Downtime = 74.36777587217625 seconds
+		QoS = 32400 seconds / violate = false
+		Migration result = true
+	VM: 274 finished the migration with the time 119.91637009767129 seconds
+		RAM = 512 MB
+		Priority = 2
+		Downtime = 119.91637009767129 seconds
+		QoS = 2700 seconds / violate = false
+		Migration result = true
+	VM: 219 finished the migration with the time 89.26400270936246 seconds
+		RAM = 512 MB
+		Priority = 2
+		Downtime = 89.26400270936246 seconds
+		QoS = 2700 seconds / violate = false
+		Migration result = true
+	VM: 216 finished the migration with the time 103.58457585590659 seconds
+		RAM = 512 MB
+		Priority = 2
+		Downtime = 103.58457585590659 seconds
+		QoS = 2700 seconds / violate = false
+		Migration result = true
+	VM: 568 finished the migration with the time 77.14886053206997 seconds
+		RAM = 512 MB
+		Priority = 3
+		Downtime = 77.14886053206997 seconds
+		QoS = 32400 seconds / violate = false
+		Migration result = true
+	VM: 542 finished the migration with the time 71.6780711813538 seconds
+		RAM = 512 MB
+		Priority = 3
+		Downtime = 71.6780711813538 seconds
+		QoS = 32400 seconds / violate = false
+		Migration result = true
+	VM: 205 finished the migration with the time 82.11676340537605 seconds
+		RAM = 512 MB
+		Priority = 2
+		Downtime = 82.11676340537605 seconds
+		QoS = 2700 seconds / violate = false
+		Migration result = true
+	VM: 571 finished the migration with the time 70.38799933810846 seconds
+		RAM = 512 MB
+		Priority = 3
+		Downtime = 70.38799933810846 seconds
+		QoS = 32400 seconds / violate = false
+		Migration result = true
+	VM: 19 finished the migration with the time 151.39985177258094 seconds
+		RAM = 512 MB
+		Priority = 1
+		Downtime = 151.39985177258094 seconds
+		QoS = 300 seconds / violate = false
+		Migration result = true
+	VM: 351 finished the migration with the time 184.47975051781967 seconds
+		RAM = 512 MB
+		Priority = 2
+		Downtime = 184.47975051781967 seconds
+		QoS = 2700 seconds / violate = false
+		Migration result = true
+	VM: 514 finished the migration with the time 118.35683203928033 seconds
+		RAM = 512 MB
+		Priority = 3
+		Downtime = 118.35683203928033 seconds
+		QoS = 32400 seconds / violate = false
+		Migration result = true
+	VM: 570 finished the migration with the time 112.82310934896589 seconds
+		RAM = 512 MB
+		Priority = 3
+		Downtime = 112.82310934896589 seconds
+		QoS = 32400 seconds / violate = false
+		Migration result = true
+	VM: 268 finished the migration with the time 80.25666871789687 seconds
+		RAM = 512 MB
+		Priority = 2
+		Downtime = 80.25666871789687 seconds
+		QoS = 2700 seconds / violate = false
+		Migration result = true
+	VM: 118 finished the migration with the time 83.69972299567466 seconds
+		RAM = 512 MB
+		Priority = 1
+		Downtime = 83.69972299567466 seconds
+		QoS = 300 seconds / violate = false
+		Migration result = true
+	VM: 231 finished the migration with the time 69.27557019540144 seconds
+		RAM = 512 MB
+		Priority = 2
+		Downtime = 69.27557019540144 seconds
+		QoS = 2700 seconds / violate = false
+		Migration result = true
+	VM: 562 finished the migration with the time 135.0891549698817 seconds
+		RAM = 512 MB
+		Priority = 3
+		Downtime = 135.0891549698817 seconds
+		QoS = 32400 seconds / violate = false
+		Migration result = true
+	VM: 121 finished the migration with the time 65.8456007154657 seconds
+		RAM = 512 MB
+		Priority = 1
+		Downtime = 65.8456007154657 seconds
+		QoS = 300 seconds / violate = false
+		Migration result = true
+	VM: 298 finished the migration with the time 69.13563528528911 seconds
+		RAM = 512 MB
+		Priority = 2
+		Downtime = 69.13563528528911 seconds
+		QoS = 2700 seconds / violate = false
+		Migration result = true
+	VM: 299 finished the migration with the time 112.15823321494327 seconds
+		RAM = 512 MB
+		Priority = 2
+		Downtime = 112.15823321494327 seconds
+		QoS = 2700 seconds / violate = false
+		Migration result = true
+	VM: 364 finished the migration with the time 72.55355703544986 seconds
+		RAM = 512 MB
+		Priority = 2
+		Downtime = 72.55355703544986 seconds
+		QoS = 2700 seconds / violate = false
+		Migration result = true
+	VM: 166 finished the migration with the time 71.49033456872385 seconds
+		RAM = 512 MB
+		Priority = 1
+		Downtime = 71.49033456872385 seconds
+		QoS = 300 seconds / violate = false
+		Migration result = true
+	VM: 552 finished the migration with the time 68.07580822045304 seconds
+		RAM = 512 MB
+		Priority = 3
+		Downtime = 68.07580822045304 seconds
+		QoS = 32400 seconds / violate = false
+		Migration result = true
+	VM: 500 finished the migration with the time 77.4003453991713 seconds
+		RAM = 512 MB
+		Priority = 3
+		Downtime = 77.4003453991713 seconds
+		QoS = 32400 seconds / violate = false
+		Migration result = true
+	VM: 13 finished the migration with the time 73.71610673529565 seconds
+		RAM = 512 MB
+		Priority = 1
+		Downtime = 73.71610673529565 seconds
+		QoS = 300 seconds / violate = false
+		Migration result = true
+	VM: 371 finished the migration with the time 124.72007293713344 seconds
+		RAM = 512 MB
+		Priority = 2
+		Downtime = 124.72007293713344 seconds
+		QoS = 2700 seconds / violate = false
+		Migration result = true
+	VM: 359 finished the migration with the time 125.989745124732 seconds
+		RAM = 512 MB
+		Priority = 2
+		Downtime = 125.989745124732 seconds
+		QoS = 2700 seconds / violate = false
+		Migration result = true
+	VM: 21 finished the migration with the time 87.53863062400087 seconds
+		RAM = 512 MB
+		Priority = 1
+		Downtime = 87.53863062400087 seconds
+		QoS = 300 seconds / violate = false
+		Migration result = true
+	VM: 113 finished the migration with the time 103.83990920685132 seconds
+		RAM = 512 MB
+		Priority = 1
+		Downtime = 103.83990920685132 seconds
+		QoS = 300 seconds / violate = false
+		Migration result = true
+	VM: 240 finished the migration with the time 122.11341844392246 seconds
+		RAM = 512 MB
+		Priority = 2
+		Downtime = 122.11341844392246 seconds
+		QoS = 2700 seconds / violate = false
+		Migration result = true
+	VM: 149 finished the migration with the time 94.87015547481433 seconds
+		RAM = 512 MB
+		Priority = 1
+		Downtime = 94.87015547481433 seconds
+		QoS = 300 seconds / violate = false
+		Migration result = true
+	VM: 85 finished the migration with the time 90.40485466158685 seconds
+		RAM = 512 MB
+		Priority = 1
+		Downtime = 90.40485466158685 seconds
+		QoS = 300 seconds / violate = false
+		Migration result = true
+	VM: 14 finished the migration with the time 107.1220753242162 seconds
+		RAM = 512 MB
+		Priority = 1
+		Downtime = 107.1220753242162 seconds
+		QoS = 300 seconds / violate = false
+		Migration result = true
+	VM: 474 finished the migration with the time 113.57471490935592 seconds
+		RAM = 512 MB
+		Priority = 3
+		Downtime = 113.57471490935592 seconds
+		QoS = 32400 seconds / violate = false
+		Migration result = true
+	VM: 249 finished the migration with the time 109.44206807171535 seconds
+		RAM = 512 MB
+		Priority = 2
+		Downtime = 109.44206807171535 seconds
+		QoS = 2700 seconds / violate = false
+		Migration result = true
+	VM: 71 finished the migration with the time 90.17290595901324 seconds
+		RAM = 512 MB
+		Priority = 1
+		Downtime = 90.17290595901324 seconds
+		QoS = 300 seconds / violate = false
+		Migration result = true
+	VM: 558 finished the migration with the time 115.50340077387901 seconds
+		RAM = 512 MB
+		Priority = 3
+		Downtime = 115.50340077387901 seconds
+		QoS = 32400 seconds / violate = false
+		Migration result = true
+	VM: 481 finished the migration with the time 75.75674993706005 seconds
+		RAM = 512 MB
+		Priority = 3
+		Downtime = 75.75674993706005 seconds
+		QoS = 32400 seconds / violate = false
+		Migration result = true
+	VM: 120 finished the migration with the time 72.94446112086818 seconds
+		RAM = 512 MB
+		Priority = 1
+		Downtime = 72.94446112086818 seconds
+		QoS = 300 seconds / violate = false
+		Migration result = true
+	VM: 462 finished the migration with the time 77.42907434557816 seconds
+		RAM = 512 MB
+		Priority = 3
+		Downtime = 77.42907434557816 seconds
+		QoS = 32400 seconds / violate = false
+		Migration result = true
+	VM: 395 finished the migration with the time 73.97892368300862 seconds
+		RAM = 512 MB
+		Priority = 2
+		Downtime = 73.97892368300862 seconds
+		QoS = 2700 seconds / violate = false
+		Migration result = true
+	VM: 495 finished the migration with the time 79.04438104905532 seconds
+		RAM = 512 MB
+		Priority = 3
+		Downtime = 79.04438104905532 seconds
+		QoS = 32400 seconds / violate = false
+		Migration result = true
+	VM: 234 finished the migration with the time 103.09821630001082 seconds
+		RAM = 512 MB
+		Priority = 2
+		Downtime = 103.09821630001082 seconds
+		QoS = 2700 seconds / violate = false
+		Migration result = true
+	VM: 70 finished the migration with the time 132.20605522428582 seconds
+		RAM = 512 MB
+		Priority = 1
+		Downtime = 132.20605522428582 seconds
+		QoS = 300 seconds / violate = false
+		Migration result = true
+	VM: 443 finished the migration with the time 67.0824331686267 seconds
+		RAM = 512 MB
+		Priority = 3
+		Downtime = 67.0824331686267 seconds
+		QoS = 32400 seconds / violate = false
+		Migration result = true
+	VM: 476 finished the migration with the time 95.88748546202048 seconds
+		RAM = 512 MB
+		Priority = 3
+		Downtime = 95.88748546202048 seconds
+		QoS = 32400 seconds / violate = false
+		Migration result = true
+	VM: 50 finished the migration with the time 81.85023089391761 seconds
+		RAM = 512 MB
+		Priority = 1
+		Downtime = 81.85023089391761 seconds
+		QoS = 300 seconds / violate = false
+		Migration result = true
+	VM: 557 finished the migration with the time 82.56912619990644 seconds
+		RAM = 512 MB
+		Priority = 3
+		Downtime = 82.56912619990644 seconds
+		QoS = 32400 seconds / violate = false
+		Migration result = true
+	VM: 291 finished the migration with the time 121.11630971204126 seconds
+		RAM = 512 MB
+		Priority = 2
+		Downtime = 121.11630971204126 seconds
+		QoS = 2700 seconds / violate = false
+		Migration result = true
+	VM: 80 finished the migration with the time 163.71222647580828 seconds
+		RAM = 512 MB
+		Priority = 1
+		Downtime = 163.71222647580828 seconds
+		QoS = 300 seconds / violate = false
+		Migration result = true
+	VM: 64 finished the migration with the time 104.10179534653906 seconds
+		RAM = 512 MB
+		Priority = 1
+		Downtime = 104.10179534653906 seconds
+		QoS = 300 seconds / violate = false
+		Migration result = true
+	VM: 100 finished the migration with the time 95.93821401949279 seconds
+		RAM = 512 MB
+		Priority = 1
+		Downtime = 95.93821401949279 seconds
+		QoS = 300 seconds / violate = false
+		Migration result = true
+	VM: 372 finished the migration with the time 161.7969748347098 seconds
+		RAM = 512 MB
+		Priority = 2
+		Downtime = 161.7969748347098 seconds
+		QoS = 2700 seconds / violate = false
+		Migration result = true
+	VM: 30 finished the migration with the time 206.38530803639895 seconds
+		RAM = 512 MB
+		Priority = 1
+		Downtime = 206.38530803639895 seconds
+		QoS = 300 seconds / violate = false
+		Migration result = true
+	VM: 220 finished the migration with the time 105.95242330871943 seconds
+		RAM = 512 MB
+		Priority = 2
+		Downtime = 105.95242330871943 seconds
+		QoS = 2700 seconds / violate = false
+		Migration result = true
+	VM: 38 finished the migration with the time 84.11496946198952 seconds
+		RAM = 512 MB
+		Priority = 1
+		Downtime = 84.11496946198952 seconds
+		QoS = 300 seconds / violate = false
+		Migration result = true
+	VM: 194 finished the migration with the time 84.79011292972835 seconds
+		RAM = 512 MB
+		Priority = 1
+		Downtime = 84.79011292972835 seconds
+		QoS = 300 seconds / violate = false
+		Migration result = true
+	VM: 452 finished the migration with the time 122.7578875241525 seconds
+		RAM = 512 MB
+		Priority = 3
+		Downtime = 122.7578875241525 seconds
+		QoS = 32400 seconds / violate = false
+		Migration result = true
+	VM: 182 finished the migration with the time 86.77617274550997 seconds
+		RAM = 512 MB
+		Priority = 1
+		Downtime = 86.77617274550997 seconds
+		QoS = 300 seconds / violate = false
+		Migration result = true
+	VM: 482 finished the migration with the time 155.7731096373718 seconds
+		RAM = 512 MB
+		Priority = 3
+		Downtime = 155.7731096373718 seconds
+		QoS = 32400 seconds / violate = false
+		Migration result = true
+	VM: 521 finished the migration with the time 91.63184576224845 seconds
+		RAM = 512 MB
+		Priority = 3
+		Downtime = 91.63184576224845 seconds
+		QoS = 32400 seconds / violate = false
+		Migration result = true
+	VM: 46 finished the migration with the time 68.08390284487936 seconds
+		RAM = 512 MB
+		Priority = 1
+		Downtime = 68.08390284487936 seconds
+		QoS = 300 seconds / violate = false
+		Migration result = true
+	VM: 213 finished the migration with the time 107.89416849135998 seconds
+		RAM = 512 MB
+		Priority = 2
+		Downtime = 107.89416849135998 seconds
+		QoS = 2700 seconds / violate = false
+		Migration result = true
+	VM: 489 finished the migration with the time 131.58207346986813 seconds
+		RAM = 512 MB
+		Priority = 3
+		Downtime = 131.58207346986813 seconds
+		QoS = 32400 seconds / violate = false
+		Migration result = true
+	VM: 54 finished the migration with the time 100.36789509017456 seconds
+		RAM = 512 MB
+		Priority = 1
+		Downtime = 100.36789509017456 seconds
+		QoS = 300 seconds / violate = false
+		Migration result = true
+	VM: 566 finished the migration with the time 79.98847432305884 seconds
+		RAM = 512 MB
+		Priority = 3
+		Downtime = 79.98847432305884 seconds
+		QoS = 32400 seconds / violate = false
+		Migration result = true
+	VM: 324 finished the migration with the time 87.25547130842617 seconds
+		RAM = 512 MB
+		Priority = 2
+		Downtime = 87.25547130842617 seconds
+		QoS = 2700 seconds / violate = false
+		Migration result = true
+	VM: 96 finished the migration with the time 168.3758913855816 seconds
+		RAM = 512 MB
+		Priority = 1
+		Downtime = 168.3758913855816 seconds
+		QoS = 300 seconds / violate = false
+		Migration result = true
+	VM: 167 finished the migration with the time 164.1792043933439 seconds
+		RAM = 512 MB
+		Priority = 1
+		Downtime = 164.1792043933439 seconds
+		QoS = 300 seconds / violate = false
+		Migration result = true
+	VM: 429 finished the migration with the time 79.49732165240997 seconds
+		RAM = 512 MB
+		Priority = 3
+		Downtime = 79.49732165240997 seconds
+		QoS = 32400 seconds / violate = false
+		Migration result = true
+
+Overall details ::
+	Total migrated VM = 208 / 600
+	Total migrated priority: 
+		Priority 1 = 69 / 200
+		Priority 2 = 65 / 200
+		Priority 3 = 74 / 200
+	Total violated VM = 0
+	Total migration time = 21561.183825544394 (Avg. = 103.6595376228096) secs
+	Total down time = 21561.183825544394 (Avg. = 103.6595376228096) secs
+
+Environment details ::
+	Bandwidth = 64.0 Mbps
+	Network type = dynamic
+	Page size = 4 KB
+	Time limit = 21600.0 secs
+	Schedule type = fifo
+	Migration type = offline
+	Control type = openloop
+

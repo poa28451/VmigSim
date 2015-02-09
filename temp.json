@@ -1,11 +1,11 @@
 {
 	"environment" : 
 		{
-			"bandwidth" : 64,
+			"bandwidth" : 1024,
 			"timeLimit" : 21600,
-			"scheduleType" : "priority",
+			"scheduleType" : "fifo",
 			"migrationType" : "offline",
-			"controlType" : "closeloop",
+			"controlType" : "openloop",
 			"networkType" : "dynamic",
 			"pageSize" : 4,
 
@@ -16,7 +16,7 @@
 			"minDirtyPage" : 50,
 			"maxNoProgressRound" : 2,
 
-			"networkInterval" : 10,
+			"networkInterval" : 60,
 			"networkSD" : 54.8222
 		},
 

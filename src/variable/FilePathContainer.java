@@ -25,9 +25,9 @@ public class FilePathContainer {
 		FilePathContainer.inputPath = inputPath;
 	}
 	public static void setOutputDirectory(String outputDirectory) {
-		String simOutputDir = addSlashAtEnd(outputDirectory) + generateOutputTimeStamp();
-		prepareOutputDirectory(simOutputDir);
-		FilePathContainer.outputDirectory = addSlashAtEnd(simOutputDir);
+		//String simOutputDir = addSlashAtEnd(outputDirectory) + generateOutputTimeStamp();
+		prepareOutputDirectory(outputDirectory);
+		FilePathContainer.outputDirectory = addSlashAtEnd(outputDirectory);
 	}
 	
 	public static void setExperimentRound(int experimentRound){
@@ -81,6 +81,11 @@ public class FilePathContainer {
 		}
 	}
 	
+	/**
+	 * Create timestamp just in case of wanting to use it
+	 * @return timestamp in the format "2558-02-06_22-56-14"
+	 */
+	@SuppressWarnings("unused")
 	private static String generateOutputTimeStamp(){
 		//Ex. 2558-02-06_22-56-14
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd_HH-mm-ss");
