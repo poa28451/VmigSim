@@ -30,7 +30,7 @@ import variable.Constant;
 import variable.Environment;
 
 
-public class VMigSim {
+public class VmigSim {
 	//private List<Vm> vmlistPri1, vmlistPri2, vmlistPri3;
 	
 	@SuppressWarnings("unused")
@@ -40,33 +40,19 @@ public class VMigSim {
 	
 	private int currentVm = 0;
 
-	public void startExperiment(Parameters param){
+	public void startSimulation(Parameters param){
 		setEnvironment(param);
 		initCloudSim(1, false);
 		initDatacenter();
 		initBroker();
 		initVm();
-		/*switch (Environment.scenarioType) {
-		case ExperimentParameters.SCENE_A:
-			initVmsTypeA();
-			break;
-		case ExperimentParameters.SCENE_B:
-			initVmsTypeB();
-			break;
-		default:
-			initVmsTypeC();
-			break;
-		}*/
 		
 		simulateMigration();
-		printSimulationResult();
 	}
 	
 	public void setEnvironment(Parameters param){
 		double bandwidth = param.getBandwidth();
-		//int vmRam = param.getVmRam();
 		double timeLimit = param.getTimeLimit();
-		//int scenarioType = param.getScenarioType();
 		int scheduleType = param.getScheduleType();
 		int migrationType = param.getMigrationType();
 		int controlType = param.getControlType();
@@ -82,11 +68,8 @@ public class VMigSim {
 		int maxNoProgressRound = param.getMaxNoProgressRound();
 		double networkInterval = param.getNetworkInterval();
 		double networkSD = param.getNetworkSD();
-
-		//Environment.setBandwidth(bandwidth, bandwidth);
-		//Environment.setVmRam(vmRam);		
+	
 		Environment.setMigrationTimeLimit(timeLimit);
-		//Environment.setScenarioType(scenarioType);
 		Environment.setScheduleType(scheduleType);
 		Environment.setMigrationType(migrationType);
 		Environment.setControlType(controlType);
@@ -118,24 +101,7 @@ public class VMigSim {
 		}
 	}
 	
-	/*public void initVmsTypeA(){
-		createVms(ExperimentParameters.PRIORITY_1_AMOUNT, Environment.vmRam, Constant.PRIORITY_1, ExperimentParameters.PRIORITY_1_QOS);
-	}
-	
-	public void initVmsTypeB(){
-		createVms(ExperimentParameters.PRIORITY_1_AMOUNT, Environment.vmRam, Constant.PRIORITY_1, ExperimentParameters.PRIORITY_1_QOS);
-		createVms(ExperimentParameters.PRIORITY_2_AMOUNT, Environment.vmRam, Constant.PRIORITY_2, ExperimentParameters.PRIORITY_2_QOS);
-	}
-	
-	public void initVmsTypeC(){
-		createVms(ExperimentParameters.PRIORITY_1_AMOUNT, Environment.vmRam, Constant.PRIORITY_1, ExperimentParameters.PRIORITY_1_QOS);
-		createVms(ExperimentParameters.PRIORITY_2_AMOUNT, Environment.vmRam, Constant.PRIORITY_2, ExperimentParameters.PRIORITY_2_QOS);
-		createVms(ExperimentParameters.PRIORITY_3_AMOUNT, Environment.vmRam, Constant.PRIORITY_3, ExperimentParameters.PRIORITY_3_QOS);
-	}*/
-	
 	public void createVms(int vmAmount, int ram, int priority, int qos){
-		//Environment.setMinMaxQos(downTime, downTime);
-		//Environment.setQos(qos);
 		List<Vm> vmlist = createVmList(broker.getId(), vmAmount, ram, priority, qos);
 		broker.submitVmList(vmlist);
 	}
@@ -146,7 +112,6 @@ public class VMigSim {
 		CloudSim.terminateSimulation(Environment.migrationTimeLimit);
 	}
 	
-	//private void initDatacenter(int amountHost, int amountPe, int ram, long storage, int bw, int mips){
 	private void initDatacenter(){
 		datacenterSrc = createDatacenter(Constant.SOURCE_DC, "Datacenter_0");
 		datacenterDest = createDatacenter(Constant.DESTINATION_DC, "Datacenter_1");
@@ -158,12 +123,7 @@ public class VMigSim {
 	
 	private void simulateMigration(){
 		CloudSim.startSimulation();
-		//CloudSim.stopSimulation();
 		System.out.println("VmigSim finished!");
-	}
-	
-	private void printSimulationResult(){
-		Environment.migrationResult.printResultsLog();
 	}
 
 	private Datacenter createDatacenter(int dcType, String name){

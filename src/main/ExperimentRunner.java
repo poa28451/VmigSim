@@ -5,7 +5,8 @@ import java.io.FileOutputStream;
 import java.io.PrintStream;
 
 import container.Parameters;
-import parser.JsonDecoder;
+import parser.JsonReader;
+import variable.Environment;
 import variable.FilePathContainer;
 
 public class ExperimentRunner {
@@ -34,14 +35,13 @@ public class ExperimentRunner {
 	private int experimentRounds = 1;
 	public static int currentRound = 1;
 	
-	private JsonDecoder decoder;
+	private JsonReader decoder;
 	
 	public ExperimentRunner(String inputPath, String outputPath, int experimentRounds){
 		FilePathContainer.setInputPath(inputPath);
 		FilePathContainer.setOutputDirectory(outputPath);
-		decoder = new JsonDecoder();
+		decoder = new JsonReader();
 		this.experimentRounds = experimentRounds;
-		//initialMigrationScenario();
 	}
 	
 	public void runExperiment(){
@@ -57,20 +57,12 @@ public class ExperimentRunner {
 	}
 	
 	public void runExperiment(Parameters param) throws FileNotFoundException{
-		/*double bw = param.getBandwidth();
-		int schedType = param.getScheduleType();
-		int migType = param.getMigrationType();
-		int conType = param.getControlType();
-		int netType = param.getNetworkType();
-		PrintStream out;
-		out = createOutputFilename(bw, schedType, migType, conType, netType);*/
-		
-		//PrintStream stream = prepareOutputPath(FilePathContainer.outputDirectory);
 		PrintStream stream = prepareLogPath();
 		System.setOut(stream);
 		
-		VMigSim run = new VMigSim();
-		run.startExperiment(param);
+		VmigSim vmigsim = new VmigSim();
+		vmigsim.startSimulation(param);
+		Environment.migrationResult.printLog();
 		
 		stream.close();
 	}
@@ -99,9 +91,7 @@ public class ExperimentRunner {
 			String inputPath = args[0];
 			String outputPath = args[1];
 			int experimentRound = Integer.valueOf(args[2]);
-			for(int i=0; i<args.length; i++){
-				System.out.println(args[i]);
-			}
+			
 			ExperimentRunner runner = new ExperimentRunner(inputPath, outputPath, experimentRound);
 			runner.runExperiment();
 		}

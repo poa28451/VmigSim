@@ -9,7 +9,7 @@ import container.Parameters;
 import container.VmSpec;
 import variable.Constant;
 
-public class JsonDecoder {
+public class JsonReader {
 	
 	public Parameters readInputFile(String filepath){
 		Parameters param = new Parameters();
@@ -18,7 +18,6 @@ public class JsonDecoder {
 			JSONObject mainObj = new JSONObject(tok);
 			
 			readSections(param, mainObj);
-			
 			return param;
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
@@ -53,8 +52,6 @@ public class JsonDecoder {
 		double networkInterval = environment.getDouble(Constant.getJSONKeyName(Constant.NETWORK_INTERVAL));
 		double networkSD = environment.getDouble(Constant.getJSONKeyName(Constant.NETWORK_SD));
 
-		//param.setVmRam(1000);
-		//param.setScenarioType(2);
 		param.setBandwidth(bandwidth);
 		param.setTimeLimit(timeLimit);
 		param.setScheduleType(Constant.getScheduleKeyCode(scheduleType));

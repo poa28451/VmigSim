@@ -13,7 +13,7 @@ import variable.FilePathContainer;
 
 public class NetworkGenerator {
 	private static double originalBandwidth;
-	private static ArrayList<Double> bwTrace, allList = new ArrayList<>();
+	private static ArrayList<Double> bwTrace;
 	private double stddevPercent;
 
 	public NetworkGenerator(double originalBandwidth){
@@ -41,8 +41,6 @@ public class NetworkGenerator {
 		}
 		//Print the bandwidth output to the file
 		printBwTraceToFile();
-		/*printBwTraceToFile(FilePathContainer.networkPath + "network.txt");
-		printAllBwTraceToFile(FilePathContainer.networkPath + "all.txt");*/
 	}
 	
 	private void generateStaticBandwidth(double intervalAmount){
@@ -60,26 +58,8 @@ public class NetworkGenerator {
 			// Plus 1 for making the number into % (e.g. 120%)
 			double bw = getOriginalBandwidth() - deviation;
 			getBwTrace().add(bw);
-			/*int bw;
-			//do {
-			  double val = (ran.nextGaussian() * 35) + 64;
-			  bw = (int) Math.round(val);
-			//} while ((bw < 0) || (bw > 64));
-			getBwTrace().add((double)bw);*/
 		}
 	}
-	
-	/*private double randomChance(Random ran){
-		double chance = 0;
-		do{
-			chance = ran.nextGaussian();
-			if(chance > 0){
-				chance = chance * -1;
-			}
-		} while (chance < -1);
-		
-		return chance;
-	}*/
 	
 	/**
 	 * Randomize the value of instability by using normal distribution
@@ -94,23 +74,12 @@ public class NetworkGenerator {
 		do{
 			chance = ran.nextGaussian();
 			deviation = chance * ((stddevPercent / 100) * getOriginalBandwidth());
-			allList.add(getOriginalBandwidth() - deviation);
 		//Do the loop until we get the deviation that is less than the bandwidth
 		}while(deviation > getOriginalBandwidth() || deviation < 0);
 		return deviation;
 	}
 	
 	public static double getBandwidthAtTime(double time){
-		/*switch (Environment.networkType) {
-			case Constant.DYNAMIC:
-				//B/W is various by time on dynamic mode
-				//
-				return getBwTrace().get((int)Math.floor(time));
-				
-			default:
-				//B/W is the same in any time on static mode
-				return getOriginalBandwidth();
-		}*/
 		return getBwTrace().get(calculateIntervalNum(time));
 	}
 	
@@ -205,7 +174,6 @@ public class NetworkGenerator {
 			
 			for(int i=0; i<getBwTrace().size(); i++){
 				double bw = getBwTrace().get(i);
-				//writer.println("Time " + (i+0.1) + "-" + (i+1) + ": " + bw);
 				writer.println(bw);
 			}
 			writer.close();
@@ -215,24 +183,6 @@ public class NetworkGenerator {
 			e.printStackTrace();
 		}
 	}
-	
-	/*private void printAllBwTraceToFile(String filePath){
-		PrintWriter writer;
-		try {
-			writer = new PrintWriter(filePath, "UTF-8");
-			
-			for(int i=0; i<allList.size(); i++){
-				double bw = allList.get(i);
-				//writer.println("Time " + (i+0.1) + "-" + (i+1) + ": " + bw);
-				writer.println(bw);
-			}
-			writer.close();
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (UnsupportedEncodingException e) {
-			e.printStackTrace();
-		}
-	}*/
 	
 	public static double getOriginalBandwidth() {
 		return originalBandwidth;

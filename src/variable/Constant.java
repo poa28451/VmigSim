@@ -63,6 +63,9 @@ public class Constant {
 	
 	public static final int SOURCE_DC = BASE + 300, DESTINATION_DC = BASE + 301;
 	
+	/**
+	 * Key name used for reading JSON input file
+	 */
 	private static final HashMap<Integer, String> jsonKeyName;
 	static{
 		jsonKeyName = new HashMap<Integer, String>();
@@ -76,17 +79,14 @@ public class Constant {
 		jsonKeyName.put(Constant.CONTROL_TYPE, "controlType");
 		jsonKeyName.put(Constant.NETWORK_TYPE, "networkType");
 		jsonKeyName.put(Constant.PAGE_SIZE, "pageSize");
-		
 		jsonKeyName.put(Constant.WWS_RATIO, "wwsRatio");
 		jsonKeyName.put(Constant.WWS_DIRTY_RATE, "wwsDirtyRate");
 		jsonKeyName.put(Constant.NORMAL_DIRTY_RATE, "normalDirtyRate");
 		jsonKeyName.put(Constant.MAX_PRECOPY_ROUND, "maxPreCopyRound");
 		jsonKeyName.put(Constant.MIN_DIRTY_PAGE, "minDirtyPage");
 		jsonKeyName.put(Constant.MAX_NO_PROGRESS, "maxNoProgressRound");
-
 		jsonKeyName.put(Constant.NETWORK_INTERVAL, "networkInterval");
 		jsonKeyName.put(Constant.NETWORK_SD, "networkSD");
-			
 		jsonKeyName.put(Constant.VM_AMOUNT, "vmAmount");
 		jsonKeyName.put(Constant.RAM, "ram");
 		jsonKeyName.put(Constant.PRIORITY, "priority");
@@ -125,6 +125,12 @@ public class Constant {
 		return jsonKeyName.get(code);
 	}
 	
+	/**
+	 * Used to get the constant number code of the string key entered
+	 * 	Ex. getScheduleKeyCode("fifo") will return 0
+	 * @param name the name of scheduling like "fifo" or "priority"
+	 * @return the number code of scheduling
+	 */
 	public static int getScheduleKeyCode(String name){
 		int keyCode = -1;
 		for(Integer code : scheduleKeyName.keySet()){

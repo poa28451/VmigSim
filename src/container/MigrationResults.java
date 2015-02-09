@@ -7,6 +7,13 @@ import cloudsim_inherit.VmTest;
 import variable.Constant;
 import variable.Environment;
 
+/**
+ * This class has responsibilities for collecting the migration result of each VM and summarize
+ * 	into usable information. In additional, MigrationResults take responsibility to print results,
+ * 	and logs of VmigSim to the file.
+ * @author tawee_000
+ *
+ */
 public class MigrationResults {
 	private ArrayList<VmTest> allVm;
 	private ArrayList<VmTest> migratedVm;
@@ -30,14 +37,25 @@ public class MigrationResults {
 		countTotalViolated();
 	}
 	
-	public void printResultsLog(){
-		printMigratedVmResultLog();
-		printOverallResultLog();
-		printEnvironmentLog();
-		//System.out.println(NetworkGenerator.getBwTrace().size());
+	/**
+	 * Print the file of the migration result, This file will be used by the Web Application
+	 * 	to create a graph and other works.w
+	 */
+	public void printResult(){
+		
 	}
 	
-	private void printMigratedVmResultLog(){
+	/**
+	 * Print the log file of the migration result. Note that this is differ from CloudSim's log.
+	 * 	This only contain the RESULT of VmigSim
+	 */
+	public void printLog(){
+		printMigratedVmLog();
+		printOverallLog();
+		printEnvironmentLog();
+	}
+	
+	private void printMigratedVmLog(){
 		System.out.println();
 		System.out.println("Migrated VM details ::");
 		for(VmTest vm : getMigratedVm()){
@@ -60,7 +78,7 @@ public class MigrationResults {
 		System.out.println();
 	}
 	
-	private void printOverallResultLog(){
+	private void printOverallLog(){
 		System.out.println("Overall details ::");
 		System.out.println("\tTotal migrated VM = " + getTotalMigratedVm() + " / " + getTotalVm());
 		System.out.println("\tTotal migrated priority: ");
