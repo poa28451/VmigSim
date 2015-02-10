@@ -23,7 +23,7 @@ import container.MigrationResults;
 import variable.Constant;
 import variable.Environment;
 
-public class DatacenterBrokerTest extends DatacenterBroker {
+public class VmigSimBroker extends DatacenterBroker {
 	private HashMap<String, Integer> migrationMap;
 	private final String SOURCE = "src";
 	private final String DESTINATION = "dest";
@@ -34,7 +34,7 @@ public class DatacenterBrokerTest extends DatacenterBroker {
 	private Controller controller;
 	private double nextMigrationDelay = 0;
 	
-	public DatacenterBrokerTest(String name) throws Exception {
+	public VmigSimBroker(String name) throws Exception {
 		super(name);
 		setResults(new ArrayList<VmTest>());
 		setScheduler(new Scheduler());

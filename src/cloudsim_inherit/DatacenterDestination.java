@@ -15,8 +15,8 @@ import org.cloudbus.cloudsim.core.SimEvent;
 import variable.Constant;
 import variable.Environment;
 
-public class DatacenterDstTest extends Datacenter{	
-	public DatacenterDstTest(String name,
+public class DatacenterDestination extends Datacenter{	
+	public DatacenterDestination(String name,
 			DatacenterCharacteristics characteristics,
 			VmAllocationPolicy vmAllocationPolicy, List<Storage> storageList,
 			double schedulingInterval) throws Exception {

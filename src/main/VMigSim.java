@@ -19,9 +19,9 @@ import org.cloudbus.cloudsim.provisioners.PeProvisionerSimple;
 import org.cloudbus.cloudsim.provisioners.RamProvisionerSimple;
 
 import broker_collaborator.NetworkGenerator;
-import cloudsim_inherit.DatacenterBrokerTest;
-import cloudsim_inherit.DatacenterDstTest;
-import cloudsim_inherit.DatacenterSrcTest;
+import cloudsim_inherit.VmigSimBroker;
+import cloudsim_inherit.DatacenterDestination;
+import cloudsim_inherit.DatacenterSource;
 import cloudsim_inherit.VmTest;
 import container.Parameters;
 import container.VmSpec;
@@ -33,7 +33,7 @@ public class VmigSim {
 	@SuppressWarnings("unused")
 	private Datacenter datacenterSrc, datacenterDest;
 	
-	private DatacenterBrokerTest broker;
+	private VmigSimBroker broker;
 	private int currentVm = 0;
 
 	public void startSimulation(Parameters param){
@@ -143,10 +143,10 @@ public class VmigSim {
 		try {
 			switch (dcType) {
 				case Constant.SOURCE_DC:
-					datacenter = new DatacenterSrcTest(name, characteristics, new VmAllocationPolicySimple(hostList), storageList, 0);
+					datacenter = new DatacenterSource(name, characteristics, new VmAllocationPolicySimple(hostList), storageList, 0);
 					break;
 				case Constant.DESTINATION_DC:
-					datacenter = new DatacenterDstTest(name, characteristics, new VmAllocationPolicySimple(hostList), storageList, 0);
+					datacenter = new DatacenterDestination(name, characteristics, new VmAllocationPolicySimple(hostList), storageList, 0);
 					break;
 				default:
 					break;
@@ -213,10 +213,10 @@ public class VmigSim {
 		return peList;
 	}
 
-	private DatacenterBrokerTest createBroker(int id){
-		DatacenterBrokerTest broker = null;
+	private VmigSimBroker createBroker(int id){
+		VmigSimBroker broker = null;
 		try {
-			broker = new DatacenterBrokerTest("Broker"+id);
+			broker = new VmigSimBroker("Broker"+id);
 		} catch (Exception e) {
 			e.printStackTrace();
 			return null;
