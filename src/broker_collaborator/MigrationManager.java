@@ -12,7 +12,6 @@ import message.PreCopyMessage;;
 
 public class MigrationManager {
 	private MigrationMessage migrationData;
-	//private boolean isDoneMigrating;
 	private int preCopyRound, noProgressRound;
 	private int previousDirtyPage;
 	
@@ -43,47 +42,33 @@ public class MigrationManager {
 	protected MigrationMessage migrateByOffline(){
 		VmTest vm = migrationData.getVm();
 		int vmRam = vm.getRam();
-		double vmRamKb = convertMbToKb(vmRam);
-		/*double migrationTime = calculateMigrationTime(vmRamKb);	*/	
+		double vmRamKB = convertMbToKb(vmRam);
 		MigrationMessage msg = new MigrationMessage(vm);
 		
-		/*vm.setMigrationTime(migrationTime);
-		vm.setDownTime(migrationTime);
-		msg.setMigrationTime(migrationTime);*/
-		msg.setDataSizeKB(vmRamKb);
+		msg.setDataSizeKB(vmRamKB);
 		msg.setLastMigrationMsg(true);
-		//setDoneMigrating(true);//One-time migration
 		return msg;
 	}
 	
 	protected MigrationMessage migrateByPreCopy(){
-		//double migrationTime = 0;
 		VmTest vm = migrationData.getVm();
-		//ArrayList<Integer> dirtyPages = null;
 		int dirtyPages = Integer.MIN_VALUE;
 		PreCopyMessage msg = new PreCopyMessage(vm, CloudSim.clock());
 		
 		if(preCopyRound == 0){//first round, send every memory page
 			int vmRam = vm.getRam();
-			double vmRamKb = convertMbToKb(vmRam);
-			/*migrationTime = calculateMigrationTime(vmRamKb);*/
-			msg.setDataSizeKB(vmRamKb);
+			double vmRamKB = convertMbToKb(vmRam);
+			msg.setDataSizeKB(vmRamKB);
+			msg.setDirtyPageAmount(Integer.MIN_VALUE);
 		}
 		else{
 			dirtyPages = findDirtyPage();
 			checkIfNoProgress(dirtyPages);
+			msg.setDataSizeKB(dirtyPages * Environment.pageSizeKB);
+			msg.setDirtyPageAmount(dirtyPages);
 			
-			if(!isPreCopyEnd(dirtyPages)){//If not end yet, send dirty pages normally
-				msg.setDataSizeKB(dirtyPages * Environment.pageSizeKB);
-			}
-			else{//If ended already, send final data
-				//May add time of transferring registers
-				msg.setDataSizeKB(dirtyPages * Environment.pageSizeKB);
+			if(isPreCopyEnd(dirtyPages)){//If ended already, send final data
 				msg.setLastMigrationMsg(true);
-				
-				//Down time = time using in stop-and-copy phase
-				//vm.setDownTime(migrationTime);
-				//migrationData.setDoneMigrating(true);//Set for stopping the sending loop in the broker
 			}
 			
 			setPreviousDirtyPage(dirtyPages);
@@ -91,9 +76,6 @@ public class MigrationManager {
 		
 		generateDirtyPage();
 		setPreCopyRound(preCopyRound + 1);
-		//vm.updateMigrationTime(migrationTime);
-		//msg.setMigrationTime(migrationTime);
-		//msg.setDirtyPage(dirtyPages);
 		return msg;
 	}
 	
@@ -122,30 +104,6 @@ public class MigrationManager {
 		return false;
 	}
 	
-	/*protected double calculateMigrationTime(double sizeKb){
-		double wanBw = (double) Environment.bandwidth / 8; //Make Mbps to MBps
-		double wanBwKb = convertMbToKb(wanBw);
-		double delay = sizeKb / wanBwKb; // scale in seconds
-		return delay;
-	}*/
-	
-	/*protected int findDirtyPage(){
-		VmTest vm = migrationData.getVm();
-		ArrayList<Integer> memoryPage = vm.getMemoryPage();
-		//ArrayList<Integer> dirtyIndices = new ArrayList<Integer>();
-		//int memPageNum = vm.getMemoryPageNum();
-		int dirtyPageNum = 0;
-		
-		for(int i=0; i<memoryPage.size(); i++){
-			Integer page = memoryPage.get(i);
-			if(page.intValue() == Constant.DIRTY_PAGE){
-				//dirtyIndices.add(i);
-				dirtyPageNum++;
-			}
-		}
-		return dirtyPageNum;
-	}*/
-	
 	protected int findDirtyPage(){
 		VmTest vm = migrationData.getVm();
 		return vm.getDirtyPageNum();
@@ -154,7 +112,6 @@ public class MigrationManager {
 	protected void generateDirtyPage(){
 		int diryPage = 0;
 		VmTest vm = migrationData.getVm();
-		//vm.resetMemoryPage();
 		vm.resetDirtyPageNum();
 		Random typeRandom = new Random();
 		Random dirtyRandom = new Random();
@@ -166,7 +123,6 @@ public class MigrationManager {
 			
 
 			if(dirty <= dirtyCriterion){
-				//vm.getMemoryPage().set(i, Constant.DIRTY_PAGE);
 				diryPage++;
 			}
 		}
@@ -195,17 +151,7 @@ public class MigrationManager {
 		setPreCopyRound(0);
 		setNoProgressRound(0);
 		setPreviousDirtyPage(Integer.MAX_VALUE);
-		//setDoneMigrating(false);
 	}
-
-	/*public boolean isDoneMigrating() {
-		return isDoneMigrating;
-	}*/
-
-	/*public void setDoneMigrating(boolean isDoneMigrating) {
-		//this.isDoneMigrating = isDoneMigrating;
-		migrationData.setDoneMigrating(isDoneMigrating);
-	}*/
 
 	protected void setPreCopyRound(int preCopyRound) {
 		this.preCopyRound = preCopyRound;
@@ -218,6 +164,4 @@ public class MigrationManager {
 	protected void setPreviousDirtyPage(int previousDirtyPage) {
 		this.previousDirtyPage = previousDirtyPage;
 	}
-	
-	
 }

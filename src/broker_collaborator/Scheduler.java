@@ -42,6 +42,10 @@ public class Scheduler {
 		}
 	}
 	
+	/**
+	 * Order the VMs being migrated by scheduling policy
+	 * @return
+	 */
 	public ArrayList<MigrationMessage> scheduleMigration(){
 		switch (Environment.scheduleType) {
 			case Constant.FIFO:
@@ -56,13 +60,13 @@ public class Scheduler {
 	}
 
 	protected ArrayList<MigrationMessage> scheduleByFifo(){
-		//HashMap<String, Object> vmData = vmWaitingList.remove(0);
+		//Do nothing with the list.
 		return msgWaitingList;
 	}
 	
 	protected ArrayList<MigrationMessage> scheduleByPriorityBased(){
+		//Sort the list by priority
 		sortWaitingListByPriority();
-		//HashMap<String, Object> vmData = vmWaitingList.remove(0);
 		return msgWaitingList;
 	}
 	
@@ -71,14 +75,12 @@ public class Scheduler {
 	        @Override
 	        public int compare(MigrationMessage msg1, MigrationMessage  msg2)
 	        {
-	        	/*VmTest vm1 = (VmTest) hash1.get("vm");
-	        	VmTest vm2 = (VmTest) hash2.get("vm");
-	        	int firstPri = vm1.getPriority();
-	        	int secondPri = vm2.getPriority();*/
 	        	VmTest vm1 = msg1.getVm();
 	        	VmTest vm2 = msg2.getVm();
 	        	int firstPri = vm1.getPriority();
 	        	int secondPri = vm2.getPriority();
+	        	//If vm1's priority is less than vm2's
+	        	//	vm1 will be migrated before vm2
 	        	return  firstPri - secondPri;
 	        }
 	    });

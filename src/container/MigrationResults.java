@@ -1,11 +1,15 @@
 package container;
 
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 
 import broker_collaborator.NetworkGenerator;
 import cloudsim_inherit.VmTest;
 import variable.Constant;
 import variable.Environment;
+import variable.FilePathContainer;
 
 /**
  * This class has responsibilities for collecting the migration result of each VM and summarize
@@ -41,9 +45,9 @@ public class MigrationResults {
 	 * Print the file of the migration result, This file will be used by the Web Application
 	 * 	to create a graph and other works.w
 	 */
-	public void printResult(){
+	/*public void printResult(){
 		
-	}
+	}*/
 	
 	/**
 	 * Print the log file of the migration result. Note that this is differ from CloudSim's log.
@@ -53,6 +57,25 @@ public class MigrationResults {
 		printMigratedVmLog();
 		printOverallLog();
 		printEnvironmentLog();
+	}
+	
+	public void printNetwork(){
+		String filePath = FilePathContainer.getNetworkFilePath();
+		ArrayList<Double> bwTrace = NetworkGenerator.getBwTrace();
+		PrintWriter writer;
+		try {
+			writer = new PrintWriter(filePath, "UTF-8");
+			
+			for(int i=0; i<bwTrace.size(); i++){
+				double bw = bwTrace.get(i);
+				writer.println(bw);
+			}
+			writer.close();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (UnsupportedEncodingException e) {
+			e.printStackTrace();
+		}
 	}
 	
 	private void printMigratedVmLog(){
@@ -180,7 +203,7 @@ public class MigrationResults {
 	public double getTotalDownTime(){
 		double downTime = 0;
 		for(VmTest vm : getMigratedVm()){
-			downTime += vm.getMigrationTime();
+			downTime += vm.getDownTime();
 		}
 		return downTime;
 	}

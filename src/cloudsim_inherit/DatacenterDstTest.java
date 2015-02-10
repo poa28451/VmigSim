@@ -42,19 +42,6 @@ public class DatacenterDstTest extends Datacenter{
 	 * @param ev The sending event sent from the controller
 	 */
 	public void processSendVmMigrate(SimEvent ev){
-		
-		/*HashMap<String, Object> received = (HashMap<String, Object>)ev.getData();		
-		VmTest migratedVm = (VmTest) received.get("vm");
-		double startClock = (double) received.get("clock");
-		double migrationTime = CloudSim.clock() - startClock;*/
-		
-		//MigrationMessage message = (MigrationMessage) ev.getData();
-		//VmTest migratedVm = message.getVm();
-		//double startClock = migratedVm.getStartClock();
-		//double migrationTime = CloudSim.clock() - startClock;
-		//double migrationTime = migratedVm.getMigrationTime();
-		
-		//if(isDoneSending){
 		if(Environment.migrationType == Constant.OFFLINE){
 			handleOfflineMigration(ev);
 		}
@@ -66,7 +53,6 @@ public class DatacenterDstTest extends Datacenter{
 	protected void handleOfflineMigration(SimEvent ev){
 		MigrationMessage message = (MigrationMessage) ev.getData();
 		VmTest migratedVm = message.getVm();
-		//double migrationTime = migratedVm.getMigrationTime();
 		double downTime = migratedVm.getDownTime();
 		
 		System.out.println();
@@ -83,27 +69,24 @@ public class DatacenterDstTest extends Datacenter{
 	protected void handlePreCopyMigration(SimEvent ev){
 		PreCopyMessage message = (PreCopyMessage) ev.getData();
 		VmTest migratedVm = message.getVm();
-		//double migrationTime = migratedVm.getMigrationTime();
 		double downTime = migratedVm.getDownTime();
 		System.out.println();
 		
 		if(!message.isLastMigrationMsg()){
 			System.out.println(CloudSim.clock() + " DC id: " + ev.getDestination() + ": Recieved VM pages from controller");
 			System.out.println("\tVM id: " + migratedVm.getId());
-			if(message.getDirtyPage() == Integer.MIN_VALUE){
+			if(message.getDirtyPageAmount() == Integer.MIN_VALUE){
 				//This means it's a first round of pre-copy
 				System.out.println("\tReceived all memory page of VM: " + migratedVm.getMemoryPageNum() + " pages");
 			}
 			else{
-				//System.out.println("\tDirty page amount: " + message.getMigratedPageIndices().size());
-				System.out.println("\tDirty page amount: " + message.getDirtyPage());
+				System.out.println("\tDirty page amount: " + message.getDirtyPageAmount());
 			}
 		}
 		else{
 			System.out.println(CloudSim.clock() + " DC id: " + ev.getDestination() + ": Recieved dirty pages and VM state from controller");
 			System.out.println("\tVM id: " + migratedVm.getId());
-			//System.out.println("\tDirty page amount: " + message.getMigratedPageIndices().size());
-			System.out.println("\tDirty page amount: " + message.getDirtyPage());
+			System.out.println("\tDirty page amount: " + message.getDirtyPageAmount());
 			System.out.println("\tVM id: " + migratedVm.getId() + " has done the migration.");
 			
 			boolean result = allocateResourceForVm(migratedVm);
@@ -127,18 +110,10 @@ public class DatacenterDstTest extends Datacenter{
 					.getAllocatedMipsForVm(migratedVm));
 			
 			System.out.println("VM id: " + migratedVm.getId() + " allocated into Host id " + migratedVm.getHost().getId());
-			//System.out.println("Migration time: " + migrationTime);
 		}
 		else{
 			System.out.println("VM id: " + migratedVm.getId() + " failed to allocated");
 		}
-		/*System.out.println("Current VM number: " + getVmList().size());	
-		for(Host host : getHostList()){//Just check the hosts if there are vms migrated from another dc
-			System.out.println("Host " + host.getId() + " vm left: " + host.getVmList().size());
-			for(Vm vm : host.getVmList()){
-				System.out.println("\t vm" + vm.getId());
-			}
-		}*/
 		
 		return result;
 	}

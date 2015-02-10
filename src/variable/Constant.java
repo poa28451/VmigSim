@@ -6,7 +6,9 @@ import java.util.HashMap;
 public class Constant {
 	public static final int KILO_BYTE = 1024;
 	public static final double START_INTERVAL = 0.1;
+	
 	//The precision of decimal used in calculating the network interval
+	// Ex. 10 means the number will be 10-digit decimal number
 	public static final int DECIMAL_SCALE = 10;
 	
 	/**

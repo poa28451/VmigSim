@@ -2,28 +2,32 @@ package container;
 
 import java.util.ArrayList;
 
+/**
+ * The class used by ExperimentRunner for passing arguments of simulation to VmigSim.
+ * 	The values contained in this class will be set into Environment class by VmigSim
+ * @author tawee_000
+ *
+ */
 public class Parameters {
-	private double bandwidth;
-	private double timeLimit;
-	private int scheduleType;
-	private int migrationType;
-	private int controlType;
-	private int networkType;
-	private int pageSizeKB;
+	private double bandwidth;//Mbps unit
+	private double timeLimit;//Second unit
+	private int scheduleType;//Constant value
+	private int migrationType;//Constant value
+	private int controlType;//Constant value
+	private int networkType;//Constant value
+	private int pageSizeKB;//KB unit
 	
-	private double wwsPageRatio, wwsDirtyRate;
-	private double normalDirtyRate;
+	private double wwsPageRatio, wwsDirtyRate;//Percent unit
+	private double normalDirtyRate;//Percent unit
 	private int maxPreCopyRound;
 	private int minDirtyPage;
 	private int maxNoProgressRound;
-	private double networkInterval;
-	private double networkSD;
+	private double networkInterval;//Second unit
+	private double networkSD;//Percent unit
 	
 	private ArrayList<VmSpec> vmSpecList;
 	
 	public Parameters(){
-		//setScenarioType(0);
-		//setVmRam(0);
 		setBandwidth(0);
 		setNetworkType(0);
 		setTimeLimit(0);
@@ -43,14 +47,6 @@ public class Parameters {
 		setNetworkSD(0);
 	}
 	
-	/*public int getVmRam() {
-		return vmRam;
-	}
-	
-	public void setVmRam(int vmRam) {
-		this.vmRam = vmRam;
-	}*/
-	
 	public double getBandwidth() {
 		return bandwidth;
 	}
@@ -66,14 +62,6 @@ public class Parameters {
 	public void setTimeLimit(double timeLimit) {
 		this.timeLimit = timeLimit;
 	}
-	
-	/*public int getScenarioType() {
-		return scenarioType;
-	}
-	
-	public void setScenarioType(int scenarioType) {
-		this.scenarioType = scenarioType;
-	}*/
 	
 	public int getScheduleType() {
 		return scheduleType;

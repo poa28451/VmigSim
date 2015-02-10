@@ -9,7 +9,6 @@ import variable.Environment;
 public class VmTest extends Vm{
 	private int priority;
 	private int qos;
-	//private ArrayList<Integer> memoryPage;
 	private int memoryPageNum, dirtyPageNum;
 	private double startClock;
 	private double stopClock;
@@ -24,7 +23,6 @@ public class VmTest extends Vm{
 		super(id, userId, mips, numberOfPes, ram, bw, size, vmm, cloudletScheduler);		
 		setQos(qos);
 		setPriority(priority);
-		//setMemoryPage(new ArrayList<Integer>());
 		setMemoryPageNum(ram);
 		setStartClock(0);
 		setStopClock(0);
@@ -49,27 +47,6 @@ public class VmTest extends Vm{
 	public void setPriority(int priority) {
 		this.priority = priority;
 	}
-
-	/*public ArrayList<Integer> getMemoryPage() {
-		return memoryPage;
-	}*/
-
-	/*public void setMemoryPage(ArrayList<Integer> memoryPage) {
-		//Make the RAM into KB scale
-		int ramInKb = getRam()*Constant.KILO_BYTE;
-		
-		//Create a list of memory pages VM have, each page size is 4KB
-		for(int i=0; i<ramInKb/Constant.PAGESIZE_KB; i++){
-			memoryPage.add(Constant.CLEAN_PAGE);
-		}
-		this.memoryPage = memoryPage;
-	}*/
-
-	/*public void resetMemoryPage(){
-		for(int i=0; i<memoryPage.size(); i++){
-			memoryPage.set(i, Constant.CLEAN_PAGE);
-		}
-	}*/
 
 	public int getMemoryPageNum() {
 		return memoryPageNum;

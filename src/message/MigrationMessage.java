@@ -6,10 +6,6 @@ public class MigrationMessage {
 	private VmTest vm;
 	private double sendClock;
 	private double receiveClock;
-	/*private double migrationTime;
-	private double downTime;
-	private boolean isViolated;
-	private boolean isMigrated;*/
 	private double migrationTime;
 	private double dataSizeKB;
 	private boolean isLastMigrationMsg;
@@ -19,9 +15,6 @@ public class MigrationMessage {
 		setSendClock(startClock);
 		setReceiveClock(0);
 		setMigrationTime(0);
-		/*setMigrationTime(0);
-		setMigrated(false);
-		setViolated(false);*/
 		setLastMigrationMsg(false);
 		setDataSizeKB(0);
 	}
@@ -31,9 +24,6 @@ public class MigrationMessage {
 		setSendClock(0);
 		setReceiveClock(0);
 		setMigrationTime(0);
-		/*setMigrationTime(0);
-		setMigrated(false);
-		setViolated(false);*/
 		setLastMigrationMsg(false);
 		setDataSizeKB(0);
 	}
@@ -70,22 +60,6 @@ public class MigrationMessage {
 		this.migrationTime = migrationTime;
 	}
 
-	/*public boolean isViolated() {
-		return isViolated;
-	}
-
-	public void setViolated(boolean isViolated) {
-		this.isViolated = isViolated;
-	}
-
-	public boolean isMigrated() {
-		return isMigrated;
-	}
-
-	public void setMigrated(boolean migrationResult) {
-		this.isMigrated = migrationResult;
-	}*/
-
 	public boolean isLastMigrationMsg() {
 		return isLastMigrationMsg;
 	}
@@ -101,27 +75,4 @@ public class MigrationMessage {
 	public void setDataSizeKB(double dataSize) {
 		this.dataSizeKB = dataSize;
 	}
-	
-
-	/*public void setMigrationTime(double migrationTime) {
-		this.migrationTime = migrationTime;
-	}
-	
-	public void updateMigrationTime(double additionTime){
-		this.migrationTime += additionTime;
-	}
-	
-	public double getMigrationTime() {
-		return migrationTime;
-	}
-
-	public double getDownTime() {
-		return downTime;
-	}
-
-	public void setDownTime(double downTime) {
-		this.downTime = downTime;
-	}*/
-	
-	
 }

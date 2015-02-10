@@ -16,7 +16,6 @@ public class Controller {
 		
 		switch (Environment.controlType) {
 			case Constant.OPEN_LOOP:
-				//migrationTime = calculateByOpenLoop(msg, nextMigrationDelay);
 				migrationTime = calculateByOpenLoop(dataKb, currentMigrationClock);
 				break;
 			
@@ -26,7 +25,6 @@ public class Controller {
 				
 			default:
 				migrationTime = calculateByOpenLoop(dataKb, currentMigrationClock);
-				//migrationTime = calculateByOpenLoop(msg, nextMigrationDelay);
 				break;
 		}
 		updateMigrationTime(msg, migrationTime);
@@ -79,60 +77,10 @@ public class Controller {
 		return totalUsedTime;
 	}
 	
-	/*private double calculateByOpenLoop(MigrationMessage msg, double nextMigrationDelay){
-		double migrationTime = 0;
-		double dataKb = msg.getDataSizeKb();
-		double currentMigrationClock = nextMigrationDelay + CloudSim.clock();
-		
-		switch (Environment.networkType) {
-			case Constant.STATIC:
-				//migrationTime = openLoopWithStatic(dataKb);
-				migrationTime = openLoopWithDynamic(dataKb, currentMigrationClock);
-				break;
-			
-			case Constant.DYNAMIC:
-				migrationTime = openLoopWithDynamic(dataKb, currentMigrationClock);
-				break;
-				
-			default:
-				migrationTime = openLoopWithStatic(dataKb);
-				break;
-		}
-		return migrationTime;
-	}
-	
-	private double openLoopWithStatic(double dataKB) {
-		double wanBw = NetworkGenerator.getOriginalBandwidth() / 8; //Make Mbps to MBps
-		double wanBwKB = convertMbToKb(wanBw);
-		double delay = dataKB / wanBwKB; // scale in seconds
-		return delay;
-	}*/
-	
 	private double calculateByCloseLoop(){
 		//Under studying
 		double migrationTime = 0;
-		switch (Environment.networkType) {
-			case Constant.STATIC:
-				migrationTime = closeLoopWithStatic();
-				break;
-			
-			case Constant.DYNAMIC:
-				migrationTime = closeLoopWithDynamic();
-				break;
-				
-			default:
-				migrationTime = closeLoopWithStatic();
-				break;
-		}
 		return migrationTime;
-	}
-	
-	private double closeLoopWithStatic(){
-		return 0;
-	}
-	
-	private double closeLoopWithDynamic(){
-		return 0;
 	}
 	
 	private boolean isDoneWithinInterval(double totalSize, double sentSize, double bw, double intervalFraction){
@@ -154,8 +102,4 @@ public class Controller {
 			vm.setDownTime(transferTime);
 		}
 	}
-	
-	/*private double convertMbToKb(double num){
-		return num * Constant.KILO_BYTE;
-	}*/
 }

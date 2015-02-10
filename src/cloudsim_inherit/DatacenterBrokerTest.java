@@ -24,23 +24,19 @@ import variable.Constant;
 import variable.Environment;
 
 public class DatacenterBrokerTest extends DatacenterBroker {
-	//private ArrayList<HashMap<String, Object>> vmMigrationWaitingList;
-	//private ArrayList<VmTest> vmMigrationSentList;
-	private ArrayList<VmTest> results;//, violated;
-	private Scheduler scheduler;
-	private MigrationManager migManager;
-	private Controller controller;
 	private HashMap<String, Integer> migrationMap;
 	private final String SOURCE = "src";
 	private final String DESTINATION = "dest";
+
+	private ArrayList<VmTest> results;
+	private Scheduler scheduler;
+	private MigrationManager migManager;
+	private Controller controller;
 	private double nextMigrationDelay = 0;
 	
 	public DatacenterBrokerTest(String name) throws Exception {
 		super(name);
-		//setVmMigrationWaitingList(new ArrayList<HashMap<String, Object>>());
-		//setVmMigrationSentList(new ArrayList<VmTest>());
 		setResults(new ArrayList<VmTest>());
-		//setViolated(new ArrayList<VmTest>());
 		setScheduler(new Scheduler());
 		setMigManager(new MigrationManager());
 		setController(new Controller());
@@ -66,19 +62,12 @@ public class DatacenterBrokerTest extends DatacenterBroker {
 	 * algorithm of the controller
 	 * @param ev The event sent from the source DC
 	 */
-	protected void processQueueVmMigrate(SimEvent ev){
-		/*HashMap<String, Object> hash = (HashMap<String, Object>)ev.getData();		
-		Vm migratedVm = (Vm) hash.get("vm");
-		double startClock = (double) hash.get("clock");*/
-		
+	protected void processQueueVmMigrate(SimEvent ev){		
 		MigrationMessage message = (MigrationMessage) ev.getData();
 		VmTest migratedVm = message.getVm();
 		double startClock = message.getSendClock();
 		message.setReceiveClock(CloudSim.clock());
 
-		
-		//vmMigrationWaitingList.add(hash);
-		//scheduler.addVmToWaitingList(hash);
 		scheduler.addMsgToWaitingList(message);
 		
 		System.out.println();
@@ -100,15 +89,6 @@ public class DatacenterBrokerTest extends DatacenterBroker {
 	
 	protected void sendVmMigration(MigrationMessage data){
 		Datacenter destination = (Datacenter) CloudSim.getEntity(migrationMap.get(DESTINATION));
-		//Vm vm = (Vm) data.get("vm");
-		/*VmTest vm = data.getVm();
-		int vmRam = vm.getRam();
-		double wanBw = (double) Environment.bandwidth / 8; //Make Mbps to MBps
-		double delay = vmRam / wanBw; // scale in seconds
-*/		
-		//Check if the total migration time has exceeded the time limit
-		//if(checkIfExceedTimeLimit(totalMigrationTime, delay)){
-		//vmMigrationSentList.add(data.getVm());
 		migManager.setMigrationData(data);
 		MigrationMessage msg;
 		do{
@@ -126,16 +106,9 @@ public class DatacenterBrokerTest extends DatacenterBroker {
 					nextMigrationDelay, 
 					Constant.SEND_VM_MIGRATE, 
 					msg);
-					//vm);
 			
 		} while(!msg.isLastMigrationMsg());
-			
-		//}
 	}
-	
-	/*protected boolean checkIfExceedTimeLimit(double currentMigrationTime, double vmMigrationTime){
-		return currentMigrationTime + vmMigrationTime <= Environment.migrationTimeLimit;
-	}*/
 	
 	/**
 	 * Use for collecting the VMs' migration result sent from the destination
@@ -155,66 +128,6 @@ public class DatacenterBrokerTest extends DatacenterBroker {
 	public void saveMigrationResult(){
 		MigrationResults summary = new MigrationResults(scheduler.getVmWaitingList(), results);
 		Environment.setMigrationResult(summary);
-		/*double totalMigTime = 0, totalDownTime = 0;
-		int totalPri1 = 0, totalPri2 = 0, totalPri3 = 0;
-		
-		System.out.println();
-		for(VmTest migratedVm : results){
-			double migrationTime = migratedVm.getMigrationTime();
-			int ram = migratedVm.getRam();
-			boolean violate = migratedVm.isViolated();
-			boolean result = migratedVm.isMigrated();
-			int priority = migratedVm.getPriority();
-			
-			System.out.println("VM: " + migratedVm.getId() + " finished the migration with the time " + migrationTime + " seconds");
-			System.out.println("\tRAM = " + ram + " MB");
-			System.out.println("\tPriority = " + priority);
-			System.out.println("\tDowntime = " + migratedVm.getDownTime() + " seconds");
-			System.out.println("\tQoS = " +  migratedVm.getQos() + " seconds / violate = " + violate);
-			System.out.println("\tMigration result = " + result);
-			
-			if(violate == true){
-				violated.add(migratedVm);
-			}
-			if(priority == Constant.PRIORITY_1){
-				totalPri1++;
-			}
-			else if(priority == Constant.PRIORITY_2){
-				totalPri2++;
-			}
-			else{
-				totalPri3++;
-			}
-			totalMigTime += migrationTime;
-			totalDownTime += migratedVm.getDownTime();
-		}
-		System.out.println();
-		System.out.println("Bandwidth = " + NetworkGenerator.getOriginalBandwidth() + " Mbps");
-		System.out.println("Page size = " + Environment.pageSizeKB + " KB");
-		System.out.println("Total migrated VM = " + results.size() + " / " + scheduler.getMsgWaitingList().size());
-		System.out.println("Total migrated priority: ");
-		System.out.println("\tPriority 1 = " + totalPri1 + " / " + scheduler.getTotalPriority1());
-		System.out.println("\tPriority 2 = " + totalPri2 + " / " + scheduler.getTotalPriority2());
-		System.out.println("\tPriority 3 = " + totalPri3 + " / " + scheduler.getTotalPriority3());
-		System.out.println("Total violated VM = " + violated.size());
-		System.out.println("Total migration time = " + totalMigTime + 
-				" (Avg. = " + totalMigTime/results.size() + ") secs");
-		System.out.println("Total down time = " + totalDownTime +
-				" (Avg. = " + totalDownTime/results.size() + ") secs");
-		System.out.println("Time limit = " + Environment.migrationTimeLimit + " secs");
-		System.out.println("Schedule type = " + Constant.scheduleKeyName.get(Environment.scheduleType));
-		System.out.println("Migration type = " + Constant.migrationKeyName.get(Environment.migrationType));
-		if(Environment.migrationType == Constant.PRECOPY){
-			System.out.println("\tNormal dirty rate = " + Environment.normalDirtyRate);
-			System.out.println("\tWWS dirty rate = " + Environment.wwsDirtyRate);
-			System.out.println("\tWWS page ratio = " + Environment.wwsPageRatio);
-			System.out.println("\tMax pre-copy iteration = " + Environment.maxPreCopyRound);
-			System.out.println("\tMin dirty page = " + Environment.minDirtyPage);
-			System.out.println("\tMax no-progress round = " + Environment.maxNoProgressRound);
-		}
-		System.out.println("Control type = " + Constant.controlKeyName.get(Environment.controlType));
-		System.out.println("Network type = " + Constant.networkKeyName.get(Environment.networkType));
-		System.out.println();*/
 	}
 
 	@Override
@@ -229,6 +142,9 @@ public class DatacenterBrokerTest extends DatacenterBroker {
 		Collections.shuffle(getVmList());
 	}
 
+	/**
+	 * Override to insert the starting-custom migration code.
+	 */
 	@Override
 	protected void processVmCreate(SimEvent ev) {
 		int[] data = (int[]) ev.getData();
@@ -250,9 +166,10 @@ public class DatacenterBrokerTest extends DatacenterBroker {
 
 		// all the requested VMs have been created
 		if (getVmsCreatedList().size() == getVmList().size() - getVmsDestroyed()) {
+			/**
+			 * Start the migration simulation here.
+			 */
 			sendStartMigrationSignal();
-			
-			submitCloudlets();
 		} else {
 			// all the acks received, but some VMs were not created
 			if (getVmsRequested() == getVmsAcks()) {
@@ -277,15 +194,6 @@ public class DatacenterBrokerTest extends DatacenterBroker {
 		}
 	}
 
-	/*public void setVmMigrationWaitingList(ArrayList<HashMap<String, Object>> vmMigrationList) {
-		this.vmMigrationWaitingList = vmMigrationList;
-	}*/
-
-
-	/*public void setVmMigrationSentList(ArrayList<VmTest> vmMigrationSentList) {
-		this.vmMigrationSentList = vmMigrationSentList;
-	}*/
-
 	public void setMigrationMap(HashMap<String, Integer> migrationMap) {
 		migrationMap.put(SOURCE, getDatacenterIdsList().get(0));
 		migrationMap.put(DESTINATION, getDatacenterIdsList().get(1));
@@ -295,10 +203,6 @@ public class DatacenterBrokerTest extends DatacenterBroker {
 	public void setResults(ArrayList<VmTest> results) {
 		this.results = results;
 	}
-
-	/*public void setViolated(ArrayList<VmTest> violated) {
-		this.violated = violated;
-	}*/
 
 	public void setScheduler(Scheduler scheduler) {
 		this.scheduler = scheduler;
@@ -311,6 +215,4 @@ public class DatacenterBrokerTest extends DatacenterBroker {
 	protected void setController(Controller controller) {
 		this.controller = controller;
 	}
-	
-	
 }

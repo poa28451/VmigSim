@@ -1,5 +1,11 @@
 package container;
 
+/**
+ * This class will be contained in Parameters class for passing the arguments to the simulator.
+ * This describe the VM specification entered by the user from the UI.
+ * @author tawee_000
+ *
+ */
 public class VmSpec {
 	private int vmAmount;
 	private int ram;

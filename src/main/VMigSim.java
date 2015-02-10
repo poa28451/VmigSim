@@ -6,12 +6,12 @@ import java.util.List;
 
 import org.cloudbus.cloudsim.CloudletSchedulerTimeShared;
 import org.cloudbus.cloudsim.Datacenter;
-import org.cloudbus.cloudsim.DatacenterBroker;
 import org.cloudbus.cloudsim.DatacenterCharacteristics;
 import org.cloudbus.cloudsim.Host;
 import org.cloudbus.cloudsim.Pe;
 import org.cloudbus.cloudsim.Storage;
 import org.cloudbus.cloudsim.Vm;
+import org.cloudbus.cloudsim.VmAllocationPolicySimple;
 import org.cloudbus.cloudsim.VmSchedulerSpaceShared;
 import org.cloudbus.cloudsim.core.CloudSim;
 import org.cloudbus.cloudsim.provisioners.BwProvisionerSimple;
@@ -22,7 +22,6 @@ import broker_collaborator.NetworkGenerator;
 import cloudsim_inherit.DatacenterBrokerTest;
 import cloudsim_inherit.DatacenterDstTest;
 import cloudsim_inherit.DatacenterSrcTest;
-import cloudsim_inherit.VmAllocationPolicyTest;
 import cloudsim_inherit.VmTest;
 import container.Parameters;
 import container.VmSpec;
@@ -31,13 +30,10 @@ import variable.Environment;
 
 
 public class VmigSim {
-	//private List<Vm> vmlistPri1, vmlistPri2, vmlistPri3;
-	
 	@SuppressWarnings("unused")
 	private Datacenter datacenterSrc, datacenterDest;
 	
-	private DatacenterBroker broker;
-	
+	private DatacenterBrokerTest broker;
 	private int currentVm = 0;
 
 	public void startSimulation(Parameters param){
@@ -132,7 +128,7 @@ public class VmigSim {
 
 		String arch = "x86";      // system architecture
 		String os = "Linux";          // operating system
-		String vmm = "Xen";
+		String vmm = "Xen";				//VM manager
 		double time_zone = 10.0;         // time zone this resource located
 		double cost = 3.0;              // the cost of using processing in this resource
 		double costPerMem = 0.05;		// the cost of using memory in this resource
@@ -147,10 +143,10 @@ public class VmigSim {
 		try {
 			switch (dcType) {
 				case Constant.SOURCE_DC:
-					datacenter = new DatacenterSrcTest(name, characteristics, new VmAllocationPolicyTest(hostList), storageList, 0);
+					datacenter = new DatacenterSrcTest(name, characteristics, new VmAllocationPolicySimple(hostList), storageList, 0);
 					break;
 				case Constant.DESTINATION_DC:
-					datacenter = new DatacenterDstTest(name, characteristics, new VmAllocationPolicyTest(hostList), storageList, 0);
+					datacenter = new DatacenterDstTest(name, characteristics, new VmAllocationPolicySimple(hostList), storageList, 0);
 					break;
 				default:
 					break;
@@ -217,10 +213,8 @@ public class VmigSim {
 		return peList;
 	}
 
-	//We strongly encourage users to develop their own broker policies, to submit vms and cloudlets according
-	//to the specific rules of the simulated scenario
-	private DatacenterBroker createBroker(int id){
-		DatacenterBroker broker = null;
+	private DatacenterBrokerTest createBroker(int id){
+		DatacenterBrokerTest broker = null;
 		try {
 			broker = new DatacenterBrokerTest("Broker"+id);
 		} catch (Exception e) {
@@ -233,81 +227,16 @@ public class VmigSim {
 	private List<Vm> createVmList(int userId, int vmAmount, int ram, int priority, int qos) {
 		LinkedList<Vm> list = new LinkedList<Vm>();
 		long size = 10000;// Image size in MB
-		//int ram = Environment.vmRam;// RAM size in MB
 		int mips = 250;
 		long bw = 1000;// bw of VM in Mbps
 		int pesNumber = 1;
 		String vmm = "Xen";
-		//int qos = 0;
 
 		Vm[] vm = new Vm[vmAmount];
 		for(int i=0;i<vmAmount;i++, currentVm++){
-			//qos = Environment.generateQos();
-			//qos = Environment.qos;
 			vm[i] = new VmTest(currentVm, userId, mips, pesNumber, ram, bw, size, qos, priority, vmm, new CloudletSchedulerTimeShared());
 			list.add(vm[i]);
 		}
 		return list;
 	}
-	
-	/**
-	 * Generate a random value of QoS for VMs, scale in seconds
-	 * @return
-	 */
-	/*private int generateQos(){
-		Random r = new Random();
-		int min = 10;
-		int max = 30;
-		//double result = min + (r.nextDouble() * (max - min));
-		int result = min + (r.nextInt(max - min + 1));
-		return result;
-	}*/
-	
-/*	private static List<Cloudlet> createCloudlet(int userId, int cloudletNum, int idStart){
-		LinkedList<Cloudlet> list = new LinkedList<Cloudlet>();
-		long length = 400000000;
-		long fileSize = 300;
-		long outputSize = 300;
-		int pesNumber = 1;
-		UtilizationModel utilizationModel = new UtilizationModelFull();
-
-		Cloudlet[] cloudlet = new Cloudlet[cloudletNum];
-		for(int i=0;i<cloudletNum;i++){
-			cloudlet[i] = new Cloudlet(idStart + i, length, pesNumber, fileSize, outputSize, utilizationModel, utilizationModel, utilizationModel);
-			cloudlet[i].setUserId(userId);
-			list.add(cloudlet[i]);
-		}
-		return list;
-	}*/
-	
-	/**
-	 * Prints the Cloudlet objects
-	 * @param list  list of Cloudlets
-	 */
-	/*private static void printCloudletList(List<Cloudlet> list) {
-		int size = list.size();
-		Cloudlet cloudlet;
-
-		String indent = "    ";
-		Log.printLine();
-		Log.printLine("========== OUTPUT ==========");
-		Log.printLine("Cloudlet ID" + indent + "STATUS" + indent +
-				"Data center ID" + indent + "VM ID" + indent + "Time" + indent + "Start Time" + indent + "Finish Time");
-
-		DecimalFormat dft = new DecimalFormat("###.##");
-		for (int i = 0; i < size; i++) {
-			cloudlet = list.get(i);
-			Log.print(indent + cloudlet.getCloudletId() + indent + indent);
-			if (cloudlet.getCloudletStatus() == Cloudlet.SUCCESS){
-				Log.print("SUCCESS");
-				Log.printLine( indent + indent + cloudlet.getResourceId() + indent + indent + indent + cloudlet.getVmId() +
-						indent + indent + dft.format(cloudlet.getActualCPUTime()) + indent + indent + dft.format(cloudlet.getExecStartTime())+
-						indent + indent + dft.format(cloudlet.getFinishTime()) + 
-						indent + indent + dft.format(cloudlet.getWallClockTime()) +
-						indent + indent + dft.format(cloudlet.getSubmissionTime()) + 
-						indent + indent + CloudSim.getEntityName(cloudlet.getResourceId()));
-			}
-		}
-
-	}*/
 }
