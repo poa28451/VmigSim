@@ -4,7 +4,7 @@
 			"bandwidth" : 1024,
 			"timeLimit" : 21600,
 			"scheduleType" : "fifo",
-			"migrationType" : "precopy",
+			"migrationType" : "offline",
 			"controlType" : "openloop",
 			"networkType" : "dynamic",
 			"pageSize" : 4,
