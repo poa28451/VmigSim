@@ -1,12 +1,12 @@
 {
 	"environment" : 
 		{
-			"bandwidth" : 64,
+			"bandwidth" : 1024,
 			"timeLimit" : 21600,
 			"scheduleType" : "fifo",
-			"migrationType" : "offline",
+			"migrationType" : "precopy",
 			"controlType" : "openloop",
-			"networkType" : "static",
+			"networkType" : "dynamic",
 			"pageSize" : 4,
 
 			"wwsRatio" : 1,

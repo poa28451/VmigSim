@@ -13,13 +13,15 @@ import variable.FilePathContainer;
 
 public class NetworkGenerator {
 	private static double originalBandwidth;
+	private static double networkInterval;
 	private static ArrayList<Double> bwTrace;
-	private double stddevPercent;
+	private static double stddevPercent;
 
-	public NetworkGenerator(double originalBandwidth){
+	public NetworkGenerator(double originalBandwidth, double networkInterval, double networkSD){
 		setOriginalBandwidth(originalBandwidth);
 		setBwTrace(new ArrayList<Double>());
-		setStddevPercent(Environment.networkSD);
+		setStddevPercent(networkSD);
+		setNetworkInterval(networkInterval);
 		generateBandwidth();
 	}
 	
@@ -88,7 +90,7 @@ public class NetworkGenerator {
 	 */
 	private static int calculateIntervalNum(double clock){		
 		double num = 0;
-		double interval = Environment.networkInterval;
+		double interval = networkInterval;
 		
 		//Use BigDecimal for the precisely calculation
 		//startFraction indicates the fraction that is the interval joint
@@ -128,7 +130,7 @@ public class NetworkGenerator {
 		double nextIntervalClock = 0;
 		double intervalFraction = 0;
 		double timeLimit = Environment.migrationTimeLimit;
-		double interval = Environment.networkInterval;
+		double interval = networkInterval;
 		//If the entire interval has still not reached the time limit yet,
 		//	find the fraction normally (time left until reaches the next interval)
 		//	stop of the current interval = start of the next interval
@@ -158,7 +160,7 @@ public class NetworkGenerator {
 	}
 	
 	private double getIntervalAmount(){
-		double amount = Environment.migrationTimeLimit / Environment.networkInterval;
+		double amount = Environment.migrationTimeLimit / networkInterval;
 		//If there is decimal of interval, always add 1 additional interval to the list
 		//Ex. if intervalNum is 15.5, the total interval is 16.
 		return Math.ceil(amount);
@@ -203,9 +205,19 @@ public class NetworkGenerator {
 		return bwTrace;
 	}
 
-	public void setStddevPercent(double stddevPercent) {
-		this.stddevPercent = stddevPercent;
+	public static double getStddevPercent() {
+		return stddevPercent;
 	}
-	
-	
+
+	private void setStddevPercent(double stddevPercent) {
+		NetworkGenerator.stddevPercent = stddevPercent;
+	}
+
+	public static double getNetworkInterval() {
+		return networkInterval;
+	}
+
+	private void setNetworkInterval(double networkInterval) {
+		NetworkGenerator.networkInterval = networkInterval;
+	}
 }

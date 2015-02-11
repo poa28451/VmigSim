@@ -120,6 +120,10 @@ public class MigrationResults {
 		System.out.println("Environment details ::");
 		System.out.println("\tBandwidth = " + getBandwidth() + " Mbps");
 		System.out.println("\tNetwork type = " + getNetworkName());
+		if(getNetworkType() == Constant.DYNAMIC){
+			printDynamicBandwidthDetail();
+		}
+		System.out.println("\tNetwork Interval = " + getNetworkInterval());
 		System.out.println("\tPage size = " + getPageSize() + " KB");
 		System.out.println("\tTime limit = " + getTimeLimit() + " secs");
 		System.out.println("\tSchedule type = " + getScheduleName());
@@ -131,10 +135,13 @@ public class MigrationResults {
 		System.out.println();
 	}
 	
+	private void printDynamicBandwidthDetail(){
+		System.out.println("\t\tNetwork's standard deviation = " + getNetworkSD() + "%");
+	}
 	private void printPreCopyDetail(){
-		System.out.println("\t\tNormal dirty rate = " + getNormalDirtyRate());
-		System.out.println("\t\tWWS dirty rate = " + getWwsDirtyRate());
-		System.out.println("\t\tWWS page ratio = " + getWwsRatio());
+		System.out.println("\t\tNormal dirty rate = " + getNormalDirtyRate() + "%");
+		System.out.println("\t\tWWS dirty rate = " + getWwsDirtyRate() + "%");
+		System.out.println("\t\tWWS page ratio = " + getWwsRatio() + "%");
 		System.out.println("\t\tMax pre-copy iteration = " + getMaxPreCopyRound());
 		System.out.println("\t\tMin dirty page = " + getMinDirtyPage());
 		System.out.println("\t\tMax no-progress round = " + getMaxNoProgressRound());
@@ -286,6 +293,14 @@ public class MigrationResults {
 	
 	public int getMaxNoProgressRound(){
 		return Environment.maxNoProgressRound;
+	}
+	
+	public double getNetworkInterval(){
+		return NetworkGenerator.getNetworkInterval();
+	}
+	
+	public double getNetworkSD(){
+		return NetworkGenerator.getStddevPercent();
 	}
 	
 	public ArrayList<VmigSimVm> getAllVm() {

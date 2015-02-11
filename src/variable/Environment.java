@@ -19,8 +19,6 @@ public class Environment {
 	public static int maxPreCopyRound;
 	public static int minDirtyPage;
 	public static int maxNoProgressRound;
-	public static double networkInterval;
-	public static double networkSD;
 	
 	public static MigrationResults migrationResult;
 	
@@ -70,14 +68,6 @@ public class Environment {
 
 	public static void setMaxNoProgressRound(int maxNoProgressRound) {
 		Environment.maxNoProgressRound = maxNoProgressRound;
-	}
-
-	public static void setNetworkInterval(double networkInterval) {
-		Environment.networkInterval = networkInterval;
-	}
-
-	public static void setNetworkSD(double networkSD) {
-		Environment.networkSD = networkSD;
 	}
 	
 	public static ArrayList<VmSpec> getVmSpecList() {

@@ -79,10 +79,10 @@ public class VmigSimCore {
 		Environment.setMaxPreCopyRound(maxPreCopyRound);
 		Environment.setMinDirtyPage(minDirtyPage);
 		Environment.setMaxNoProgressRound(maxNoProgressRound);
-		Environment.setNetworkInterval(networkInterval);
-		Environment.setNetworkSD(networkSD);
+		/*Environment.setNetworkInterval(networkInterval);
+		Environment.setNetworkSD(networkSD);*/
 		
-		new NetworkGenerator(bandwidth);
+		new NetworkGenerator(bandwidth, networkInterval, networkSD);
 	}
 	
 	public void initVm(){
