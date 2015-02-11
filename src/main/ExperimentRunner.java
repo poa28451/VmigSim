@@ -72,8 +72,16 @@ public class ExperimentRunner {
 			runner.runExperiment();
 		}
 		else{
-			System.out.println("VmigSim need 3 arguments for input path, output path, and experiment rounds.");
+			showHelp();
 		}
 		//System.out.println("Test!");
+	}
+	
+	private static void showHelp(){
+		System.out.println("VmigSim need 3 arguments for simulating");
+		System.out.println("\t1. Input file path: /path/to/file.json");
+		System.out.println("\t1. Output directory: /path/to/directory");
+		System.out.println("\t1. Simulation round: ex. 10");
+		System.out.println("Usage: java -jar vmigsim.jar <input path> <output dir> <round>");
 	}
 }
