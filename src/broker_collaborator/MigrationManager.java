@@ -4,7 +4,7 @@ import java.util.Random;
 
 import org.cloudbus.cloudsim.core.CloudSim;
 
-import cloudsim_inherit.VmTest;
+import cloudsim_inherit.VmigSimVm;
 import variable.Constant;
 import variable.Environment;
 import message.MigrationMessage;
@@ -40,7 +40,7 @@ public class MigrationManager {
 	}
 	
 	protected MigrationMessage migrateByOffline(){
-		VmTest vm = migrationData.getVm();
+		VmigSimVm vm = migrationData.getVm();
 		int vmRam = vm.getRam();
 		double vmRamKB = convertMbToKb(vmRam);
 		MigrationMessage msg = new MigrationMessage(vm);
@@ -51,7 +51,7 @@ public class MigrationManager {
 	}
 	
 	protected MigrationMessage migrateByPreCopy(){
-		VmTest vm = migrationData.getVm();
+		VmigSimVm vm = migrationData.getVm();
 		int dirtyPages = Integer.MIN_VALUE;
 		PreCopyMessage msg = new PreCopyMessage(vm, CloudSim.clock());
 		
@@ -105,13 +105,13 @@ public class MigrationManager {
 	}
 	
 	protected int findDirtyPage(){
-		VmTest vm = migrationData.getVm();
+		VmigSimVm vm = migrationData.getVm();
 		return vm.getDirtyPageNum();
 	}
 	
 	protected void generateDirtyPage(){
 		int diryPage = 0;
-		VmTest vm = migrationData.getVm();
+		VmigSimVm vm = migrationData.getVm();
 		vm.resetDirtyPageNum();
 		Random typeRandom = new Random();
 		Random dirtyRandom = new Random();

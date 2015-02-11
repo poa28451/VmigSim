@@ -1,6 +1,6 @@
 package message;
 
-import cloudsim_inherit.VmTest;
+import cloudsim_inherit.VmigSimVm;
 
 /**
  * Message used for Pre-copy migration policy.
@@ -12,7 +12,7 @@ import cloudsim_inherit.VmTest;
 public class PreCopyMessage extends MigrationMessage{
 	private int dirtyPageAmount;
 	
-	public PreCopyMessage(VmTest vm, double startClock) {
+	public PreCopyMessage(VmigSimVm vm, double startClock) {
 		super(vm, startClock);
 		setDirtyPageAmount(0);
 	}

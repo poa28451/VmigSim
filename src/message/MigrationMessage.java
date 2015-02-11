@@ -1,16 +1,16 @@
 package message;
 
-import cloudsim_inherit.VmTest;
+import cloudsim_inherit.VmigSimVm;
 
 public class MigrationMessage {
-	private VmTest vm;
+	private VmigSimVm vm;
 	private double sendClock;
 	private double receiveClock;
 	private double migrationTime;
 	private double dataSizeKB;
 	private boolean isLastMigrationMsg;
 	
-	public MigrationMessage(VmTest vm, double startClock) {
+	public MigrationMessage(VmigSimVm vm, double startClock) {
 		setVm(vm);
 		setSendClock(startClock);
 		setReceiveClock(0);
@@ -19,7 +19,7 @@ public class MigrationMessage {
 		setDataSizeKB(0);
 	}
 	
-	public MigrationMessage(VmTest vm) {
+	public MigrationMessage(VmigSimVm vm) {
 		setVm(vm);
 		setSendClock(0);
 		setReceiveClock(0);
@@ -28,11 +28,11 @@ public class MigrationMessage {
 		setDataSizeKB(0);
 	}
 
-	public VmTest getVm() {
+	public VmigSimVm getVm() {
 		return vm;
 	}
 
-	public void setVm(VmTest vm) {
+	public void setVm(VmigSimVm vm) {
 		this.vm = vm;
 	}
 

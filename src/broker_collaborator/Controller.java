@@ -2,7 +2,7 @@ package broker_collaborator;
 
 import org.cloudbus.cloudsim.core.CloudSim;
 
-import cloudsim_inherit.VmTest;
+import cloudsim_inherit.VmigSimVm;
 import variable.Constant;
 import variable.Environment;
 import message.MigrationMessage;
@@ -92,7 +92,7 @@ public class Controller {
 		return false;
 	}
 	protected void updateMigrationTime(MigrationMessage msg, double transferTime){
-		VmTest vm = msg.getVm();
+		VmigSimVm vm = msg.getVm();
 		
 		msg.setMigrationTime(transferTime);
 		vm.updateMigrationTime(transferTime);

@@ -6,7 +6,7 @@ import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 
 import broker_collaborator.NetworkGenerator;
-import cloudsim_inherit.VmTest;
+import cloudsim_inherit.VmigSimVm;
 import variable.Constant;
 import variable.Environment;
 import variable.FilePathContainer;
@@ -19,16 +19,16 @@ import variable.FilePathContainer;
  *
  */
 public class MigrationResults {
-	private ArrayList<VmTest> allVm;
-	private ArrayList<VmTest> migratedVm;
-	private ArrayList<VmTest> violatedVm;
+	private ArrayList<VmigSimVm> allVm;
+	private ArrayList<VmigSimVm> migratedVm;
+	private ArrayList<VmigSimVm> violatedVm;
 	private int totalPriority1, totalPriority2, totalPriority3;
 	private int migratedPriority1, migratedPriority2, migratedPriority3;
 	
-	public MigrationResults(ArrayList<VmTest> allVm, ArrayList<VmTest> migratedVm){
+	public MigrationResults(ArrayList<VmigSimVm> allVm, ArrayList<VmigSimVm> migratedVm){
 		setAllVm(allVm);
 		setMigratedVm(migratedVm);
-		setViolatedVm(new ArrayList<VmTest>());
+		setViolatedVm(new ArrayList<VmigSimVm>());
 		setTotalPriority1(0);
 		setTotalPriority2(0);
 		setTotalPriority3(0);
@@ -81,7 +81,7 @@ public class MigrationResults {
 	private void printMigratedVmLog(){
 		System.out.println();
 		System.out.println("Migrated VM details ::");
-		for(VmTest vm : getMigratedVm()){
+		for(VmigSimVm vm : getMigratedVm()){
 			int id = vm.getId();
 			double migrationTime = vm.getMigrationTime();
 			double downTime = vm.getDownTime();
@@ -141,7 +141,7 @@ public class MigrationResults {
 	}
 	
 	private void countTotalPriority(){
-		for(VmTest vm : getAllVm()){
+		for(VmigSimVm vm : getAllVm()){
 			int priority = vm.getPriority();
 			switch (priority) {
 				case Constant.PRIORITY_1:
@@ -163,7 +163,7 @@ public class MigrationResults {
 	}
 	
 	private void countMigratedPriority(){
-		for(VmTest vm : getMigratedVm()){
+		for(VmigSimVm vm : getMigratedVm()){
 			int priority = vm.getPriority();
 			switch (priority) {
 				case Constant.PRIORITY_1:
@@ -185,7 +185,7 @@ public class MigrationResults {
 	}
 	
 	private void countTotalViolated(){
-		for(VmTest vm : getMigratedVm()){
+		for(VmigSimVm vm : getMigratedVm()){
 			if(vm.isViolated()){
 				getViolatedVm().add(vm);
 			}
@@ -194,7 +194,7 @@ public class MigrationResults {
 	
 	public double getTotalMigrationTime(){
 		double migrationTime = 0;
-		for(VmTest vm : getMigratedVm()){
+		for(VmigSimVm vm : getMigratedVm()){
 			migrationTime += vm.getMigrationTime();
 		}
 		return migrationTime;
@@ -202,7 +202,7 @@ public class MigrationResults {
 	
 	public double getTotalDownTime(){
 		double downTime = 0;
-		for(VmTest vm : getMigratedVm()){
+		for(VmigSimVm vm : getMigratedVm()){
 			downTime += vm.getDownTime();
 		}
 		return downTime;
@@ -288,27 +288,27 @@ public class MigrationResults {
 		return Environment.maxNoProgressRound;
 	}
 	
-	public ArrayList<VmTest> getAllVm() {
+	public ArrayList<VmigSimVm> getAllVm() {
 		return allVm;
 	}
 	
-	public void setAllVm(ArrayList<VmTest> allVm) {
+	public void setAllVm(ArrayList<VmigSimVm> allVm) {
 		this.allVm = allVm;
 	}
 	
-	public ArrayList<VmTest> getMigratedVm() {
+	public ArrayList<VmigSimVm> getMigratedVm() {
 		return migratedVm;
 	}
 	
-	public void setMigratedVm(ArrayList<VmTest> migratedVm) {
+	public void setMigratedVm(ArrayList<VmigSimVm> migratedVm) {
 		this.migratedVm = migratedVm;
 	}
 
-	public ArrayList<VmTest> getViolatedVm() {
+	public ArrayList<VmigSimVm> getViolatedVm() {
 		return violatedVm;
 	}
 
-	public void setViolatedVm(ArrayList<VmTest> violatedVm) {
+	public void setViolatedVm(ArrayList<VmigSimVm> violatedVm) {
 		this.violatedVm = violatedVm;
 	}
 

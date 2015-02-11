@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
-import cloudsim_inherit.VmTest;
+import cloudsim_inherit.VmigSimVm;
 import variable.Constant;
 import variable.Environment;
 import message.MigrationMessage;
@@ -25,7 +25,7 @@ public class Scheduler {
 		countPriority(vmData.getVm());
 	}
 	
-	public void countPriority(VmTest vm){
+	public void countPriority(VmigSimVm vm){
 		int priority = vm.getPriority();
 		switch (priority) {
 			case Constant.PRIORITY_1:
@@ -75,8 +75,8 @@ public class Scheduler {
 	        @Override
 	        public int compare(MigrationMessage msg1, MigrationMessage  msg2)
 	        {
-	        	VmTest vm1 = msg1.getVm();
-	        	VmTest vm2 = msg2.getVm();
+	        	VmigSimVm vm1 = msg1.getVm();
+	        	VmigSimVm vm2 = msg2.getVm();
 	        	int firstPri = vm1.getPriority();
 	        	int secondPri = vm2.getPriority();
 	        	//If vm1's priority is less than vm2's
@@ -86,8 +86,8 @@ public class Scheduler {
 	    });
 	}
 	
-	public ArrayList<VmTest> getVmWaitingList(){
-		ArrayList<VmTest> vmWaitingList = new ArrayList<VmTest>();
+	public ArrayList<VmigSimVm> getVmWaitingList(){
+		ArrayList<VmigSimVm> vmWaitingList = new ArrayList<VmigSimVm>();
 		for(MigrationMessage msg : getMsgWaitingList()){
 			vmWaitingList.add(msg.getVm());
 		}

@@ -6,7 +6,7 @@ import org.cloudbus.cloudsim.Vm;
 import variable.Constant;
 import variable.Environment;
 
-public class VmTest extends Vm{
+public class VmigSimVm extends Vm{
 	private int priority;
 	private int qos;
 	private int memoryPageNum, dirtyPageNum;
@@ -17,7 +17,7 @@ public class VmTest extends Vm{
 	private boolean isViolated;
 	private boolean isMigrated;
 	
-	public VmTest(int id, int userId, double mips, int numberOfPes, int ram,
+	public VmigSimVm(int id, int userId, double mips, int numberOfPes, int ram,
 			long bw, long size, int qos, int priority, String vmm, CloudletScheduler cloudletScheduler) {
 		
 		super(id, userId, mips, numberOfPes, ram, bw, size, vmm, cloudletScheduler);		

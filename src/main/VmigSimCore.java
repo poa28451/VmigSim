@@ -22,14 +22,14 @@ import broker_collaborator.NetworkGenerator;
 import cloudsim_inherit.VmigSimBroker;
 import cloudsim_inherit.DatacenterDestination;
 import cloudsim_inherit.DatacenterSource;
-import cloudsim_inherit.VmTest;
+import cloudsim_inherit.VmigSimVm;
 import container.Parameters;
 import container.VmSpec;
 import variable.Constant;
 import variable.Environment;
 
 
-public class VmigSim {
+public class VmigSimCore {
 	@SuppressWarnings("unused")
 	private Datacenter datacenterSrc, datacenterDest;
 	
@@ -234,7 +234,7 @@ public class VmigSim {
 
 		Vm[] vm = new Vm[vmAmount];
 		for(int i=0;i<vmAmount;i++, currentVm++){
-			vm[i] = new VmTest(currentVm, userId, mips, pesNumber, ram, bw, size, qos, priority, vmm, new CloudletSchedulerTimeShared());
+			vm[i] = new VmigSimVm(currentVm, userId, mips, pesNumber, ram, bw, size, qos, priority, vmm, new CloudletSchedulerTimeShared());
 			list.add(vm[i]);
 		}
 		return list;

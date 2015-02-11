@@ -28,7 +28,7 @@ public class VmigSimBroker extends DatacenterBroker {
 	private final String SOURCE = "src";
 	private final String DESTINATION = "dest";
 
-	private ArrayList<VmTest> results;
+	private ArrayList<VmigSimVm> results;
 	private Scheduler scheduler;
 	private MigrationManager migManager;
 	private Controller controller;
@@ -36,7 +36,7 @@ public class VmigSimBroker extends DatacenterBroker {
 	
 	public VmigSimBroker(String name) throws Exception {
 		super(name);
-		setResults(new ArrayList<VmTest>());
+		setResults(new ArrayList<VmigSimVm>());
 		setScheduler(new Scheduler());
 		setMigManager(new MigrationManager());
 		setController(new Controller());
@@ -64,7 +64,7 @@ public class VmigSimBroker extends DatacenterBroker {
 	 */
 	protected void processQueueVmMigrate(SimEvent ev){		
 		MigrationMessage message = (MigrationMessage) ev.getData();
-		VmTest migratedVm = message.getVm();
+		VmigSimVm migratedVm = message.getVm();
 		double startClock = message.getSendClock();
 		message.setReceiveClock(CloudSim.clock());
 
@@ -200,7 +200,7 @@ public class VmigSimBroker extends DatacenterBroker {
 		this.migrationMap = migrationMap;
 	}
 
-	public void setResults(ArrayList<VmTest> results) {
+	public void setResults(ArrayList<VmigSimVm> results) {
 		this.results = results;
 	}
 

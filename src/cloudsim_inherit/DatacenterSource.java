@@ -50,7 +50,7 @@ public class DatacenterSource extends Datacenter{
 			//Deallocate the VM from the current datacenter
 			getVmAllocationPolicy().deallocateHostForVm(vm);
 		
-			VmTest migrate = (VmTest) vm;
+			VmigSimVm migrate = (VmigSimVm) vm;
 			migrate.setStartClock(CloudSim.clock());
 			MigrationMessage message = new MigrationMessage(migrate, CloudSim.clock());
 			

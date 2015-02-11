@@ -52,7 +52,7 @@ public class DatacenterDestination extends Datacenter{
 	
 	protected void handleOfflineMigration(SimEvent ev){
 		MigrationMessage message = (MigrationMessage) ev.getData();
-		VmTest migratedVm = message.getVm();
+		VmigSimVm migratedVm = message.getVm();
 		double downTime = migratedVm.getDownTime();
 		
 		System.out.println();
@@ -68,7 +68,7 @@ public class DatacenterDestination extends Datacenter{
 	
 	protected void handlePreCopyMigration(SimEvent ev){
 		PreCopyMessage message = (PreCopyMessage) ev.getData();
-		VmTest migratedVm = message.getVm();
+		VmigSimVm migratedVm = message.getVm();
 		double downTime = migratedVm.getDownTime();
 		System.out.println();
 		
@@ -97,7 +97,7 @@ public class DatacenterDestination extends Datacenter{
 		}
 	}
 	
-	protected boolean allocateResourceForVm(VmTest migratedVm){
+	protected boolean allocateResourceForVm(VmigSimVm migratedVm){
 		boolean result = getVmAllocationPolicy().allocateHostForVm(migratedVm);
 		if (result) {
 			getVmList().add(migratedVm);

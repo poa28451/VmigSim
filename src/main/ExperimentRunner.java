@@ -39,7 +39,7 @@ public class ExperimentRunner {
 		PrintStream stream = prepareLogPath();
 		System.setOut(stream);
 		
-		VmigSim vmigsim = new VmigSim();
+		VmigSimCore vmigsim = new VmigSimCore();
 		vmigsim.startSimulation(param);
 		Environment.migrationResult.printLog();
 		Environment.migrationResult.printNetwork();
