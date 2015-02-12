@@ -18,7 +18,6 @@ public class ExperimentRunner {
 	public ExperimentRunner(String inputPath, String outputPath, int experimentRounds){
 		FilePathContainer.setInputPath(inputPath);
 		FilePathContainer.setOutputDirectory(outputPath);
-		//FilePathContainer.setOutputDirectory("experiment/case8-1024Mbps-fifo-dynamic");
 		decoder = new JsonReader();
 		this.experimentRounds = experimentRounds;
 	}
@@ -74,7 +73,6 @@ public class ExperimentRunner {
 		else{
 			showHelp();
 		}
-		//System.out.println("Test!");
 	}
 	
 	private static void showHelp(){
