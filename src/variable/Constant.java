@@ -27,7 +27,7 @@ public class Constant {
 	public static final int ENVIRONMENT = KEY_BASE + 1;
 	public static final int VM_SPEC_LIST = KEY_BASE + 2;
 	
-	public static final int BANDWIDTH = KEY_BASE + 11;
+	public static final int MAX_BANDWIDTH = KEY_BASE + 11;
 	public static final int TIME_LIMIT = KEY_BASE + 12;
 	public static final int SCHEDULE_TYPE = KEY_BASE + 13;
 	public static final int MIGRATION_TYPE = KEY_BASE + 14;
@@ -49,6 +49,7 @@ public class Constant {
 	public static final int RAM = KEY_BASE + 27;
 	public static final int PRIORITY = KEY_BASE + 28;
 	public static final int QOS = KEY_BASE + 29;
+	public static final int MEAN_BANDWIDTH = KEY_BASE + 30;
 	
 	/**
 	 * Custom tags
@@ -74,7 +75,8 @@ public class Constant {
 		jsonKeyName.put(Constant.ENVIRONMENT, "environment");
 		jsonKeyName.put(Constant.VM_SPEC_LIST, "vmSpecList");
 		
-		jsonKeyName.put(Constant.BANDWIDTH, "bandwidth");
+		jsonKeyName.put(Constant.MAX_BANDWIDTH, "maxBandwidth");
+		jsonKeyName.put(Constant.MEAN_BANDWIDTH, "meanBandwidth");
 		jsonKeyName.put(Constant.TIME_LIMIT, "timeLimit");
 		jsonKeyName.put(Constant.SCHEDULE_TYPE, "scheduleType");
 		jsonKeyName.put(Constant.MIGRATION_TYPE, "migrationType");

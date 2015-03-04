@@ -1,0 +1,33 @@
+{
+	"environment" : 
+		{
+			"maxBandwidth" : 1024,
+			"meanBandwidth" : 1024,
+			"timeLimit" : 21600,
+			"scheduleType" : "fifo",
+			"migrationType" : "precopy",
+			"controlType" : "openloop",
+			"networkType" : "static",
+			"pageSize" : 4,
+
+			"wwsRatio" : 1,
+			"wwsDirtyRate" : 90,
+			"normalDirtyRate" : 20,
+			"maxPreCopyRound" : 30,
+			"minDirtyPage" : 50,
+			"maxNoProgressRound" : 2,
+
+			"networkInterval" : 60,
+			"networkSD" : 54.8222
+		},
+
+	"vmSpecList" :
+		[
+			{
+					"vmAmount" : 1,
+					"ram" : 1024,
+					"priority" : 1,
+					"qos" : 300
+			}
+		]
+}

@@ -47,7 +47,8 @@ public class VmigSimCore {
 	}
 	
 	public void setEnvironment(Parameters param){
-		double bandwidth = param.getBandwidth();
+		double maxBandwidth = param.getMaxBandwidth();
+		double meanBandwidth = param.getMeanBandwidth();
 		double timeLimit = param.getTimeLimit();
 		int scheduleType = param.getScheduleType();
 		int migrationType = param.getMigrationType();
@@ -82,7 +83,7 @@ public class VmigSimCore {
 		/*Environment.setNetworkInterval(networkInterval);
 		Environment.setNetworkSD(networkSD);*/
 		
-		new NetworkGenerator(bandwidth, networkInterval, networkSD);
+		new NetworkGenerator(maxBandwidth, meanBandwidth, networkInterval, networkSD);
 	}
 	
 	public void initVm(){

@@ -9,7 +9,8 @@ import java.util.ArrayList;
  *
  */
 public class Parameters {
-	private double bandwidth;//Mbps unit
+	private double maxBandwidth;//Mbps unit
+	private double meanBandwidth;//Mbps unit
 	private double timeLimit;//Second unit
 	private int scheduleType;//Constant value
 	private int migrationType;//Constant value
@@ -28,7 +29,8 @@ public class Parameters {
 	private ArrayList<VmSpec> vmSpecList;
 	
 	public Parameters(){
-		setBandwidth(0);
+		setMaxBandwidth(0);
+		setMeanBandwidth(0);
 		setNetworkType(0);
 		setTimeLimit(0);
 		setScheduleType(0);
@@ -47,12 +49,20 @@ public class Parameters {
 		setNetworkSD(0);
 	}
 	
-	public double getBandwidth() {
-		return bandwidth;
+	public double getMaxBandwidth() {
+		return maxBandwidth;
 	}
 	
-	public void setBandwidth(double bandwidth) {
-		this.bandwidth = bandwidth;
+	public void setMaxBandwidth(double maxBandwidth) {
+		this.maxBandwidth = maxBandwidth;
+	}
+	
+	public double getMeanBandwidth() {
+		return meanBandwidth;
+	}
+	
+	public void setMeanBandwidth(double meanBandwidth) {
+		this.meanBandwidth = meanBandwidth;
 	}
 	
 	public double getTimeLimit() {

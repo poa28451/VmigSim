@@ -12,13 +12,23 @@ import variable.Environment;
 import variable.FilePathContainer;
 
 public class NetworkGenerator {
-	private static double originalBandwidth;
+	private static double maxBandwidth;
+	private static double meanBandwidth;
 	private static double networkInterval;
 	private static ArrayList<Double> bwTrace;
 	private static double stddevPercent;
 
-	public NetworkGenerator(double originalBandwidth, double networkInterval, double networkSD){
-		setOriginalBandwidth(originalBandwidth);
+	/*public NetworkGenerator(double maxBandwidth, double networkInterval, double networkSD){
+		setMaxBandwidth(maxBandwidth);
+		setBwTrace(new ArrayList<Double>());
+		setStddevPercent(networkSD);
+		setNetworkInterval(networkInterval);
+		generateBandwidth();
+	}*/
+	
+	public NetworkGenerator(double maxBandwidth, double meanBandwidth, double networkInterval, double networkSD){
+		setMaxBandwidth(maxBandwidth);
+		setMeanBandwidth(meanBandwidth);
 		setBwTrace(new ArrayList<Double>());
 		setStddevPercent(networkSD);
 		setNetworkInterval(networkInterval);
@@ -27,7 +37,7 @@ public class NetworkGenerator {
 	
 	public void generateBandwidth(){
 		double intervalAmount = getIntervalAmount();
-		switch (Environment.networkType) {		
+		/*switch (Environment.networkType) {		
 			case Constant.STATIC:
 				generateStaticBandwidth(intervalAmount);
 				break;
@@ -40,13 +50,22 @@ public class NetworkGenerator {
 			default:
 				generateStaticBandwidth(intervalAmount);
 				break;
+		}*/
+		
+		Random ran = new Random();
+		for(int i=0; i<intervalAmount; i++){			
+			double deviation = randomDeviation(ran);
+			// Plus 1 for making the number into % (e.g. 120%)
+			//double bw = getMaxBandwidth() - deviation;
+			double bw = getMeanBandwidth() + deviation;
+			getBwTrace().add(bw);
 		}
 	}
 	
-	private void generateStaticBandwidth(double intervalAmount){
+	/*private void generateStaticBandwidth(double intervalAmount){
 		for(int i=0; i<intervalAmount; i++){
 			//Bandwidth always be the same as original
-			double bw = getOriginalBandwidth();
+			double bw = getMaxBandwidth();
 			getBwTrace().add(bw);
 		}
 	}
@@ -56,10 +75,10 @@ public class NetworkGenerator {
 		for(int i=0; i<intervalAmount; i++){			
 			double deviation = randomDeviation(ran);
 			// Plus 1 for making the number into % (e.g. 120%)
-			double bw = getOriginalBandwidth() - deviation;
+			double bw = getMaxBandwidth() - deviation;
 			getBwTrace().add(bw);
 		}
-	}
+	}*/
 	
 	/**
 	 * Randomize the value of instability by using normal distribution
@@ -73,10 +92,22 @@ public class NetworkGenerator {
 
 		do{
 			chance = ran.nextGaussian();
-			deviation = chance * ((stddevPercent / 100) * getOriginalBandwidth());
+			deviation = chance * ((stddevPercent / 100) * getMaxBandwidth());
 		//Do the loop until we get the deviation that is less than the bandwidth
-		}while(deviation > getOriginalBandwidth() || deviation < 0);
+		}//while(deviation > getMaxBandwidth() || deviation < 0);
+		while(!checkIfBandwidthInRange(deviation));
 		return deviation;
+	}
+	
+	private boolean checkIfBandwidthInRange(double deviation){
+		//Cannot be neither more than max B/W nor less than 0
+		if(deviation + getMeanBandwidth() > getMaxBandwidth()){
+			return false;
+		}
+		else if(deviation + getMeanBandwidth() < 0){
+			return false;
+		}
+		return true;
 	}
 	
 	public static double getBandwidthAtTime(double time){
@@ -189,12 +220,20 @@ public class NetworkGenerator {
 		}
 	}
 	
-	public static double getOriginalBandwidth() {
-		return originalBandwidth;
+	public static double getMaxBandwidth() {
+		return maxBandwidth;
 	}
 
-	public void setOriginalBandwidth(double originalBandwidth) {
-		NetworkGenerator.originalBandwidth = originalBandwidth;
+	public void setMaxBandwidth(double originalBandwidth) {
+		NetworkGenerator.maxBandwidth = originalBandwidth;
+	}
+
+	public static double getMeanBandwidth() {
+		return meanBandwidth;
+	}
+
+	public static void setMeanBandwidth(double meanBandwidth) {
+		NetworkGenerator.meanBandwidth = meanBandwidth;
 	}
 
 	protected void setBwTrace(ArrayList<Double> bwTrace) {

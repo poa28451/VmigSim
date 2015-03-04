@@ -1,0 +1,152 @@
+
+0.1 DC id: 2: Recieved start migration message from controller
+Starting the migration with vm amount: 1
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 0 added to a waiting queue
+Amount in a waiting queue: 1
+
+8.339959747277977 DC id: 3: Recieved VM pages from controller
+	VM id: 0
+	Received all memory page of VM: 262144 pages
+
+10.049975197455804 DC id: 3: Recieved VM pages from controller
+	VM id: 0
+	Dirty page amount: 54402
+
+11.760430708960468 DC id: 3: Recieved VM pages from controller
+	VM id: 0
+	Dirty page amount: 54416
+
+13.470194695522961 DC id: 3: Recieved VM pages from controller
+	VM id: 0
+	Dirty page amount: 54394
+
+15.165028029924974 DC id: 3: Recieved VM pages from controller
+	VM id: 0
+	Dirty page amount: 53919
+
+16.87589216980456 DC id: 3: Recieved VM pages from controller
+	VM id: 0
+	Dirty page amount: 54429
+
+18.57792365019552 DC id: 3: Recieved VM pages from controller
+	VM id: 0
+	Dirty page amount: 54148
+
+20.278509214798305 DC id: 3: Recieved VM pages from controller
+	VM id: 0
+	Dirty page amount: 54102
+
+21.98431264941928 DC id: 3: Recieved VM pages from controller
+	VM id: 0
+	Dirty page amount: 54268
+
+23.68062333256138 DC id: 3: Recieved VM pages from controller
+	VM id: 0
+	Dirty page amount: 53966
+
+25.390418752075792 DC id: 3: Recieved VM pages from controller
+	VM id: 0
+	Dirty page amount: 54395
+
+27.096222186696767 DC id: 3: Recieved VM pages from controller
+	VM id: 0
+	Dirty page amount: 54268
+
+28.801711291798576 DC id: 3: Recieved VM pages from controller
+	VM id: 0
+	Dirty page amount: 54258
+
+30.51178960788024 DC id: 3: Recieved VM pages from controller
+	VM id: 0
+	Dirty page amount: 54404
+
+32.22045344112564 DC id: 3: Recieved VM pages from controller
+	VM id: 0
+	Dirty page amount: 54359
+
+33.9221077260936 DC id: 3: Recieved VM pages from controller
+	VM id: 0
+	Dirty page amount: 54136
+
+35.61508651633252 DC id: 3: Recieved VM pages from controller
+	VM id: 0
+	Dirty page amount: 53860
+
+37.32079565209774 DC id: 3: Recieved VM pages from controller
+	VM id: 0
+	Dirty page amount: 54265
+
+39.02304716315212 DC id: 3: Recieved VM pages from controller
+	VM id: 0
+	Dirty page amount: 54155
+
+40.7327797167627 DC id: 3: Recieved VM pages from controller
+	VM id: 0
+	Dirty page amount: 54393
+
+42.43597421637458 DC id: 3: Recieved VM pages from controller
+	VM id: 0
+	Dirty page amount: 54185
+
+44.15601677821387 DC id: 3: Recieved VM pages from controller
+	VM id: 0
+	Dirty page amount: 54721
+
+45.86798107141054 DC id: 3: Recieved VM pages from controller
+	VM id: 0
+	Dirty page amount: 54464
+
+47.57592194676186 DC id: 3: Recieved VM pages from controller
+	VM id: 0
+	Dirty page amount: 54336
+
+49.2844600481996 DC id: 3: Recieved VM pages from controller
+	VM id: 0
+	Dirty page amount: 54355
+
+50.99365824162759 DC id: 3: Recieved dirty pages and VM state from controller
+	VM id: 0
+	Dirty page amount: 54376
+	VM id: 0 has done the migration.
+VM id: 0 allocated into Host id 0
+Broker1 is shutting down...
+VmigSim finished!
+
+Migrated VM details ::
+	VM: 0 finished the migration with the time 50.89365824162759 seconds
+		RAM = 1024 MB
+		Priority = 1
+		Downtime = 1.7091981934279912 seconds
+		QoS = 300 seconds / violate = false
+		Migration result = true
+
+Overall details ::
+	Total migrated VM = 1 / 1
+	Total migrated priority: 
+		Priority 1 = 1 / 1
+		Priority 2 = 0 / 0
+		Priority 3 = 0 / 0
+	Total violated VM = 0
+	Total migration time = 50.89365824162759 (Avg. = 50.89365824162759) secs
+	Total down time = 1.7091981934279912 (Avg. = 1.7091981934279912) secs
+
+Environment details ::
+	Network type = static
+		Max Bandwidth = 1024.0 Mbps
+		Mean Bandwidth = 1024.0 Mbps
+		Network's standard deviation = 54.8222%
+		Network Interval = 60.0
+	Page size = 4 KB
+	Time limit = 21600.0 secs
+	Schedule type = fifo
+	Migration type = precopy
+		Normal dirty rate = 20.0%
+		WWS dirty rate = 90.0%
+		WWS page ratio = 1.0%
+		Max pre-copy iteration = 30
+		Min dirty page = 50
+		Max no-progress round = 2
+	Control type = openloop
+

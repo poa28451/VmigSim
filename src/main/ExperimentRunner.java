@@ -73,6 +73,13 @@ public class ExperimentRunner {
 		else{
 			showHelp();
 		}
+		
+		/*Environment.setNetworkType(0);
+		Environment.setMigrationTimeLimit(26200);
+		NetworkGenerator nw = new NetworkGenerator(100, 80, 1, 54.8222);
+		for(double d : nw.getBwTrace()){
+			System.out.println(d);
+		}*/
 	}
 	
 	private static void showHelp(){

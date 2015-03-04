@@ -35,7 +35,8 @@ public class JsonReader {
 	
 	private void readEnvironment(Parameters param, JSONObject environment){
 		double timeLimit = environment.getDouble(Constant.getJSONKeyName(Constant.TIME_LIMIT));
-		double bandwidth = environment.getDouble(Constant.getJSONKeyName(Constant.BANDWIDTH));
+		double maxBandwidth = environment.getDouble(Constant.getJSONKeyName(Constant.MAX_BANDWIDTH));
+		double meanBandwidth = environment.getDouble(Constant.getJSONKeyName(Constant.MEAN_BANDWIDTH));
 		String scheduleType = environment.getString(Constant.getJSONKeyName(Constant.SCHEDULE_TYPE));
 		String migrationType = environment.getString(Constant.getJSONKeyName(Constant.MIGRATION_TYPE));
 		String controlType = environment.getString(Constant.getJSONKeyName(Constant.CONTROL_TYPE));
@@ -52,7 +53,8 @@ public class JsonReader {
 		double networkInterval = environment.getDouble(Constant.getJSONKeyName(Constant.NETWORK_INTERVAL));
 		double networkSD = environment.getDouble(Constant.getJSONKeyName(Constant.NETWORK_SD));
 
-		param.setBandwidth(bandwidth);
+		param.setMaxBandwidth(maxBandwidth);
+		param.setMeanBandwidth(meanBandwidth);
 		param.setTimeLimit(timeLimit);
 		param.setScheduleType(Constant.getScheduleKeyCode(scheduleType));
 		param.setMigrationType(Constant.getMigrationKeyCode(migrationType));

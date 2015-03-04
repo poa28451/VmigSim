@@ -1,0 +1,42 @@
+
+0.1 DC id: 2: Recieved start migration message from controller
+Starting the migration with vm amount: 1
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 0 added to a waiting queue
+Amount in a waiting queue: 1
+
+64.1 DC id: 3: Recieved migrated VM from controller
+	VM id: 0
+VM id: 0 allocated into Host id 0
+Broker1 is shutting down...
+VmigSim finished!
+
+Migrated VM details ::
+	VM: 0 finished the migration with the time 64.0 seconds
+		RAM = 512 MB
+		Priority = 1
+		Downtime = 64.0 seconds
+		QoS = 300 seconds / violate = false
+		Migration result = true
+
+Overall details ::
+	Total migrated VM = 1 / 1
+	Total migrated priority: 
+		Priority 1 = 1 / 1
+		Priority 2 = 0 / 0
+		Priority 3 = 0 / 0
+	Total violated VM = 0
+	Total migration time = 64.0 (Avg. = 64.0) secs
+	Total down time = 64.0 (Avg. = 64.0) secs
+
+Environment details ::
+	Bandwidth = 64.0 Mbps
+	Network type = static
+	Network Interval = 60.0
+	Page size = 4 KB
+	Time limit = 21600.0 secs
+	Schedule type = fifo
+	Migration type = offline
+	Control type = openloop
+
