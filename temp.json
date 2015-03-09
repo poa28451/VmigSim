@@ -1,8 +1,8 @@
 {
 	"environment" : 
 		{
-			"maxBandwidth" : 1024,
-			"meanBandwidth" : 1024,
+			"maxBandwidth" : 701,
+			"meanBandwidth" : 701,
 			"timeLimit" : 21600,
 			"scheduleType" : "fifo",
 			"migrationType" : "precopy",
@@ -17,16 +17,22 @@
 			"minDirtyPage" : 50,
 			"maxNoProgressRound" : 2,
 
-			"networkInterval" : 60,
-			"networkSD" : 54.8222
+			"networkInterval" : 1,
+			"networkSD" : 0.763870607
 		},
 
 	"vmSpecList" :
 		[
 			{
 					"vmAmount" : 1,
-					"ram" : 1024,
+					"ram" : 512,
 					"priority" : 1,
+					"qos" : 300
+			},
+			{
+					"vmAmount" : 1,
+					"ram" : 512,
+					"priority" : 2,
 					"qos" : 300
 			}
 		]

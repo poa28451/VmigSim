@@ -1,0 +1,104 @@
+
+0.1 DC id: 2: Recieved start migration message from controller
+Starting the migration with vm amount: 2
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 0 added to a waiting queue
+Amount in a waiting queue: 1
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 1 added to a waiting queue
+Amount in a waiting queue: 2
+
+5.991681722471928 DC id: 3: Recieved VM pages from controller
+	VM id: 0
+	Received all memory page of VM: 131072 pages
+
+7.202900654464697 DC id: 3: Recieved VM pages from controller
+	VM id: 0
+	Dirty page amount: 26860
+
+8.439233533945714 DC id: 3: Recieved VM pages from controller
+	VM id: 0
+	Dirty page amount: 27305
+
+9.661522971214788 DC id: 3: Recieved VM pages from controller
+	VM id: 0
+	Dirty page amount: 27105
+
+10.880471645379279 DC id: 3: Recieved VM pages from controller
+	VM id: 0
+	Dirty page amount: 27250
+
+12.099452477289125 DC id: 3: Recieved dirty pages and VM state from controller
+	VM id: 0
+	Dirty page amount: 27291
+	VM id: 0 has done the migration.
+VM id: 0 allocated into Host id 0
+
+17.977264343381478 DC id: 3: Recieved VM pages from controller
+	VM id: 1
+	Received all memory page of VM: 131072 pages
+
+19.194944518379874 DC id: 3: Recieved VM pages from controller
+	VM id: 1
+	Dirty page amount: 27218
+
+20.408557225502378 DC id: 3: Recieved VM pages from controller
+	VM id: 1
+	Dirty page amount: 27059
+
+21.622645195396167 DC id: 3: Recieved VM pages from controller
+	VM id: 1
+	Dirty page amount: 27165
+
+22.85352915827754 DC id: 3: Recieved dirty pages and VM state from controller
+	VM id: 1
+	Dirty page amount: 27314
+	VM id: 1 has done the migration.
+VM id: 1 allocated into Host id 0
+Broker1 is shutting down...
+VmigSim finished!
+
+Migrated VM details ::
+	VM: 0 finished the migration with the time 11.999452477289125 seconds
+		RAM = 512 MB
+		Priority = 1
+		Downtime = 1.2189808319098454 seconds
+		QoS = 300 seconds / violate = false
+		Migration result = true
+	VM: 1 finished the migration with the time 10.75407668098841 seconds
+		RAM = 512 MB
+		Priority = 2
+		Downtime = 1.230883962881372 seconds
+		QoS = 300 seconds / violate = false
+		Migration result = true
+
+Overall details ::
+	Total migrated VM = 2 / 2
+	Total migrated priority: 
+		Priority 1 = 1 / 1
+		Priority 2 = 1 / 1
+		Priority 3 = 0 / 0
+	Total violated VM = 0
+	Total migration time = 22.753529158277537 (Avg. = 11.376764579138769) secs
+	Total down time = 2.4498647947912175 (Avg. = 1.2249323973956088) secs
+
+Environment details ::
+	Network type = static
+		Max Bandwidth = 701.0 Mbps
+		Mean Bandwidth = 701.0 Mbps
+		Network's standard deviation = 0.763870607%
+		Network Interval = 1.0
+	Page size = 4 KB
+	Time limit = 21600.0 secs
+	Schedule type = fifo
+	Migration type = precopy
+		Normal dirty rate = 20.0%
+		WWS dirty rate = 90.0%
+		WWS page ratio = 1.0%
+		Max pre-copy iteration = 30
+		Min dirty page = 50
+		Max no-progress round = 2
+	Control type = openloop
+

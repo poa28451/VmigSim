@@ -1,15 +1,11 @@
 package container;
 
-import java.io.FileNotFoundException;
-import java.io.PrintWriter;
-import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 
 import broker_collaborator.NetworkGenerator;
 import cloudsim_inherit.VmigSimVm;
 import variable.Constant;
 import variable.Environment;
-import variable.FilePathContainer;
 
 /**
  * This class has responsibilities for collecting the migration result of each VM and summarize
@@ -48,106 +44,6 @@ public class MigrationResults {
 	/*public void printResult(){
 		
 	}*/
-	
-	/**
-	 * Print the log file of the migration result. Note that this is differ from CloudSim's log.
-	 * 	This only contain the RESULT of VmigSim
-	 */
-	public void printLog(){
-		printMigratedVmLog();
-		printOverallLog();
-		printEnvironmentLog();
-	}
-	
-	public void printNetwork(){
-		String filePath = FilePathContainer.getNetworkFilePath();
-		ArrayList<Double> bwTrace = NetworkGenerator.getBwTrace();
-		PrintWriter writer;
-		try {
-			writer = new PrintWriter(filePath, "UTF-8");
-			
-			for(int i=0; i<bwTrace.size(); i++){
-				double bw = bwTrace.get(i);
-				writer.println(bw);
-			}
-			writer.close();
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (UnsupportedEncodingException e) {
-			e.printStackTrace();
-		}
-	}
-	
-	private void printMigratedVmLog(){
-		System.out.println();
-		System.out.println("Migrated VM details ::");
-		for(VmigSimVm vm : getMigratedVm()){
-			int id = vm.getId();
-			double migrationTime = vm.getMigrationTime();
-			double downTime = vm.getDownTime();
-			int ram = vm.getRam();
-			boolean violate = vm.isViolated();
-			boolean result = vm.isMigrated();
-			int priority = vm.getPriority();
-			int qos = vm.getQos();
-			
-			System.out.println("\tVM: " + id + " finished the migration with the time " + migrationTime + " seconds");
-			System.out.println("\t\tRAM = " + ram + " MB");
-			System.out.println("\t\tPriority = " + priority);
-			System.out.println("\t\tDowntime = " + downTime + " seconds");
-			System.out.println("\t\tQoS = " +  qos + " seconds / violate = " + violate);
-			System.out.println("\t\tMigration result = " + result);
-		}
-		System.out.println();
-	}
-	
-	private void printOverallLog(){
-		System.out.println("Overall details ::");
-		System.out.println("\tTotal migrated VM = " + getTotalMigratedVm() + " / " + getTotalVm());
-		System.out.println("\tTotal migrated priority: ");
-		System.out.println("\t\tPriority 1 = " + getMigratedPriority1() + " / " + getTotalPriority1());
-		System.out.println("\t\tPriority 2 = " + getMigratedPriority2() + " / " + getTotalPriority2());
-		System.out.println("\t\tPriority 3 = " + getMigratedPriority3() + " / " + getTotalPriority3());
-		System.out.println("\tTotal violated VM = " + getTotalViolatedVm());
-		System.out.println("\tTotal migration time = " + getTotalMigrationTime() + 
-				" (Avg. = " + getTotalMigrationTime()/getTotalMigratedVm() + ") secs");
-		System.out.println("\tTotal down time = " + getTotalDownTime() +
-				" (Avg. = " + getTotalDownTime()/getTotalMigratedVm() + ") secs");
-		System.out.println();
-	}
-	
-	private void printEnvironmentLog(){
-		System.out.println("Environment details ::");
-		System.out.println("\tNetwork type = " + getNetworkName());
-		//if(getNetworkType() == Constant.DYNAMIC){
-			printBandwidthDetail();
-		//}
-		System.out.println("\tPage size = " + getPageSize() + " KB");
-		System.out.println("\tTime limit = " + getTimeLimit() + " secs");
-		System.out.println("\tSchedule type = " + getScheduleName());
-		System.out.println("\tMigration type = " + getMigrationName());
-		if(getMigrationType() == Constant.PRECOPY){
-			printPreCopyDetail();
-		}
-		System.out.println("\tControl type = " + getControlName());
-		System.out.println();
-	}
-	
-	private void printBandwidthDetail(){
-		System.out.println("\t\tMax Bandwidth = " + getMaxBandwidth() + " Mbps");
-		System.out.println("\t\tMean Bandwidth = " + getMeanBandwidth() + " Mbps");
-		System.out.println("\t\tNetwork's standard deviation = " + getNetworkSD() + "%");
-		System.out.println("\t\tNetwork Interval = " + getNetworkInterval());
-	}
-
-	private void printPreCopyDetail(){
-		System.out.println("\t\tNormal dirty rate = " + getNormalDirtyRate() + "%");
-		System.out.println("\t\tWWS dirty rate = " + getWwsDirtyRate() + "%");
-		System.out.println("\t\tWWS page ratio = " + getWwsRatio() + "%");
-		System.out.println("\t\tMax pre-copy iteration = " + getMaxPreCopyRound());
-		System.out.println("\t\tMin dirty page = " + getMinDirtyPage());
-		System.out.println("\t\tMax no-progress round = " + getMaxNoProgressRound());
-	}
 	
 	private void countTotalPriority(){
 		for(VmigSimVm vm : getAllVm()){

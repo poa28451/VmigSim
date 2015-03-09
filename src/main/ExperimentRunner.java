@@ -5,7 +5,10 @@ import java.io.FileOutputStream;
 import java.io.PrintStream;
 
 import container.Parameters;
-import parser.JsonReader;
+import file_manager.JsonReader;
+import file_manager.LogWriter;
+import file_manager.NetworkWriter;
+import file_manager.ResultWriter;
 import variable.Environment;
 import variable.FilePathContainer;
 
@@ -40,8 +43,10 @@ public class ExperimentRunner {
 		
 		VmigSimCore vmigsim = new VmigSimCore();
 		vmigsim.startSimulation(param);
-		Environment.migrationResult.printLog();
-		Environment.migrationResult.printNetwork();
+		
+		ResultWriter.writeResultToFile(Environment.migrationResult);
+		LogWriter.writeLogToFile(Environment.migrationResult);
+		NetworkWriter.writeNetworkToFile();
 		
 		stream.close();
 	}

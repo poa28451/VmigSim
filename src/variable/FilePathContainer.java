@@ -9,16 +9,17 @@ public class FilePathContainer {
 	private static String outputDirectory;
 	private static int experimentRound;
 	
-	//private static String resultPath = "result/";
+	private static String resultPath = "result/";
 	private static String networkPath = "network/";
 	private static String logPath = "logfile/";
 	
-	//private static String resultFileName = "result";
+	private static String resultFileName = "result";
 	private static String networkFileName = "network";
 	private static String logFileName = "log";
 	
 	private static String roundWord = "-round";
-	private static String fileExtension = ".txt";
+	private static String logExtension = ".txt";
+	private static String resultExtension = ".json";
 	
 	public static void setInputPath(String inputPath) {
 		FilePathContainer.inputPath = inputPath;
@@ -40,7 +41,7 @@ public class FilePathContainer {
 		createDirectory(mainOutputDir);
 		
 		//Create simulation result path
-		//createDirectory(mainOutputDir + resultPath);
+		createDirectory(mainOutputDir + resultPath);
 		
 		//Create network result path
 		createDirectory(mainOutputDir + networkPath);
@@ -96,18 +97,18 @@ public class FilePathContainer {
 		return timeStamp;
 	}
 	
-	/*public static String getResultFilePath(){
-		String resultFullName = resultFileName + roundWord + experimentRound + fileExtension;
+	public static String getResultFilePath(){
+		String resultFullName = resultFileName + roundWord + experimentRound + resultExtension;
 		return outputDirectory + resultPath + resultFullName;
-	}*/
+	}
 	
 	public static String getNetworkFilePath(){
-		String networkFullName = networkFileName + roundWord + experimentRound + fileExtension;
+		String networkFullName = networkFileName + roundWord + experimentRound + logExtension;
 		return outputDirectory + networkPath + networkFullName;
 	}
 	
 	public static String getLogFilePath(){
-		String logFullName = logFileName + roundWord + experimentRound + fileExtension;
+		String logFullName = logFileName + roundWord + experimentRound + logExtension;
 		return outputDirectory + logPath + logFullName;
 	}
 }

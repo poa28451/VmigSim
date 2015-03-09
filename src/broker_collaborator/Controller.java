@@ -43,7 +43,10 @@ public class Controller {
 				return Double.MIN_VALUE;
 			}
 			
-			bwAtTimeKB = NetworkGenerator.getBandwidthAtTime(currentClock) * Constant.KILO_BYTE / 8;
+			//bwAtTimeKB = NetworkGenerator.getBandwidthAtTime(currentClock) * Constant.KILO_BYTE / 8;
+			double bwAtTimeMb = NetworkGenerator.getBandwidthAtTime(currentClock);
+			bwAtTimeKB = convertMbToKB(bwAtTimeMb);
+			
 			//Find the left time between that b/w interval
 			//Ex. if current time is 0.9 , then it has 0.1 second (1.1-0.9 = 0.2)
 			//	before the changing of b/w interval (to b/w of the second 1.1 - 2) 
@@ -101,5 +104,9 @@ public class Controller {
 			//Downtime = last transferring time
 			vm.setDownTime(transferTime);
 		}
+	}
+	
+	private double convertMbToKB(double number){
+		return number * Constant.KILO_BIT / 8;
 	}
 }
