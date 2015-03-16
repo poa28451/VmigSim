@@ -1,0 +1,42 @@
+{
+    "overall": {
+        "totalViolated": 0,
+        "downtime": {
+            "average": 17.34548403697855,
+            "total": 17.34548403697855
+        },
+        "totalViolatedPriority": {
+            "priority2": 0,
+            "priority3": 0,
+            "priority1": 0
+        },
+        "totalMigrated": 1,
+        "totalVm": 1,
+        "migrationTime": {
+            "average": 17.34548403697855,
+            "total": 17.34548403697855
+        },
+        "totalMigratedPriority": {
+            "priority2": {
+                "total": 0,
+                "migrated": 0
+            },
+            "priority3": {
+                "total": 0,
+                "migrated": 0
+            },
+            "priority1": {
+                "total": 1,
+                "migrated": 1
+            }
+        }
+    },
+    "migratedVm": {"0": {
+        "violated": false,
+        "downtime": 17.34548403697855,
+        "qos": 300,
+        "migrationTime": 17.34548403697855,
+        "priority": 1,
+        "ram": 1024
+    }}
+}

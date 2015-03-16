@@ -11,7 +11,7 @@ public class Controller {
 	
 	public double calculateMigrationTime(MigrationMessage msg, double nextMigrationDelay){
 		double migrationTime = 0;
-		double dataKb = msg.getDataSizeKb();
+		double dataKb = msg.getDataSizeKB();
 		double currentMigrationClock = nextMigrationDelay + CloudSim.clock();
 		
 		switch (Environment.controlType) {
@@ -107,6 +107,6 @@ public class Controller {
 	}
 	
 	private double convertMbToKB(double number){
-		return number * Constant.KILO_BIT / 8;
+		return number * Constant.KILO_BYTE / 8;
 	}
 }

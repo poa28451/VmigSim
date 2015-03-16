@@ -10,7 +10,7 @@
 			"networkType" : "dynamic",
 			"pageSize" : 4,
 
-			"wwsRatio" : 1 double,
+			"wwsPercentage" : 1 double,
 			"wwsDirtyRate" : 90 double,
 			"normalDirtyRate" : 20 double,
 			"maxPreCopyRound" : 30 int,

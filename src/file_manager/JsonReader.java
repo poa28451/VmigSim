@@ -44,7 +44,7 @@ public class JsonReader {
 		String networkType = environment.getString(JsonKeyName.getJSONInputKeyName(JsonKeyName.NETWORK_TYPE));
 		int pageSizeKB = environment.getInt(JsonKeyName.getJSONInputKeyName(JsonKeyName.PAGE_SIZE));
 		
-		double wwsPageRatio = environment.getDouble(JsonKeyName.getJSONInputKeyName(JsonKeyName.WWS_RATIO));
+		double wwsPageRatio = environment.getDouble(JsonKeyName.getJSONInputKeyName(JsonKeyName.WWS_PERCENTAGE));
 		double wwsDirtyRate = environment.getDouble(JsonKeyName.getJSONInputKeyName(JsonKeyName.WWS_DIRTY_RATE));
 		double normalDirtyRate = environment.getDouble(JsonKeyName.getJSONInputKeyName(JsonKeyName.NORMAL_DIRTY_RATE));
 		int maxPreCopyRound = environment.getInt(JsonKeyName.getJSONInputKeyName(JsonKeyName.MAX_PRECOPY_ROUND));

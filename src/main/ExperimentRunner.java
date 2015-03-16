@@ -39,7 +39,7 @@ public class ExperimentRunner {
 	
 	public void runExperiment(Parameters param) throws FileNotFoundException{
 		PrintStream stream = prepareLogPath();
-		System.setOut(stream);
+		//System.setOut(stream);
 		
 		VmigSimCore vmigsim = new VmigSimCore();
 		vmigsim.startSimulation(param);

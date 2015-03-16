@@ -59,16 +59,18 @@ public class ResultWriter {
 		
 		overall.put(JsonKeyName.getJSONOutputKeyName(JsonKeyName.TOTAL_VM), migResult.getTotalVm());
 		overall.put(JsonKeyName.getJSONOutputKeyName(JsonKeyName.TOTAL_MIGRATED), migResult.getTotalMigratedVm());
-		writePriorityDetail(overall);
+		writeMigratedPriorityDetail(overall);
 		
 		overall.put(JsonKeyName.getJSONOutputKeyName(JsonKeyName.TOTAL_VIOLATED), migResult.getTotalViolatedVm());
+		writeViolatedPriorityDetail(overall);
+		
 		writeMigrationTimeDetail(overall);
 		writeDowntimeDetail(overall);
 		
 		mainObject.put(JsonKeyName.getJSONOutputKeyName(JsonKeyName.OVERALL), overall);
 	}
 	
-	private static void writePriorityDetail(JSONObject overallObject){
+	private static void writeMigratedPriorityDetail(JSONObject overallObject){
 		JSONObject priDetail = new JSONObject();
 		JSONObject pri1 = new JSONObject();
 		JSONObject pri2 = new JSONObject();
@@ -88,6 +90,16 @@ public class ResultWriter {
 		priDetail.put(JsonKeyName.getJSONOutputKeyName(JsonKeyName.PRIORITY_3), pri3);
 		
 		overallObject.put(JsonKeyName.getJSONOutputKeyName(JsonKeyName.TOTAL_MIGRATED_PRIORITY), priDetail);
+	}
+	
+	private static void writeViolatedPriorityDetail(JSONObject overallObject){
+		JSONObject priDetail = new JSONObject();
+		
+		priDetail.put(JsonKeyName.getJSONOutputKeyName(JsonKeyName.PRIORITY_1), migResult.getViolatedPriority1());
+		priDetail.put(JsonKeyName.getJSONOutputKeyName(JsonKeyName.PRIORITY_2), migResult.getViolatedPriority2());
+		priDetail.put(JsonKeyName.getJSONOutputKeyName(JsonKeyName.PRIORITY_3), migResult.getViolatedPriority3());
+		
+		overallObject.put(JsonKeyName.getJSONOutputKeyName(JsonKeyName.TOTAL_VIOLATED_PRIORITY), priDetail);
 	}
 	
 	private static void writeMigrationTimeDetail(JSONObject overallObject){

@@ -18,7 +18,7 @@ public class JsonKeyName {
 	public static final int NETWORK_TYPE = KEY_BASE + 16;
 	public static final int PAGE_SIZE = KEY_BASE + 17;
 	
-	public static final int WWS_RATIO = KEY_BASE + 18;
+	public static final int WWS_PERCENTAGE = KEY_BASE + 18;
 	public static final int WWS_DIRTY_RATE = KEY_BASE + 19;
 	public static final int NORMAL_DIRTY_RATE = KEY_BASE + 20;
 	public static final int MAX_PRECOPY_ROUND = KEY_BASE + 21;
@@ -54,6 +54,7 @@ public class JsonKeyName {
 	public static final int MIGRATED = KEY_BASE + 157;
 	
 	public static final int TOTAL_VIOLATED = KEY_BASE + 160;
+	public static final int TOTAL_VIOLATED_PRIORITY = KEY_BASE + 161;
 	public static final int AVERAGE = KEY_BASE + 170;
 	
 	
@@ -74,7 +75,7 @@ public class JsonKeyName {
 		inputKeyName.put(CONTROL_TYPE, "controlType");
 		inputKeyName.put(NETWORK_TYPE, "networkType");
 		inputKeyName.put(PAGE_SIZE, "pageSize");
-		inputKeyName.put(WWS_RATIO, "wwsRatio");
+		inputKeyName.put(WWS_PERCENTAGE, "wwsPercentage");
 		inputKeyName.put(WWS_DIRTY_RATE, "wwsDirtyRate");
 		inputKeyName.put(NORMAL_DIRTY_RATE, "normalDirtyRate");
 		inputKeyName.put(MAX_PRECOPY_ROUND, "maxPreCopyRound");
@@ -107,6 +108,7 @@ public class JsonKeyName {
 		outputKeyName.put(TOTAL, "total");
 		outputKeyName.put(MIGRATED, "migrated");
 		outputKeyName.put(TOTAL_VIOLATED, "totalViolated");
+		outputKeyName.put(TOTAL_VIOLATED_PRIORITY, "totalViolatedPriority");
 		outputKeyName.put(AVERAGE, "average");
 	}
 	

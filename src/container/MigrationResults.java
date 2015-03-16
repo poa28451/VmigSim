@@ -20,6 +20,7 @@ public class MigrationResults {
 	private ArrayList<VmigSimVm> violatedVm;
 	private int totalPriority1, totalPriority2, totalPriority3;
 	private int migratedPriority1, migratedPriority2, migratedPriority3;
+	private int violatedPriority1, violatedPriority2, violatedPriority3;
 	
 	public MigrationResults(ArrayList<VmigSimVm> allVm, ArrayList<VmigSimVm> migratedVm){
 		setAllVm(allVm);
@@ -31,10 +32,14 @@ public class MigrationResults {
 		setMigratedPriority1(0);
 		setMigratedPriority2(0);
 		setMigratedPriority3(0);
+		setViolatedPriority1(0);
+		setViolatedPriority2(0);
+		setViolatedPriority3(0);
 		
 		countTotalPriority();
 		countMigratedPriority();
 		countTotalViolated();
+		countViolatedPriority();
 	}
 	
 	/**
@@ -93,6 +98,28 @@ public class MigrationResults {
 		for(VmigSimVm vm : getMigratedVm()){
 			if(vm.isViolated()){
 				getViolatedVm().add(vm);
+			}
+		}
+	}
+	
+	private void countViolatedPriority(){
+		for(VmigSimVm vm : getViolatedVm()){
+			int priority = vm.getPriority();
+			switch (priority) {
+				case Constant.PRIORITY_1:
+					setViolatedPriority1(getViolatedPriority1() + 1);
+					break;
+				
+				case Constant.PRIORITY_2:
+					setViolatedPriority2(getViolatedPriority2() + 1);
+					break;
+					
+				case Constant.PRIORITY_3:
+					setViolatedPriority3(getViolatedPriority3() + 1);
+					break;
+					
+				default:
+					break;
 			}
 		}
 	}
@@ -276,5 +303,29 @@ public class MigrationResults {
 
 	public void setMigratedPriority3(int migratedPriority3) {
 		this.migratedPriority3 = migratedPriority3;
+	}
+	
+	public int getViolatedPriority1(){
+		return violatedPriority1;
+	}
+	
+	public void setViolatedPriority1(int violatedPriority1){
+		this.violatedPriority1 = violatedPriority1;
+	}
+	
+	public int getViolatedPriority2(){
+		return violatedPriority2;
+	}
+	
+	public void setViolatedPriority2(int violatedPriority2){
+		this.violatedPriority2 = violatedPriority2;
+	}
+	
+	public int getViolatedPriority3(){
+		return violatedPriority3;
+	}
+	
+	public void setViolatedPriority3(int violatedPriority3){
+		this.violatedPriority3 = violatedPriority3;
 	}
 }

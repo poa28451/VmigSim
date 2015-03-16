@@ -5,8 +5,12 @@ import java.util.HashMap;
 
 public class Constant {
 	public static final int KILO_BYTE = 1024;
-	public static final int KILO_BIT = 1024;
+	//public static final int KILO_BIT = 1000;
 	public static final double START_INTERVAL = 0.1;
+	
+	private static final int GPR_SIZE_BYTE = 16*(64/8);
+	private static final int FP_SIZE_BYTE = 16*(128/8);
+	public static final int REGISTER_SIZE_BYTE = GPR_SIZE_BYTE + FP_SIZE_BYTE;
 	
 	//The precision of decimal used in calculating the network interval
 	// Ex. 10 means the number will be 10-digit decimal number

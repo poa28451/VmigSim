@@ -48,7 +48,13 @@ public class LogWriter {
 		System.out.println("\t\tPriority 1 = " + migResult.getMigratedPriority1() + " / " + migResult.getTotalPriority1());
 		System.out.println("\t\tPriority 2 = " + migResult.getMigratedPriority2() + " / " + migResult.getTotalPriority2());
 		System.out.println("\t\tPriority 3 = " + migResult.getMigratedPriority3() + " / " + migResult.getTotalPriority3());
-		System.out.println("\tTotal violated VM = " + migResult.getTotalViolatedVm());
+		
+		System.out.println("\tTotal violated VM = " + migResult.getTotalViolatedVm() + " / " + migResult.getTotalVm());
+		System.out.println("\tTotal violated priority: ");
+		System.out.println("\t\tPriority 1 = " + migResult.getViolatedPriority1() + " / " + migResult.getTotalPriority1());
+		System.out.println("\t\tPriority 2 = " + migResult.getViolatedPriority2() + " / " + migResult.getTotalPriority2());
+		System.out.println("\t\tPriority 3 = " + migResult.getViolatedPriority3() + " / " + migResult.getTotalPriority3());
+		
 		System.out.println("\tTotal migration time = " + migResult.getTotalMigrationTime() + 
 				" (Avg. = " + migResult.getTotalMigrationTime()/migResult.getTotalMigratedVm() + ") secs");
 		System.out.println("\tTotal down time = " + migResult.getTotalDownTime() +
@@ -79,9 +85,9 @@ public class LogWriter {
 	}
 
 	private static void writePreCopyDetail() {
-		System.out.println("\t\tNormal dirty rate = " + migResult.getNormalDirtyRate() + "%");
+		System.out.println("\t\tWWS page percentage = " + migResult.getWwsRatio() + "%");
 		System.out.println("\t\tWWS dirty rate = " + migResult.getWwsDirtyRate() + "%");
-		System.out.println("\t\tWWS page ratio = " + migResult.getWwsRatio() + "%");
+		System.out.println("\t\tNormal dirty rate = " + migResult.getNormalDirtyRate() + "%");
 		System.out.println("\t\tMax pre-copy iteration = " + migResult.getMaxPreCopyRound());
 		System.out.println("\t\tMin dirty page = " + migResult.getMinDirtyPage());
 		System.out.println("\t\tMax no-progress round = " + migResult.getMaxNoProgressRound());

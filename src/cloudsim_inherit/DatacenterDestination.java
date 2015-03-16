@@ -95,6 +95,10 @@ public class DatacenterDestination extends Datacenter{
 			migratedVm.setMigrated(result);
 			sendNow(ev.getSource(), Constant.REPORT_VM_MIGRATE, message); 
 		}
+		double transferred = migratedVm.getTotalTransferredKB();
+		double totalTransferred = transferred + message.getDataSizeKB();
+		migratedVm.setTotalTransferredKB(totalTransferred);
+		System.out.println("\tTotal transferred = " + totalTransferred + " KB");
 	}
 	
 	protected boolean allocateResourceForVm(VmigSimVm migratedVm){

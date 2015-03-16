@@ -68,7 +68,7 @@ public class MigrationMessage {
 		this.isLastMigrationMsg = isDoneMigrating;
 	}
 
-	public double getDataSizeKb() {
+	public double getDataSizeKB() {
 		return dataSizeKB;
 	}
 
