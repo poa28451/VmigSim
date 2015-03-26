@@ -94,7 +94,7 @@ public class MigrationManager {
 	}
 	
 	protected boolean isPreCopyEnd(int dirtyPageNum){
-		//Reached 30 iterations
+		/*//Reached 30 iterations
 		if(preCopyRound == Environment.maxPreCopyRound){
 			return true;
 		}
@@ -102,10 +102,26 @@ public class MigrationManager {
 		if(dirtyPageNum <= Environment.minDirtyPage){
 			return true;
 		}
+			
 		//Higher dirty page spawned than previous iteration's dirty page for 2 iterations straight
 		if(noProgressRound >= Environment.maxNoProgressRound){
 			return true;
+		}*/
+
+		double dirtySizeKB = dirtyPageNum * Environment.pageSizeKB;
+		double maxDowntimeSec = Environment.maxDowntimeMs / 1000;
+		
+		//double bwAtTimeMb = NetworkGenerator.getBandwidthAtTimeKB(CloudSim.clock());
+		double bwAtTimeKB = NetworkGenerator.getBandwidthAtTimeKB(CloudSim.clock());
+		double expectedDowntime = dirtySizeKB / bwAtTimeKB;
+		if(expectedDowntime <= maxDowntimeSec){
+			return true;
 		}
+		
+		/*if(Controller.calculateDowntime(dirtySizeKB, CloudSim.clock()) < maxDowntimeSec){
+		return true;
+		}*/
+		
 		return false;
 	}
 	

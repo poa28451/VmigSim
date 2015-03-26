@@ -21,6 +21,7 @@ public class Environment {
 	public static int maxNoProgressRound;
 	
 	public static MigrationResults migrationResult;
+	public static double maxDowntimeMs;
 	
 	public static void setMigrationTimeLimit(double migrationTimeLimit){
 		Environment.migrationTimeLimit = migrationTimeLimit;

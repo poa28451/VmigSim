@@ -70,6 +70,11 @@ public class DatacenterDestination extends Datacenter{
 		PreCopyMessage message = (PreCopyMessage) ev.getData();
 		VmigSimVm migratedVm = message.getVm();
 		double downTime = migratedVm.getDownTime();
+		
+		double transferred = migratedVm.getTotalTransferredKB();
+		double totalTransferred = transferred + message.getDataSizeKB();
+		migratedVm.setTotalTransferredKB(totalTransferred);
+		
 		System.out.println();
 		
 		if(!message.isLastMigrationMsg()){
@@ -82,12 +87,14 @@ public class DatacenterDestination extends Datacenter{
 			else{
 				System.out.println("\tDirty page amount: " + message.getDirtyPageAmount());
 			}
+			printTotalTransferData(totalTransferred);
 		}
 		else{
 			System.out.println(CloudSim.clock() + " DC id: " + ev.getDestination() + ": Recieved dirty pages and VM state from controller");
 			System.out.println("\tVM id: " + migratedVm.getId());
 			System.out.println("\tDirty page amount: " + message.getDirtyPageAmount());
 			System.out.println("\tVM id: " + migratedVm.getId() + " has done the migration.");
+			printTotalTransferData(totalTransferred);
 			
 			boolean result = allocateResourceForVm(migratedVm);
 			migratedVm.setStopClock(CloudSim.clock());
@@ -95,10 +102,6 @@ public class DatacenterDestination extends Datacenter{
 			migratedVm.setMigrated(result);
 			sendNow(ev.getSource(), Constant.REPORT_VM_MIGRATE, message); 
 		}
-		double transferred = migratedVm.getTotalTransferredKB();
-		double totalTransferred = transferred + message.getDataSizeKB();
-		migratedVm.setTotalTransferredKB(totalTransferred);
-		System.out.println("\tTotal transferred = " + totalTransferred + " KB");
 	}
 	
 	protected boolean allocateResourceForVm(VmigSimVm migratedVm){
@@ -125,5 +128,9 @@ public class DatacenterDestination extends Datacenter{
 	public boolean isViolateQos(double qos, double downTime){
 		if(qos < downTime) return true;
 		return false;
+	}
+	
+	private void printTotalTransferData(double totalTransferred){
+		System.out.println("\tTotal transferred = " + totalTransferred + " KB");
 	}
 }

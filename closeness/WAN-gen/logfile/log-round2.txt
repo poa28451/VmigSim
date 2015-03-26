@@ -1,0 +1,62 @@
+
+0.1 DC id: 2: Recieved start migration message from controller
+Starting the migration with vm amount: 1
+
+0.1 Broker: Received queue message from dc id2 sent at 0.1
+VM id: 0 added to a waiting queue
+Amount in a waiting queue: 1
+
+8.567144589701867 DC id: 3: Recieved VM pages from controller
+	VM id: 0
+	Received all memory page of VM: 41472 pages
+	Total transferred = 165888.0 KB
+
+8.571686157890182 DC id: 3: Recieved dirty pages and VM state from controller
+	VM id: 0
+	Dirty page amount: 21
+	VM id: 0 has done the migration.
+	Total transferred = 165972.375 KB
+VM id: 0 allocated into Host id 0
+Broker1 is shutting down...
+VmigSim finished!
+
+Migrated VM details ::
+	VM: 0 finished the migration with the time 8.471686157890183 seconds
+		RAM = 162 MB
+		Priority = 1
+		Downtime = 0.00454156818831509 seconds
+		QoS = 300 seconds / violate = false
+		Migration result = true
+
+Overall details ::
+	Total migrated VM = 1 / 1
+	Total migrated priority: 
+		Priority 1 = 1 / 1
+		Priority 2 = 0 / 0
+		Priority 3 = 0 / 0
+	Total violated VM = 0 / 1
+	Total violated priority: 
+		Priority 1 = 0 / 1
+		Priority 2 = 0 / 0
+		Priority 3 = 0 / 0
+	Total migration time = 8.471686157890183 (Avg. = 8.471686157890183) secs
+	Total down time = 0.00454156818831509 (Avg. = 0.00454156818831509) secs
+
+Environment details ::
+	Network type = static
+		Max Bandwidth = 186.646528 Mbps
+		Mean Bandwidth = 158.6859577 Mbps
+		Network's standard deviation = 16.34344445%
+		Network Interval = 1.0
+	Page size = 4 KB
+	Time limit = 3600.0 secs
+	Schedule type = fifo
+	Migration type = precopy
+		WWS page percentage = 0.057768815%
+		WWS dirty rate = 100.0%
+		Normal dirty rate = 0.0%
+		Max pre-copy iteration = 30
+		Min dirty page = 50
+		Max no-progress round = 2
+	Control type = openloop
+

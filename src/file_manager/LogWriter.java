@@ -55,10 +55,16 @@ public class LogWriter {
 		System.out.println("\t\tPriority 2 = " + migResult.getViolatedPriority2() + " / " + migResult.getTotalPriority2());
 		System.out.println("\t\tPriority 3 = " + migResult.getViolatedPriority3() + " / " + migResult.getTotalPriority3());
 		
+		double avgMigTime, avgDownTime;
+		avgMigTime = migResult.getTotalMigrationTime()/migResult.getTotalMigratedVm();
+		avgDownTime = migResult.getTotalDownTime()/migResult.getTotalMigratedVm();
+		if(Double.isNaN(avgMigTime)) avgMigTime = 0;
+		if(Double.isNaN(avgDownTime)) avgDownTime = 0;
+		
 		System.out.println("\tTotal migration time = " + migResult.getTotalMigrationTime() + 
-				" (Avg. = " + migResult.getTotalMigrationTime()/migResult.getTotalMigratedVm() + ") secs");
+				" (Avg. = " + avgMigTime + ") secs");
 		System.out.println("\tTotal down time = " + migResult.getTotalDownTime() +
-				" (Avg. = " + migResult.getTotalDownTime()/migResult.getTotalMigratedVm() + ") secs");
+				" (Avg. = " + avgDownTime + ") secs");
 		System.out.println();
 	}
 	

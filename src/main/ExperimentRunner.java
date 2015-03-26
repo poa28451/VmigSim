@@ -39,13 +39,15 @@ public class ExperimentRunner {
 	
 	public void runExperiment(Parameters param) throws FileNotFoundException{
 		PrintStream stream = prepareLogPath();
-		//System.setOut(stream);
+		System.setOut(stream);
 		
 		VmigSimCore vmigsim = new VmigSimCore();
 		vmigsim.startSimulation(param);
 		
-		ResultWriter.writeResultToFile(Environment.migrationResult);
 		LogWriter.writeLogToFile(Environment.migrationResult);
+		
+		ResultWriter.writeResultToFile(Environment.migrationResult);
+		
 		NetworkWriter.writeNetworkToFile();
 		
 		stream.close();
@@ -67,11 +69,12 @@ public class ExperimentRunner {
 	}
 	
 	public static void main(String args[]){		
-		if(args.length == 3){
+		if(args.length == 4){
 			String inputPath = args[0];
 			String outputPath = args[1];
 			int experimentRound = Integer.valueOf(args[2]);
 			
+			Environment.maxDowntimeMs = Double.valueOf(args[3]);
 			ExperimentRunner runner = new ExperimentRunner(inputPath, outputPath, experimentRound);
 			runner.runExperiment();
 		}

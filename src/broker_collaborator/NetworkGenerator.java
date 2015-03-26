@@ -114,10 +114,10 @@ public class NetworkGenerator {
 	 * Get bandwidth at the specific time. This function will convert the time into the interval number
 	 * and use it to retrieve the bandwidth trace.
 	 * @param time The time to get a bandwidth
-	 * @return bandwidth in Mbps
+	 * @return bandwidth in KBps
 	 */
-	public static double getBandwidthAtTime(double time){
-		return getBwTrace().get(calculateIntervalNum(time));
+	public static double getBandwidthAtTimeKB(double time){
+		return getBwTrace().get(calculateIntervalNum(time)) * Constant.KILO_BYTE / 8;
 	}
 	
 	/**

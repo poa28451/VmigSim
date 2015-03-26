@@ -1,8 +1,8 @@
 {
 	"environment" : 
 		{
-			"maxBandwidth" : 78.6,
-			"meanBandwidth" : 60.982573164912280701754385964912,
+			"maxBandwidth" : 64,
+			"meanBandwidth" : 60.39073684,
 			"timeLimit" : 21600,
 			"scheduleType" : "fifo",
 			"migrationType" : "precopy",
@@ -10,22 +10,22 @@
 			"networkType" : "static",
 			"pageSize" : 4,
 
-			"wwsPercentage" : 0,
-			"wwsDirtyRate" : 0,
+			"wwsPercentage" : 0.054309379,
+			"wwsDirtyRate" : 100,
 			"normalDirtyRate" : 0,
 			"maxPreCopyRound" : 30,
 			"minDirtyPage" : 50,
 			"maxNoProgressRound" : 2,
 
 			"networkInterval" : 1,
-			"networkSD" : 0.83757741995614035087719298245614
+			"networkSD" : 1.588500677
 		},
 
 	"vmSpecList" :
 		[
 			{
 					"vmAmount" : 1,
-					"ram" : 161,
+					"ram" : 512,
 					"priority" : 1,
 					"qos" : 300
 			}

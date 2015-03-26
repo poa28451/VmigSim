@@ -107,6 +107,10 @@ public class ResultWriter {
 		double totalMigTime = migResult.getTotalMigrationTime();
 		double avgMigTime = totalMigTime / migResult.getTotalMigratedVm();
 		
+		if(Double.isNaN(avgMigTime)){
+			avgMigTime = 0;
+		}
+		
 		migTime.put(JsonKeyName.getJSONOutputKeyName(JsonKeyName.TOTAL), totalMigTime);	
 		migTime.put(JsonKeyName.getJSONOutputKeyName(JsonKeyName.AVERAGE), avgMigTime);
 		
@@ -117,6 +121,8 @@ public class ResultWriter {
 		JSONObject downtime = new JSONObject();
 		double totalDowntime = migResult.getTotalDownTime();
 		double avgDowntime = totalDowntime / migResult.getTotalMigratedVm();
+		
+		if(Double.isNaN(avgDowntime)) avgDowntime = 0;
 		
 		downtime.put(JsonKeyName.getJSONOutputKeyName(JsonKeyName.TOTAL), totalDowntime);	
 		downtime.put(JsonKeyName.getJSONOutputKeyName(JsonKeyName.AVERAGE), avgDowntime);
