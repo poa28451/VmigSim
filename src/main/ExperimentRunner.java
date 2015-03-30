@@ -4,6 +4,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.PrintStream;
 
+import broker_collaborator.MigrationManager;
 import container.Parameters;
 import file_manager.JsonReader;
 import file_manager.LogWriter;
@@ -75,8 +76,13 @@ public class ExperimentRunner {
 			int experimentRound = Integer.valueOf(args[2]);
 			
 			Environment.maxDowntimeMs = Double.valueOf(args[3]);
+			
+			
 			ExperimentRunner runner = new ExperimentRunner(inputPath, outputPath, experimentRound);
 			runner.runExperiment();
+			
+			
+			MigrationManager.writer.close();
 		}
 		else{
 			showHelp();

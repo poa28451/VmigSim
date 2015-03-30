@@ -1,5 +1,8 @@
 package broker_collaborator;
 
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
 import java.util.Random;
 
 import org.cloudbus.cloudsim.core.CloudSim;
@@ -15,9 +18,36 @@ public class MigrationManager {
 	private int preCopyRound, noProgressRound;
 	private int previousDirtyPage;
 	
+	/***
+	 * 
+	 * 
+	 */
+	public static PrintWriter writer;
+	
 	public MigrationManager(){
 		setPreCopyRound(0);
 		setNoProgressRound(0);
+		
+		dirtyFile();
+	}
+	
+	/***
+	 * 
+	 */
+	private void dirtyFile(){
+		try {
+			writer = new PrintWriter("dirty\\dirty.txt", "UTF-8");
+			
+			/*for(int i=0; i<bwTrace.size(); i++){
+				double bw = bwTrace.get(i);
+				writer.println(bw);
+			}
+			writer.close();*/
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (UnsupportedEncodingException e) {
+			e.printStackTrace();
+		}
 	}
 	
 	public MigrationMessage manageMigration(){
@@ -94,16 +124,16 @@ public class MigrationManager {
 	}
 	
 	protected boolean isPreCopyEnd(int dirtyPageNum){
-		/*//Reached 30 iterations
+		/*//Reached specified iterations
 		if(preCopyRound == Environment.maxPreCopyRound){
 			return true;
 		}
-		//Dirty page less than 50 pages
+		//Dirty page less than specified pages
 		if(dirtyPageNum <= Environment.minDirtyPage){
 			return true;
 		}
 			
-		//Higher dirty page spawned than previous iteration's dirty page for 2 iterations straight
+		//Higher dirty page spawned than previous iteration's dirty page for specified iterations straight
 		if(noProgressRound >= Environment.maxNoProgressRound){
 			return true;
 		}*/
@@ -117,10 +147,6 @@ public class MigrationManager {
 		if(expectedDowntime <= maxDowntimeSec){
 			return true;
 		}
-		
-		/*if(Controller.calculateDowntime(dirtySizeKB, CloudSim.clock()) < maxDowntimeSec){
-		return true;
-		}*/
 		
 		return false;
 	}
@@ -137,17 +163,49 @@ public class MigrationManager {
 		Random typeRandom = new Random();
 		Random dirtyRandom = new Random();
 		
+		/***
+		 * 
+		 */
+		Random critRandom = new Random();
+		
 		for(int i=0; i<vm.getMemoryPageNum(); i++){
 			double pageType = typeRandom.nextDouble() * 100.0;
 			double dirty = dirtyRandom.nextDouble() * 100.0; //random value between 0-100
-			double dirtyCriterion = checkDirtyRate(pageType); //check dirty rate by the page type
+			//double dirtyCriterion = checkDirtyRate(pageType); //check dirty rate by the page type
 			
+			/**
+			 * 
+			 */
+			double dirtyCriterion = checkDirtyRate(pageType) + randomDeviation(critRandom);
 
 			if(dirty <= dirtyCriterion){
 				diryPage++;
 			}
 		}
+		
+		/***
+		 * 
+		 */
+		writer.println(diryPage*Environment.pageSizeKB);
+		
 		vm.setDirtyPageNum(diryPage);
+	}
+	
+	/**
+	 * 
+	 * @param ran
+	 * @return
+	 */
+	private double randomDeviation(Random ran){
+		double chance;
+		double deviation = 0;
+		double stdDev = 0.001617163;
+		do{
+			chance = ran.nextGaussian();
+			deviation = chance * stdDev;
+		}
+		while(deviation + Environment.wwsDirtyRate < 0);
+		return deviation;
 	}
 	
 	private double checkDirtyRate(double type){

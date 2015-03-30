@@ -10,8 +10,8 @@
 			"networkType" : "static",
 			"pageSize" : 4,
 
-			"wwsPercentage" : 0.054309379,
-			"wwsDirtyRate" : 100,
+			"wwsPercentage" : 100,
+			"wwsDirtyRate" : 0.001523972,
 			"normalDirtyRate" : 0,
 			"maxPreCopyRound" : 30,
 			"minDirtyPage" : 50,
