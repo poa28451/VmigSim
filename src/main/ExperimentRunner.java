@@ -69,25 +69,18 @@ public class ExperimentRunner {
 	}
 	
 	public static void main(String args[]){		
-		if(args.length == 4){
+		if(args.length == 3){
 			String inputPath = args[0];
 			String outputPath = args[1];
 			int experimentRound = Integer.valueOf(args[2]);
 			
-			Environment.maxDowntimeMs = Double.valueOf(args[3]);
+			//Environment.maxDowntimeMs = Double.valueOf(args[3]);
 			ExperimentRunner runner = new ExperimentRunner(inputPath, outputPath, experimentRound);
 			runner.runExperiment();
 		}
 		else{
 			showHelp();
 		}
-		
-		/*Environment.setNetworkType(0);
-		Environment.setMigrationTimeLimit(26200);
-		NetworkGenerator nw = new NetworkGenerator(100, 80, 1, 54.8222);
-		for(double d : nw.getBwTrace()){
-			System.out.println(d);
-		}*/
 	}
 	
 	private static void showHelp(){

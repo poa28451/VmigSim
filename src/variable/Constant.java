@@ -7,6 +7,7 @@ public class Constant {
 	public static final int KILO_BYTE = 1024;
 	//public static final int KILO_BIT = 1000;
 	public static final double START_INTERVAL = 0.1;
+	public static final double STATIC_NETWORK_SD_PERCENTAGE = 0.83757741995614035087719298245614;
 	
 	private static final int GPR_SIZE_BYTE = 16*(64/8);
 	private static final int FP_SIZE_BYTE = 16*(128/8);

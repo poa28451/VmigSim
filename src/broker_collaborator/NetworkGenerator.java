@@ -30,8 +30,16 @@ public class NetworkGenerator {
 		setMaxBandwidth(maxBandwidth);
 		setMeanBandwidth(meanBandwidth);
 		setBwTrace(new ArrayList<Double>());
-		setStddevPercent(networkSD);
 		setNetworkInterval(networkInterval);
+
+		if(Environment.networkType == Constant.STATIC){
+			//If it's a static network, use default network STDDEV
+			setStddevPercent(Constant.STATIC_NETWORK_SD_PERCENTAGE);
+		}
+		else{
+			setStddevPercent(networkSD);
+		}
+		
 		generateBandwidth();
 	}
 	
@@ -55,8 +63,6 @@ public class NetworkGenerator {
 		Random ran = new Random();
 		for(int i=0; i<intervalAmount; i++){			
 			double deviation = randomDeviation(ran);
-			// Plus 1 for making the number into % (e.g. 120%)
-			//double bw = getMaxBandwidth() - deviation;
 			double bw = getMeanBandwidth() + deviation;
 			getBwTrace().add(bw);
 		}
@@ -93,8 +99,7 @@ public class NetworkGenerator {
 		do{
 			chance = ran.nextGaussian();
 			deviation = chance * ((stddevPercent / 100) * getMaxBandwidth());
-		//Do the loop until we get the deviation that is less than the bandwidth
-		}//while(deviation > getMaxBandwidth() || deviation < 0);
+		}
 		while(!checkIfBandwidthInRange(deviation));
 		return deviation;
 	}
