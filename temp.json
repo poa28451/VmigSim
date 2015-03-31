@@ -10,15 +10,15 @@
 			"networkType" : "dynamic",
 			"pageSize" : 4,
 
-			"wwsPercentage" : 100,
-			"wwsDirtyRate" : 0,
-			"normalDirtyRate" : 0,
+			"wwsPercentage" : 1,
+			"wwsDirtyRate" : 90,
+			"normalDirtyRate" : 20,
 			"maxPreCopyRound" : 30,
 			"minDirtyPage" : 50,
 			"maxNoProgressRound" : 2,
 
 			"networkInterval" : 1,
-			"networkSD" : 0
+			"networkSD" : 60
 		},
 
 	"vmSpecList" :
