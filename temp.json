@@ -2,23 +2,23 @@
 	"environment" : 
 		{
 			"maxBandwidth" : 64,
-			"meanBandwidth" : 60.39073684,
+			"meanBandwidth" : 60.982573164912280701754385964912,
 			"timeLimit" : 21600,
 			"scheduleType" : "fifo",
 			"migrationType" : "precopy",
 			"controlType" : "openloop",
-			"networkType" : "static",
+			"networkType" : "dynamic",
 			"pageSize" : 4,
 
-			"wwsPercentage" : 0.054309379,
-			"wwsDirtyRate" : 100,
+			"wwsPercentage" : 100,
+			"wwsDirtyRate" : 0,
 			"normalDirtyRate" : 0,
 			"maxPreCopyRound" : 30,
 			"minDirtyPage" : 50,
 			"maxNoProgressRound" : 2,
 
 			"networkInterval" : 1,
-			"networkSD" : 1.588500677
+			"networkSD" : 0
 		},
 
 	"vmSpecList" :

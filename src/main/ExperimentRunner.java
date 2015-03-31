@@ -68,7 +68,7 @@ public class ExperimentRunner {
 		return null;
 	}
 	
-	public static void main(String args[]){		
+	public static void main(String args[]){
 		if(args.length == 3){
 			String inputPath = args[0];
 			String outputPath = args[1];
