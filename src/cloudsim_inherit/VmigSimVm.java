@@ -13,7 +13,7 @@ public class VmigSimVm extends Vm{
 	private double startClock;
 	private double stopClock;
 	private double migrationTime;
-	private double downTime;
+	private double downtime;
 	private double totalTransferredKB;
 	private boolean isViolated;
 	private boolean isMigrated;
@@ -28,7 +28,7 @@ public class VmigSimVm extends Vm{
 		setStartClock(0);
 		setStopClock(0);
 		setMigrationTime(0);
-		setDownTime(0);
+		setDowntime(0);
 		setTotalTransferredKB(0);
 		setViolated(false);
 		setMigrated(false);
@@ -99,12 +99,12 @@ public class VmigSimVm extends Vm{
 		this.migrationTime += additionTime;
 	}
 
-	public double getDownTime() {
-		return downTime;
+	public double getDowntime() {
+		return downtime;
 	}
 
-	public void setDownTime(double downTime) {
-		this.downTime = downTime;
+	public void setDowntime(double downTime) {
+		this.downtime = downTime;
 	}
 
 	public double getTotalTransferredKB() {
@@ -134,7 +134,7 @@ public class VmigSimVm extends Vm{
 	public double getViolationPercenteage(){
 		double percent = 0;
 		if(isViolated){
-			double violate = downTime - qos;
+			double violate = downtime - qos;
 			percent = violate * 100 / qos;
 		}
 		return percent;

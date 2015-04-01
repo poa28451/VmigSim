@@ -21,10 +21,16 @@ public class MigrationResults {
 	private int totalPriority1, totalPriority2, totalPriority3;
 	private int migratedPriority1, migratedPriority2, migratedPriority3;
 	private int violatedPriority1, violatedPriority2, violatedPriority3;
+	private double avgExcessPriority1, avgExcessPriority2, avgExcessPriority3;
 	
 	public MigrationResults(ArrayList<VmigSimVm> allVm, ArrayList<VmigSimVm> migratedVm){
 		setAllVm(allVm);
 		setMigratedVm(migratedVm);
+		initialAllVariable();
+		countPriority();
+	}
+	
+	private void initialAllVariable(){
 		setViolatedVm(new ArrayList<VmigSimVm>());
 		setTotalPriority1(0);
 		setTotalPriority2(0);
@@ -35,11 +41,17 @@ public class MigrationResults {
 		setViolatedPriority1(0);
 		setViolatedPriority2(0);
 		setViolatedPriority3(0);
-		
+		setAvgExcessPriority1(0);
+		setAvgExcessPriority2(0);
+		setAvgExcessPriority3(0);
+	}
+	
+	private void countPriority(){
 		countTotalPriority();
 		countMigratedPriority();
 		countTotalViolated();
 		countViolatedPriority();
+		countTotalExcessDowntimePercentage();
 	}
 	
 	/**
@@ -124,6 +136,50 @@ public class MigrationResults {
 		}
 	}
 	
+	private void countTotalExcessDowntimePercentage(){
+		for(VmigSimVm vm : getViolatedVm()){
+			int priority = vm.getPriority();
+			double excess = calculateExcessPercentage(vm);
+			
+			switch (priority) {
+				case Constant.PRIORITY_1:
+					setAvgExcessPriority1(getAvgExcessPriority1() + excess);
+					break;
+				
+				case Constant.PRIORITY_2:
+					setAvgExcessPriority2(getAvgExcessPriority2() + excess);
+					break;
+					
+				case Constant.PRIORITY_3:
+					setAvgExcessPriority3(getAvgExcessPriority3() + excess);
+					break;
+					
+				default:
+					break;
+			}
+		}
+		double avgExcessP1 = getAvgExcessPriority1()/getTotalPriority1();
+		double avgExcessP2 = getAvgExcessPriority2()/getTotalPriority2();
+		double avgExcessP3 = getAvgExcessPriority3()/getTotalPriority3();
+		setAvgExcessPriority1(handleNanValue(avgExcessP1, 0));
+		setAvgExcessPriority2(handleNanValue(avgExcessP2, 0));
+		setAvgExcessPriority3(handleNanValue(avgExcessP3, 0));
+	}
+	
+	private double calculateExcessPercentage(VmigSimVm vm){
+		double excess = (vm.getDowntime() - vm.getQos()) * 100 / vm.getQos();
+		return excess;
+	}
+	
+	public double getAllAvgExcessDowntime(){
+		double all = getAvgExcessPriority1() + getAvgExcessPriority2() + getAvgExcessPriority3();
+		int divider = 0;
+		if(getTotalPriority1() > 0) divider++;
+		if(getTotalPriority2() > 0) divider++;
+		if(getTotalPriority3() > 0) divider++;
+		return all / divider;
+	}
+	
 	public double getTotalMigrationTime(){
 		double migrationTime = 0;
 		for(VmigSimVm vm : getMigratedVm()){
@@ -132,12 +188,26 @@ public class MigrationResults {
 		return migrationTime;
 	}
 	
-	public double getTotalDownTime(){
-		double downTime = 0;
+	public double getTotalDowntime(){
+		double downtime = 0;
 		for(VmigSimVm vm : getMigratedVm()){
-			downTime += vm.getDownTime();
+			downtime += vm.getDowntime();
 		}
-		return downTime;
+		return downtime;
+	}
+	
+	public double getAverageMigrationTime(){
+		double total = getTotalMigrationTime();
+		double vms = getTotalMigratedVm();
+		double avg = total / vms;
+		return handleNanValue(avg, 0);
+	}
+	
+	public double getAverageDownTime(){
+		double total = getTotalDowntime();
+		double vms = getTotalMigratedVm();
+		double avg = total / vms;
+		return handleNanValue(avg, 0);
 	}
 	
 	public int getTotalVm(){
@@ -327,5 +397,34 @@ public class MigrationResults {
 	
 	public void setViolatedPriority3(int violatedPriority3){
 		this.violatedPriority3 = violatedPriority3;
+	}
+
+	public double getAvgExcessPriority1() {
+		return avgExcessPriority1;
+	}
+
+	public void setAvgExcessPriority1(double excessPriority1) {
+		this.avgExcessPriority1 = excessPriority1;
+	}
+
+	public double getAvgExcessPriority2() {
+		return avgExcessPriority2;
+	}
+
+	public void setAvgExcessPriority2(double excessPriority2) {
+		this.avgExcessPriority2 = excessPriority2;
+	}
+
+	public double getAvgExcessPriority3() {
+		return avgExcessPriority3;
+	}
+
+	public void setAvgExcessPriority3(double excessPriority3) {
+		this.avgExcessPriority3 = excessPriority3;
+	}
+	
+	private double handleNanValue(double value, double fixValue){
+		if(Double.isNaN(value)) return fixValue;
+		return value;
 	}
 }

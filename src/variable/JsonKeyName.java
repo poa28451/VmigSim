@@ -55,6 +55,10 @@ public class JsonKeyName {
 	
 	public static final int TOTAL_VIOLATED = KEY_BASE + 160;
 	public static final int TOTAL_VIOLATED_PRIORITY = KEY_BASE + 161;
+	
+	public static final int EXCESS_DOWNTIME = KEY_BASE + 165;
+	public static final int EXCESS_DOWNTIME_PRIORITY = KEY_BASE + 166;
+	
 	public static final int AVERAGE = KEY_BASE + 170;
 	
 	
@@ -109,6 +113,8 @@ public class JsonKeyName {
 		outputKeyName.put(MIGRATED, "migrated");
 		outputKeyName.put(TOTAL_VIOLATED, "totalViolated");
 		outputKeyName.put(TOTAL_VIOLATED_PRIORITY, "totalViolatedPriority");
+		outputKeyName.put(EXCESS_DOWNTIME, "excessDowntime");
+		outputKeyName.put(EXCESS_DOWNTIME_PRIORITY, "excessDowntimePriority");
 		outputKeyName.put(AVERAGE, "average");
 	}
 	

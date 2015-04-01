@@ -54,6 +54,13 @@
 			"priority2": 10 int,
 			"priority3": 10 int,
 		},
+		"excessDowntime" : 2 double-percentage,
+		"excessDowntimePriority" :
+		{
+			"priority1": 10 double-percentage,
+			"priority2": 10 double-percentage,
+			"priority3": 10 double-percentage,
+		},
 		"migrationTime" :
 		{
 			"total": 1000 double,

@@ -45,7 +45,7 @@ public class ResultWriter {
 			vmDetail.put(JsonKeyName.getJSONInputKeyName(JsonKeyName.PRIORITY), vm.getPriority());
 			vmDetail.put(JsonKeyName.getJSONInputKeyName(JsonKeyName.QOS), vm.getQos());
 			vmDetail.put(JsonKeyName.getJSONOutputKeyName(JsonKeyName.MIGRATION_TIME), vm.getMigrationTime());
-			vmDetail.put(JsonKeyName.getJSONOutputKeyName(JsonKeyName.DOWNTIME), vm.getDownTime());
+			vmDetail.put(JsonKeyName.getJSONOutputKeyName(JsonKeyName.DOWNTIME), vm.getDowntime());
 			vmDetail.put(JsonKeyName.getJSONOutputKeyName(JsonKeyName.VIOLATED), vm.isViolated());
 			
 			allMigrated.put(String.valueOf(vm.getId()), vmDetail);
@@ -63,6 +63,9 @@ public class ResultWriter {
 		
 		overall.put(JsonKeyName.getJSONOutputKeyName(JsonKeyName.TOTAL_VIOLATED), migResult.getTotalViolatedVm());
 		writeViolatedPriorityDetail(overall);
+		
+		overall.put(JsonKeyName.getJSONOutputKeyName(JsonKeyName.EXCESS_DOWNTIME), migResult.getAllAvgExcessDowntime());
+		writeExcessDowntimePriorityDetail(overall);
 		
 		writeMigrationTimeDetail(overall);
 		writeDowntimeDetail(overall);
@@ -102,14 +105,20 @@ public class ResultWriter {
 		overallObject.put(JsonKeyName.getJSONOutputKeyName(JsonKeyName.TOTAL_VIOLATED_PRIORITY), priDetail);
 	}
 	
+	private static void writeExcessDowntimePriorityDetail(JSONObject overallObject){
+		JSONObject excessDetail = new JSONObject();
+		
+		excessDetail.put(JsonKeyName.getJSONOutputKeyName(JsonKeyName.PRIORITY_1), migResult.getAvgExcessPriority1());
+		excessDetail.put(JsonKeyName.getJSONOutputKeyName(JsonKeyName.PRIORITY_2), migResult.getAvgExcessPriority2());
+		excessDetail.put(JsonKeyName.getJSONOutputKeyName(JsonKeyName.PRIORITY_3), migResult.getAvgExcessPriority3());
+		
+		overallObject.put(JsonKeyName.getJSONOutputKeyName(JsonKeyName.EXCESS_DOWNTIME_PRIORITY), excessDetail);
+	}
+	
 	private static void writeMigrationTimeDetail(JSONObject overallObject){
 		JSONObject migTime = new JSONObject();
 		double totalMigTime = migResult.getTotalMigrationTime();
-		double avgMigTime = totalMigTime / migResult.getTotalMigratedVm();
-		
-		if(Double.isNaN(avgMigTime)){
-			avgMigTime = 0;
-		}
+		double avgMigTime = migResult.getAverageMigrationTime();
 		
 		migTime.put(JsonKeyName.getJSONOutputKeyName(JsonKeyName.TOTAL), totalMigTime);	
 		migTime.put(JsonKeyName.getJSONOutputKeyName(JsonKeyName.AVERAGE), avgMigTime);
@@ -119,8 +128,8 @@ public class ResultWriter {
 	
 	private static void writeDowntimeDetail(JSONObject overallObject){
 		JSONObject downtime = new JSONObject();
-		double totalDowntime = migResult.getTotalDownTime();
-		double avgDowntime = totalDowntime / migResult.getTotalMigratedVm();
+		double totalDowntime = migResult.getTotalDowntime();
+		double avgDowntime = migResult.getAverageDownTime();
 		
 		if(Double.isNaN(avgDowntime)) avgDowntime = 0;
 		

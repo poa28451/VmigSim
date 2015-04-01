@@ -53,7 +53,7 @@ public class DatacenterDestination extends Datacenter{
 	protected void handleOfflineMigration(SimEvent ev){
 		MigrationMessage message = (MigrationMessage) ev.getData();
 		VmigSimVm migratedVm = message.getVm();
-		double downTime = migratedVm.getDownTime();
+		double downTime = migratedVm.getDowntime();
 		
 		System.out.println();
 		System.out.println(CloudSim.clock() + " DC id: " + ev.getDestination() + ": Recieved migrated VM from controller");
@@ -69,7 +69,7 @@ public class DatacenterDestination extends Datacenter{
 	protected void handlePreCopyMigration(SimEvent ev){
 		PreCopyMessage message = (PreCopyMessage) ev.getData();
 		VmigSimVm migratedVm = message.getVm();
-		double downTime = migratedVm.getDownTime();
+		double downTime = migratedVm.getDowntime();
 		
 		double transferred = migratedVm.getTotalTransferredKB();
 		double totalTransferred = transferred + message.getDataSizeKB();

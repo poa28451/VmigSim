@@ -102,7 +102,7 @@ public class Controller {
 		
 		if(msg.isLastMigrationMsg()){
 			//Downtime = last transferring time
-			vm.setDownTime(transferTime);
+			vm.setDowntime(transferTime);
 		}
 	}
 	
