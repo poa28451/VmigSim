@@ -44,13 +44,13 @@ public class LogWriter {
 	private static void writeOverallLog() {
 		System.out.println("Overall details ::");
 		System.out.println("\tTotal migrated VM = " + migResult.getTotalMigratedVm() + " / " + migResult.getTotalVm());
-		System.out.println("\tTotal migrated in each priority: ");
+		System.out.println("\tTotal migrated VM in each priority: ");
 		System.out.println("\t\tPriority 1 = " + migResult.getMigratedPriority1() + " / " + migResult.getTotalPriority1());
 		System.out.println("\t\tPriority 2 = " + migResult.getMigratedPriority2() + " / " + migResult.getTotalPriority2());
 		System.out.println("\t\tPriority 3 = " + migResult.getMigratedPriority3() + " / " + migResult.getTotalPriority3());
 		
 		System.out.println("\tTotal violated VM = " + migResult.getTotalViolatedVm() + " / " + migResult.getTotalVm());
-		System.out.println("\tTotal violated in each priority: ");
+		System.out.println("\tTotal violated VM in each priority: ");
 		System.out.println("\t\tPriority 1 = " + migResult.getViolatedPriority1() + " / " + migResult.getTotalPriority1());
 		System.out.println("\t\tPriority 2 = " + migResult.getViolatedPriority2() + " / " + migResult.getTotalPriority2());
 		System.out.println("\t\tPriority 3 = " + migResult.getViolatedPriority3() + " / " + migResult.getTotalPriority3());
