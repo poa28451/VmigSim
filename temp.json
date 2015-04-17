@@ -4,15 +4,15 @@
 			"maxBandwidth" : 64,
 			"meanBandwidth" : 60.39073684,
 			"timeLimit" : 21600,
-			"scheduleType" : "fifo",
-			"migrationType" : "offline",
+			"scheduleType" : "priority",
+			"migrationType" : "precopy",
 			"controlType" : "openloop",
-			"networkType" : "dynamic",
+			"networkType" : "static",
 			"pageSize" : 4,
 
-			"wwsPercentage" : 100,
-			"wwsDirtyRate" : 0.054309379,
-			"normalDirtyRate" : 0,
+			"wwsPercentage" : 1,
+			"wwsDirtyRate" : 90,
+			"normalDirtyRate" : 20,
 			"maxPreCopyRound" : 30,
 			"minDirtyPage" : 50,
 			"maxNoProgressRound" : 2,
@@ -24,10 +24,22 @@
 	"vmSpecList" :
 		[
 			{
-					"vmAmount" : 1,
+					"vmAmount" : 200,
 					"ram" : 512,
 					"priority" : 1,
 					"qos" : 300
+			},
+			{
+					"vmAmount" : 200,
+					"ram" : 512,
+					"priority" : 2,
+					"qos" : 2700
+			},
+			{
+					"vmAmount" : 200,
+					"ram" : 512,
+					"priority" : 3,
+					"qos" : 32400
 			}
 		]
 }
