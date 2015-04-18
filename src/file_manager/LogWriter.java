@@ -74,7 +74,9 @@ public class LogWriter {
 		avgMigTime = migResult.getAverageMigrationTime();
 		avgDownTime = migResult.getAverageDownTime();
 		
-		System.out.println("\tTotal migration time = " + migResult.getTotalMigrationTime() + 
+		/*System.out.println("\tTotal migration time = " + migResult.getTotalMigrationTime() + 
+				" (Avg. = " + avgMigTime + ") secs");*/
+		System.out.println("\tTotal migration time = " + migResult.getRealMigTime() + 
 				" (Avg. = " + avgMigTime + ") secs");
 		System.out.println("\tTotal down time = " + migResult.getTotalDowntime() +
 				" (Avg. = " + avgDownTime + ") secs");

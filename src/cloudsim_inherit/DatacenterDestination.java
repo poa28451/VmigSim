@@ -57,7 +57,7 @@ public class DatacenterDestination extends Datacenter{
 		
 		System.out.println();
 		System.out.println(CloudSim.clock() + " DC id: " + ev.getDestination() + ": Recieved migrated VM from controller");
-		System.out.println("\tVM id: " + migratedVm.getId());
+		System.out.println("\tVM id: " + migratedVm.getId() + " " + migratedVm.getRam());
 		
 		boolean result = allocateResourceForVm(migratedVm);
 		migratedVm.setStopClock(CloudSim.clock());
@@ -79,7 +79,7 @@ public class DatacenterDestination extends Datacenter{
 		
 		if(!message.isLastMigrationMsg()){
 			System.out.println(CloudSim.clock() + " DC id: " + ev.getDestination() + ": Recieved VM pages from controller");
-			System.out.println("\tVM id: " + migratedVm.getId());
+			System.out.println("\tVM id: " + migratedVm.getId() + " " + migratedVm.getRam());
 			if(message.getDirtyPageAmount() == Integer.MIN_VALUE){
 				//This means it's a first round of pre-copy
 				System.out.println("\tReceived all memory page of VM: " + migratedVm.getMemoryPageNum() + " pages");
@@ -90,8 +90,8 @@ public class DatacenterDestination extends Datacenter{
 			printTotalTransferData(totalTransferred);
 		}
 		else{
-			System.out.println(CloudSim.clock() + " DC id: " + ev.getDestination() + ": Recieved dirty pages and VM state from controller");
-			System.out.println("\tVM id: " + migratedVm.getId());
+			System.out.println(CloudSim.clock() + " DC id: " + ev.getDestination() + ": Recieved the last data from controller");
+			System.out.println("\tVM id: " + migratedVm.getId() + " " + migratedVm.getRam());
 			System.out.println("\tDirty page amount: " + message.getDirtyPageAmount());
 			System.out.println("\tVM id: " + migratedVm.getId() + " has done the migration.");
 			printTotalTransferData(totalTransferred);

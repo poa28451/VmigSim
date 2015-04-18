@@ -83,7 +83,8 @@ public class VmigSimCore {
 		/*Environment.setNetworkInterval(networkInterval);
 		Environment.setNetworkSD(networkSD);*/
 		
-		new NetworkGenerator(maxBandwidth, meanBandwidth, networkInterval, networkSD);
+		//new NetworkGenerator(maxBandwidth, meanBandwidth, networkInterval, networkSD);
+		new NetworkGenerator("testbw.txt", networkInterval);
 	}
 	
 	public void initVm(){

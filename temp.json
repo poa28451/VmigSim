@@ -1,13 +1,13 @@
 {
 	"environment" : 
 		{
-			"maxBandwidth" : 64,
-			"meanBandwidth" : 60.39073684,
+			"maxBandwidth" : 32,
+			"meanBandwidth" : 32,
 			"timeLimit" : 21600,
 			"scheduleType" : "priority",
-			"migrationType" : "precopy",
+			"migrationType" : "offline",
 			"controlType" : "openloop",
-			"networkType" : "static",
+			"networkType" : "dynamic",
 			"pageSize" : 4,
 
 			"wwsPercentage" : 1,
@@ -24,22 +24,16 @@
 	"vmSpecList" :
 		[
 			{
-					"vmAmount" : 200,
+					"vmAmount" : 4,
 					"ram" : 512,
 					"priority" : 1,
 					"qos" : 300
 			},
 			{
-					"vmAmount" : 200,
-					"ram" : 512,
-					"priority" : 2,
-					"qos" : 2700
-			},
-			{
-					"vmAmount" : 200,
-					"ram" : 512,
-					"priority" : 3,
-					"qos" : 32400
+					"vmAmount" : 1,
+					"ram" : 1024,
+					"priority" : 1,
+					"qos" : 300
 			}
 		]
 }

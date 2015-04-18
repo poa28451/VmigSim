@@ -22,6 +22,8 @@ public class MigrationResults {
 	private int migratedPriority1, migratedPriority2, migratedPriority3;
 	private int violatedPriority1, violatedPriority2, violatedPriority3;
 	private double avgExcessPriority1, avgExcessPriority2, avgExcessPriority3;
+	private double realMigTime;
+	private double totalMigTime, totalDowntime;
 	
 	public MigrationResults(ArrayList<VmigSimVm> allVm, ArrayList<VmigSimVm> migratedVm){
 		setAllVm(allVm);
@@ -44,6 +46,9 @@ public class MigrationResults {
 		setAvgExcessPriority1(0);
 		setAvgExcessPriority2(0);
 		setAvgExcessPriority3(0);
+		setRealMigTime(0);
+		totalMigTime = Double.MIN_VALUE;
+		totalDowntime = Double.MIN_VALUE;
 	}
 	
 	private void countPriority(){
@@ -181,19 +186,25 @@ public class MigrationResults {
 	}
 	
 	public double getTotalMigrationTime(){
-		double migrationTime = 0;
-		for(VmigSimVm vm : getMigratedVm()){
-			migrationTime += vm.getMigrationTime();
+		if(totalMigTime == Double.MIN_VALUE){
+			double migrationTime = 0;
+			for(VmigSimVm vm : getMigratedVm()){
+				migrationTime += vm.getMigrationTime();
+			}
+			totalMigTime = migrationTime;
 		}
-		return migrationTime;
+		return totalMigTime;
 	}
 	
 	public double getTotalDowntime(){
-		double downtime = 0;
-		for(VmigSimVm vm : getMigratedVm()){
-			downtime += vm.getDowntime();
+		if(totalDowntime == Double.MIN_VALUE){
+			double downtime = 0;
+			for(VmigSimVm vm : getMigratedVm()){
+				downtime += vm.getDowntime();
+			}
+			totalDowntime = downtime;
 		}
-		return downtime;
+		return totalDowntime;
 	}
 	
 	public double getAverageMigrationTime(){
@@ -423,6 +434,14 @@ public class MigrationResults {
 		this.avgExcessPriority3 = excessPriority3;
 	}
 	
+	public double getRealMigTime() {
+		return realMigTime;
+	}
+
+	public void setRealMigTime(double realMigTime) {
+		this.realMigTime = realMigTime;
+	}
+
 	private double handleNanValue(double value, double fixValue){
 		if(Double.isNaN(value)) return fixValue;
 		return value;

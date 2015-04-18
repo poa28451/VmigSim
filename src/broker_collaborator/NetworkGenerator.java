@@ -1,11 +1,13 @@
 package broker_collaborator;
 
 import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.Scanner;
 
 import variable.Constant;
 import variable.Environment;
@@ -41,6 +43,23 @@ public class NetworkGenerator {
 		}
 		
 		generateBandwidth();
+	}
+	
+	public NetworkGenerator(String inputFile, double networkInterval){
+		setBwTrace(new ArrayList<Double>());
+		setNetworkInterval(networkInterval);
+		
+		Scanner scan;
+		try {
+			scan = new Scanner(new FileReader(inputFile));
+			while(scan.hasNextDouble()){
+				double bw = scan.nextDouble();
+				getBwTrace().add(bw);
+			}
+			scan.close();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
 	}
 	
 	public void generateBandwidth(){
