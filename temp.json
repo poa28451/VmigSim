@@ -3,7 +3,7 @@
 		{
 			"maxBandwidth" : 32,
 			"meanBandwidth" : 32,
-			"timeLimit" : 21600,
+			"timeLimit" : 7200,
 			"scheduleType" : "priority",
 			"migrationType" : "offline",
 			"controlType" : "openloop",
@@ -24,16 +24,23 @@
 	"vmSpecList" :
 		[
 			{
-					"vmAmount" : 4,
+					"vmAmount" : 200,
 					"ram" : 512,
 					"priority" : 1,
 					"qos" : 300
 			},
 			{
-					"vmAmount" : 1,
-					"ram" : 1024,
-					"priority" : 1,
-					"qos" : 300
+					"vmAmount" : 200,
+					"ram" : 512,
+					"priority" : 2,
+					"qos" : 2700
+			},
+			{
+					"vmAmount" : 200,
+					"ram" : 512,
+					"priority" : 3,
+					"qos" : 32400
 			}
+
 		]
 }

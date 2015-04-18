@@ -5,6 +5,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.locks.Lock;
 
 import message.MigrationMessage;
 
@@ -69,27 +70,29 @@ public class VmigSimBroker extends DatacenterBroker {
 	 */
 	protected void processQueueVmMigrate(SimEvent ev){	
 		MigrationMessage message = (MigrationMessage) ev.getData();
-		VmigSimVm migratedVm = message.getVm();
+		//VmigSimVm migratedVm = message.getVm();
 		double startClock = message.getSendClock();
 		message.setReceiveClock(CloudSim.clock());
 
 		scheduler.addMsgToWaitingList(message);
 		
-		System.out.println();
+		/*System.out.println();
 		System.out.println(CloudSim.clock() + " Broker: Received queue message from dc id" + ev.getSource() + " sent at " + startClock);
 		System.out.println("VM id: " + migratedVm.getId() + " added to a waiting queue");
-		System.out.println("Amount in a waiting queue: " + scheduler.getMsgWaitingList().size());
+		System.out.println("Amount of VM in a waiting queue: " + scheduler.getMsgWaitingList().size());*/
 
 		destDC = (Datacenter) CloudSim.getEntity(3);
 		threadMain = new ThreadMain("main");
 		//If every VM listed already, begin the migration
 		if(isAllVmInWaitingList()){
+			System.out.println();
+			System.out.println(CloudSim.clock() + " Broker: Received all queue message from source dc at " + startClock);
+			System.out.println("Amount of VM in a waiting queue: " + scheduler.getMsgWaitingList().size());
+			
 			/*for(MigrationMessage migration : scheduler.scheduleMigration()){
-				//sendVmMigration(migration);
-				ThreadWorker t = new ThreadWorker(String.valueOf(migration.getVm().getId()), migration);
-				tList.add(t);
-				t.start();
+				sendVmMigration(migration);
 			}*/
+
 			threadMain.start();
 			try {
 				threadMain.join();
@@ -100,17 +103,17 @@ public class VmigSimBroker extends DatacenterBroker {
 	}
 	
 	private class ThreadMain extends Thread{
-		private ArrayList<ThreadWorker> tList;
+		private ArrayList<ThreadWorker> workerList;
 		//private CountDownLatch varLatch;
-		private CountDownLatch lock;
-		private int maxThread = 2;
+		private CountDownLatch doneAlarm;
+		private int maxThread = 4;
 		public double highestMigTime;
 		
 		public ThreadMain(String name){
 			super(name);
 			//varLatch = new CountDownLatch(1);
-			lock = new CountDownLatch(1);
-			tList = new ArrayList<>();
+			doneAlarm = new CountDownLatch(1);
+			workerList = new ArrayList<>();
 			highestMigTime = Double.MIN_VALUE;
 			prepareThread();
 		}
@@ -121,15 +124,15 @@ public class VmigSimBroker extends DatacenterBroker {
 				for(MigrationMessage migration : scheduler.scheduleMigration()){
 					while((freeWorker = findFreeThread()) == null){
 						//System.out.println("go to sleep");
-						lock.await();
+						doneAlarm.await();
 					}
 					
 					String threadName = freeWorker.getName();
 					//System.out.println("assign work to thread " + threadName);
 					if(freeWorker.isTerminated){
-						tList.remove(freeWorker);
-						freeWorker = new ThreadWorker(threadName, lock, freeWorker.nextMigrationDelay);
-						tList.add(freeWorker);
+						workerList.remove(freeWorker);
+						freeWorker = new ThreadWorker(threadName, doneAlarm, freeWorker.nextMigrationDelay);
+						workerList.add(freeWorker);
 					}
 					freeWorker.setData(migration);
 					freeWorker.start();
@@ -142,13 +145,37 @@ public class VmigSimBroker extends DatacenterBroker {
 		}
 		
 		/**
-		 * Initialize the threads, the number of threads depends on number defined from the user.
+		 * Find the first free worker (done its current execution) and return it.
+		 * @return the free worker if it is existed, null if no free worker.
 		 */
-		private void prepareThread(){
-			for(int i=0; i<maxThread; i++){
-				//tList.add(new ThreadWorker(String.valueOf(i), lock, varLatch));
-				tList.add(new ThreadWorker(String.valueOf(i), lock, 0));
+		private ThreadWorker findFreeThread(){
+			double lowestDelay = Double.MAX_VALUE;
+			ThreadWorker nextWorker = null;
+			/*for(ThreadWorker worker : workerList){
+				if(!worker.isAlive()){
+					return worker;
+				}
 			}
+			return null;*/
+			
+			for(ThreadWorker worker : workerList){
+				if(worker.isAlive()) return null;
+				/*if(worker.nextMigrationDelay < lowestDelay){
+					lowestDelay = worker.nextMigrationDelay;
+					nextWorker = worker;
+				}*/
+			}
+			//return nextWorker;
+			return workerList.get(0);
+		}
+		
+		private double findHighestMigTime(){
+			for(ThreadWorker t : workerList){
+				if(t.nextMigrationDelay > highestMigTime){
+					highestMigTime = t.nextMigrationDelay;
+				}
+			}
+			return highestMigTime;
 		}
 		
 		/**
@@ -156,37 +183,25 @@ public class VmigSimBroker extends DatacenterBroker {
 		 * @throws InterruptedException
 		 */
 		private void synchroWorkerThreads() throws InterruptedException{
-			for(ThreadWorker t : tList){
+			for(ThreadWorker t : workerList){
 				t.join();
 			}
 		}
 		
 		/**
-		 * Find the first free worker (done its current execution) and return it.
-		 * @return the free worker if it is existed, null if no free worker.
+		 * Initialize the threads, the number of threads depends on number defined from the user.
 		 */
-		private ThreadWorker findFreeThread(){
-			for(ThreadWorker worker : tList){
-				if(!worker.isAlive()){
-					return worker;
-				}
+		private void prepareThread(){
+			for(int i=0; i<maxThread; i++){
+				//tList.add(new ThreadWorker(String.valueOf(i), lock, varLatch));
+				workerList.add(new ThreadWorker(String.valueOf(i), doneAlarm, 0));
 			}
-			return null;
-		}
-		
-		private double findHighestMigTime(){
-			for(ThreadWorker t : tList){
-				if(t.nextMigrationDelay > highestMigTime){
-					highestMigTime = t.nextMigrationDelay;
-				}
-			}
-			return highestMigTime;
 		}
 	}
 	
 	private class ThreadWorker extends Thread{
 		private MigrationMessage data;
-		private CountDownLatch lock;
+		private CountDownLatch doneAlarm;
 		//private CountDownLatch latch;
 		public boolean isTerminated;
 		public double nextMigrationDelay = 0;
@@ -198,9 +213,9 @@ public class VmigSimBroker extends DatacenterBroker {
 			isTerminated = false;
 		}*/
 		
-		public ThreadWorker(String name, CountDownLatch lock, double nextMigrationDelay){
+		public ThreadWorker(String name, CountDownLatch doneAlarm, double nextMigrationDelay){
 			super(name);
-			this.lock = lock;
+			this.doneAlarm = doneAlarm;
 			this.nextMigrationDelay = nextMigrationDelay;
 			isTerminated = false;
 		}
@@ -237,12 +252,14 @@ public class VmigSimBroker extends DatacenterBroker {
 				}*/
 				
 				nextMigrationDelay += migrationTime;
-				send(destDC.getId(), 
-						nextMig + migrationTime, 
-						Constant.SEND_VM_MIGRATE, 
-						msg);
+				//synchronized (this) {
+					send(destDC.getId(), 
+							nextMig + migrationTime, 
+							Constant.SEND_VM_MIGRATE, 
+							msg);
+				//}
 			} while(!msg.isLastMigrationMsg());
-			lock.countDown();
+			doneAlarm.countDown();
 			isTerminated = true;
 		}
 	}

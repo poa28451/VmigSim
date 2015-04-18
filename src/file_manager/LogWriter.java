@@ -65,12 +65,7 @@ public class LogWriter {
 		System.out.println("\t\tPriority 2 = " + excessP2 + "%");
 		System.out.println("\t\tPriority 3 = " + excessP3 + "%");
 		
-		double avgMigTime, avgDownTime;
-		/*avgMigTime = migResult.getTotalMigrationTime()/migResult.getTotalMigratedVm();
-		avgDownTime = migResult.getTotalDowntime()/migResult.getTotalMigratedVm();
-		if(Double.isNaN(avgMigTime)) avgMigTime = 0;
-		if(Double.isNaN(avgDownTime)) avgDownTime = 0;*/
-		
+		double avgMigTime, avgDownTime;		
 		avgMigTime = migResult.getAverageMigrationTime();
 		avgDownTime = migResult.getAverageDownTime();
 		
@@ -112,10 +107,5 @@ public class LogWriter {
 		System.out.println("\t\tMax pre-copy iteration = " + migResult.getMaxPreCopyRound());
 		System.out.println("\t\tMin dirty page = " + migResult.getMinDirtyPage());
 		System.out.println("\t\tMax no-progress round = " + migResult.getMaxNoProgressRound());
-	}
-	
-	private static double handleNanValue(double value, double fixValue){
-		if(Double.isNaN(value)) return fixValue;
-		return value;
 	}
 }
