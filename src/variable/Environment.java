@@ -22,6 +22,7 @@ public class Environment {
 	
 	public static MigrationResults migrationResult;
 	//public static double maxDowntimeMs;
+	public static int threadNum;
 	
 	public static void setMigrationTimeLimit(double migrationTimeLimit){
 		Environment.migrationTimeLimit = migrationTimeLimit;
@@ -81,6 +82,10 @@ public class Environment {
 	
 	public static void setMigrationResult(MigrationResults migrationResult) {
 		Environment.migrationResult = migrationResult;
+	}
+
+	public static void setThreadNum(int threadNum) {
+		Environment.threadNum = threadNum;
 	}
 
 	public static int getHighestVmRam(){

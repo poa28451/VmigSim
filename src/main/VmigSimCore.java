@@ -65,6 +65,7 @@ public class VmigSimCore {
 		int maxNoProgressRound = param.getMaxNoProgressRound();
 		double networkInterval = param.getNetworkInterval();
 		double networkSD = param.getNetworkSD();
+		int parallelNum = param.getThreadNum();
 	
 		Environment.setMigrationTimeLimit(timeLimit);
 		Environment.setScheduleType(scheduleType);
@@ -80,6 +81,8 @@ public class VmigSimCore {
 		Environment.setMaxPreCopyRound(maxPreCopyRound);
 		Environment.setMinDirtyPage(minDirtyPage);
 		Environment.setMaxNoProgressRound(maxNoProgressRound);
+		
+		Environment.setThreadNum(parallelNum);
 		/*Environment.setNetworkInterval(networkInterval);
 		Environment.setNetworkSD(networkSD);*/
 		

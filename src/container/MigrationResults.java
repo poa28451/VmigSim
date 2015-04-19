@@ -441,6 +441,10 @@ public class MigrationResults {
 	public void setRealMigTime(double realMigTime) {
 		this.realMigTime = realMigTime;
 	}
+	
+	public int getThreadNum(){
+		return Environment.threadNum;
+	}
 
 	private double handleNanValue(double value, double fixValue){
 		if(Double.isNaN(value)) return fixValue;

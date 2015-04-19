@@ -28,6 +28,8 @@ public class Parameters {
 	
 	private ArrayList<VmSpec> vmSpecList;
 	
+	private int threadNum;
+	
 	public Parameters(){
 		setMaxBandwidth(0);
 		setMeanBandwidth(0);
@@ -47,6 +49,7 @@ public class Parameters {
 		setMaxNoProgressRound(0);
 		setNetworkInterval(0);
 		setNetworkSD(0);
+		setThreadlNum(0);
 	}
 	
 	public double getMaxBandwidth() {
@@ -187,5 +190,13 @@ public class Parameters {
 	
 	public void addVmSpec(VmSpec vmSpec){
 		vmSpecList.add(vmSpec);
+	}
+
+	public int getThreadNum() {
+		return threadNum;
+	}
+
+	public void setThreadlNum(int threadNum) {
+		this.threadNum = threadNum;
 	}
 }

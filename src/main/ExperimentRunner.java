@@ -28,6 +28,7 @@ public class ExperimentRunner {
 	public void runExperiment(){
 		try {
 			Parameters param = decoder.readInputFile(FilePathContainer.inputPath);
+			param.setThreadlNum(4);
 			for(;currentRound <= experimentRounds; currentRound++){
 				FilePathContainer.setExperimentRound(currentRound);
 				runExperiment(param);

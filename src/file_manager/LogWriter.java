@@ -98,6 +98,7 @@ public class LogWriter {
 		System.out.println("\t\tMean Bandwidth = " + migResult.getMeanBandwidth() + " Mbps");
 		System.out.println("\t\tNetwork's standard deviation = " + migResult.getNetworkSD() + "%");
 		System.out.println("\t\tNetwork Interval = " + migResult.getNetworkInterval());
+		System.out.println("\t\tThread number = " + migResult.getThreadNum());
 	}
 
 	private static void writePreCopyDetail() {

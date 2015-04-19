@@ -7,7 +7,7 @@
 			"scheduleType" : "priority",
 			"migrationType" : "offline",
 			"controlType" : "openloop",
-			"networkType" : "dynamic",
+			"networkType" : "static",
 			"pageSize" : 4,
 
 			"wwsPercentage" : 1,

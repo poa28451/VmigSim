@@ -17,6 +17,7 @@ public class NetworkGenerator {
 	private static double maxBandwidth;
 	private static double meanBandwidth;
 	private static double networkInterval;
+	//private static ArrayList<Double> bwTrace;
 	private static ArrayList<Double> bwTrace;
 	private static double stddevPercent;
 
@@ -62,7 +63,7 @@ public class NetworkGenerator {
 		}
 	}
 	
-	public void generateBandwidth(){
+	private void generateBandwidth(){
 		double intervalAmount = getIntervalAmount();
 		/*switch (Environment.networkType) {		
 			case Constant.STATIC:
