@@ -16,7 +16,8 @@ public class JsonKeyName {
 	public static final int MIGRATION_TYPE = KEY_BASE + 14;
 	public static final int CONTROL_TYPE = KEY_BASE + 15;
 	public static final int NETWORK_TYPE = KEY_BASE + 16;
-	public static final int PAGE_SIZE = KEY_BASE + 17;
+	//public static final int PAGE_SIZE = KEY_BASE + 17;
+	//public static final int
 	
 	public static final int WWS_PERCENTAGE = KEY_BASE + 18;
 	public static final int WWS_DIRTY_RATE = KEY_BASE + 19;
@@ -33,6 +34,10 @@ public class JsonKeyName {
 	public static final int PRIORITY = KEY_BASE + 28;
 	public static final int QOS = KEY_BASE + 29;
 	public static final int MEAN_BANDWIDTH = KEY_BASE + 30;
+	
+	public static final int THREAD_NUM = KEY_BASE + 31;
+	public static final int IS_RECORDED_TRACE = KEY_BASE + 32;
+	public static final int TRACE_FILE = KEY_BASE + 33;
 	
 	/**
 	 * JSON writer key code
@@ -71,22 +76,27 @@ public class JsonKeyName {
 		inputKeyName.put(ENVIRONMENT, "environment");
 		inputKeyName.put(VM_SPEC_LIST, "vmSpecList");
 		
-		inputKeyName.put(MAX_BANDWIDTH, "maxBandwidth");
-		inputKeyName.put(MEAN_BANDWIDTH, "meanBandwidth");
 		inputKeyName.put(TIME_LIMIT, "timeLimit");
 		inputKeyName.put(SCHEDULE_TYPE, "scheduleType");
 		inputKeyName.put(MIGRATION_TYPE, "migrationType");
 		inputKeyName.put(CONTROL_TYPE, "controlType");
-		inputKeyName.put(NETWORK_TYPE, "networkType");
-		inputKeyName.put(PAGE_SIZE, "pageSize");
+		//inputKeyName.put(PAGE_SIZE, "pageSize");
+		
 		inputKeyName.put(WWS_PERCENTAGE, "wwsPercentage");
 		inputKeyName.put(WWS_DIRTY_RATE, "wwsDirtyRate");
 		inputKeyName.put(NORMAL_DIRTY_RATE, "normalDirtyRate");
 		inputKeyName.put(MAX_PRECOPY_ROUND, "maxPreCopyRound");
 		inputKeyName.put(MIN_DIRTY_PAGE, "minDirtyPage");
 		inputKeyName.put(MAX_NO_PROGRESS, "maxNoProgressRound");
+		
+		inputKeyName.put(IS_RECORDED_TRACE, "isRecordedTrace");
+		inputKeyName.put(TRACE_FILE, "traceFile");
+		inputKeyName.put(NETWORK_TYPE, "networkType");
 		inputKeyName.put(NETWORK_INTERVAL, "networkInterval");
+		inputKeyName.put(MAX_BANDWIDTH, "maxBandwidth");
+		inputKeyName.put(MEAN_BANDWIDTH, "meanBandwidth");
 		inputKeyName.put(NETWORK_SD, "networkSD");
+		inputKeyName.put(THREAD_NUM, "threadNum");
 		inputKeyName.put(VM_AMOUNT, "vmAmount");
 		inputKeyName.put(RAM, "ram");
 		inputKeyName.put(PRIORITY, "priority");

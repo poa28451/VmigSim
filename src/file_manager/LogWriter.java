@@ -80,8 +80,9 @@ public class LogWriter {
 	
 	private static void writeEnvironmentLog() {
 		System.out.println("Environment details ::");
+		System.out.println("\tThread number = " + migResult.getThreadNum());
 		writeNetworkDetail();
-		System.out.println("\tPage size = " + migResult.getPageSize() + " KB");
+		//System.out.println("\tPage size = " + migResult.getPageSize() + " KB");
 		System.out.println("\tTime limit = " + migResult.getTimeLimit() + " secs");
 		System.out.println("\tSchedule type = " + migResult.getScheduleName());
 		System.out.println("\tMigration type = " + migResult.getMigrationName());
@@ -93,12 +94,18 @@ public class LogWriter {
 	}
 
 	private static void writeNetworkDetail() {
-		System.out.println("\tNetwork type = " + migResult.getNetworkName());
-		System.out.println("\t\tMax Bandwidth = " + migResult.getMaxBandwidth() + " Mbps");
-		System.out.println("\t\tMean Bandwidth = " + migResult.getMeanBandwidth() + " Mbps");
-		System.out.println("\t\tNetwork's standard deviation = " + migResult.getNetworkSD() + "%");
-		System.out.println("\t\tNetwork Interval = " + migResult.getNetworkInterval());
-		System.out.println("\t\tThread number = " + migResult.getThreadNum());
+		System.out.println("\tRecorded bandwidth trace = " + migResult.isRecordedTrace());
+		if(migResult.isRecordedTrace()){
+			System.out.println("\t\tTrace file name = " + migResult.getTraceFile());
+		}
+		else{
+			System.out.println("\t\tNetwork type = " + migResult.getNetworkName());
+			System.out.println("\t\tMax bandwidth = " + migResult.getMaxBandwidth() + " Mbps");
+			System.out.println("\t\tMean bandwidth = " + migResult.getMeanBandwidth() + " Mbps");
+			System.out.println("\t\tNetwork's standard deviation = " + migResult.getNetworkSD() + "%");
+		}
+		
+		System.out.println("\t\tNetwork interval = " + migResult.getNetworkInterval());
 	}
 
 	private static void writePreCopyDetail() {

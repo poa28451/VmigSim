@@ -1,14 +1,10 @@
 {
 	"environment" : 
 		{
-			"maxBandwidth" : 32,
-			"meanBandwidth" : 32,
 			"timeLimit" : 7200,
-			"scheduleType" : "priority",
+			"scheduleType" : "fifo",
 			"migrationType" : "offline",
 			"controlType" : "openloop",
-			"networkType" : "static",
-			"pageSize" : 4,
 
 			"wwsPercentage" : 1,
 			"wwsDirtyRate" : 90,
@@ -17,8 +13,16 @@
 			"minDirtyPage" : 50,
 			"maxNoProgressRound" : 2,
 
+			"isRecordedTrace" : true,
+			"traceFile" : "testbw.txt",
+
+			"networkType" : "static",
 			"networkInterval" : 1,
-			"networkSD" : 0
+			"maxBandwidth" : 32,
+			"meanBandwidth" : 32,
+			"networkSD" : 0,
+
+			"threadNum" : 2
 		},
 
 	"vmSpecList" :

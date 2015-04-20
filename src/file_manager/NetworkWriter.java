@@ -5,20 +5,25 @@ import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 
+import variable.Environment;
 import variable.FilePathContainer;
 import broker_collaborator.NetworkGenerator;
 
 public class NetworkWriter {
 	public static void writeNetworkToFile(){
 		String filePath = FilePathContainer.getNetworkFilePath();
-		ArrayList<Double> bwTrace = NetworkGenerator.getBwTrace();
+		ArrayList<ArrayList<Double>> bwTrace = NetworkGenerator.getBwTrace();
 		PrintWriter writer;
 		try {
 			writer = new PrintWriter(filePath, "UTF-8");
+			double bw;
 			
-			for(int i=0; i<bwTrace.size(); i++){
-				double bw = bwTrace.get(i);
-				writer.println(bw);
+			for(int i=0; i<bwTrace.get(0).size(); i++){
+				for(int j=0; j<Environment.threadNum; j++){
+					bw = bwTrace.get(j).get(i);
+					writer.print(bw + " ");
+				}
+				writer.println();
 			}
 			writer.close();
 		} catch (FileNotFoundException e) {

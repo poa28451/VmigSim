@@ -246,9 +246,9 @@ public class MigrationResults {
 		return Environment.migrationTimeLimit;
 	}
 	
-	public int getPageSize(){
+	/*public int getPageSize(){
 		return Environment.pageSizeKB;
-	}
+	}*/
 	
 	public int getScheduleType(){
 		return Environment.scheduleType;
@@ -312,6 +312,14 @@ public class MigrationResults {
 	
 	public double getNetworkSD(){
 		return NetworkGenerator.getStddevPercent();
+	}
+	
+	public boolean isRecordedTrace(){
+		return Environment.isRecordedTrace;
+	}
+	
+	public String getTraceFile(){
+		return Environment.traceFile;
 	}
 	
 	public ArrayList<VmigSimVm> getAllVm() {

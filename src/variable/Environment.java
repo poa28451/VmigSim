@@ -11,7 +11,7 @@ public class Environment {
 	public static int migrationType;
 	public static int controlType;
 	public static int networkType;
-	public static int pageSizeKB;
+	//public static int pageSizeKB;
 	public static ArrayList<VmSpec> vmSpecList;
 	
 	public static double wwsPageRatio, wwsDirtyRate;
@@ -23,6 +23,8 @@ public class Environment {
 	public static MigrationResults migrationResult;
 	//public static double maxDowntimeMs;
 	public static int threadNum;
+	public static boolean isRecordedTrace;
+	public static String traceFile;
 	
 	public static void setMigrationTimeLimit(double migrationTimeLimit){
 		Environment.migrationTimeLimit = migrationTimeLimit;
@@ -56,9 +58,9 @@ public class Environment {
 		Environment.normalDirtyRate = normalDirtyRate;
 	}
 
-	public static void setPageSizeKB(int pageSizeKB) {
+	/*public static void setPageSizeKB(int pageSizeKB) {
 		Environment.pageSizeKB = pageSizeKB;
-	}
+	}*/
 
 	public static void setMaxPreCopyRound(int maxPreCopyRound) {
 		Environment.maxPreCopyRound = maxPreCopyRound;
@@ -86,6 +88,14 @@ public class Environment {
 
 	public static void setThreadNum(int threadNum) {
 		Environment.threadNum = threadNum;
+	}
+	
+	public static void setIsRecordedTrace(boolean isRecordedTrace){
+		Environment.isRecordedTrace = isRecordedTrace;
+	}
+	
+	public static void setTraceFile(String traceFile){
+		Environment.traceFile = traceFile;
 	}
 
 	public static int getHighestVmRam(){

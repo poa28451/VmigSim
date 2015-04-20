@@ -4,7 +4,6 @@ import org.cloudbus.cloudsim.CloudletScheduler;
 import org.cloudbus.cloudsim.Vm;
 
 import variable.Constant;
-import variable.Environment;
 
 public class VmigSimVm extends Vm{
 	private int priority;
@@ -56,7 +55,8 @@ public class VmigSimVm extends Vm{
 
 	public void setMemoryPageNum(int ram) {
 		int ramInKb = ram*Constant.KILO_BYTE;
-		this.memoryPageNum = ramInKb/Environment.pageSizeKB;
+		//this.memoryPageNum = ramInKb / Environment.pageSizeKB;
+		this.memoryPageNum = ramInKb / Constant.PAGE_SIZE_KB;
 	}
 
 	public int getDirtyPageNum() {

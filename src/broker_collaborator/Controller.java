@@ -8,6 +8,15 @@ import variable.Environment;
 import message.MigrationMessage;
 
 public class Controller {
+	private int threadId;
+	
+	public Controller(){
+		
+	}
+	
+	public Controller(int threadId){
+		this.threadId = threadId;
+	}
 	
 	public double calculateMigrationTime(MigrationMessage msg, double nextMigrationDelay){
 		double migrationTime = 0;
@@ -43,7 +52,7 @@ public class Controller {
 				return Double.MIN_VALUE;
 			}
 			
-			bwAtTimeKB = NetworkGenerator.getBandwidthAtTimeKB(currentClock);
+			bwAtTimeKB = NetworkGenerator.getBandwidthAtTimeKB(threadId, currentClock);
 			/*double bwAtTimeMb = NetworkGenerator.getBandwidthAtTimeKB(currentClock);
 			bwAtTimeKB = convertMbToKB(bwAtTimeMb);*/
 			
@@ -105,8 +114,4 @@ public class Controller {
 			vm.setDowntime(transferTime);
 		}
 	}
-	
-	/*private static double convertMbToKB(double number){
-		return number * Constant.KILO_BYTE / 8;
-	}*/
 }

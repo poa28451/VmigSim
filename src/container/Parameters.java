@@ -1,7 +1,5 @@
 package container;
 
-import java.util.ArrayList;
-
 /**
  * The class used by ExperimentRunner for passing arguments of simulation to VmigSim.
  * 	The values contained in this class will be set into Environment class by VmigSim
@@ -9,9 +7,7 @@ import java.util.ArrayList;
  *
  */
 public class Parameters {
-	private double maxBandwidth;//Mbps unit
-	private double meanBandwidth;//Mbps unit
-	private double timeLimit;//Second unit
+	/*private double timeLimit;//Second unit
 	private int scheduleType;//Constant value
 	private int migrationType;//Constant value
 	private int controlType;//Constant value
@@ -23,52 +19,40 @@ public class Parameters {
 	private int maxPreCopyRound;
 	private int minDirtyPage;
 	private int maxNoProgressRound;
+	private ArrayList<VmSpec> vmSpecList;*/
+	
+	private double maxBandwidth;//Mbps unit
+	private double meanBandwidth;//Mbps unit
 	private double networkInterval;//Second unit
 	private double networkSD;//Percent unit
 	
-	private ArrayList<VmSpec> vmSpecList;
-	
-	private int threadNum;
+	//private int threadNum;
 	
 	public Parameters(){
-		setMaxBandwidth(0);
-		setMeanBandwidth(0);
-		setNetworkType(0);
+		/*setNetworkType(0);
 		setTimeLimit(0);
 		setScheduleType(0);
 		setMigrationType(0);
 		setControlType(0);
-		setPageSizeKB(0);
-		setVmSpecList(new ArrayList<VmSpec>());
+		setPageSizeKB(0);*/
 		
-		setWwsPageRatio(0);
+		/*setWwsPageRatio(0);
 		setWwsDirtyRate(0);
 		setNormalDirtyRate(0);
 		setMaxPreCopyRound(0);
 		setMinDirtyPage(0);
 		setMaxNoProgressRound(0);
+		setVmSpecList(new ArrayList<VmSpec>());*/
+		
+		setMaxBandwidth(0);
+		setMeanBandwidth(0);
 		setNetworkInterval(0);
 		setNetworkSD(0);
-		setThreadlNum(0);
+		
+		//setThreadlNum(0);
 	}
 	
-	public double getMaxBandwidth() {
-		return maxBandwidth;
-	}
-	
-	public void setMaxBandwidth(double maxBandwidth) {
-		this.maxBandwidth = maxBandwidth;
-	}
-	
-	public double getMeanBandwidth() {
-		return meanBandwidth;
-	}
-	
-	public void setMeanBandwidth(double meanBandwidth) {
-		this.meanBandwidth = meanBandwidth;
-	}
-	
-	public double getTimeLimit() {
+	/*public double getTimeLimit() {
 		return timeLimit;
 	}
 	
@@ -164,6 +148,34 @@ public class Parameters {
 		this.maxNoProgressRound = maxNoProgressRound;
 	}
 	
+	public ArrayList<VmSpec> getVmSpecList() {
+		return vmSpecList;
+	}
+	
+	public void setVmSpecList(ArrayList<VmSpec> vmSpecList) {
+		this.vmSpecList = vmSpecList;
+	}
+	
+	public void addVmSpec(VmSpec vmSpec){
+		vmSpecList.add(vmSpec);
+	}*/
+	
+	public double getMaxBandwidth() {
+		return maxBandwidth;
+	}
+	
+	public void setMaxBandwidth(double maxBandwidth) {
+		this.maxBandwidth = maxBandwidth;
+	}
+	
+	public double getMeanBandwidth() {
+		return meanBandwidth;
+	}
+	
+	public void setMeanBandwidth(double meanBandwidth) {
+		this.meanBandwidth = meanBandwidth;
+	}
+	
 	public double getNetworkInterval() {
 		return networkInterval;
 	}
@@ -179,24 +191,12 @@ public class Parameters {
 	public void setNetworkSD(double networkSD) {
 		this.networkSD = networkSD;
 	}
-	
-	public ArrayList<VmSpec> getVmSpecList() {
-		return vmSpecList;
-	}
-	
-	public void setVmSpecList(ArrayList<VmSpec> vmSpecList) {
-		this.vmSpecList = vmSpecList;
-	}
-	
-	public void addVmSpec(VmSpec vmSpec){
-		vmSpecList.add(vmSpec);
-	}
 
-	public int getThreadNum() {
+	/*public int getThreadNum() {
 		return threadNum;
 	}
 
 	public void setThreadlNum(int threadNum) {
 		this.threadNum = threadNum;
-	}
+	}*/
 }

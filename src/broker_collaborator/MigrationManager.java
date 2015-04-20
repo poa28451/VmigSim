@@ -67,14 +67,15 @@ public class MigrationManager {
 			msg.setDirtyPageAmount(dirtyPages);
 			
 			if(isPreCopyEnd(dirtyPages)){//If ended already, send final data
-				double dirtySizeKB = dirtyPages * Environment.pageSizeKB;
+				//double dirtySizeKB = dirtyPages * Environment.pageSizeKB;
+				double dirtySizeKB = dirtyPages * Constant.PAGE_SIZE_KB;
 				double registerSizeKB = (double) Constant.REGISTER_SIZE_BYTE / Constant.KILO_BYTE;
 				msg.setDataSizeKB(dirtySizeKB + registerSizeKB);
 				//msg.setDataSizeKB(dirtySizeKB);
 				msg.setLastMigrationMsg(true);
 			}
 			else{
-				msg.setDataSizeKB(dirtyPages * Environment.pageSizeKB);
+				msg.setDataSizeKB(dirtyPages * Constant.PAGE_SIZE_KB);
 			}
 			setPreviousDirtyPage(dirtyPages);
 		}

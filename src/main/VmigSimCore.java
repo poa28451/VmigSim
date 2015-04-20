@@ -47,9 +47,7 @@ public class VmigSimCore {
 	}
 	
 	public void setEnvironment(Parameters param){
-		double maxBandwidth = param.getMaxBandwidth();
-		double meanBandwidth = param.getMeanBandwidth();
-		double timeLimit = param.getTimeLimit();
+		/*double timeLimit = param.getTimeLimit();
 		int scheduleType = param.getScheduleType();
 		int migrationType = param.getMigrationType();
 		int controlType = param.getControlType();
@@ -62,12 +60,11 @@ public class VmigSimCore {
 		int pageSizeKB = param.getPageSizeKB();
 		int maxPreCopyRound = param.getMaxPreCopyRound();
 		int minDirtyPage = param.getMinDirtyPage();
-		int maxNoProgressRound = param.getMaxNoProgressRound();
-		double networkInterval = param.getNetworkInterval();
-		double networkSD = param.getNetworkSD();
-		int parallelNum = param.getThreadNum();
+		int maxNoProgressRound = param.getMaxNoProgressRound();*/
+		
+		//int parallelNum = param.getThreadNum();
 	
-		Environment.setMigrationTimeLimit(timeLimit);
+		/*Environment.setMigrationTimeLimit(timeLimit);
 		Environment.setScheduleType(scheduleType);
 		Environment.setMigrationType(migrationType);
 		Environment.setControlType(controlType);
@@ -80,14 +77,27 @@ public class VmigSimCore {
 		Environment.setNormalDirtyRate(normalDirtyRate);
 		Environment.setMaxPreCopyRound(maxPreCopyRound);
 		Environment.setMinDirtyPage(minDirtyPage);
-		Environment.setMaxNoProgressRound(maxNoProgressRound);
+		Environment.setMaxNoProgressRound(maxNoProgressRound);*/
 		
-		Environment.setThreadNum(parallelNum);
+		//Environment.setThreadNum(parallelNum);
 		/*Environment.setNetworkInterval(networkInterval);
 		Environment.setNetworkSD(networkSD);*/
-		
-		//new NetworkGenerator(maxBandwidth, meanBandwidth, networkInterval, networkSD);
-		new NetworkGenerator("testbw.txt", networkInterval);
+
+		/*double maxBandwidth = param.getMaxBandwidth();
+		double meanBandwidth = param.getMeanBandwidth();
+		double networkSD = param.getNetworkSD();
+		double networkInterval = param.getNetworkInterval();
+		new NetworkGenerator(maxBandwidth, meanBandwidth, networkInterval, networkSD);*/
+		if(Environment.isRecordedTrace){
+			new NetworkGenerator(Environment.traceFile);
+		}
+		else{
+			double maxBandwidth = param.getMaxBandwidth();
+			double meanBandwidth = param.getMeanBandwidth();
+			double networkSD = param.getNetworkSD();
+			double networkInterval = param.getNetworkInterval();
+			new NetworkGenerator(maxBandwidth, meanBandwidth, networkInterval, networkSD);
+		}
 	}
 	
 	public void initVm(){

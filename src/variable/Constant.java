@@ -9,6 +9,7 @@ public class Constant {
 	public static final double START_INTERVAL = 0.1;
 	public static final double STATIC_NETWORK_SD_PERCENTAGE = 1.588500677;
 	
+	public static final int PAGE_SIZE_KB = 4;
 	private static final int GPR_SIZE_BYTE = 16*(64/8);
 	private static final int FP_SIZE_BYTE = 16*(128/8);
 	public static final int REGISTER_SIZE_BYTE = GPR_SIZE_BYTE + FP_SIZE_BYTE;

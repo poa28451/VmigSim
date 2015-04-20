@@ -2,12 +2,14 @@ package file_manager;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.util.ArrayList;
 
 import org.json.*;
 
 import container.Parameters;
 import container.VmSpec;
 import variable.Constant;
+import variable.Environment;
 import variable.JsonKeyName;
 
 public class JsonReader {
@@ -36,13 +38,10 @@ public class JsonReader {
 	
 	private void readEnvironment(Parameters param, JSONObject environment){
 		double timeLimit = environment.getDouble(JsonKeyName.getJSONInputKeyName(JsonKeyName.TIME_LIMIT));
-		double maxBandwidth = environment.getDouble(JsonKeyName.getJSONInputKeyName(JsonKeyName.MAX_BANDWIDTH));
-		double meanBandwidth = environment.getDouble(JsonKeyName.getJSONInputKeyName(JsonKeyName.MEAN_BANDWIDTH));
 		String scheduleType = environment.getString(JsonKeyName.getJSONInputKeyName(JsonKeyName.SCHEDULE_TYPE));
 		String migrationType = environment.getString(JsonKeyName.getJSONInputKeyName(JsonKeyName.MIGRATION_TYPE));
 		String controlType = environment.getString(JsonKeyName.getJSONInputKeyName(JsonKeyName.CONTROL_TYPE));
-		String networkType = environment.getString(JsonKeyName.getJSONInputKeyName(JsonKeyName.NETWORK_TYPE));
-		int pageSizeKB = environment.getInt(JsonKeyName.getJSONInputKeyName(JsonKeyName.PAGE_SIZE));
+		//int pageSizeKB = environment.getInt(JsonKeyName.getJSONInputKeyName(JsonKeyName.PAGE_SIZE));
 		
 		double wwsPageRatio = environment.getDouble(JsonKeyName.getJSONInputKeyName(JsonKeyName.WWS_PERCENTAGE));
 		double wwsDirtyRate = environment.getDouble(JsonKeyName.getJSONInputKeyName(JsonKeyName.WWS_DIRTY_RATE));
@@ -50,31 +49,58 @@ public class JsonReader {
 		int maxPreCopyRound = environment.getInt(JsonKeyName.getJSONInputKeyName(JsonKeyName.MAX_PRECOPY_ROUND));
 		int minDirtyPage = environment.getInt(JsonKeyName.getJSONInputKeyName(JsonKeyName.MIN_DIRTY_PAGE));
 		int maxNoProgressRound = environment.getInt(JsonKeyName.getJSONInputKeyName(JsonKeyName.MAX_NO_PROGRESS));
-		
-		double networkInterval = environment.getDouble(JsonKeyName.getJSONInputKeyName(JsonKeyName.NETWORK_INTERVAL));
-		double networkSD = environment.getDouble(JsonKeyName.getJSONInputKeyName(JsonKeyName.NETWORK_SD));
 
-		param.setMaxBandwidth(maxBandwidth);
-		param.setMeanBandwidth(meanBandwidth);
-		param.setTimeLimit(timeLimit);
+		boolean isRecordedTrace = environment.getBoolean(JsonKeyName.getJSONInputKeyName(JsonKeyName.IS_RECORDED_TRACE));
+		String traceFile = environment.getString(JsonKeyName.getJSONInputKeyName(JsonKeyName.TRACE_FILE));
+		String networkType = environment.getString(JsonKeyName.getJSONInputKeyName(JsonKeyName.NETWORK_TYPE));
+		double networkInterval = environment.getDouble(JsonKeyName.getJSONInputKeyName(JsonKeyName.NETWORK_INTERVAL));
+		double maxBandwidth = environment.getDouble(JsonKeyName.getJSONInputKeyName(JsonKeyName.MAX_BANDWIDTH));
+		double meanBandwidth = environment.getDouble(JsonKeyName.getJSONInputKeyName(JsonKeyName.MEAN_BANDWIDTH));
+		double networkSD = environment.getDouble(JsonKeyName.getJSONInputKeyName(JsonKeyName.NETWORK_SD));
+		
+		int threadNum = environment.getInt(JsonKeyName.getJSONInputKeyName(JsonKeyName.THREAD_NUM));
+
+
+		/*param.setTimeLimit(timeLimit);
 		param.setScheduleType(Constant.getScheduleKeyCode(scheduleType));
 		param.setMigrationType(Constant.getMigrationKeyCode(migrationType));
 		param.setControlType(Constant.getControlKeyCode(controlType));
 		param.setNetworkType(Constant.getNetworkKeyCode(networkType));
-		param.setPageSizeKB(pageSizeKB);
+		param.setPageSizeKB(pageSizeKB);*/
+		
+		Environment.setMigrationTimeLimit(timeLimit);
+		Environment.setScheduleType(Constant.getScheduleKeyCode(scheduleType));
+		Environment.setMigrationType(Constant.getMigrationKeyCode(migrationType));
+		Environment.setControlType(Constant.getControlKeyCode(controlType));
+		Environment.setNetworkType(Constant.getNetworkKeyCode(networkType));
+		//Environment.setPageSizeKB(pageSizeKB);
 		
 		
-		param.setWwsPageRatio(wwsPageRatio);
+		/*param.setWwsPageRatio(wwsPageRatio);
 		param.setWwsDirtyRate(wwsDirtyRate);
 		param.setNormalDirtyRate(normalDirtyRate);
 		param.setMaxPreCopyRound(maxPreCopyRound);
 		param.setMinDirtyPage(minDirtyPage);
-		param.setMaxNoProgressRound(maxNoProgressRound);
+		param.setMaxNoProgressRound(maxNoProgressRound);*/
+		param.setMaxBandwidth(maxBandwidth);
+		param.setMeanBandwidth(meanBandwidth);
 		param.setNetworkInterval(networkInterval);
 		param.setNetworkSD(networkSD);
+		
+		Environment.setWwsPageRatio(wwsPageRatio);
+		Environment.setWwsDirtyRate(wwsDirtyRate);
+		Environment.setNormalDirtyRate(normalDirtyRate);
+		Environment.setMaxPreCopyRound(maxPreCopyRound);
+		Environment.setMinDirtyPage(minDirtyPage);
+		Environment.setMaxNoProgressRound(maxNoProgressRound);
+		
+		Environment.setThreadNum(threadNum);
+		Environment.setIsRecordedTrace(isRecordedTrace);
+		Environment.setTraceFile(traceFile);
 	}
 	
 	private void readVmSpecList(Parameters param, JSONArray vmSpecList){
+		ArrayList<VmSpec> specList = new ArrayList<VmSpec>();
 		for(int i=0; i<vmSpecList.length(); i++){
 			JSONObject spec = vmSpecList.getJSONObject(i);
 			int vmAmount = spec.getInt(JsonKeyName.getJSONInputKeyName(JsonKeyName.VM_AMOUNT));
@@ -82,7 +108,11 @@ public class JsonReader {
 			int priority = spec.getInt(JsonKeyName.getJSONInputKeyName(JsonKeyName.PRIORITY));
 			int qos = spec.getInt(JsonKeyName.getJSONInputKeyName(JsonKeyName.QOS));
 
-			param.addVmSpec(new VmSpec(vmAmount, ram, priority, qos));
+			//param.addVmSpec(new VmSpec(vmAmount, ram, priority, qos));
+			specList.add(new VmSpec(vmAmount, ram, priority, qos));
 		}
+		
+
+		Environment.setVmSpecList(specList);
 	}
 }

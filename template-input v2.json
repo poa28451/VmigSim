@@ -1,0 +1,55 @@
+{
+	"environment" : 
+		{
+			"timeLimit" : 21600 double,
+			"scheduleType" : "priority",
+			"migrationType" : "precopy",
+			"controlType" : "closeloop",
+
+			"wwsPercentage" : 1 double,
+			"wwsDirtyRate" : 90 double,
+			"normalDirtyRate" : 20 double,
+			"maxPreCopyRound" : 30 int,
+			"minDirtyPage" : 50 int,
+			"maxNoProgressRound" : 2 int,
+
+			"isRecordedTrace" : true boolean,
+			"traceFile" : "testbw.txt",
+			
+			"networkType" : "dynamic",
+			"networkInterval" : 1 double,
+			"maxBandwidth" : 64 double,
+			"meanBandwidth" : 40 double,
+			"networkSD" : 54.8222 double,
+
+			"threadNum" : 4 int
+		},
+
+	"vmSpecList" :
+		[
+			{
+					"vmAmount" : 200 int,
+					"ram" : 512 int,
+					"priority" : 1 int,
+					"qos" : 300 int
+			},
+
+			{
+					"vmAmount" : 200,
+					"ram" : 512,
+					"priority" : 2,
+					"qos" : 2700
+			},
+
+			{
+					"vmAmount" : 200,
+					"ram" : 512,
+					"priority" : 3,
+					"qos" : 32400
+			}
+
+			.
+			.
+			.
+		]
+}
