@@ -8,7 +8,7 @@ import org.cloudbus.cloudsim.core.SimEntity;
 import message.MigrationMessage;
 import variable.Constant;
 
-public class ThreadWorker extends Thread{
+public class ControllerWorker extends Thread{
 	private SimEntity srcEnt, destEnt;
 	private MigrationMessage data;
 	private final CountDownLatch doneAlarm;
@@ -16,7 +16,7 @@ public class ThreadWorker extends Thread{
 	private double nextMigrationDelay = 0;
 	private int threadId;
 	
-	public ThreadWorker(int threadId, SimEntity srcEnt, SimEntity destEnt, CountDownLatch doneAlarm, double nextMigrationDelay){
+	public ControllerWorker(int threadId, SimEntity srcEnt, SimEntity destEnt, CountDownLatch doneAlarm, double nextMigrationDelay){
 		super(String.valueOf(threadId));
 		this.threadId = threadId;
 		this.srcEnt = srcEnt;
@@ -32,7 +32,7 @@ public class ThreadWorker extends Thread{
 	
 	public void run(){
 		MigrationManager migManager = new MigrationManager();
-		Controller controller = new Controller(threadId);
+		MigrationCalculator controller = new MigrationCalculator(threadId);
 		
 		migManager.setMigrationData(data);
 		MigrationMessage msg;

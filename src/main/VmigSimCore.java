@@ -37,7 +37,7 @@ public class VmigSimCore {
 	private int currentVm = 0;
 
 	public void startSimulation(Parameters param){
-		setEnvironment(param);
+		setNetworkDetail(param);
 		initCloudSim(1, false);
 		initDatacenter();
 		initBroker();
@@ -46,7 +46,7 @@ public class VmigSimCore {
 		simulateMigration();
 	}
 	
-	public void setEnvironment(Parameters param){
+	public void setNetworkDetail(Parameters param){
 		/*double timeLimit = param.getTimeLimit();
 		int scheduleType = param.getScheduleType();
 		int migrationType = param.getMigrationType();

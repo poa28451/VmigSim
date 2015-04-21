@@ -28,7 +28,6 @@ public class ExperimentRunner {
 	public void runExperiment(){
 		try {
 			Parameters param = decoder.readInputFile(FilePathContainer.inputPath);
-			//param.setThreadlNum(2);
 			for(;currentRound <= experimentRounds; currentRound++){
 				FilePathContainer.setExperimentRound(currentRound);
 				runExperiment(param);
@@ -40,7 +39,7 @@ public class ExperimentRunner {
 	
 	public void runExperiment(Parameters param) throws FileNotFoundException{
 		PrintStream stream = prepareLogPath();
-		//System.setOut(stream);
+		System.setOut(stream);
 		
 		VmigSimCore vmigsim = new VmigSimCore();
 		vmigsim.startSimulation(param);

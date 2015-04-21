@@ -3,7 +3,7 @@
 		{
 			"timeLimit" : 7200,
 			"scheduleType" : "fifo",
-			"migrationType" : "offline",
+			"migrationType" : "precopy",
 			"controlType" : "openloop",
 
 			"wwsPercentage" : 1,

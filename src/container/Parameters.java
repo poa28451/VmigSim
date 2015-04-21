@@ -1,8 +1,8 @@
 package container;
 
 /**
- * The class used by ExperimentRunner for passing arguments of simulation to VmigSim.
- * 	The values contained in this class will be set into Environment class by VmigSim
+ * The class used by ExperimentRunner for passing network arguments of simulation to VmigSim.
+ * 	The values contained in this class will be set into NetworkGenerator class by VmigSim
  * @author tawee_000
  *
  */

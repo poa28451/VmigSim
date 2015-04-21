@@ -1,117 +1,115 @@
 package broker_collaborator;
 
-import org.cloudbus.cloudsim.core.CloudSim;
+import java.util.ArrayList;
+import java.util.concurrent.CountDownLatch;
 
-import cloudsim_inherit.VmigSimVm;
-import variable.Constant;
-import variable.Environment;
+import org.cloudbus.cloudsim.core.SimEntity;
+
 import message.MigrationMessage;
+import variable.Environment;
 
 public class Controller {
-	private int threadId;
+	private ArrayList<MigrationMessage> vmQueue;
+	private ArrayList<ControllerWorker> workerList;
+	private final CountDownLatch doneAlarm;
+	private double highestMigTime;
 	
-	public Controller(){
-		
+	public Controller(SimEntity srcEnt, SimEntity destEnt, ArrayList<MigrationMessage> vmQueue){
+		this.vmQueue = vmQueue;
+		doneAlarm = new CountDownLatch(1);
+		workerList = new ArrayList<>();
+		highestMigTime = Double.MIN_VALUE;
+		prepareThread(srcEnt, destEnt);
 	}
 	
-	public Controller(int threadId){
-		this.threadId = threadId;
-	}
-	
-	public double calculateMigrationTime(MigrationMessage msg, double nextMigrationDelay){
-		double migrationTime = 0;
-		double dataKb = msg.getDataSizeKB();
-		double currentMigrationClock = nextMigrationDelay + CloudSim.clock();
-		
-		switch (Environment.controlType) {
-			case Constant.OPEN_LOOP:
-				migrationTime = calculateByOpenLoop(dataKb, currentMigrationClock);
-				break;
-			
-			case Constant.CLOSE_LOOP:
-				//Close-loop system is still under studying
-				calculateByCloseLoop();
+	public void run(){
+		ControllerWorker freeWorker;
+		try {
+			for(MigrationMessage migration : vmQueue){
+				while((freeWorker = findFreeThread()) == null){
+					//System.out.println("go to sleep");
+					doneAlarm.await();
+				}
 				
-			default:
-				migrationTime = calculateByOpenLoop(dataKb, currentMigrationClock);
-				break;
+				//System.out.println("assign work to thread " + threadId);
+				if(freeWorker.isTerminated()){
+					//System.out.println("create new thread " + threadId);
+					int threadId = freeWorker.getThreadId();
+					SimEntity srcEnt = freeWorker.getSrcEntity();
+					SimEntity destEnt = freeWorker.getDestEntity();
+					double nextMigrationDelay = freeWorker.getNextMigrationDelay();
+					
+					workerList.remove(freeWorker);
+					freeWorker = new ControllerWorker(threadId, srcEnt, destEnt, doneAlarm, nextMigrationDelay);
+					workerList.add(freeWorker);
+				}
+				freeWorker.setData(migration);
+				freeWorker.start();
+			}
+			synchroWorkerThreads();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
 		}
-		updateMigrationTime(msg, migrationTime);
-		return migrationTime;
+		findHighestMigTime();
 	}
 	
-	public double calculateByOpenLoop(double dataKB, double startClock) {
-		double totalSentKB = 0;
-		double totalUsedTime = 0;
-		double bwAtTimeKB = 0;
-		double currentClock = startClock;
-		
-		while(totalSentKB < dataKB){
-			//Check if the time exceeded the limit already
-			if(currentClock >= Environment.migrationTimeLimit){
-				return Double.MIN_VALUE;
+	/**
+	 * Find the first free worker (done its current execution) and return it.
+	 * @return the free worker if it is existed, null if no free worker.
+	 */
+	private ControllerWorker findFreeThread(){
+		/*for(ThreadWorker worker : workerList){
+			if(!worker.isAlive()){
+				//return worker;
 			}
-			
-			bwAtTimeKB = NetworkGenerator.getBandwidthAtTimeKB(threadId, currentClock);
-			/*double bwAtTimeMb = NetworkGenerator.getBandwidthAtTimeKB(currentClock);
-			bwAtTimeKB = convertMbToKB(bwAtTimeMb);*/
-			
-			//Find the left time between that b/w interval
-			//Ex. if current time is 0.9 , then it has 0.1 second (1.1-0.9 = 0.2)
-			//	before the changing of b/w interval (to b/w of the second 1.1 - 2) 
-			//10 -> 11
-			double intervalFraction = NetworkGenerator.calculateIntervalFraction(currentClock);
-			if(intervalFraction == Double.MIN_VALUE){
-				//If this case occurred, that means there's a double decimal issue.
-				//Just end the migration of this data
-				return Double.MIN_VALUE;
-			}
-			
-			double roundSend, usedTime;
-			if(isDoneWithinInterval(dataKB, totalSentKB, bwAtTimeKB, intervalFraction)){
-				double leftoverSize = dataKB - totalSentKB;
-				roundSend = leftoverSize;
-				usedTime = leftoverSize / bwAtTimeKB;
-				//System.out.println("Ended");
-			}
-			else{
-				roundSend = bwAtTimeKB * intervalFraction;
-				usedTime = intervalFraction;
-			}
-			totalSentKB += roundSend;
-			totalUsedTime += usedTime;
-			currentClock += usedTime;
-			/*System.out.println("\tSend " + roundSend + "/" + totalSentKB);
-			System.out.println("\tTime " + usedTime + "/" + totalUsedTime);
-			System.out.println("\tClock " + currentClock+ "/" + (currentClock - usedTime));
-			System.out.println("\tBW " + bwAtTimeKB + "/" + (bwAtTimeKB / Constant.KILO_BYTE * 8));*/
 		}
-		return totalUsedTime;
+		return null;*/
+		
+		/*double least = Double.MAX_VALUE;
+		ThreadWorker next = null;
+		for(ThreadWorker worker : workerList){
+			if(!worker.isAlive() && least > worker.nextMigrationDelay){
+				least = worker.nextMigrationDelay;
+				next = worker;
+			}
+		}
+		return next;*/
+		
+		for(ControllerWorker worker : workerList){
+			if(worker.isAlive()) return null;
+		}
+		return workerList.get(0);
 	}
 	
-	private double calculateByCloseLoop(){
-		//Under studying
-		double migrationTime = 0;
-		return migrationTime;
+	private double findHighestMigTime(){
+		for(ControllerWorker t : workerList){
+			if(t.getNextMigrationDelay() > highestMigTime){
+				highestMigTime = t.getNextMigrationDelay();
+			}
+		}
+		return highestMigTime;
 	}
 	
-	private static boolean isDoneWithinInterval(double totalSize, double sentSize, double bw, double intervalFraction){
-		double ableToSend = bw * intervalFraction;
-		if(sentSize + ableToSend >= totalSize){
-			//Able to send all of leftover data in this interval
-			return true;
+	/**
+	 * Wait for all worker thread to be done the execution.
+	 * @throws InterruptedException
+	 */
+	private void synchroWorkerThreads() throws InterruptedException{
+		for(ControllerWorker t : workerList){
+			t.join();
 		}
-		return false;
 	}
-	protected void updateMigrationTime(MigrationMessage msg, double transferTime){
-		VmigSimVm vm = msg.getVm();
-		
-		msg.setMigrationTime(transferTime);
-		vm.updateMigrationTime(transferTime);
-		
-		if(msg.isLastMigrationMsg()){
-			//Downtime = last transferring time
-			vm.setDowntime(transferTime);
+	
+	/**
+	 * Initialize the threads, the number of threads depends on number defined from the user.
+	 */
+	private void prepareThread(SimEntity srcEnt, SimEntity destEnt){
+		for(int i=0; i<Environment.threadNum; i++){
+			workerList.add(new ControllerWorker(i, srcEnt, destEnt, doneAlarm, 0));
 		}
+	}
+	
+	public double getHighestMigrationTime(){
+		return highestMigTime;
 	}
 }

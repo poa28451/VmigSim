@@ -16,10 +16,10 @@ import org.cloudbus.cloudsim.core.CloudSimTags;
 import org.cloudbus.cloudsim.core.SimEvent;
 import org.cloudbus.cloudsim.lists.VmList;
 
-import broker_collaborator.Controller;
+import broker_collaborator.MigrationCalculator;
 import broker_collaborator.MigrationManager;
 import broker_collaborator.Scheduler;
-import broker_collaborator.ThreadMain;
+import broker_collaborator.Controller;
 import container.MigrationResults;
 import variable.Constant;
 import variable.Environment;
@@ -32,19 +32,19 @@ public class VmigSimBroker extends DatacenterBroker {
 	private ArrayList<VmigSimVm> results;
 	private Scheduler scheduler;
 	private MigrationManager migManager;
-	private Controller controller;
+	private MigrationCalculator controller;
 	private double nextMigrationDelay = 0;
 	
 	private Datacenter destDC;
 	//boolean threadFirstRound = true;
-	private ThreadMain threadMain;
+	private Controller threadMain;
 	
 	public VmigSimBroker(String name) throws Exception {
 		super(name);
 		setResults(new ArrayList<VmigSimVm>());
 		setScheduler(new Scheduler());
 		setMigManager(new MigrationManager());
-		setController(new Controller());
+		setController(new MigrationCalculator());
 	}
 
 	@Override
@@ -82,7 +82,7 @@ public class VmigSimBroker extends DatacenterBroker {
 
 		destDC = (Datacenter) CloudSim.getEntity(3);
 		//threadMain = new ThreadMain("main");
-		threadMain = new ThreadMain(this, destDC, scheduler.scheduleMigration());
+		threadMain = new Controller(this, destDC, scheduler.scheduleMigration());
 		
 		//If every VM listed already, begin the migration
 		if(isAllVmInWaitingList()){
@@ -402,7 +402,7 @@ public class VmigSimBroker extends DatacenterBroker {
 		this.migManager = migManager;
 	}
 
-	protected void setController(Controller controller) {
+	protected void setController(MigrationCalculator controller) {
 		this.controller = controller;
 	}
 }
