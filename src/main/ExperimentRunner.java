@@ -39,14 +39,14 @@ public class ExperimentRunner {
 	
 	public void runExperiment(Parameters param) throws FileNotFoundException{
 		PrintStream stream = prepareLogPath();
-		//System.setOut(stream);
+		System.setOut(stream);
 		
 		VmigSimCore vmigsim = new VmigSimCore();
 		vmigsim.startSimulation(param);
 		
 		LogWriter.writeLogToFile(Environment.migrationResult);
 		
-		//ResultWriter.writeResultToFile(Environment.migrationResult);
+		ResultWriter.writeResultToFile(Environment.migrationResult);
 		
 		NetworkWriter.writeNetworkToFile();
 		
