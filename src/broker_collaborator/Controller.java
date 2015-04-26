@@ -22,7 +22,7 @@ public class Controller {
 		prepareThread(srcEnt, destEnt);
 	}
 	
-	public void run(){
+	public void startControlling(){
 		ControllerWorker freeWorker;
 		try {
 			for(MigrationMessage migration : vmQueue){
@@ -32,17 +32,8 @@ public class Controller {
 				}
 				
 				//System.out.println("assign work to thread " + threadId);
-				if(freeWorker.isTerminated()){
-					//System.out.println("create new thread " + threadId);
-					int threadId = freeWorker.getThreadId();
-					SimEntity srcEnt = freeWorker.getSrcEntity();
-					SimEntity destEnt = freeWorker.getDestEntity();
-					double nextMigrationDelay = freeWorker.getNextMigrationDelay();
-					
-					workerList.remove(freeWorker);
-					freeWorker = new ControllerWorker(threadId, srcEnt, destEnt, doneAlarm, nextMigrationDelay);
-					workerList.add(freeWorker);
-				}
+				freeWorker = manageTerminatedThread(freeWorker);
+				
 				freeWorker.setData(migration);
 				freeWorker.start();
 			}
@@ -79,6 +70,21 @@ public class Controller {
 			if(worker.isAlive()) return null;
 		}
 		return workerList.get(0);
+	}
+	
+	private ControllerWorker manageTerminatedThread(ControllerWorker freeWorker){
+		if(freeWorker.isTerminated()){
+			//System.out.println("create new thread " + threadId);
+			int threadId = freeWorker.getThreadId();
+			SimEntity srcEnt = freeWorker.getSrcEntity();
+			SimEntity destEnt = freeWorker.getDestEntity();
+			double nextMigrationDelay = freeWorker.getNextMigrationDelay();
+			
+			workerList.remove(freeWorker);
+			freeWorker = new ControllerWorker(threadId, srcEnt, destEnt, doneAlarm, nextMigrationDelay);
+			workerList.add(freeWorker);
+		}
+		return freeWorker;
 	}
 	
 	private double findHighestMigTime(){

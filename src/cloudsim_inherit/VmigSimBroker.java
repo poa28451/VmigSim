@@ -31,20 +31,20 @@ public class VmigSimBroker extends DatacenterBroker {
 
 	private ArrayList<VmigSimVm> results;
 	private Scheduler scheduler;
-	private MigrationManager migManager;
-	private MigrationCalculator controller;
-	private double nextMigrationDelay = 0;
+	/*private MigrationManager migManager;
+	private MigrationCalculator timeCalculator;
+	private double nextMigrationDelay = 0;*/
 	
 	private Datacenter destDC;
 	//boolean threadFirstRound = true;
-	private Controller threadMain;
+	private Controller controller;
 	
 	public VmigSimBroker(String name) throws Exception {
 		super(name);
 		setResults(new ArrayList<VmigSimVm>());
 		setScheduler(new Scheduler());
-		setMigManager(new MigrationManager());
-		setController(new MigrationCalculator());
+		/*setMigManager(new MigrationManager());
+		setController(new MigrationCalculator());*/
 	}
 
 	@Override
@@ -82,7 +82,7 @@ public class VmigSimBroker extends DatacenterBroker {
 
 		destDC = (Datacenter) CloudSim.getEntity(3);
 		//threadMain = new ThreadMain("main");
-		threadMain = new Controller(this, destDC, scheduler.scheduleMigration());
+		controller = new Controller(this, destDC, scheduler.scheduleMigration());
 		
 		//If every VM listed already, begin the migration
 		if(isAllVmInWaitingList()){
@@ -94,7 +94,7 @@ public class VmigSimBroker extends DatacenterBroker {
 				sendVmMigration(migration);
 			}*/
 
-			threadMain.run();
+			controller.startControlling();
 			/*try {
 				threadMain.join();
 			} catch (InterruptedException e) {
@@ -274,14 +274,14 @@ public class VmigSimBroker extends DatacenterBroker {
 		return scheduler.getMsgWaitingList().size() == getVmList().size();		
 	}
 	
-	protected void sendVmMigration(MigrationMessage data){
+	/*protected void sendVmMigration(MigrationMessage data){
 		Datacenter destination = (Datacenter) CloudSim.getEntity(migrationMap.get(DESTINATION));
 		migManager.setMigrationData(data);
 		MigrationMessage msg;
 		do{
 			msg = migManager.manageMigration();
 			msg.setSendClock(nextMigrationDelay);
-			double migrationTime = controller.calculateMigrationTime(msg, nextMigrationDelay);
+			double migrationTime = timeCalculator.calculateMigrationTime(msg, nextMigrationDelay);
 			
 			//Stop sending if the time exceeded the limit
 			if(migrationTime == Double.MIN_VALUE){
@@ -295,7 +295,7 @@ public class VmigSimBroker extends DatacenterBroker {
 					msg);
 			
 		} while(!msg.isLastMigrationMsg());
-	}
+	}*/
 	
 	/**
 	 * Use for collecting the VMs' migration result sent from the destination
@@ -316,7 +316,7 @@ public class VmigSimBroker extends DatacenterBroker {
 	
 	public void saveMigrationResult(){
 		MigrationResults summary = new MigrationResults(scheduler.getVmWaitingList(), results);
-		summary.setRealMigTime(threadMain.getHighestMigrationTime());
+		summary.setRealMigTime(controller.getHighestMigrationTime());
 		Environment.setMigrationResult(summary);
 	}
 
@@ -398,11 +398,11 @@ public class VmigSimBroker extends DatacenterBroker {
 		this.scheduler = scheduler;
 	}
 
-	protected void setMigManager(MigrationManager migManager) {
+	/*protected void setMigManager(MigrationManager migManager) {
 		this.migManager = migManager;
 	}
 
 	protected void setController(MigrationCalculator controller) {
-		this.controller = controller;
-	}
+		this.timeCalculator = controller;
+	}*/
 }

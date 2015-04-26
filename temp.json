@@ -14,7 +14,7 @@
 			"maxNoProgressRound" : 2,
 
 			"isRecordedTrace" : true,
-			"traceFile" : "testbw.txt",
+			"traceFile" : "testbw - 4p - con.txt",
 
 			"networkType" : "static",
 			"networkInterval" : 1,
@@ -22,7 +22,7 @@
 			"meanBandwidth" : 32,
 			"networkSD" : 0,
 
-			"threadNum" : 2
+			"threadNum" : 4
 		},
 
 	"vmSpecList" :
