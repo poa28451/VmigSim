@@ -2,8 +2,6 @@ package broker_collaborator;
 
 import java.util.Random;
 
-import org.cloudbus.cloudsim.core.CloudSim;
-
 import cloudsim_inherit.VmigSimVm;
 import variable.Constant;
 import variable.Environment;
@@ -20,40 +18,40 @@ public class MigrationManager {
 		setNoProgressRound(0);
 	}
 	
-	public MigrationMessage manageMigration(){
+	public MigrationMessage manageMigration(double clock){
 		MigrationMessage migratedData = null;
 		switch (Environment.migrationType) {
 			case Constant.OFFLINE:
-				migratedData = migrateByOffline();
+				migratedData = migrateByOffline(clock);
 				break;
 		
 			case Constant.PRECOPY:
-				migratedData = migrateByPreCopy();
+				migratedData = migrateByPreCopy(clock);
 				break;
 				
 			default:
-				migratedData = migrateByOffline();
+				migratedData = migrateByOffline(clock);
 				break;
 		}
 		
 		return migratedData;
 	}
 	
-	protected MigrationMessage migrateByOffline(){
+	protected MigrationMessage migrateByOffline(double clock){
 		VmigSimVm vm = migrationData.getVm();
 		int vmRam = vm.getRam();
 		double vmRamKB = convertMbToKb(vmRam);
-		MigrationMessage msg = new MigrationMessage(vm);
+		MigrationMessage msg = new MigrationMessage(vm, clock);
 		
 		msg.setDataSizeKB(vmRamKB);
 		msg.setLastMigrationMsg(true);
 		return msg;
 	}
 	
-	protected MigrationMessage migrateByPreCopy(){
+	protected MigrationMessage migrateByPreCopy(double clock){
 		VmigSimVm vm = migrationData.getVm();
 		int dirtyPages = Integer.MIN_VALUE;
-		PreCopyMessage msg = new PreCopyMessage(vm, CloudSim.clock());
+		PreCopyMessage msg = new PreCopyMessage(vm, clock);
 		
 		if(preCopyRound == 0){//first round, send every memory page
 			int vmRam = vm.getRam();

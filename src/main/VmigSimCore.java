@@ -47,47 +47,7 @@ public class VmigSimCore {
 	}
 	
 	public void setNetworkDetail(Parameters param){
-		/*double timeLimit = param.getTimeLimit();
-		int scheduleType = param.getScheduleType();
-		int migrationType = param.getMigrationType();
-		int controlType = param.getControlType();
-		int networkType = param.getNetworkType();
-		ArrayList<VmSpec> vmSpecList = param.getVmSpecList();
-		
-		double wwsPageRatio = param.getWwsPageRatio();
-		double wwsDirtyRate = param.getWwsDirtyRate();
-		double normalDirtyRate = param.getNormalDirtyRate();
-		int pageSizeKB = param.getPageSizeKB();
-		int maxPreCopyRound = param.getMaxPreCopyRound();
-		int minDirtyPage = param.getMinDirtyPage();
-		int maxNoProgressRound = param.getMaxNoProgressRound();*/
-		
-		//int parallelNum = param.getThreadNum();
-	
-		/*Environment.setMigrationTimeLimit(timeLimit);
-		Environment.setScheduleType(scheduleType);
-		Environment.setMigrationType(migrationType);
-		Environment.setControlType(controlType);
-		Environment.setNetworkType(networkType);
-		Environment.setPageSizeKB(pageSizeKB);
-		Environment.setVmSpecList(vmSpecList);
-		
-		Environment.setWwsPageRatio(wwsPageRatio);
-		Environment.setWwsDirtyRate(wwsDirtyRate);
-		Environment.setNormalDirtyRate(normalDirtyRate);
-		Environment.setMaxPreCopyRound(maxPreCopyRound);
-		Environment.setMinDirtyPage(minDirtyPage);
-		Environment.setMaxNoProgressRound(maxNoProgressRound);*/
-		
-		//Environment.setThreadNum(parallelNum);
-		/*Environment.setNetworkInterval(networkInterval);
-		Environment.setNetworkSD(networkSD);*/
-
-		/*double maxBandwidth = param.getMaxBandwidth();
-		double meanBandwidth = param.getMeanBandwidth();
-		double networkSD = param.getNetworkSD();
-		double networkInterval = param.getNetworkInterval();
-		new NetworkGenerator(maxBandwidth, meanBandwidth, networkInterval, networkSD);*/
+		handleClosedLoopCase();
 		if(Environment.isRecordedTrace){
 			new NetworkGenerator(Environment.traceFile);
 		}
@@ -97,6 +57,14 @@ public class VmigSimCore {
 			double networkSD = param.getNetworkSD();
 			double networkInterval = param.getNetworkInterval();
 			new NetworkGenerator(maxBandwidth, meanBandwidth, networkInterval, networkSD);
+		}
+	}
+	
+	private void handleClosedLoopCase(){
+		if(Environment.controlType == Constant.CLOSED_LOOP){
+			Environment.setIsRecordedTrace(true);
+			Environment.setTraceFile(Constant.CLOSED_LOOP_FILE_PATH + Constant.BW_1P_FILENAME);
+			Environment.setThreadNum(Constant.CLOSED_LOOP_START_THREAD);
 		}
 	}
 	

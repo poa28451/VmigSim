@@ -55,6 +55,27 @@ public class NetworkGenerator {
 		}
 	}
 	
+	public NetworkGenerator(String inputFile, int threadNum){
+		setBwTrace(new ArrayList<ArrayList<Double>>(), threadNum);
+		
+		Scanner scan;
+		try {
+			scan = new Scanner(new FileReader(inputFile));
+			while(scan.hasNextDouble()){
+				for(int i=0; i<threadNum; i++){
+					getBwTrace().get(i).add(scan.nextDouble());
+				}
+			}
+			scan.close();
+			
+			double networkInterval = Environment.migrationTimeLimit / getBwTrace().get(0).size();
+			setNetworkInterval(networkInterval);			
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+			System.exit(1);
+		}
+	}
+	
 	public void generateBandwidth(){
 		double intervalAmount = getIntervalAmount();
 		
@@ -103,11 +124,21 @@ public class NetworkGenerator {
 	/**
 	 * Get bandwidth at the specific time. This function will convert the time into the interval number
 	 * and use it to retrieve the bandwidth trace.
-	 * @param time The time to get a bandwidth
-	 * @return bandwidth in KBps
+	 * @param time The time to get a bandwidth.
+	 * @return bandwidth in KBps.
 	 */
 	public static double getBandwidthAtTimeKB(int threadNum, double time){
 		return getBwTrace().get(threadNum).get(calculateIntervalNum(time)) * Constant.KILO_BYTE / 8;
+	}
+	
+	/**
+	 * Get bandwidth at the specific time. This function will convert the time into the interval number
+	 * and use it to retrieve the bandwidth trace.
+	 * @param time The time to get a bandwidth.
+	 * @return bandwidth in MBps.
+	 */
+	public static double getBandwidthAtTimeMB(int threadNum, double time){
+		return getBwTrace().get(threadNum).get(calculateIntervalNum(time)) / 8;
 	}
 	
 	/**

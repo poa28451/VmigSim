@@ -16,8 +16,6 @@ import org.cloudbus.cloudsim.core.CloudSimTags;
 import org.cloudbus.cloudsim.core.SimEvent;
 import org.cloudbus.cloudsim.lists.VmList;
 
-import broker_collaborator.MigrationCalculator;
-import broker_collaborator.MigrationManager;
 import broker_collaborator.Scheduler;
 import broker_collaborator.Controller;
 import container.MigrationResults;
@@ -81,25 +79,19 @@ public class VmigSimBroker extends DatacenterBroker {
 		System.out.println("Amount of VM in a waiting queue: " + scheduler.getMsgWaitingList().size());*/
 
 		destDC = (Datacenter) CloudSim.getEntity(3);
-		//threadMain = new ThreadMain("main");
-		controller = new Controller(this, destDC, scheduler.scheduleMigration());
 		
 		//If every VM listed already, begin the migration
 		if(isAllVmInWaitingList()){
 			System.out.println();
-			System.out.println(CloudSim.clock() + " Broker: Received all queue message from source dc at " + startClock);
+			System.out.println(CloudSim.clock() + " Broker: Received all queue message from Source DC at " + startClock);
 			System.out.println("Amount of VM in a waiting queue: " + scheduler.getMsgWaitingList().size());
 			
 			/*for(MigrationMessage migration : scheduler.scheduleMigration()){
 				sendVmMigration(migration);
 			}*/
 
+			controller = new Controller(this, destDC, scheduler.scheduleMigration());
 			controller.startControlling();
-			/*try {
-				threadMain.join();
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}*/
 		}
 	}
 	
@@ -303,7 +295,7 @@ public class VmigSimBroker extends DatacenterBroker {
 	 */
 	protected void processReportVmMigrate(SimEvent ev){
 		MigrationMessage report = (MigrationMessage) ev.getData();
-		if(report.getVm().isMigrated()){
+		if(report.getVm().isDoneMigration()){
 			results.add(report.getVm());
 		}
 	}
@@ -346,7 +338,7 @@ public class VmigSimBroker extends DatacenterBroker {
 			getVmsToDatacentersMap().put(vmId, datacenterId);
 			getVmsCreatedList().add(VmList.getById(getVmList(), vmId));
 			Log.printLine(CloudSim.clock() + ": " + getName() + ": VM #" + vmId
-					+ " has been created in Datacenter #" + datacenterId + ", Host #"
+					+ " has been created in Source DC, Host #"
 					+ VmList.getById(getVmsCreatedList(), vmId).getHost().getId());
 		} else {
 			Log.printLine(CloudSim.clock() + ": " + getName() + ": Creation of VM #" + vmId
@@ -382,6 +374,25 @@ public class VmigSimBroker extends DatacenterBroker {
 				}
 			}
 		}
+	}
+	
+	/**
+	 * Override to remove some unnecessary log
+	 */
+	protected void createVmsInDatacenter(int datacenterId) {
+		// send as much vms as possible for this datacenter before trying the next one
+		int requestedVms = 0;
+		for (Vm vm : getVmList()) {
+			if (!getVmsToDatacentersMap().containsKey(vm.getId())) {
+				sendNow(datacenterId, CloudSimTags.VM_CREATE_ACK, vm);
+				requestedVms++;
+			}
+		}
+
+		getDatacenterRequestedIdsList().add(datacenterId);
+
+		setVmsRequested(requestedVms);
+		setVmsAcks(0);
 	}
 
 	public void setMigrationMap(HashMap<String, Integer> migrationMap) {

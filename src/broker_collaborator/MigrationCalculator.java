@@ -1,7 +1,5 @@
 package broker_collaborator;
 
-import org.cloudbus.cloudsim.core.CloudSim;
-
 import cloudsim_inherit.VmigSimVm;
 import variable.Environment;
 import message.MigrationMessage;
@@ -17,10 +15,10 @@ public class MigrationCalculator {
 		this.threadId = threadId;
 	}
 	
-	public double calculateMigrationTime(MigrationMessage msg, double nextMigrationDelay){
+	public double calculateMigrationTime(MigrationMessage msg, double nextMigrationDelay, double clock){
 		double migrationTime = 0;
 		double dataKB = msg.getDataSizeKB();
-		double currentMigrationClock = nextMigrationDelay + CloudSim.clock();
+		double currentMigrationClock = nextMigrationDelay + clock;
 		
 		double totalSentKB = 0;
 		double bwAtTimeKB = 0;

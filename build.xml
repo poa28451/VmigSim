@@ -15,11 +15,14 @@
     <property name="src.dir" value="src"/>
     <property name="dist.dir" value="dist"/>
     <property name="dist.lib" value="vmigsim_lib"/>
+    <property name="dist.bw" value="closed-loop"/>
+    <property name="bw.dir" value="run_simulation"/>
 	
     <path id="VmigSim.classpath">
         <pathelement location="${bin.dir}"/>
         <pathelement location="${lib.dir}/json-20141113.jar"/>
         <pathelement location="${lib.dir}/cloudsim-3.0.3.jar"/>
+        <pathelement location="${lib.dir}/jFuzzyLogic.jar"/>
     </path>
 	
     <target name="init">
@@ -40,6 +43,7 @@
 	<target name="init-jar">
         <mkdir dir="${dist.dir}" />
         <mkdir dir="${dist.dir}/${dist.lib}"/>
+        <mkdir dir="${dist.dir}/${bw.dir}/${dist.bw}"/>
     </target>
 	
 	<target name="clean-jar">
@@ -61,6 +65,9 @@
 	<target name="build-jar" depends="clean-jar,init-jar">
         <copy todir="${dist.dir}/${dist.lib}" overwrite="false">
 			<fileset dir="${lib.dir}"/>
+		</copy>
+		<copy todir="${dist.dir}/${bw.dir}/${dist.bw}" overwrite="false">
+			<fileset dir="${bw.dir}/${dist.bw}"/>
 		</copy>
 		
 		<path id="build.classpath">

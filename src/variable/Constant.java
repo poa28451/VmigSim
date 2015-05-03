@@ -18,12 +18,17 @@ public class Constant {
 	// Ex. 10 means the number will be 10-digit decimal number
 	public static final int DECIMAL_SCALE = 10;
 	
+	public static final String CLOSED_LOOP_FILE_PATH = "run_simulation/closed-loop/";
+	public static final String BW_1P_FILENAME = "bandwidth-1p.txt";
+	public static final String FUZZY_RULE_FILENAME = "fuzzy-rule.txt";
+	public static final int CLOSED_LOOP_START_THREAD = 1;
+	
 	/**
 	 * Custom array indices
 	 */
 	public static final int FIFO = 0, PRIORITY_BASED = 1;
 	public static final int OFFLINE = 0, PRECOPY = 1;
-	public static final int  OPEN_LOOP = 0, CLOSE_LOOP = 1;
+	public static final int  OPEN_LOOP = 0, CLOSED_LOOP = 1;
 	public static final int STATIC = 0, DYNAMIC = 1;
 	public static final int PRIORITY_1 = 1, PRIORITY_2 = 2, PRIORITY_3 = 3;
 	
@@ -61,7 +66,7 @@ public class Constant {
 	static{
 		controlKeyName = new HashMap<Integer, String>();
 		controlKeyName.put(OPEN_LOOP, "openloop");
-		controlKeyName.put(CLOSE_LOOP, "closeloop");
+		controlKeyName.put(CLOSED_LOOP, "closedloop");
 	}
 	
 	public static final HashMap<Integer, String> networkKeyName;

@@ -2,9 +2,9 @@
 	"environment" : 
 		{
 			"timeLimit" : 7200,
-			"scheduleType" : "fifo",
-			"migrationType" : "precopy",
-			"controlType" : "openloop",
+			"scheduleType" : "priority",
+			"migrationType" : "offline",
+			"controlType" : "closedloop",
 
 			"wwsPercentage" : 1,
 			"wwsDirtyRate" : 90,
@@ -13,16 +13,16 @@
 			"minDirtyPage" : 50,
 			"maxNoProgressRound" : 2,
 
-			"isRecordedTrace" : true,
-			"traceFile" : "testbw - 4p - con.txt",
+			"isRecordedTrace" : false,
+			"traceFile" : "bw-new2/testbw - 1p.txt",
 
 			"networkType" : "static",
 			"networkInterval" : 1,
-			"maxBandwidth" : 32,
-			"meanBandwidth" : 32,
+			"maxBandwidth" : 1024,
+			"meanBandwidth" : 966.2517895,
 			"networkSD" : 0,
 
-			"threadNum" : 4
+			"threadNum" : 1
 		},
 
 	"vmSpecList" :

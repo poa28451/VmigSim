@@ -1,1 +1,0 @@
-java -jar dist\vmigsim.jar temp.json closeness\test 10

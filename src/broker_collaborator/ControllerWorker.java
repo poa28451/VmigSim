@@ -11,63 +11,80 @@ import variable.Constant;
 public class ControllerWorker extends Thread{
 	private SimEntity srcEnt, destEnt;
 	private MigrationMessage data;
-	private final CountDownLatch doneAlarm;
+	//private final CountDownLatch doneAlarm;
+	//private CyclicBarrier doneAlarm;
+	private final CountDownLatch lock;
 	private boolean isTerminated;
 	private double nextMigrationDelay = 0;
 	private int threadId;
 	
-	public ControllerWorker(int threadId, SimEntity srcEnt, SimEntity destEnt, CountDownLatch doneAlarm, double nextMigrationDelay){
+	public ControllerWorker(int threadId, SimEntity srcEnt, SimEntity destEnt, double nextMigrationDelay, CountDownLatch lock){
 		super(String.valueOf(threadId));
 		this.threadId = threadId;
 		this.srcEnt = srcEnt;
 		this.destEnt = destEnt;
-		this.doneAlarm = doneAlarm;
 		this.nextMigrationDelay = nextMigrationDelay;
+		//this.doneAlarm = doneAlarm;
+		this.lock = lock;
 		isTerminated = false;
 	}
 	
 	public void setData(MigrationMessage migration){
 		data = migration;
+		migration.getVm().setMigratedOut(true);
 	}
 	
-	public void run(){
+	public void run() {
 		MigrationManager migManager = new MigrationManager();
-		MigrationCalculator controller = new MigrationCalculator(threadId);
+		MigrationCalculator calculator = new MigrationCalculator(threadId);
 		
 		migManager.setMigrationData(data);
 		MigrationMessage msg;
 		do{
 			double nextMig = nextMigrationDelay;
-			/*if(!threadFirstRound) latch.countDown();
-			else threadFirstRound = false;*/
+			double currentClock = CloudSim.clock();
 			
-			msg = migManager.manageMigration();
+			msg = migManager.manageMigration(currentClock);
 			msg.setSendClock(nextMig);
-			double migrationTime = controller.calculateMigrationTime(msg, nextMig);
+			double migrationTime = calculator.calculateMigrationTime(msg, nextMig, currentClock);
+			
 			//Stop sending if the time exceeded the limit
 			if(migrationTime == Double.MIN_VALUE){
 				break;
 			}
 			
-			/*if(maxThread > 1){
-				try {
-					latch.await();
-				} catch (InterruptedException e) {
-					e.printStackTrace();
-				}
-			}*/
-			
 			nextMigrationDelay += migrationTime;
-			//synchronized (this) {
-				CloudSim.send(srcEnt.getId(), destEnt.getId(), 
-						nextMig + migrationTime, 
-						Constant.SEND_VM_MIGRATE, 
-						msg);
-			//}
+			try {
+				//To prevent the event list from the race conditions occurred by threads
+				synchronized (lock) {
+					lock.await();
+					CloudSim.send(srcEnt.getId(), destEnt.getId(), 
+							nextMig + migrationTime, 
+							Constant.SEND_VM_MIGRATE, 
+							msg);
+					lock.countDown();
+				}
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+				System.exit(1);
+			}
 		} while(!msg.isLastMigrationMsg());
-		doneAlarm.countDown();
 		isTerminated = true;
+		
+		//Notify the Controller that the work's done.
+		//doneAlarm.countDown();
+		//blockAtBarrier();
 	}
+	
+	/*private void blockAtBarrier(){
+		try {
+			doneAlarm.await();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		} catch (BrokenBarrierException e) {
+			e.printStackTrace();
+		}
+	}*/
 	
 	public int getThreadId(){
 		return threadId;
@@ -88,4 +105,12 @@ public class ControllerWorker extends Thread{
 	public SimEntity getDestEntity(){
 		return destEnt;
 	}
+	
+	public CountDownLatch getLock(){
+		return lock;
+	}
+	
+	/*public void setDoneAlarm(CyclicBarrier doneAlarm){
+		this.doneAlarm = doneAlarm;
+	}*/
 }

@@ -41,7 +41,6 @@ public class JsonReader {
 		String scheduleType = environment.getString(JsonKeyName.getJSONInputKeyName(JsonKeyName.SCHEDULE_TYPE));
 		String migrationType = environment.getString(JsonKeyName.getJSONInputKeyName(JsonKeyName.MIGRATION_TYPE));
 		String controlType = environment.getString(JsonKeyName.getJSONInputKeyName(JsonKeyName.CONTROL_TYPE));
-		//int pageSizeKB = environment.getInt(JsonKeyName.getJSONInputKeyName(JsonKeyName.PAGE_SIZE));
 		
 		double wwsPageRatio = environment.getDouble(JsonKeyName.getJSONInputKeyName(JsonKeyName.WWS_PERCENTAGE));
 		double wwsDirtyRate = environment.getDouble(JsonKeyName.getJSONInputKeyName(JsonKeyName.WWS_DIRTY_RATE));
@@ -59,29 +58,13 @@ public class JsonReader {
 		double networkSD = environment.getDouble(JsonKeyName.getJSONInputKeyName(JsonKeyName.NETWORK_SD));
 		
 		int threadNum = environment.getInt(JsonKeyName.getJSONInputKeyName(JsonKeyName.THREAD_NUM));
-
-
-		/*param.setTimeLimit(timeLimit);
-		param.setScheduleType(Constant.getScheduleKeyCode(scheduleType));
-		param.setMigrationType(Constant.getMigrationKeyCode(migrationType));
-		param.setControlType(Constant.getControlKeyCode(controlType));
-		param.setNetworkType(Constant.getNetworkKeyCode(networkType));
-		param.setPageSizeKB(pageSizeKB);*/
 		
 		Environment.setMigrationTimeLimit(timeLimit);
 		Environment.setScheduleType(Constant.getScheduleKeyCode(scheduleType));
 		Environment.setMigrationType(Constant.getMigrationKeyCode(migrationType));
 		Environment.setControlType(Constant.getControlKeyCode(controlType));
 		Environment.setNetworkType(Constant.getNetworkKeyCode(networkType));
-		//Environment.setPageSizeKB(pageSizeKB);
-		
-		
-		/*param.setWwsPageRatio(wwsPageRatio);
-		param.setWwsDirtyRate(wwsDirtyRate);
-		param.setNormalDirtyRate(normalDirtyRate);
-		param.setMaxPreCopyRound(maxPreCopyRound);
-		param.setMinDirtyPage(minDirtyPage);
-		param.setMaxNoProgressRound(maxNoProgressRound);*/
+	
 		param.setMaxBandwidth(maxBandwidth);
 		param.setMeanBandwidth(meanBandwidth);
 		param.setNetworkInterval(networkInterval);
@@ -108,7 +91,6 @@ public class JsonReader {
 			int priority = spec.getInt(JsonKeyName.getJSONInputKeyName(JsonKeyName.PRIORITY));
 			int qos = spec.getInt(JsonKeyName.getJSONInputKeyName(JsonKeyName.QOS));
 
-			//param.addVmSpec(new VmSpec(vmAmount, ram, priority, qos));
 			specList.add(new VmSpec(vmAmount, ram, priority, qos));
 		}
 		

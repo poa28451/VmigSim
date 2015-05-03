@@ -27,7 +27,7 @@ public class LogWriter {
 			double downTime = vm.getDowntime();
 			int ram = vm.getRam();
 			boolean violate = vm.isViolated();
-			boolean result = vm.isMigrated();
+			boolean result = vm.isDoneMigration();
 			int priority = vm.getPriority();
 			int qos = vm.getQos();
 			

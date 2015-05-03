@@ -74,7 +74,6 @@ public class ExperimentRunner {
 			String outputPath = args[1];
 			int experimentRound = Integer.valueOf(args[2]);
 			
-			//Environment.maxDowntimeMs = Double.valueOf(args[3]);
 			ExperimentRunner runner = new ExperimentRunner(inputPath, outputPath, experimentRound);
 			runner.runExperiment();
 		}

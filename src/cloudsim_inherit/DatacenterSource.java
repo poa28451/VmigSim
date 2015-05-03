@@ -42,7 +42,7 @@ public class DatacenterSource extends Datacenter{
 	 */
 	public void processStartVmMigrate(SimEvent ev){
 		System.out.println();
-		System.out.println(CloudSim.clock() + " DC id: " + ev.getDestination() + ": Recieved start migration message from controller");
+		System.out.println(CloudSim.clock() + " Source DC: Recieved a migration starting message from Broker");
 		System.out.println("Starting the migration with vm amount: " + getVmList().size());
 		
 

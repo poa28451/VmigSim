@@ -56,13 +56,13 @@ public class DatacenterDestination extends Datacenter{
 		double downTime = migratedVm.getDowntime();
 		
 		System.out.println();
-		System.out.println(CloudSim.clock() + " DC id: " + ev.getDestination() + ": Recieved migrated VM from controller");
-		System.out.println("\tVM id: " + migratedVm.getId() + " " + migratedVm.getRam());
+		System.out.println(CloudSim.clock() + " Destination DC: Recieved migrated VM from Broker");
+		System.out.println("\tVM id: " + migratedVm.getId());
 		
 		boolean result = allocateResourceForVm(migratedVm);
 		migratedVm.setStopClock(CloudSim.clock());
 		migratedVm.setViolated(isViolateQos(migratedVm.getQos(), downTime));
-		migratedVm.setMigrated(result);
+		migratedVm.setDoneMigration(result);
 		sendNow(ev.getSource(), Constant.REPORT_VM_MIGRATE, message); 
 	}
 	
@@ -76,30 +76,24 @@ public class DatacenterDestination extends Datacenter{
 		migratedVm.setTotalTransferredKB(totalTransferred);
 		
 		System.out.println();
-		
-		if(!message.isLastMigrationMsg()){
-			System.out.println(CloudSim.clock() + " DC id: " + ev.getDestination() + ": Recieved VM pages from controller");
-			System.out.println("\tVM id: " + migratedVm.getId() + " " + migratedVm.getRam());
-			if(message.getDirtyPageAmount() == Integer.MIN_VALUE){
-				//This means it's a first round of pre-copy
-				System.out.println("\tReceived all memory page of VM: " + migratedVm.getMemoryPageNum() + " pages");
-			}
-			else{
-				System.out.println("\tDirty page amount: " + message.getDirtyPageAmount());
-			}
-			printTotalTransferData(totalTransferred);
+		System.out.println(CloudSim.clock() + " Destination DC: Recieved VM pages from Broker");
+		System.out.println("\tVM id: " + migratedVm.getId());
+		if(message.getDirtyPageAmount() == Integer.MIN_VALUE){
+			//This means it's a first round of pre-copy
+			System.out.println("\tReceived all memory page of VM: " + migratedVm.getMemoryPageNum() + " pages");
 		}
 		else{
-			System.out.println(CloudSim.clock() + " DC id: " + ev.getDestination() + ": Recieved the last data from controller");
-			System.out.println("\tVM id: " + migratedVm.getId() + " " + migratedVm.getRam());
 			System.out.println("\tDirty page amount: " + message.getDirtyPageAmount());
-			System.out.println("\tVM id: " + migratedVm.getId() + " has done the migration.");
-			printTotalTransferData(totalTransferred);
-			
+		}
+		printTotalTransferData(totalTransferred);
+		
+		//If this is the Stop-and-Copy phase's message
+		if(message.isLastMigrationMsg()){
+			System.out.println("\tVM has done the migration");
 			boolean result = allocateResourceForVm(migratedVm);
 			migratedVm.setStopClock(CloudSim.clock());
 			migratedVm.setViolated(isViolateQos(migratedVm.getQos(), downTime));
-			migratedVm.setMigrated(result);
+			migratedVm.setDoneMigration(result);
 			sendNow(ev.getSource(), Constant.REPORT_VM_MIGRATE, message); 
 		}
 	}
@@ -113,13 +107,13 @@ public class DatacenterDestination extends Datacenter{
 				migratedVm.setBeingInstantiated(false);
 			}
 
-			migratedVm.updateVmProcessing(CloudSim.clock(), getVmAllocationPolicy().getHost(migratedVm).getVmScheduler()
-					.getAllocatedMipsForVm(migratedVm));
+			/*migratedVm.updateVmProcessing(CloudSim.clock(), getVmAllocationPolicy().getHost(migratedVm).getVmScheduler()
+					.getAllocatedMipsForVm(migratedVm));*/
 			
-			System.out.println("VM id: " + migratedVm.getId() + " allocated into Host id " + migratedVm.getHost().getId());
+			System.out.println("VM id: " + migratedVm.getId() + " allocated into Destination DC's host");
 		}
 		else{
-			System.out.println("VM id: " + migratedVm.getId() + " failed to allocated");
+			System.out.println("VM id: " + migratedVm.getId() + " failed to allocate into Destination DC's host");
 		}
 		
 		return result;
@@ -131,6 +125,6 @@ public class DatacenterDestination extends Datacenter{
 	}
 	
 	private void printTotalTransferData(double totalTransferred){
-		System.out.println("\tTotal transferred = " + totalTransferred + " KB");
+		System.out.println("\tTotal transferred data = " + totalTransferred + " KB");
 	}
 }

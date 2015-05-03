@@ -15,7 +15,8 @@ public class VmigSimVm extends Vm{
 	private double downtime;
 	private double totalTransferredKB;
 	private boolean isViolated;
-	private boolean isMigrated;
+	private boolean isDoneMigration;
+	private boolean isMigratedOut;
 	
 	public VmigSimVm(int id, int userId, double mips, int numberOfPes, int ram,
 			long bw, long size, int qos, int priority, String vmm, CloudletScheduler cloudletScheduler) {
@@ -30,7 +31,8 @@ public class VmigSimVm extends Vm{
 		setDowntime(0);
 		setTotalTransferredKB(0);
 		setViolated(false);
-		setMigrated(false);
+		setDoneMigration(false);
+		setMigratedOut(false);
 	}
 	
 	public int getQos() {
@@ -123,14 +125,22 @@ public class VmigSimVm extends Vm{
 		this.isViolated = isViolated;
 	}
 
-	public boolean isMigrated() {
-		return isMigrated;
+	public boolean isDoneMigration() {
+		return isDoneMigration;
 	}
 
-	public void setMigrated(boolean isMigrated) {
-		this.isMigrated = isMigrated;
+	public void setDoneMigration(boolean isDoneMigration) {
+		this.isDoneMigration = isDoneMigration;
 	}
 	
+	public boolean isMigratedOut() {
+		return isMigratedOut;
+	}
+
+	public void setMigratedOut(boolean isMigratedOut) {
+		this.isMigratedOut = isMigratedOut;
+	}
+
 	public double getViolationPercenteage(){
 		double percent = 0;
 		if(isViolated){
