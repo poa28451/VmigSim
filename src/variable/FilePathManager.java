@@ -4,34 +4,38 @@ import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-public class FilePathContainer {
+public class FilePathManager {
 	public static String inputPath;
 	private static String outputDirectory;
 	private static int experimentRound;
 	
-	private static String resultPath = "result/";
-	private static String networkPath = "network/";
-	private static String logPath = "logfile/";
+	private static final String resultPath = "result/";
+	private static final String networkPath = "network/";
+	private static final String logPath = "logfile/";
 	
-	private static String resultFileName = "result";
-	private static String networkFileName = "network";
-	private static String logFileName = "log";
+	private static final String resultFileName = "result";
+	private static final String networkFileName = "network";
+	private static final String logFileName = "log";
 	
-	private static String roundWord = "-round";
-	private static String logExtension = ".txt";
-	private static String resultExtension = ".json";
-	
+	private static final String roundWord = "-round";
+	private static final String logExtension = ".txt";
+	private static final String resultExtension = ".json";
+
+	private static final String closedLoopPath = "run_simulation/closed-loop/";
+	private static final String bw1tFilename = "bandwidth-1t.txt";
+	private static final String fuzzyRuleFilename = "fuzzy-rule.txt";
+
 	public static void setInputPath(String inputPath) {
-		FilePathContainer.inputPath = inputPath;
+		FilePathManager.inputPath = inputPath;
 	}
 	public static void setOutputDirectory(String outputDirectory) {
 		//String simOutputDir = addSlashAtEnd(outputDirectory) + generateOutputTimeStamp();
 		prepareOutputDirectory(outputDirectory);
-		FilePathContainer.outputDirectory = addSlashAtEnd(outputDirectory);
+		FilePathManager.outputDirectory = addSlashAtEnd(outputDirectory);
 	}
 	
 	public static void setExperimentRound(int experimentRound){
-		FilePathContainer.experimentRound = experimentRound;
+		FilePathManager.experimentRound = experimentRound;
 	}
 	
 	private static void prepareOutputDirectory(String mainOutputDir){		
@@ -110,5 +114,15 @@ public class FilePathContainer {
 	public static String getLogFilePath(){
 		String logFullName = logFileName + roundWord + experimentRound + logExtension;
 		return outputDirectory + logPath + logFullName;
+	}
+	
+	public static String getFuzzyRuleFilePath(){
+		String fuzzyPath = closedLoopPath + fuzzyRuleFilename;
+		return fuzzyPath;
+	}
+	
+	public static String getInitialBwFilePath(){
+		String fuzzyPath = closedLoopPath + bw1tFilename;
+		return fuzzyPath;
 	}
 }

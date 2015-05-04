@@ -6,12 +6,12 @@ import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 
 import variable.Environment;
-import variable.FilePathContainer;
+import variable.FilePathManager;
 import broker_collaborator.NetworkGenerator;
 
 public class NetworkWriter {
 	public static void writeNetworkToFile(){
-		String filePath = FilePathContainer.getNetworkFilePath();
+		String filePath = FilePathManager.getNetworkFilePath();
 		ArrayList<ArrayList<Double>> bwTrace = NetworkGenerator.getBwTrace();
 		PrintWriter writer;
 		try {

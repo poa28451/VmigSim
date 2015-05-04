@@ -2,9 +2,9 @@
 	"environment" : 
 		{
 			"timeLimit" : 7200,
-			"scheduleType" : "priority",
+			"scheduleType" : "fifo",
 			"migrationType" : "offline",
-			"controlType" : "closedloop",
+			"controlType" : "openloop",
 
 			"wwsPercentage" : 1,
 			"wwsDirtyRate" : 90,
@@ -13,8 +13,8 @@
 			"minDirtyPage" : 50,
 			"maxNoProgressRound" : 2,
 
-			"isRecordedTrace" : false,
-			"traceFile" : "bw-new2/testbw - 1p.txt",
+			"isRecordedTrace" : true,
+			"traceFile" : "run_simulation/closed-loop/bandwidth-3p.txt",
 
 			"networkType" : "static",
 			"networkInterval" : 1,
@@ -22,7 +22,7 @@
 			"meanBandwidth" : 966.2517895,
 			"networkSD" : 0,
 
-			"threadNum" : 1
+			"threadNum" : 3
 		},
 
 	"vmSpecList" :

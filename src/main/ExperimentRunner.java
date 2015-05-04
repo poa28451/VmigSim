@@ -10,7 +10,7 @@ import file_manager.LogWriter;
 import file_manager.NetworkWriter;
 import file_manager.ResultWriter;
 import variable.Environment;
-import variable.FilePathContainer;
+import variable.FilePathManager;
 
 public class ExperimentRunner {	
 	private int experimentRounds = 1;
@@ -19,17 +19,17 @@ public class ExperimentRunner {
 	private JsonReader decoder;
 	
 	public ExperimentRunner(String inputPath, String outputPath, int experimentRounds){
-		FilePathContainer.setInputPath(inputPath);
-		FilePathContainer.setOutputDirectory(outputPath);
+		FilePathManager.setInputPath(inputPath);
+		FilePathManager.setOutputDirectory(outputPath);
 		decoder = new JsonReader();
 		this.experimentRounds = experimentRounds;
 	}
 	
 	public void runExperiment(){
 		try {
-			Parameters param = decoder.readInputFile(FilePathContainer.inputPath);
+			Parameters param = decoder.readInputFile(FilePathManager.inputPath);
 			for(;currentRound <= experimentRounds; currentRound++){
-				FilePathContainer.setExperimentRound(currentRound);
+				FilePathManager.setExperimentRound(currentRound);
 				runExperiment(param);
 			}
 		} catch (FileNotFoundException e) {
@@ -54,7 +54,7 @@ public class ExperimentRunner {
 	}
 	
 	private PrintStream prepareLogPath(){
-		String logPath = FilePathContainer.getLogFilePath();
+		String logPath = FilePathManager.getLogFilePath();
 		FileOutputStream fileStream;
 		try {
 			fileStream = new FileOutputStream(logPath);

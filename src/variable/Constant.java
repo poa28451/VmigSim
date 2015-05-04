@@ -18,9 +18,6 @@ public class Constant {
 	// Ex. 10 means the number will be 10-digit decimal number
 	public static final int DECIMAL_SCALE = 10;
 	
-	public static final String CLOSED_LOOP_FILE_PATH = "run_simulation/closed-loop/";
-	public static final String BW_1P_FILENAME = "bandwidth-1p.txt";
-	public static final String FUZZY_RULE_FILENAME = "fuzzy-rule.txt";
 	public static final int CLOSED_LOOP_START_THREAD = 1;
 	
 	/**

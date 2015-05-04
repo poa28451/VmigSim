@@ -27,6 +27,7 @@ import container.Parameters;
 import container.VmSpec;
 import variable.Constant;
 import variable.Environment;
+import variable.FilePathManager;
 
 
 public class VmigSimCore {
@@ -63,7 +64,7 @@ public class VmigSimCore {
 	private void handleClosedLoopCase(){
 		if(Environment.controlType == Constant.CLOSED_LOOP){
 			Environment.setIsRecordedTrace(true);
-			Environment.setTraceFile(Constant.CLOSED_LOOP_FILE_PATH + Constant.BW_1P_FILENAME);
+			Environment.setTraceFile(FilePathManager.getInitialBwFilePath());
 			Environment.setThreadNum(Constant.CLOSED_LOOP_START_THREAD);
 		}
 	}

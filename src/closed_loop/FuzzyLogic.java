@@ -1,6 +1,6 @@
 package closed_loop;
 
-import variable.Constant;
+import variable.FilePathManager;
 import net.sourceforge.jFuzzyLogic.FIS;
 import net.sourceforge.jFuzzyLogic.rule.Variable;
 
@@ -11,8 +11,8 @@ public class FuzzyLogic {
 	private double prevAction = 1;
 	
 	public FuzzyLogic(){
-		filename = Constant.CLOSED_LOOP_FILE_PATH + Constant.FUZZY_RULE_FILENAME;
-		fis = FIS.load(Constant.CLOSED_LOOP_FILE_PATH + Constant.FUZZY_RULE_FILENAME);
+		filename = FilePathManager.getFuzzyRuleFilePath();
+		fis = FIS.load(filename);
 		handleFindNotFound(fis, filename);
 	}
 	
@@ -60,12 +60,12 @@ public class FuzzyLogic {
 
 		prevAction = fuzz;*/
 		System.out.println("differr: " + (currentError - prevError) + " newerr: " + currentError + " olderr: " + prevError + " action: " + action + "/" + Math.ceil(action) + " fuzzRes: " + fuzz + " prevAct: " + prevAction);
-		//System.out.println((currentError - prevError) + " " + fuzz + " " + prevAction);
 		
-		/*if(action > 0) newThreadNum = (int) (currentThreadNum * multiplier);
-		else if(action < 0) newThreadNum = (int) (currentThreadNum / multiplier);*/
-		int plus = action > 0 ? (int) Math.ceil(action) : (int) Math.floor(action);
-		newThreadNum = currentThreadNum + plus;
+		if(action > 0) newThreadNum = (int) (currentThreadNum * multiplier);
+		else if(action < 0) newThreadNum = (int) (currentThreadNum / multiplier);
+		
+		/*int plus = action > 0 ? (int) Math.ceil(action) : (int) Math.floor(action);
+		newThreadNum = currentThreadNum + plus;*/
 
 		prevAction = action;
 		prevError = currentError;
@@ -78,7 +78,7 @@ public class FuzzyLogic {
 	 * @return the thread number that is checked with the value boundary.
 	 */
 	private int checkThreadValue(int threadNum){
-		int maxThread = 6;
+		int maxThread = 64;
 		int minThread = 1;
 		if(threadNum > maxThread) threadNum = maxThread;
 		if(threadNum < minThread) threadNum = minThread;

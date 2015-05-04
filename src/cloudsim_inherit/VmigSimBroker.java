@@ -33,7 +33,7 @@ public class VmigSimBroker extends DatacenterBroker {
 	private MigrationCalculator timeCalculator;
 	private double nextMigrationDelay = 0;*/
 	
-	private Datacenter destDC;
+	//private Datacenter destDC;
 	//boolean threadFirstRound = true;
 	private Controller controller;
 	
@@ -78,7 +78,7 @@ public class VmigSimBroker extends DatacenterBroker {
 		System.out.println("VM id: " + migratedVm.getId() + " added to a waiting queue");
 		System.out.println("Amount of VM in a waiting queue: " + scheduler.getMsgWaitingList().size());*/
 
-		destDC = (Datacenter) CloudSim.getEntity(3);
+		Datacenter destDC = (Datacenter) CloudSim.getEntity(3);
 		
 		//If every VM listed already, begin the migration
 		if(isAllVmInWaitingList()){

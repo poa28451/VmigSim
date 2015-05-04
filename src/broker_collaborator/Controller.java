@@ -216,7 +216,7 @@ public class Controller {
 			totalBwMBps += NetworkGenerator.getBandwidthAtTimeMB(t.getThreadId(), currentTime);
 		}
 		
-		//Find the total being-migrated RAM of VM.
+		//Find the total being-migrated RAM of VM (i.e. total RAM of VMs those are not migrated yet).
 		for(MigrationMessage migration : vmQueue){
 			VmigSimVm vm = migration.getVm();
 			if(!vm.isMigratedOut()){
@@ -236,7 +236,6 @@ public class Controller {
 		double errorPercent = error * 100 / Environment.migrationTimeLimit;
 		
 		int newThreadNum = fuzzy.evaluateResult(errorPercent, threadNum);
-		//System.out.println("new " + newThreadNum + " / " + errorPercent + " / " + error + " / " + predictedTime  + " " + totalBwMBps + " ram:" + totalLeftRamMB);
 		System.out.println("old: " + threadNum + " new: " + newThreadNum + " error%: " + errorPercent + "/" + error + " predic: " + predictedTime + " totalBW: " + totalBwMBps + " leftRAM: " + totalLeftRamMB);
 		System.out.println();		
 		manageThreadAdaption(newThreadNum);
@@ -260,8 +259,8 @@ public class Controller {
 	
 	private void changeTraceFile(int threadNum){
 		String oldName = Environment.traceFile;
-		String oldThread = String.valueOf(Environment.threadNum) + "p";
-		String newThread = String.valueOf(threadNum) + "p";
+		String oldThread = String.valueOf(Environment.threadNum) + "t";
+		String newThread = String.valueOf(threadNum) + "t";
 		String newname = oldName.replaceAll(oldThread, newThread);
 		
 		//System.out.println(oldThread + " " + newThread + " " + newname + " " + threadNum + " " + Environment.threadNum);

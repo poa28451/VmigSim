@@ -7,7 +7,7 @@ import java.io.UnsupportedEncodingException;
 import org.json.JSONObject;
 
 import cloudsim_inherit.VmigSimVm;
-import variable.FilePathContainer;
+import variable.FilePathManager;
 import variable.JsonKeyName;
 import container.MigrationResults;
 
@@ -16,7 +16,7 @@ public class ResultWriter {
 	
 	public static void writeResultToFile(MigrationResults result){
 		migResult = result;
-		String filePath = FilePathContainer.getResultFilePath();
+		String filePath = FilePathManager.getResultFilePath();
 		PrintWriter writer;
 		try {
 			writer = new PrintWriter(filePath, "UTF-8");
