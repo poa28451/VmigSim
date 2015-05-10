@@ -49,6 +49,7 @@ public class Scheduler {
 	public ArrayList<MigrationMessage> scheduleMigration(){
 		switch (Environment.scheduleType) {
 			case Constant.FIFO:
+				
 				return scheduleByFifo();
 			
 			case Constant.PRIORITY_BASED:

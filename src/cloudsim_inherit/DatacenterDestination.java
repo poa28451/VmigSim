@@ -75,7 +75,7 @@ public class DatacenterDestination extends Datacenter{
 		double totalTransferred = transferred + message.getDataSizeKB();
 		migratedVm.setTotalTransferredKB(totalTransferred);
 		
-		System.out.println();
+		/*System.out.println();
 		System.out.println(CloudSim.clock() + " Destination DC: Recieved VM pages from Broker");
 		System.out.println("\tVM id: " + migratedVm.getId());
 		if(message.getDirtyPageAmount() == Integer.MIN_VALUE){
@@ -83,9 +83,9 @@ public class DatacenterDestination extends Datacenter{
 			System.out.println("\tReceived all memory page of VM: " + migratedVm.getMemoryPageNum() + " pages");
 		}
 		else{
-			System.out.println("\tDirty page amount: " + message.getDirtyPageAmount());
+			System.out.println("\tDirty page: " + message.getDirtyPageAmount());
 		}
-		printTotalTransferData(totalTransferred);
+		printTotalTransferData(totalTransferred);*/
 		
 		//If this is the Stop-and-Copy phase's message
 		if(message.isLastMigrationMsg()){

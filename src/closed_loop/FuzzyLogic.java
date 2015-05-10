@@ -39,34 +39,13 @@ public class FuzzyLogic {
 	 * @return the number of thread that should be used in the migration.
 	 */
 	private int adaptThreadNum(double fuzzyResult, double currentError, int currentThreadNum){
-		//double fuzz = Math.round(fuzzyResult);
-		double fuzz = fuzzyResult;
 		int newThreadNum = currentThreadNum;
 		double multiplier = 2;
-		double action = fuzz * prevAction;
-		//if(prevAction <= 0.1 && prevAction >= -0.1) action = fuzz + prevAction;
-		/*double deltaError = currentError - prevError;
-
-		System.out.println(currentError + " " + prevError + " " + fuzz + " " + prevAction);
-		if(deltaError < 0 && fuzz == prevAction){
-			multiplier = 1 / multiplier;
-		}
-		else{
-			prevError = currentError;
-		}
-		
-		if(fuzz > 0) threadResult *= multiplier;
-		else if(fuzz < 0) threadResult /= multiplier;
-
-		prevAction = fuzz;*/
-		System.out.println("differr: " + (currentError - prevError) + " newerr: " + currentError + " olderr: " + prevError + " action: " + action + "/" + Math.ceil(action) + " fuzzRes: " + fuzz + " prevAct: " + prevAction);
+		double action = fuzzyResult * prevAction;
 		
 		if(action > 0) newThreadNum = (int) (currentThreadNum * multiplier);
 		else if(action < 0) newThreadNum = (int) (currentThreadNum / multiplier);
 		
-		/*int plus = action > 0 ? (int) Math.ceil(action) : (int) Math.floor(action);
-		newThreadNum = currentThreadNum + plus;*/
-
 		prevAction = action;
 		prevError = currentError;
 		return checkThreadValue(newThreadNum);
@@ -96,4 +75,6 @@ public class FuzzyLogic {
 			System.exit(1);
 		}
 	}
+	
+	//System.out.println("differr: " + (currentError - prevError) + " newerr: " + currentError + " olderr: " + prevError + " action: " + action + "/" + Math.ceil(action) + " fuzzRes: " + fuzz + " prevAct: " + prevAction);
 }

@@ -67,227 +67,28 @@ public class VmigSimBroker extends DatacenterBroker {
 	 */
 	protected void processQueueVmMigrate(SimEvent ev){	
 		MigrationMessage message = (MigrationMessage) ev.getData();
-		//VmigSimVm migratedVm = message.getVm();
 		double startClock = message.getSendClock();
 		message.setReceiveClock(CloudSim.clock());
 
-		scheduler.addMsgToWaitingList(message);
-		
-		/*System.out.println();
-		System.out.println(CloudSim.clock() + " Broker: Received queue message from dc id" + ev.getSource() + " sent at " + startClock);
-		System.out.println("VM id: " + migratedVm.getId() + " added to a waiting queue");
-		System.out.println("Amount of VM in a waiting queue: " + scheduler.getMsgWaitingList().size());*/
+		scheduler.addMsgToWaitingList(message);//Add VM to the queue
 
-		Datacenter destDC = (Datacenter) CloudSim.getEntity(3);
-		
 		//If every VM listed already, begin the migration
 		if(isAllVmInWaitingList()){
 			System.out.println();
 			System.out.println(CloudSim.clock() + " Broker: Received all queue message from Source DC at " + startClock);
 			System.out.println("Amount of VM in a waiting queue: " + scheduler.getMsgWaitingList().size());
-			
-			/*for(MigrationMessage migration : scheduler.scheduleMigration()){
-				sendVmMigration(migration);
-			}*/
 
+			Datacenter destDC = (Datacenter) CloudSim.getEntity(3);
+			//Send the scheduled VM list to the controller.
 			controller = new Controller(this, destDC, scheduler.scheduleMigration());
 			controller.startControlling();
 		}
 	}
 	
-	/*private class ThreadMain{
-		private ArrayList<ThreadWorker> workerList;
-		private final CountDownLatch doneAlarm;
-		public double highestMigTime;
-		
-		public ThreadMain(String name){
-			//super(name);
-			doneAlarm = new CountDownLatch(1);
-			workerList = new ArrayList<>();
-			highestMigTime = Double.MIN_VALUE;
-			prepareThread();
-		}
-		
-		public void run(){
-			ThreadWorker freeWorker;
-			try {
-				for(MigrationMessage migration : scheduler.scheduleMigration()){
-					while((freeWorker = findFreeThread()) == null){
-						//System.out.println("go to sleep");
-						doneAlarm.await();
-					}
-					
-					int threadId = freeWorker.getThreadId();
-					//System.out.println("assign work to thread " + threadId);
-					if(freeWorker.isTerminated()){
-						//System.out.println("create new thread " + threadId);
-						workerList.remove(freeWorker);
-						freeWorker = new ThreadWorker(threadId, doneAlarm, freeWorker.getNextMigrationDelay());
-						workerList.add(freeWorker);
-					}
-					freeWorker.setData(migration);
-					freeWorker.start();
-				}
-				synchroWorkerThreads();
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
-			findHighestMigTime();
-		}
-		
-		*//**
-		 * Find the first free worker (done its current execution) and return it.
-		 * @return the free worker if it is existed, null if no free worker.
-		 *//*
-		private ThreadWorker findFreeThread(){
-			for(ThreadWorker worker : workerList){
-				if(!worker.isAlive()){
-					//return worker;
-				}
-			}
-			return null;
-			
-			double least = Double.MAX_VALUE;
-			ThreadWorker next = null;
-			for(ThreadWorker worker : workerList){
-				if(!worker.isAlive() && least > worker.nextMigrationDelay){
-					least = worker.nextMigrationDelay;
-					next = worker;
-				}
-			}
-			return next;
-			
-			for(ThreadWorker worker : workerList){
-				if(worker.isAlive()) return null;
-			}
-			return workerList.get(0);
-		}
-		
-		private double findHighestMigTime(){
-			for(ThreadWorker t : workerList){
-				if(t.nextMigrationDelay > highestMigTime){
-					highestMigTime = t.nextMigrationDelay;
-				}
-			}
-			return highestMigTime;
-		}
-		
-		*//**
-		 * Wait for all worker thread to be done the execution.
-		 * @throws InterruptedException
-		 *//*
-		private void synchroWorkerThreads() throws InterruptedException{
-			for(ThreadWorker t : workerList){
-				t.join();
-			}
-		}
-		
-		*//**
-		 * Initialize the threads, the number of threads depends on number defined from the user.
-		 *//*
-		private void prepareThread(){
-			for(int i=0; i<Environment.threadNum; i++){
-				workerList.add(new ThreadWorker(i, doneAlarm, 0));
-			}
-		}
-	}
-	
-	private class ThreadWorker extends Thread{
-		private MigrationMessage data;
-		private final CountDownLatch doneAlarm;
-		private boolean isTerminated;
-		private double nextMigrationDelay = 0;
-		private int threadId;
-		
-		public ThreadWorker(int threadId, CountDownLatch doneAlarm, double nextMigrationDelay){
-			super(String.valueOf(threadId));
-			this.threadId = threadId;
-			this.doneAlarm = doneAlarm;
-			this.nextMigrationDelay = nextMigrationDelay;
-			isTerminated = false;
-		}
-		
-		public void setData(MigrationMessage migration){
-			data = migration;
-		}
-		
-		public void run(){
-			MigrationManager migManager = new MigrationManager();
-			Controller controller = new Controller(threadId);
-			
-			migManager.setMigrationData(data);
-			MigrationMessage msg;
-			do{
-				double nextMig = nextMigrationDelay;
-				if(!threadFirstRound) latch.countDown();
-				else threadFirstRound = false;
-				
-				msg = migManager.manageMigration();
-				msg.setSendClock(nextMig);
-				double migrationTime = controller.calculateMigrationTime(msg, nextMig);
-				//Stop sending if the time exceeded the limit
-				if(migrationTime == Double.MIN_VALUE){
-					break;
-				}
-				
-				if(maxThread > 1){
-					try {
-						latch.await();
-					} catch (InterruptedException e) {
-						e.printStackTrace();
-					}
-				}
-				
-				nextMigrationDelay += migrationTime;
-				//synchronized (this) {
-					send(destDC.getId(), 
-							nextMig + migrationTime, 
-							Constant.SEND_VM_MIGRATE, 
-							msg);
-				//}
-			} while(!msg.isLastMigrationMsg());
-			doneAlarm.countDown();
-			isTerminated = true;
-		}
-		
-		public int getThreadId(){
-			return threadId;
-		}
-		
-		public boolean isTerminated(){
-			return isTerminated;
-		}
-		public double getNextMigrationDelay(){
-			return nextMigrationDelay;
-		}
-	}*/
 	
 	protected boolean isAllVmInWaitingList(){
 		return scheduler.getMsgWaitingList().size() == getVmList().size();		
 	}
-	
-	/*protected void sendVmMigration(MigrationMessage data){
-		Datacenter destination = (Datacenter) CloudSim.getEntity(migrationMap.get(DESTINATION));
-		migManager.setMigrationData(data);
-		MigrationMessage msg;
-		do{
-			msg = migManager.manageMigration();
-			msg.setSendClock(nextMigrationDelay);
-			double migrationTime = timeCalculator.calculateMigrationTime(msg, nextMigrationDelay);
-			
-			//Stop sending if the time exceeded the limit
-			if(migrationTime == Double.MIN_VALUE){
-				break;
-			}
-			
-			nextMigrationDelay += migrationTime;
-			send(destination.getId(), 
-					nextMigrationDelay, 
-					Constant.SEND_VM_MIGRATE, 
-					msg);
-			
-		} while(!msg.isLastMigrationMsg());
-	}*/
 	
 	/**
 	 * Use for collecting the VMs' migration result sent from the destination

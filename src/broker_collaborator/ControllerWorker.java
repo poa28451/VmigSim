@@ -11,8 +11,6 @@ import variable.Constant;
 public class ControllerWorker extends Thread{
 	private SimEntity srcEnt, destEnt;
 	private MigrationMessage data;
-	//private final CountDownLatch doneAlarm;
-	//private CyclicBarrier doneAlarm;
 	private final CountDownLatch lock;
 	private boolean isTerminated;
 	private double nextMigrationDelay = 0;
@@ -24,7 +22,6 @@ public class ControllerWorker extends Thread{
 		this.srcEnt = srcEnt;
 		this.destEnt = destEnt;
 		this.nextMigrationDelay = nextMigrationDelay;
-		//this.doneAlarm = doneAlarm;
 		this.lock = lock;
 		isTerminated = false;
 	}
@@ -70,21 +67,7 @@ public class ControllerWorker extends Thread{
 			}
 		} while(!msg.isLastMigrationMsg());
 		isTerminated = true;
-		
-		//Notify the Controller that the work's done.
-		//doneAlarm.countDown();
-		//blockAtBarrier();
 	}
-	
-	/*private void blockAtBarrier(){
-		try {
-			doneAlarm.await();
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		} catch (BrokenBarrierException e) {
-			e.printStackTrace();
-		}
-	}*/
 	
 	public int getThreadId(){
 		return threadId;
@@ -109,8 +92,4 @@ public class ControllerWorker extends Thread{
 	public CountDownLatch getLock(){
 		return lock;
 	}
-	
-	/*public void setDoneAlarm(CyclicBarrier doneAlarm){
-		this.doneAlarm = doneAlarm;
-	}*/
 }

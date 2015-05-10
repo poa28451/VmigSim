@@ -24,12 +24,6 @@ FUZZIFY delta_status
 END_FUZZIFY
 
 DEFUZZIFY delta_n_multiplier
-	//TERM follow_most := sigm 40 0.5;
-	//TERM follow := gbell 0.15 5 0.3;
-	//TERM unchanged := gbell 0.05 3 0;
-	//TERM reverse := gbell 0.15 5 -0.3;
-	//TERM reverse_most := sigm -40 -0.5;
-	
 	TERM follow_most := (0.5, 0) (1, 1);
 	TERM follow := trian 0.1 0.3 0.5;
 	TERM unchanged := trian -0.1 0 0.1;
