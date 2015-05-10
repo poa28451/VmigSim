@@ -11,9 +11,9 @@ import broker_collaborator.NetworkGenerator;
 
 public class NetworkWriter {
 	public static void writeNetworkToFile(){
-		if(Environment.isRecordedTrace){
+		/*if(Environment.isRecordedTrace){
 			return;
-		}
+		}*/
 		String filePath = FilePathManager.getNetworkFilePath();
 		ArrayList<ArrayList<Double>> bwTrace = NetworkGenerator.getBwTrace();
 		PrintWriter writer;
