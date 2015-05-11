@@ -1,5 +1,6 @@
 package closed_loop;
 
+import file_manager.FuzzyWriter;
 import variable.FilePathManager;
 import net.sourceforge.jFuzzyLogic.FIS;
 import net.sourceforge.jFuzzyLogic.rule.Variable;
@@ -46,6 +47,13 @@ public class FuzzyLogic {
 		if(action > 0) newThreadNum = (int) (currentThreadNum * multiplier);
 		else if(action < 0) newThreadNum = (int) (currentThreadNum / multiplier);
 		
+		String log = "";
+		log += "delta_status (%): " + (currentError - prevError) + ", status (%): " + currentError + ", prev_status (%): " + prevError + "\n";
+		log += "action: " + action  + " del_n_multiplier: " + fuzzyResult + " prev_action: " + prevAction;
+		FuzzyWriter.appendThreadTrace(log);
+		//System.out.println(log);
+		//System.out.println("differr: " + (currentError - prevError) + " newerr: " + currentError + " olderr: " + prevError + " action: " + action  + " fuzzRes: " + fuzzyResult + " prevAct: " + prevAction);
+		
 		prevAction = action;
 		prevError = currentError;
 		return checkThreadValue(newThreadNum);
@@ -76,5 +84,5 @@ public class FuzzyLogic {
 		}
 	}
 	
-	//System.out.println("differr: " + (currentError - prevError) + " newerr: " + currentError + " olderr: " + prevError + " action: " + action + "/" + Math.ceil(action) + " fuzzRes: " + fuzz + " prevAct: " + prevAction);
+	
 }

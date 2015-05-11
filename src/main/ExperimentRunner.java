@@ -5,6 +5,7 @@ import java.io.FileOutputStream;
 import java.io.PrintStream;
 
 import container.Parameters;
+import file_manager.FuzzyWriter;
 import file_manager.JsonReader;
 import file_manager.LogWriter;
 import file_manager.NetworkWriter;
@@ -49,6 +50,8 @@ public class ExperimentRunner {
 		ResultWriter.writeResultToFile(Environment.migrationResult);
 		
 		NetworkWriter.writeNetworkToFile();
+		
+		FuzzyWriter.writeFuzzyLogToFile();
 		
 		stream.close();
 	}

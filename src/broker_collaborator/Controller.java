@@ -3,10 +3,12 @@ package broker_collaborator;
 import java.util.ArrayList;
 import java.util.concurrent.CountDownLatch;
 
+import org.cloudbus.cloudsim.core.CloudSim;
 import org.cloudbus.cloudsim.core.SimEntity;
 
 import closed_loop.FuzzyLogic;
 import cloudsim_inherit.VmigSimVm;
+import file_manager.FuzzyWriter;
 import message.MigrationMessage;
 import variable.Constant;
 import variable.Environment;
@@ -41,10 +43,9 @@ public class Controller {
 					freeWorker = findFreeThread();
 				} while(freeWorker == null);
 				
-				freeWorker = findFreeThread();				
+				//freeWorker = findFreeThread();				
 				freeWorker.setData(migration);
 				freeWorker.start();
-				
 				round++;
 				if(round == threadNum){
 					//Wait for all thread to be done its job.
@@ -113,15 +114,20 @@ public class Controller {
 		double totalLeftRamMB = 0;
 		
 		//Find the highest clock among the threads, this time will be set to all thread after the calculation.
-		for(ControllerWorker t : workerList){
+		/*for(ControllerWorker t : workerList){
 			t.join();
 			if(currentTime < t.getNextMigrationDelay())
 				currentTime = t.getNextMigrationDelay();
+		}*/
+		for(ControllerWorker t : workerList){
+			t.join();
 		}
+		currentTime = findHighestMigTime();
+		double clock = currentTime + CloudSim.clock();
 		
 		//Find the current total bw used by threads, also the current migration time.
 		for(ControllerWorker t : workerList){
-			totalBwMBps += NetworkGenerator.getBandwidthAtTimeMB(t.getThreadId(), currentTime);
+			totalBwMBps += NetworkGenerator.getBandwidthAtTimeMB(t.getThreadId(), clock);
 		}
 		
 		//Find the total being-migrated RAM of VM (i.e. total RAM of VMs those are not migrated yet).
@@ -143,7 +149,20 @@ public class Controller {
 		double error = Environment.migrationTimeLimit - predictedTime;
 		double status = error * 100 / Environment.migrationTimeLimit;
 		
+		String log = "";
+		log += "clock: " + clock + "\n";
+		log += "time_predict: " + predictedTime + ", BW(MBps): " + totalBwMBps + ", leftRAM: " + totalLeftRamMB + "\n";
+		log += "status: " + error;
+		FuzzyWriter.appendThreadTrace(log);
+		//System.out.println(log);
 		int newThreadNum = fuzzy.evaluateResult(status, threadNum);
+		
+		
+		log = "Change thread number from " + threadNum + " to " + newThreadNum + "\n";
+		FuzzyWriter.appendThreadTrace(log);
+		//System.out.println(log);
+		//System.out.println("old: " + threadNum + " new: " + newThreadNum + " error%: " + status + "(" + error + ") predict: " + predictedTime + " totalBW: " + totalBwMBps + " leftRAM: " + totalLeftRamMB);
+		//System.out.println();		
 		manageThreadAdaption(newThreadNum);
 	}
 	
@@ -163,10 +182,10 @@ public class Controller {
 	}
 	
 	private void changeTraceFile(int threadNum){
-		String oldName = Environment.traceFile;
+		String oldname = Environment.traceFile;
 		String oldThread = String.valueOf(Environment.threadNum) + "t";
 		String newThread = String.valueOf(threadNum) + "t";
-		String newname = oldName.replaceAll(oldThread, newThread);
+		String newname = oldname.replaceAll(oldThread, newThread);
 		
 		Environment.setTraceFile(newname);
 		new NetworkGenerator(newname, threadNum);
@@ -228,8 +247,4 @@ public class Controller {
 	public double getHighestMigrationTime(){
 		return highestMigTime;
 	}
-	
-
-	//System.out.println("old: " + threadNum + " new: " + newThreadNum + " error%: " + errorPercent + "/" + error + " predic: " + predictedTime + " totalBW: " + totalBwMBps + " leftRAM: " + totalLeftRamMB);
-	//System.out.println();		
 }

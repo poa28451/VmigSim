@@ -163,7 +163,7 @@ public class NetworkGenerator {
 		
 		//if current clock's fraction is less than joint fraction,
 		//then it's the previous interval, or else it's in the current interval
-		//Ex. if the interval = 10 and start interval = 0.1
+		//Ex. if one interval = 10 seconds and start the interval at second 0.1 
 		//	that means the start of interval is every 10.1 (0.1-10.0, 10.1-20.0, 20.1-30.0)
 		//	and the startFraction = 0.01 .
 		//	And if current clock = 10.05 then temp = 10.05/10 = 1.005 and tempFraction = 1.005-1 = 0.005,

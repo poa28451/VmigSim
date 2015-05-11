@@ -12,10 +12,12 @@ public class FilePathManager {
 	private static final String resultPath = "result/";
 	private static final String networkPath = "network/";
 	private static final String logPath = "logfile/";
+	private static final String fuzzyPath = "fuzzy/";
 	
 	private static final String resultFileName = "result";
 	private static final String networkFileName = "network";
 	private static final String logFileName = "log";
+	private static final String fuzzyFileName = "fuzzyresult";
 	
 	private static final String roundWord = "-round";
 	private static final String logExtension = ".txt";
@@ -52,6 +54,9 @@ public class FilePathManager {
 		
 		//Create log file path
 		createDirectory(mainOutputDir + logPath);
+		
+		//Create fuzzy log path
+		createDirectory(mainOutputDir + fuzzyPath);
 	}
 	
 	private static String addSlashAtEnd(String path){
@@ -114,6 +119,11 @@ public class FilePathManager {
 	public static String getLogFilePath(){
 		String logFullName = logFileName + roundWord + experimentRound + logExtension;
 		return outputDirectory + logPath + logFullName;
+	}
+	
+	public static String getFuzzyFilePath(){
+		String fuzzyFullName = fuzzyFileName + roundWord + experimentRound + logExtension;
+		return outputDirectory + fuzzyPath + fuzzyFullName;
 	}
 	
 	public static String getFuzzyRuleFilePath(){

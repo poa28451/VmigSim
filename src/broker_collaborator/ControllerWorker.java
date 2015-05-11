@@ -41,8 +41,8 @@ public class ControllerWorker extends Thread{
 			double nextMig = nextMigrationDelay;
 			double currentClock = CloudSim.clock();
 			
-			msg = migManager.manageMigration(currentClock);
-			msg.setSendClock(nextMig);
+			msg = migManager.manageMigration(nextMig + currentClock);
+			//msg.setSendClock(nextMig);
 			double migrationTime = calculator.calculateMigrationTime(msg, nextMig, currentClock);
 			
 			//Stop sending if the time exceeded the limit

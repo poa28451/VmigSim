@@ -1,9 +1,9 @@
 {
 	"environment" : 
 		{
-			"timeLimit" : 21600,
+			"timeLimit" : 7200,
 			"scheduleType" : "fifo",
-			"migrationType" : "precopy",
+			"migrationType" : "offline",
 			"controlType" : "openloop",
 
 			"wwsPercentage" : 1,
@@ -14,7 +14,7 @@
 			"maxNoProgressRound" : 2,
 
 			"isRecordedTrace" : false,
-			"traceFile" : "run_simulation/closed-loop/bandwidth-64t.txt",
+			"traceFile" : "run_simulation/closed-loop/bandwidth-1t.txt",
 
 			"networkType" : "dynamic",
 			"networkInterval" : 1,
