@@ -114,11 +114,6 @@ public class Controller {
 		double totalLeftRamMB = 0;
 		
 		//Find the highest clock among the threads, this time will be set to all thread after the calculation.
-		/*for(ControllerWorker t : workerList){
-			t.join();
-			if(currentTime < t.getNextMigrationDelay())
-				currentTime = t.getNextMigrationDelay();
-		}*/
 		for(ControllerWorker t : workerList){
 			t.join();
 		}
@@ -155,8 +150,8 @@ public class Controller {
 		log += "status: " + error;
 		FuzzyWriter.appendThreadTrace(log);
 		//System.out.println(log);
-		int newThreadNum = fuzzy.evaluateResult(status, threadNum);
 		
+		int newThreadNum = fuzzy.evaluateResult(status, threadNum);
 		
 		log = "Change thread number from " + threadNum + " to " + newThreadNum + "\n";
 		FuzzyWriter.appendThreadTrace(log);

@@ -4,7 +4,7 @@
 			"timeLimit" : 7200,
 			"scheduleType" : "fifo",
 			"migrationType" : "offline",
-			"controlType" : "openloop",
+			"controlType" : "closedloop",
 
 			"wwsPercentage" : 1,
 			"wwsDirtyRate" : 90,

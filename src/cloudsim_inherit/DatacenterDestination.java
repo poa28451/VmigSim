@@ -124,7 +124,7 @@ public class DatacenterDestination extends Datacenter{
 		return false;
 	}
 	
-	private void printTotalTransferData(double totalTransferred){
+	/*private void printTotalTransferData(double totalTransferred){
 		System.out.println("\tTotal transferred data = " + totalTransferred + " KB");
-	}
+	}*/
 }

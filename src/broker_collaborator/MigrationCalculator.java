@@ -8,7 +8,7 @@ public class MigrationCalculator {
 	private int threadId;
 	
 	public MigrationCalculator(){
-		
+		threadId = 0;
 	}
 	
 	public MigrationCalculator(int threadId){
@@ -78,5 +78,9 @@ public class MigrationCalculator {
 			//Downtime = last transferring time
 			vm.setDowntime(transferTime);
 		}
+	}
+
+	public int getThreadId() {
+		return threadId;
 	}
 }
