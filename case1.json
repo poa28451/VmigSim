@@ -1,0 +1,38 @@
+{
+	"environment" : 
+		{
+			"timeLimit" : 21600,
+			"scheduleType" : "fifo",
+			"migrationType" : "precopy",
+			"controlType" : "openloop",
+
+			"wwsPercentage" : 0.054309379,
+			"wwsDirtyRate" : 100,
+			"normalDirtyRate" : 0,
+			"maxPreCopyRound" : 30,
+			"minDirtyPage" : 50,
+			"maxNoProgressRound" : 2,
+
+			"isRecordedTrace" : false,
+			"traceFile" : "run_simulation/closed-loop/bandwidth-1t.txt",
+
+			"networkType" : "static",
+			"networkInterval" : 1,
+			"maxBandwidth" : 60,
+			"meanBandwidth" : 60.39073684,
+			"networkSD" : 5.361716737,
+
+			"threadNum" : 1
+		},
+
+	"vmSpecList" :
+		[
+			{
+					"vmAmount" : 1,
+					"ram" : 512,
+					"priority" : 1,
+					"qos" : 300
+			}
+
+		]
+}
