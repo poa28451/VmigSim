@@ -1,0 +1,50 @@
+{
+	"environment" : 
+		{
+			"timeLimit" : 7200,
+			"scheduleType" : "priority",
+			"migrationType" : "precopy",
+			"controlType" : "openloop",
+
+			"wwsPercentage" : 1,
+			"wwsDirtyRate" : 90,
+			"normalDirtyRate" : 20,
+			"maxPreCopyRound" : 30,
+			"minDirtyPage" : 50,
+			"maxNoProgressRound" : 2,
+
+			"isRecordedTrace" : true,
+			"traceFile" : "run_simulation/closed-loop/bandwidth-4t-con.txt",
+
+			"networkType" : "dynamic",
+			"networkInterval" : 1,
+			"maxBandwidth" : 64,
+			"meanBandwidth" : 57.21954909,
+			"networkSD" : 5.361716737,
+
+			"threadNum" : 4
+		},
+
+	"vmSpecList" :
+		[
+			{
+					"vmAmount" : 200,
+					"ram" : 512,
+					"priority" : 1,
+					"qos" : 300
+			},
+			{
+					"vmAmount" : 200,
+					"ram" : 512,
+					"priority" : 2,
+					"qos" : 2700
+			},
+			{
+					"vmAmount" : 200,
+					"ram" : 512,
+					"priority" : 3,
+					"qos" : 32400
+			}
+
+		]
+}

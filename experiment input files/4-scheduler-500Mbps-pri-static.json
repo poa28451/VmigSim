@@ -1,10 +1,10 @@
 {
 	"environment" : 
 		{
-			"timeLimit" : 7200,
-			"scheduleType" : "fifo",
+			"timeLimit" : 21600,
+			"scheduleType" : "priority",
 			"migrationType" : "offline",
-			"controlType" : "closedloop",
+			"controlType" : "openloop",
 
 			"wwsPercentage" : 1,
 			"wwsDirtyRate" : 90,
@@ -16,20 +16,35 @@
 			"isRecordedTrace" : false,
 			"traceFile" : "run_simulation/closed-loop/bandwidth-1t.txt",
 
-			"networkType" : "dynamic",
+			"networkType" : "static",
 			"networkInterval" : 1,
 			"maxBandwidth" : 500,
-			"meanBandwidth" : 447.0277272,
+			"meanBandwidth" : 471.8026316,
 			"networkSD" : 5.361716737,
+
 			"threadNum" : 1
 		},
+
 	"vmSpecList" :
 		[
 			{
-					"vmAmount" : 200,
+					"vmAmount" : 2000,
 					"ram" : 512,
 					"priority" : 1,
 					"qos" : 300
+			},
+			{
+					"vmAmount" : 2000,
+					"ram" : 512,
+					"priority" : 2,
+					"qos" : 2700
+			},
+			{
+					"vmAmount" : 2000,
+					"ram" : 512,
+					"priority" : 3,
+					"qos" : 32400
 			}
+
 		]
 }
